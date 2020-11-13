@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.section-b-homepage-container {
+  padding: 0 110px;
+  font-family: 'Poppins', sans-serif;
+}
+.section-b-homepage-container h3 {
+  font-size: 45px;
+  color: #727272;
+  font-weight: 500;
+  padding-right: 41px;
+}
+.section-b-homepage-container svg {
+  margin-top: 10px;
+  margin-left: 21px;
+  margin-bottom: 20px;
+}
+.section-b-homepage-container .special {
+  color: #d53535;
+}
+.section-b__nav .nav-container {
+  min-height: 80px;
+  padding: 0px;
+  background-color: #d53535;
+  border-radius: 15px;
+  margin-top: 27.5px;
+  margin-bottom: 35.5px;
+}
+.section-b__nav .nav-container .nav-link {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 25px !important;
+}
+.section-b__nav .nav-container .active .nav-link {
+  border-left: 0px;
+}
+.section-b_car-container {
+  margin: 0px !important;
+  padding-bottom: 85px;
+}
+.section-b_car-sub-container {
+  padding-right: 25px !important;
+}
+.section-b__addCar {
+  border: 1px solid #d53535;
+  min-height: 238px;
+  color: #d53535;
+  cursor: pointer;
+}
+.section-b__addCar h4 {
+  padding-top: 13px;
+  font-size: 32px;
+  font-weight: 600;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  .section-b-homepage-container {
+    padding: 0 20px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1737px) {
+  .section-b-homepage-container h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .section-b-homepage-container svg {
+    width: 800px;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section-b__nav .nav-container .active .nav-link {
+    border-left: 1px solid white;
+  }
+  .section-b-homepage-container .sub-container {
+    flex-direction: column;
+  }
+  .section-b-homepage-container svg {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 1080px) {
+  .section-b-homepage-container {
+    padding: 0 20px !important;
+  }
+  .section-b-homepage-container svg {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .section-b-homepage-container h3 {
+    font-size: 35px;
+  }
+  .section-b_car-sub-container {
+    padding-bottom: 25px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-b-homepage-container h3 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section-b-homepage-container h3 {
+    font-size: 25px;
+  }
+}

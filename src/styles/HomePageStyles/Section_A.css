@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.section-a-homepage-container {
+  padding: 0 110px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 90px;
+}
+.section-a-homepage-container .choices-container h3,
+.make-container h3 {
+  font-size: 44px;
+  color: #727272;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-right: 41px;
+}
+.section-a-homepage-container svg {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.section-a-homepage-container .special {
+  color: #d53535;
+}
+.section-a-homepage-container .note {
+  font-size: 19px !important;
+  font-weight: 600;
+  color: #727272;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-a-homepage-container .cars-container img {
+  padding-bottom: 26.5px;
+  width: 170px;
+  height: 110.5px;
+}
+.section-a-homepage-container .cars-container .car-name {
+  font-weight: 500;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #727272;
+}
+.make-container-sub .special-row {
+  justify-content: flex-end;
+}
+@media (min-width: 1200px) {
+  .section-a-homepage-container .cars-container {
+    flex: 0 0 27.333333% !important;
+  }
+}
+@media (max-width: 1200px) {
+  .section-a-homepage-container .choices-container {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 1080px) {
+  .section-a-homepage-container .choices-container-sub,
+  .make-container-sub {
+    flex-direction: column;
+  }
+  .section-a-homepage-container {
+    padding: 0 20px !important;
+  }
+  .section-a-homepage-container .choices-container h3,
+  .make-container h3 {
+    padding-right: 0px;
+  }
+  .section-a-homepage-container svg {
+    margin-bottom: 20px;
+  }
+  .make-container-sub .special-row {
+    justify-content: flex-start !important;
+  }
+}
+@media (max-width: 768px) {
+  .section-a-homepage-container .choices-container h3,
+  .make-container h3 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 576px) {
+  .section-a-homepage-container .choices-container h3,
+  .make-container h3 {
+    font-size: 18px;
+  }
+  .section-a-homepage-container .note {
+    font-size: 14px !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  .section-a-homepage-container {
+    padding: 0 20px !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1737px) {
+  .section-a-homepage-container .choices-container h3,
+  .make-container h3 {
+    font-size: 22px;
+  }
+  .section-a-homepage-container svg {
+    margin-top: 0px;
+  }
+  .section-a-homepage-container .cars-container .car-name {
+    font-size: 20px;
+  }
+}
