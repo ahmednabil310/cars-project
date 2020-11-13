@@ -1,0 +1,26 @@
+.NewCarPricing-Section1 {
+  font-family: "Poppins", sans-serif;
+  padding-top: 12px;
+  padding-left: 110px;
+}
+
+.NewCarPricing-Section1__h3 {
+  font-weight: 500;
+  font-size: 45px;
+  color: #727272;
+}
+
+.NewCarPricing-Section1__h3--red {
+  color: #d53535;
+}
+
+.NewCarPricing-Section1-search {
+  padding-top: 45px;
+}
+
+.NewCarPricing-Section1-search__p {
+  display: inline;
+  margin-right: 40px;
+  font-size: 25px;
+  color: #727272;
+}

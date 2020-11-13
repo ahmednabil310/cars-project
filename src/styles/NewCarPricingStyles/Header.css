@@ -1,0 +1,13 @@
+.NewCarPricing-Header {
+  background-color: #727272;
+  min-height: 183px;
+  padding: 43px 110px;
+}
+
+.NewCarPricing-Header__text {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
