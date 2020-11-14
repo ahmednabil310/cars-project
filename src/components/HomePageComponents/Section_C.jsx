@@ -5,58 +5,57 @@ const Section_C = () => {
   return (
     <div className="section-c-homepage-container">
       <div className="section-c_compare">
-        <SingleCompare mainTitle="COMPARE SUVS" width="1003.729" />
+        <SingleCompare mainTitle="Compare SUV" width="1003.729" />
         <div className="row">
           <div className="col-lg-6">
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types=" Kia Telluride / Jeep Wrangler / Toyota Highlander / Ford
-                  Explorer"
+                title="Popular SUV"
+                types="Toyota Land Cruiser/Nissan Patrol/GMC Yukon/Chevrolet Tahoe"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Small SUVs"
-                types=" Jeep Wrangler / Toyota RAV4 / Honda CR-V / Nissan Rogue"
+                title="Small SUV"
+                types="Toyota RAV-4/Mazda CX-5/Kia Sportage/Honda CR-V"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Midsize SUVs"
-                types="Honda Pilot / Kia Telluride / Ford Explorer / Toyota Highlander"
+                title="Midsize SUV"
+                types="Ford Explorer/Toyota Fortuner/Nissan Pathfinder/Mitsubishi Pajero"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types="Kia Telluride / Ford Explorer / Toyota Highlander / Subaru Ascent"
+                title="3-row SUV"
+                types="Honda Pilot/Mazda CX-9/Hyundai Grand Santa Fe/GMC Acadia"
               />
             </div>
           </div>
           <div className="col-lg-6">
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types="Lexus RX 350 / Volvo XC90 / Audi Q8 / BMW X7"
+                title="Popular Luxury SUV"
+                types="Audi Q7/BMW X5/Lexus RX/Mercedes-Benz GLE 63 AMG"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types="Acura RDX / Audi Q5 / BMW X3 / Volvo XC40"
+                title="Small Luxury SUV"
+                types="Jaguar F-Pace/Volvo XC60/Land Rover Range Rover Evoque/Porsche Macan"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types="Kia Telluride / Jeep Wrangler / Toyota Highlander / Ford Explorer"
+                title="Midsize Luxury SUV"
+                types="Jeep Grand Cherokee/Toyota Land Cruiser Prado/Volkswagen Touareg/Land Rover Discovery"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Popular SUVs"
-                types=" Toyota Sequoia / Nissan Armada / Toyota Land Cruiser"
+                title="Large SUV"
+                types="Infiniti QX80/Land Rover Range Rover/Lexus LX/Mercedes-Benz G 63 AMG"
               />
             </div>
           </div>
@@ -66,31 +65,31 @@ const Section_C = () => {
       {/* Second Compare */}
 
       <div className="section-c_compare">
-        <SingleCompare mainTitle="COMPARE SEDANS" width="1003.729" />
+        <SingleCompare mainTitle="Compare Sedans" width="1003.729" />
         <div className="row">
           <div className="col-lg-6">
             <div className="col-12">
               <CompareTypes
-                title="Popular Sedans "
-                types=" Honda Civic / Dodge Charger / Honda Accord / Toyota Camry"
+                title="Popular Sedans"
+                types="Toyota Camry/Honda Accord/Nissan Altima/Mazda 6"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Small Sedans "
-                types=" Honda Civic / Toyota Corolla / Ford Focus / Hyundai Elantra"
+                title="Small Sedan"
+                types="Nissan Sunny/Toyota Yaris Sedan/Honda City/Hyundai Elantra"
               />
             </div>
             <div className="col-12">
               <CompareTypes
                 title="Midsize Sedans"
-                types=" Honda Accord / Toyota Camry / Kia Stinger / Ford Fusion"
+                types="Kia Optima/Toyota Corolla/Ford Taurus/Honda Civic"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="3-row Sedans"
-                types=" Dodge Charger / Chrysler 300 / Toyota Avalon / Ford Taurus"
+                title="Large Sedan"
+                types="Chrysler 300C/Dodge Charger/Ford Taurus/Toyota Avalon"
               />
             </div>
           </div>
@@ -98,157 +97,52 @@ const Section_C = () => {
             <div className="col-12">
               <CompareTypes
                 title="Popular Luxury Sedans"
-                types="Genesis G70 / INFINITI Q50 / Porsche Panamera / Audi A4"
+                types="Lexus ES/Mercedes-Benz E-Class/Audi A6/BMW 5-Series"
               />
             </div>
             <div className="col-12">
               <CompareTypes
                 title="Small Luxury Sedans"
-                types="Genesis G70 / INFINITI Q50 / Audi A4 / Alfa Romeo Giulia"
+                types="Audi A4/Mercedes-Benz C-Class/Volvo S60/Jaguar XE"
               />
             </div>
             <div className="col-12">
               <CompareTypes
                 title="Midsize Luxury Sedans"
-                types=" Audi A7 / Cadillac CTS / Lincoln MKZ / Audi A6"
+                types="Lexus GS/Jaguar XF/Volvo S90/Infiniti Q70"
               />
             </div>
             <div className="col-12">
               <CompareTypes
-                title="Large Sedans "
-                types=" Porsche Panamera / Lincoln Continental / Audi A8 / Cadillac XTS"
+                title="Luxry Large Sedan"
+                types="Lexus LS/Mercedes-Benz S-Class/Audi A8/BMW 7-Series"
               />
             </div>
           </div>
         </div>
       </div>
       {/* Third Compare */}
-      <div className="row">
-        <div className="col-lg-6">
-          <div className="section-c_compare">
-            <SingleCompare
-              mainTitle="Compare"
-              secondTitle=" Trucks"
-              width="243.729"
-              textColor="#D53535"
-            />
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="col-12">
-                  <CompareTypes
-                    title="Popular Sedans "
-                    types=" Honda Civic / Dodge Charger / Honda Accord / Toyota Camry"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Small Sedans "
-                    types=" Honda Civic / Toyota Corolla / Ford Focus / Hyundai Elantra"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Midsize Sedans"
-                    types=" Honda Accord / Toyota Camry / Kia Stinger / Ford Fusion"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="3-row Sedans"
-                    types=" Dodge Charger / Chrysler 300 / Toyota Avalon / Ford Taurus"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="col-12">
-                  <CompareTypes
-                    title="Popular Luxury Sedans"
-                    types="Genesis G70 / INFINITI Q50 / Porsche Panamera / Audi A4"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Small Luxury Sedans"
-                    types="Genesis G70 / INFINITI Q50 / Audi A4 / Alfa Romeo Giulia"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Midsize Luxury Sedans"
-                    types=" Audi A7 / Cadillac CTS / Lincoln MKZ / Audi A6"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Large Sedans "
-                    types=" Porsche Panamera / Lincoln Continental / Audi A8 / Cadillac XTS"
-                  />
-                </div>
-              </div>
+      <div className="section-c_compare">
+        <SingleCompare mainTitle="Compare Trucks" width="1003.729" />
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="col-12">
+              <CompareTypes
+                title="Popular Trucks"
+                types="Ram 1200/Chevrolet Silverado/Ford F-150/GMC Sierra 1500"
+              />
             </div>
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <div className="section-c_compare">
-            <SingleCompare
-              mainTitle="Compare"
-              secondTitle=" Hybrids"
-              width="243.729"
-              textColor="#D53535"
-            />
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="col-12">
-                  <CompareTypes
-                    title="Popular Sedans "
-                    types=" Honda Civic / Dodge Charger / Honda Accord / Toyota Camry"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Small Sedans "
-                    types=" Honda Civic / Toyota Corolla / Ford Focus / Hyundai Elantra"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Midsize Sedans"
-                    types=" Honda Accord / Toyota Camry / Kia Stinger / Ford Fusion"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="3-row Sedans"
-                    types=" Dodge Charger / Chrysler 300 / Toyota Avalon / Ford Taurus"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="col-12">
-                  <CompareTypes
-                    title="Popular Luxury Sedans"
-                    types="Genesis G70 / INFINITI Q50 / Porsche Panamera / Audi A4"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Small Luxury Sedans"
-                    types="Genesis G70 / INFINITI Q50 / Audi A4 / Alfa Romeo Giulia"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Midsize Luxury Sedans"
-                    types=" Audi A7 / Cadillac CTS / Lincoln MKZ / Audi A6"
-                  />
-                </div>
-                <div className="col-12">
-                  <CompareTypes
-                    title="Large Sedans "
-                    types=" Porsche Panamera / Lincoln Continental / Audi A8 / Cadillac XTS"
-                  />
-                </div>
-              </div>
+            <div className="col-12">
+              <CompareTypes
+                title="Large Trucks"
+                types="Ford F-150 Raptor/Jeep Wrangler Unlimited/Ram 1200/Chevrolet Silverado"
+              />
+            </div>
+            <div className="col-12">
+              <CompareTypes
+                title="Midsize Truck"
+                types="Nissan Navara/Toyota Hilux/Mitsubishi L200/Isuzu D-Max"
+              />
             </div>
           </div>
         </div>

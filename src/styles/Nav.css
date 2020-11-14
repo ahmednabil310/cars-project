@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 .nav-container {
   background-color: #1a1a1a;
   color: white !important;
   min-height: 175px;
   padding: 0 110px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-container .collapse {
@@ -56,14 +56,23 @@
     border-left: 1px solid white;
   }
 }
-@media scree and (max-width: 1500px) {
+@media only screen and (max-width: 1500px) {
   .nav-container .collapse ul {
     width: auto;
   }
 }
+
 @media only screen and (max-width: 1919px) and (min-width: 1200px) {
   .nav-container {
     padding: 0 110px 0 20px;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .nav-container .collapse ul {
+    width: auto;
+  }
+  .nav-container {
+    padding: 0 20px !important;
   }
 }
 @media screen and (max-width: 370px) {

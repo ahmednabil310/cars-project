@@ -7,7 +7,7 @@
 }
 .section-a-homepage-container .choices-container h3,
 .make-container h3 {
-  font-size: 44px;
+  font-size: 43px;
   color: #727272;
   font-weight: 500;
   margin-bottom: 20px;
@@ -30,12 +30,11 @@
 
 .section-a-homepage-container .cars-container img {
   padding-bottom: 26.5px;
-  width: 170px;
   height: 110.5px;
 }
 .section-a-homepage-container .cars-container .car-name {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 24px;
   text-transform: uppercase;
   color: #727272;
 }

@@ -4,7 +4,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .section-b-homepage-container h3 {
-  font-size: 45px;
+  font-size: 43px;
   color: #727272;
   font-weight: 500;
   padding-right: 41px;
@@ -64,6 +64,10 @@
   .section-b-homepage-container svg {
     width: 800px;
     margin-top: 0px;
+  }
+  .section-b__nav .nav-container .nav-link {
+    font-size: 15px;
+    padding: 0 11px !important;
   }
 }
 
