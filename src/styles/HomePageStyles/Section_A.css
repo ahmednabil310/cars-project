@@ -7,7 +7,7 @@
 }
 .section-a-homepage-container .choices-container h3,
 .make-container h3 {
-  font-size: 43px;
+  font-size: 30px;
   color: #727272;
   font-weight: 500;
   margin-bottom: 20px;
@@ -21,7 +21,7 @@
   color: #d53535;
 }
 .section-a-homepage-container .note {
-  font-size: 19px !important;
+  font-size: 15px !important;
   font-weight: 600;
   color: #727272;
   margin-bottom: 30px;
@@ -34,7 +34,7 @@
 }
 .section-a-homepage-container .cars-container .car-name {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 17px;
   text-transform: uppercase;
   color: #727272;
 }
@@ -46,12 +46,8 @@
     flex: 0 0 27.333333% !important;
   }
 }
+
 @media (max-width: 1200px) {
-  .section-a-homepage-container .choices-container {
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 1080px) {
   .section-a-homepage-container .choices-container-sub,
   .make-container-sub {
     flex-direction: column;
@@ -69,6 +65,9 @@
   .make-container-sub .special-row {
     justify-content: flex-start !important;
   }
+  .section-a-homepage-container .choices-container {
+    margin-bottom: 30px;
+  }
 }
 @media (max-width: 768px) {
   .section-a-homepage-container .choices-container h3,
@@ -84,21 +83,7 @@
   .section-a-homepage-container .note {
     font-size: 14px !important;
   }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1919px) {
-  .section-a-homepage-container {
-    padding: 0 20px !important;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1737px) {
-  .section-a-homepage-container .choices-container h3,
-  .make-container h3 {
-    font-size: 22px;
-  }
   .section-a-homepage-container svg {
-    margin-top: 0px;
-  }
-  .section-a-homepage-container .cars-container .car-name {
-    font-size: 20px;
+    width: 200px;
   }
 }

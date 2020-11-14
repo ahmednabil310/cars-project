@@ -6,28 +6,29 @@
 .section-c_compare {
   padding-bottom: 159px;
 }
+.compare-title {
+  font-weight: bold;
+  font-size: 35px;
+  color: #727272;
+}
 .compare-main-content {
-  padding-bottom: 58px;
+  padding-bottom: 38px;
   font-family: 'Montserrat', sans-serif;
   align-items: center;
 }
-.compare-title {
-  font-weight: bold;
-  font-size: 53px;
-  color: #727272;
-}
+
 .compare-labels {
   font-family: 'Poppins', sans-serif;
   color: #727272;
 }
 .compare-labels .labels-title {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 21px;
   padding-bottom: 15px;
 }
 .compare-labels .labels-types {
-  font-weight: 300;
-  font-size: 20px !important;
+  font-weight: 700;
+  font-size: 14px !important;
   padding-bottom: 34px;
 }
 
@@ -52,16 +53,7 @@
     width: 534px;
   }
 }
-@media only screen and (min-width: 1544px) and (max-width: 1737px) {
-  .compare-title {
-    font-size: 45px;
-  }
-}
-@media (max-width: 600px) {
-  .section-c-homepage-container svg {
-    width: 400px;
-  }
-}
+
 @media screen and (max-width: 768px) {
   .compare-labels .labels-types {
     font-size: 12px !important;
@@ -72,13 +64,19 @@
   }
 }
 @media screen and (max-width: 576px) {
+  .compare-labels .labels-title {
+    font-size: 12px;
+    padding-bottom: 5px;
+  }
   .compare-labels .labels-types {
     font-size: 11px !important;
+    padding-bottom: 14px;
   }
-  .compare-labels .labels-title {
-    font-size: 10px;
-  }
+
   .section-c-homepage-container svg {
     width: 210px;
+  }
+  .compare-title {
+    font-size: 23px;
   }
 }

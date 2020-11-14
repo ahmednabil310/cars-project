@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.car-details-container {
+  padding: 0 110px;
+  margin-top: 38px;
+  margin-bottom: 59px;
+}
+.bigger-image img {
+  height: 100%;
+  max-width: 100%;
+}
+.smaller-image img {
+  height: 100%;
+  padding-bottom: 17px;
+}
+.smaller-image .last-image img {
+  padding-bottom: 0px;
+}
+.car-specs {
+  font-family: 'Poppins', sans-serif;
+}
+.car-specs svg {
+  max-width: 100%;
+}
+.car-specs .car-new {
+  font-weight: normal;
+  font-size: 45px;
+  padding-bottom: 26px;
+  color: #1a1a1a;
+}
+.car-specs-details {
+  padding-bottom: 15px;
+  padding-top: 40px;
+  align-items: baseline;
+}
+.car-specs-details h3 {
+  font-weight: 400;
+  font-size: 40px;
+  color: #727272;
+}
+.last-detail {
+  padding-bottom: 0px;
+}

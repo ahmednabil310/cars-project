@@ -4,13 +4,12 @@
   font-family: 'Poppins', sans-serif;
 }
 .section-b-homepage-container h3 {
-  font-size: 43px;
+  font-size: 23px;
   color: #727272;
   font-weight: 500;
   padding-right: 41px;
 }
 .section-b-homepage-container svg {
-  margin-top: 10px;
   margin-left: 21px;
   margin-bottom: 20px;
 }
@@ -26,7 +25,7 @@
   margin-bottom: 35.5px;
 }
 .section-b__nav .nav-container .nav-link {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   padding: 0 25px !important;
 }
@@ -51,27 +50,12 @@
   font-size: 32px;
   font-weight: 600;
 }
-@media only screen and (min-width: 1200px) and (max-width: 1919px) {
-  .section-b-homepage-container {
-    padding: 0 20px;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1737px) {
-  .section-b-homepage-container h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .section-b-homepage-container svg {
-    width: 800px;
-    margin-top: 0px;
-  }
-  .section-b__nav .nav-container .nav-link {
-    font-size: 13px;
-    padding: 0 17px !important;
-  }
-}
 
 @media screen and (max-width: 1200px) {
+  .section-b-homepage-container {
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
   .section-b__nav .nav-container .active .nav-link {
     border-left: 1px solid white;
   }
@@ -87,12 +71,12 @@
     padding: 0 20px !important;
   }
   .section-b-homepage-container svg {
-    display: none;
+    width: 800px;
   }
 }
 @media screen and (max-width: 992px) {
-  .section-b-homepage-container h3 {
-    font-size: 35px;
+  .section-b-homepage-container svg {
+    width: 660px;
   }
   .section-b_car-sub-container {
     padding-bottom: 25px !important;
@@ -102,9 +86,15 @@
   .section-b-homepage-container h3 {
     font-size: 23px;
   }
+  .section-b-homepage-container svg {
+    width: 500px;
+  }
 }
 @media screen and (max-width: 576px) {
   .section-b-homepage-container h3 {
-    font-size: 25px;
+    font-size: 18px;
+  }
+  .section-b-homepage-container svg {
+    width: 200px;
   }
 }

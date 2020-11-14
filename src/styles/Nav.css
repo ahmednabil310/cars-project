@@ -2,7 +2,7 @@
 .nav-container {
   background-color: #1a1a1a;
   color: white !important;
-  min-height: 175px;
+  min-height: 130px;
   padding: 0 110px;
   font-family: 'Poppins', sans-serif;
 }
@@ -14,22 +14,22 @@
   width: 75%;
 }
 .nav-container .nav-link {
-  font-size: 25px;
+  font-size: 16px;
+  padding: 0 16px !important;
   font-weight: 400;
   color: white !important;
   border-left: 1px solid white;
-  padding: 0 27px !important;
 }
 .nav-container .active .nav-link {
   border: 0;
 }
 .user-container .username {
-  font-size: 25px;
+  font-size: 17px;
   font-weight: 400;
   text-decoration: underline;
 }
 .user-container .user-icon {
-  font-size: 23px;
+  font-size: 17px;
 }
 .nav-container .navbar-toggler {
   border-color: rgba(255, 255, 255, 0) !important;
@@ -40,28 +40,15 @@
 .nav-container .navbar-toggler-icon {
   color: white;
 }
-@media screen and (max-width: 1489px) {
-  .nav-container .nav-link {
-    font-size: 18px;
-    padding: 0 21px !important;
-  }
-  .nav-container .nav-item {
-    padding-bottom: 15px;
-  }
-  .nav-container .user-container {
-    padding-bottom: 15px;
-  }
-  .user-container .user-icon,
-  .user-container .username {
-    font-size: 15px;
-  }
-}
 @media screen and (max-width: 1200px) {
+  .nav-container .nav-link {
+    margin-bottom: 10px !important;
+  }
   .nav-container .active .nav-link {
     border-left: 1px solid white;
   }
   .navbar-brand img {
-    width: 170px;
+    width: 125px;
   }
   .user-container .user-icon,
   .user-container .username {
@@ -70,28 +57,10 @@
   .nav-container {
     min-height: auto;
   }
-}
-@media only screen and (max-width: 1500px) {
-  /* .nav-container .collapse ul {
-    width: auto;
-  } */
-}
-
-@media only screen and (max-width: 1919px) and (min-width: 1200px) {
-  .nav-container {
-    padding: 0 20px 0 20px;
-  }
-}
-@media only screen and (max-width: 1080px) {
   .nav-container .collapse ul {
     width: auto;
   }
   .nav-container {
     padding: 0 20px !important;
-  }
-}
-@media screen and (max-width: 370px) {
-  .nav-container {
-    padding: 0 0;
   }
 }

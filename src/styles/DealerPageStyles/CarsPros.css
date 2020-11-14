@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.cars-pros-container {
+  padding: 0 110px;
+  margin-bottom: 56px;
+}
+.car-pros .pros,
+.cons {
+  font-size: 45px;
+  font-weight: 500;
+  color: #1a1a1a;
+  padding-bottom: 26px;
+  font-family: 'Poppins', sans-serif;
+}
+/* .car-pros svg {
+  padding-bottom: 40px;
+} */
+.pros-content {
+  display: flex;
+  align-items: baseline;
+}
+.pros-content h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 29px;
+  padding-bottom: 34px;
+}
