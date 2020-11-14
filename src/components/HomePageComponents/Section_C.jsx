@@ -7,7 +7,7 @@ const Section_C = () => {
       <div className="section-c_compare">
         <SingleCompare mainTitle="Compare SUV" width="1003.729" />
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-6">
             <div className="col-12">
               <CompareTypes
                 title="Popular SUV"
@@ -33,7 +33,7 @@ const Section_C = () => {
               />
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-6">
             <div className="col-12">
               <CompareTypes
                 title="Popular Luxury SUV"
@@ -67,7 +67,7 @@ const Section_C = () => {
       <div className="section-c_compare">
         <SingleCompare mainTitle="Compare Sedans" width="1003.729" />
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-6">
             <div className="col-12">
               <CompareTypes
                 title="Popular Sedans"
@@ -93,7 +93,7 @@ const Section_C = () => {
               />
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-6">
             <div className="col-12">
               <CompareTypes
                 title="Popular Luxury Sedans"
@@ -125,7 +125,7 @@ const Section_C = () => {
       <div className="section-c_compare">
         <SingleCompare mainTitle="Compare Trucks" width="1003.729" />
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-12">
             <div className="col-12">
               <CompareTypes
                 title="Popular Trucks"

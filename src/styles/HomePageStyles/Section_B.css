@@ -58,7 +58,7 @@
 }
 @media only screen and (min-width: 1200px) and (max-width: 1737px) {
   .section-b-homepage-container h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
   }
   .section-b-homepage-container svg {
@@ -66,8 +66,8 @@
     margin-top: 0px;
   }
   .section-b__nav .nav-container .nav-link {
-    font-size: 15px;
-    padding: 0 11px !important;
+    font-size: 13px;
+    padding: 0 17px !important;
   }
 }
 

@@ -1,7 +1,7 @@
 const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
   return (
     <>
-      <div className="compare-main-content d-flex justify-content-between align-items-center">
+      <div className="compare-main-content d-flex justify-content-between">
         <h1 className="compare-title">
           {mainTitle} <span style={{ color: textColor }}>{secondTitle}</span>
         </h1>

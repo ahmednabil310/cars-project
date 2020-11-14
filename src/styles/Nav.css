@@ -40,9 +40,10 @@
 .nav-container .navbar-toggler-icon {
   color: white;
 }
-@media screen and (max-width: 1484px) {
+@media screen and (max-width: 1489px) {
   .nav-container .nav-link {
-    font-size: 15px;
+    font-size: 18px;
+    padding: 0 21px !important;
   }
   .nav-container .nav-item {
     padding-bottom: 15px;
@@ -50,21 +51,35 @@
   .nav-container .user-container {
     padding-bottom: 15px;
   }
+  .user-container .user-icon,
+  .user-container .username {
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 1200px) {
   .nav-container .active .nav-link {
     border-left: 1px solid white;
   }
+  .navbar-brand img {
+    width: 170px;
+  }
+  .user-container .user-icon,
+  .user-container .username {
+    font-size: 15px;
+  }
+  .nav-container {
+    min-height: auto;
+  }
 }
 @media only screen and (max-width: 1500px) {
-  .nav-container .collapse ul {
+  /* .nav-container .collapse ul {
     width: auto;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1919px) and (min-width: 1200px) {
   .nav-container {
-    padding: 0 110px 0 20px;
+    padding: 0 20px 0 20px;
   }
 }
 @media only screen and (max-width: 1080px) {
@@ -78,8 +93,5 @@
 @media screen and (max-width: 370px) {
   .nav-container {
     padding: 0 0;
-  }
-  .navbar-brand img {
-    width: 170px;
   }
 }

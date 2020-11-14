@@ -9,6 +9,7 @@
 .compare-main-content {
   padding-bottom: 58px;
   font-family: 'Montserrat', sans-serif;
+  align-items: center;
 }
 .compare-title {
   font-weight: bold;
@@ -36,19 +37,48 @@
   }
 }
 @media screen and (max-width: 992px) {
+  .compare-main-content {
+    align-items: flex-start !important;
+  }
   .compare-title {
     font-size: 30px;
     margin-bottom: 20px;
+    color: rgb(41, 40, 40);
   }
   .compare-main-content {
     flex-direction: column;
   }
   .section-c-homepage-container svg {
-    display: none;
+    width: 534px;
   }
 }
 @media only screen and (min-width: 1544px) and (max-width: 1737px) {
   .compare-title {
     font-size: 45px;
+  }
+}
+@media (max-width: 600px) {
+  .section-c-homepage-container svg {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .compare-labels .labels-types {
+    font-size: 12px !important;
+    font-weight: 500;
+  }
+  .compare-labels .labels-title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .compare-labels .labels-types {
+    font-size: 11px !important;
+  }
+  .compare-labels .labels-title {
+    font-size: 10px;
+  }
+  .section-c-homepage-container svg {
+    width: 210px;
   }
 }
