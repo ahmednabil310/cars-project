@@ -111,11 +111,13 @@ const Section_B = () => {
           </nav>
         </div>
       </div>
-      <div className="row section-b_car-container">
-        <AddVechile />
-        <AddVechile />
-        <AddVechile />
-        <AddVechile />
+      <div className="car-container-wrapper">
+        <div className="row section-b_car-container">
+          <AddVechile />
+          <AddVechile />
+          <AddVechile />
+          <AddVechile />
+        </div>
       </div>
     </div>
   );

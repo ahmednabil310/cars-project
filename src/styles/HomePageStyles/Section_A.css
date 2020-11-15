@@ -5,17 +5,21 @@
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 90px;
 }
+.section-a-homepage-container .choices-container .choices-container-sub,
+.make-container-sub {
+  align-items: center;
+}
 .section-a-homepage-container .choices-container h3,
 .make-container h3 {
-  font-size: 30px;
+  font-size: 21px;
   color: #727272;
   font-weight: 500;
   margin-bottom: 20px;
   padding-right: 41px;
 }
 .section-a-homepage-container svg {
-  margin-top: 10px;
   margin-bottom: 20px;
+  width: 150px;
 }
 .section-a-homepage-container .special {
   color: #d53535;
@@ -34,7 +38,7 @@
 }
 .section-a-homepage-container .cars-container .car-name {
   font-weight: 500;
-  font-size: 17px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #727272;
 }
@@ -48,9 +52,13 @@
 }
 
 @media (max-width: 1200px) {
-  .section-a-homepage-container .choices-container-sub,
-  .make-container-sub {
+  .section-a-homepage-container .make-container-sub {
     flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-a-homepage-container .choices-container .choices-container-sub {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .section-a-homepage-container {
     padding: 0 20px !important;
@@ -61,6 +69,7 @@
   }
   .section-a-homepage-container svg {
     margin-bottom: 20px;
+    width: 243.44px;
   }
   .make-container-sub .special-row {
     justify-content: flex-start !important;
@@ -84,6 +93,6 @@
     font-size: 14px !important;
   }
   .section-a-homepage-container svg {
-    width: 200px;
+    width: 170px;
   }
 }
