@@ -8,7 +8,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 .banner-title {
-  font-size: 80px;
+  font-size: 50px;
   font-weight: bold;
 }
 .banner-list {
@@ -16,15 +16,34 @@
 }
 .banner-list li:nth-child(1) {
   padding-right: 51px;
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 400;
 }
 .banner-list li:nth-child(2) {
   padding-right: 51px;
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 400;
 }
 .banner-list li:nth-child(3) {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 400;
+}
+@media (max-width: 1200px) {
+  .banner-content {
+    flex-direction: column;
+    padding: 43px 20px;
+    align-items: center;
+  }
+  .banner-list {
+    padding-left: 0px !important;
+  }
+}
+@media (max-width: 576px) {
+  .banner-title {
+    font-size: 22px;
+  }
+  .banner-list li {
+    font-size: 17px !important;
+    padding-right: 10px !important;
+  }
 }

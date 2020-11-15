@@ -5,22 +5,32 @@
 }
 .car-pros .pros,
 .cons {
-  font-size: 45px;
+  font-size: 33px;
   font-weight: 500;
   color: #1a1a1a;
-  padding-bottom: 26px;
   font-family: 'Poppins', sans-serif;
 }
-/* .car-pros svg {
-  padding-bottom: 40px;
-} */
 .pros-content {
   display: flex;
-  align-items: baseline;
+  align-items: end;
 }
 .pros-content h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 29px;
+  font-size: 16px;
   padding-bottom: 34px;
+}
+@media (max-width: 1200px) {
+  .cars-pros-container {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .car-pros svg,
+  .car-cons svg {
+    width: 200px;
+  }
+  .pros-content h2 {
+    font-size: 12px;
+  }
 }
