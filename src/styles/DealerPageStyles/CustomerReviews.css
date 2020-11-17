@@ -4,23 +4,22 @@
   margin-bottom: 60px;
   font-family: 'Poppins', sans-serif;
 }
-.customer-reviews-container #Component_6_1 {
-  margin-left: 21px;
-  width: 150px;
-}
 
+.customer-review-title {
+  font-size: 35px;
+  font-weight: 500;
+  color: #727272;
+}
 .customer-reviews-container .special {
   color: #d53535;
 }
-
-.customer-reviews-container h3 {
-  font-size: 23px;
+.customer-review-sub-title {
+  font-weight: 400;
   color: #727272;
-  font-weight: 500;
 }
 
 .customer-reviews-container button {
-  background-color: #D53535;
+  background-color: #d53535;
   color: white;
   border: none;
   display: flex;
@@ -40,9 +39,9 @@
 }
 
 .ratings-section h1 {
-  font-size: 120px;
+  font-size: 100px;
   color: #727272;
-  line-height: 80%;
+  margin-bottom: 0px;
 }
 
 .ratings-section span {
@@ -51,19 +50,19 @@
 .ratings-section p {
   font-size: 15px;
   color: #727272;
-  margin: 0;
+  margin-bottom: 14px;
 }
-
-.ratings-section img {
+/* .ratings-section .big-star {
   width: 100%;
+} */
+.ratings-section img {
   color: #727272;
 }
 
-
 .ratings-section h2 {
   font-size: 20px;
-  color: #C4C4C4;
-  margin: 0;
+  color: #c4c4c4;
+  padding-right: 15px;
 }
 
 .ratings-section svg {
@@ -80,6 +79,7 @@
   font-size: 35px;
   color: #727272;
   margin: 0 45px 0 0;
+  font-weight: 500;
 }
 
 .consumer-reviews p {
@@ -94,16 +94,16 @@
 
 .consumer-reviews span {
   font-size: 13px;
-  font-weight: 200;
-  color: #C4C4C4;
+  font-weight: 500;
+  color: #c4c4c4;
 }
 
-.consumer-reviews span::after{
-  content: "|";
+.consumer-reviews span::after {
+  content: '|';
   margin: 0 20px 0 20px;
 }
-.consumer-reviews .last::after{
-  content: "";
+.consumer-reviews .last::after {
+  content: '';
   margin: 0 20px 0 20px;
 }
 

@@ -1,7 +1,6 @@
-import React from 'react';
-
+import '../../../styles/Form.css';
 const Form = () => {
-  return <div>ok</div>;
+  return <div class="container"></div>;
 };
 
 export default Form;

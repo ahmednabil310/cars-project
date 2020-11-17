@@ -25,6 +25,7 @@ const Dealer = () => {
       <FullCar />
       <LastBanner />
       <CustomerReviews />
+      <Form />
     </div>
   );
 };
