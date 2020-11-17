@@ -1,55 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-.last-banner-container {
-  padding: 96px 110px;
-  margin-bottom: 60px;
-  font-family: 'Poppins', sans-serif;
-  background: #efefef;
+.last-banner {
+	margin-bottom: 60px;
+	font-family: 'Poppins', sans-serif;
+	background: #efefef;
 }
-.last-banner-container .banner-title {
-  font-size: 30px;
-  font-weight: 500;
-  padding-right: 85px;
+.last-banner .banner-title {
+	font-size: 30px;
+	font-weight: 500;
+	padding-right: 85px;
 }
-.last-banner-container .banner-title span {
-  color: #d53535;
+.last-banner .banner-title span {
+	color: #d53535;
 }
-.last-banner-container .banner-price {
-  margin-top: 15px;
-  padding-right: 50px;
+.last-banner .banner-price {
+	margin-top: 15px;
+	padding-right: 50px;
 }
-.last-banner-container .price-detail {
-  font-weight: 400;
-  font-size: 28px;
-  color: #727272;
-  margin-bottom: 0px;
+.last-banner .price-detail {
+	font-weight: 400;
+	font-size: 28px;
+	color: #727272;
+	margin-bottom: 0px;
 }
-.last-banner-container .price-range {
-  font-weight: 900;
-  font-size: 28px;
-  color: #727272;
+.last-banner .price-range {
+	font-weight: 900;
+	font-size: 28px;
+	color: #727272;
 }
 @media (max-width: 1200px) {
-  .last-banner-container {
-    padding: 96px 20px;
-  }
-  .last-banner-container .banner-title {
-    font-size: 29px;
-  }
-  .last-banner-container .price-range {
-    font-size: 27px;
-  }
+	.last-banner {
+		padding: 96px 20px;
+	}
+	.last-banner .banner-title {
+		font-size: 29px;
+	}
+	.last-banner .price-range {
+		font-size: 27px;
+	}
 }
 @media (max-width: 600px) {
-  .banner-content-container {
-    flex-direction: column;
-  }
-  .last-banner-container .banner-title {
-    padding-right: 0;
-  }
-  .last-banner-container .banner-price {
-    padding-right: 0;
-  }
-  .last-banner-container .banner-title {
-    font-size: 21px;
-  }
+	.banner-content {
+		flex-direction: column;
+	}
+	.last-banner .banner-title {
+		padding-right: 0;
+	}
+	.last-banner .banner-price {
+		padding-right: 0;
+	}
+	.last-banner .banner-title {
+		font-size: 21px;
+	}
 }
