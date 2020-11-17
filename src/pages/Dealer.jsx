@@ -1,3 +1,4 @@
+import CustomerReviews from './../components/DealerComponent/CustomerReviews';
 const { default: Banner } = require('../components/DealerComponent/Banner');
 const {
   default: CarDetails,
@@ -16,6 +17,7 @@ const Dealer = () => {
       <CarsPros />
       <FullCar />
       <LastBanner />
+      <CustomerReviews />
     </div>
   );
 };
