@@ -6,6 +6,9 @@ const {
   default: CarsPros,
 } = require('../components/CarDetailsComponent/CarsPros');
 const {
+  default: CustomerReviews,
+} = require('../components/CarDetailsComponent/CustomerReviews');
+const {
   default: FullCar,
 } = require('../components/CarDetailsComponent/FullCar');
 const {
@@ -21,7 +24,7 @@ const Dealer = () => {
       <CarsPros />
       <FullCar />
       <LastBanner />
-      <Form />
+      <CustomerReviews />
     </div>
   );
 };
