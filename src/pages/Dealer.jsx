@@ -14,7 +14,6 @@ const {
 const {
   default: LastBanner,
 } = require('../components/CarDetailsComponent/LastBanner');
-const { default: Form } = require('../components/SubComponents/PopUp/Form');
 
 const Dealer = () => {
   return (
@@ -25,7 +24,6 @@ const Dealer = () => {
       <FullCar />
       <LastBanner />
       <CustomerReviews />
-      <Form />
     </div>
   );
 };
