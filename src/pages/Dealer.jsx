@@ -1,12 +1,17 @@
-const { default: Banner } = require('../components/DealerComponent/Banner');
+const { default: Banner } = require('../components/CarDetailsComponent/Banner');
 const {
   default: CarDetails,
-} = require('../components/DealerComponent/CarDetails');
-const { default: CarsPros } = require('../components/DealerComponent/CarsPros');
-const { default: FullCar } = require('../components/DealerComponent/FullCar');
+} = require('../components/CarDetailsComponent/CarDetails');
+const {
+  default: CarsPros,
+} = require('../components/CarDetailsComponent/CarsPros');
+const {
+  default: FullCar,
+} = require('../components/CarDetailsComponent/FullCar');
 const {
   default: LastBanner,
-} = require('../components/DealerComponent/LastBanner');
+} = require('../components/CarDetailsComponent/LastBanner');
+const { default: Form } = require('../components/SubComponents/PopUp/Form');
 
 const Dealer = () => {
   return (
@@ -16,6 +21,7 @@ const Dealer = () => {
       <CarsPros />
       <FullCar />
       <LastBanner />
+      <Form />
     </div>
   );
 };
