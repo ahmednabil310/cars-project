@@ -9,5 +9,10 @@
 
 .NewCarPricing-Section3-CategoryContainer p {
   font-size: 25px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 576px) {
+  .NewCarPricing-Section3-CategoryContainer p {
+    font-size: 18px;
+  }
 }

@@ -1,183 +1,183 @@
 .NewCarPricing-Section1 {
-	font-family: 'Poppins', sans-serif;
-	padding-top: 12px;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 12px;
 }
 
 .NewCarPricing-Section1__h3 {
-	font-weight: 500;
-	font-size: 38px;
-	color: #727272;
+  font-weight: 500;
+  font-size: 38px;
+  color: #727272;
 }
 
 .NewCarPricing-Section1__h3--red {
-	color: #d53535;
+  color: #d53535;
 }
 
 .NewCarPricing-Section1-search {
-	padding-top: 45px;
+  padding-top: 45px;
 }
 
 .NewCarPricing-Section1-search__p {
-	display: inline-block;
-	margin-right: 40px;
-	font-size: 25px;
-	color: #727272;
+  display: inline-block;
+  margin-right: 40px;
+  font-size: 25px;
+  color: #727272;
 }
 
 .NewCarPricing-Section1-search__p:nth-of-type(2) {
-	color: var(--mainRed);
-	border-bottom: 2px solid var(--mainRed);
+  color: var(--mainRed);
+  border-bottom: 2px solid var(--mainRed);
 }
 
 .my-select {
-	height: 72px !important;
-	width: 350px !important;
-	padding: 6px 30px !important;
-	margin-bottom: 3px !important;
-	background: #fff url('../../images/Icon\ material-keyboard-arrow-down.png')
-		no-repeat right 1rem center/16px 10px !important;
-	border: 1px solid #707070 !important;
-	box-shadow: 0px 1px 3px #707070;
-	margin-top: 3px;
+  height: 72px !important;
+  width: 350px !important;
+  padding: 6px 30px !important;
+  margin-bottom: 3px !important;
+  background: #fff url('../../images/Icon\ material-keyboard-arrow-down.png')
+    no-repeat right 1rem center/16px 10px !important;
+  border: 1px solid #707070 !important;
+  box-shadow: 0px 1px 3px #707070;
+  margin-top: 3px;
 }
 
 .my-btn {
-	width: 556px !important;
-	height: 72px;
-	background-color: #d53535 !important;
-	border-color: #d53535 !important;
-	box-shadow: 0px 1px 3px #707070;
+  width: 556px !important;
+  height: 72px;
+  background-color: #d53535 !important;
+  border-color: #d53535 !important;
+  box-shadow: 0px 1px 3px #707070;
 }
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-	.select__input {
-		flex-direction: column;
-	}
-	.my-select {
-		padding: 5px 20px !important;
-		height: 58px !important;
-		margin-top: 1rem;
-		margin-bottom: 1rem !important;
-		width: 100% !important;
-		background-position: right 2rem center !important;
-	}
-	.my-btn {
-		width: 100% !important;
-		height: 58px !important;
-	}
-	.NewCarPricing-Section1__h3 {
-		font-size: 24px;
-	}
-	.desc {
-		font-size: 22px !important;
-	}
-	.NewCarPricing-Section1-search__p:first-child {
-		display: block !important;
-		margin-bottom: 10px;
-	}
-	.NewCarPricing-Section1-search__p {
-		display: inline-block;
-		margin: 0;
-		font-size: 20px;
-	}
-	.NewCarPricing-Section1-search__p:nth-of-type(1) {
-		margin-left: 0;
-	}
-	.NewCarPricing-Section1-search__p:nth-of-type(2) {
-		margin-left: 0;
-	}
-	.NewCarPricing-Section1-search__p {
-		margin-left: 15px;
-	}
+  .select__input {
+    flex-direction: column;
+  }
+  .my-select {
+    padding: 5px 20px !important;
+    height: 58px !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    background-position: right 2rem center !important;
+  }
+  .my-btn {
+    width: 100% !important;
+    height: 58px !important;
+  }
+  .NewCarPricing-Section1__h3 {
+    font-size: 24px;
+  }
+  .desc {
+    font-size: 16px !important;
+  }
+  .NewCarPricing-Section1-search__p:first-child {
+    display: block !important;
+    margin-bottom: 10px;
+  }
+  .NewCarPricing-Section1-search__p {
+    display: inline-block;
+    margin: 0;
+    font-size: 17px;
+  }
+  .NewCarPricing-Section1-search__p:nth-of-type(1) {
+    margin-left: 0;
+  }
+  .NewCarPricing-Section1-search__p:nth-of-type(2) {
+    margin-left: 0;
+  }
+  .NewCarPricing-Section1-search__p {
+    margin-left: 15px;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.NewCarPricing-Section1__h3 {
-		font-size: 25px;
-	}
-	.NewCarPricing-Section1-search__p {
-		font-size: 22px;
-	}
-	.my-select {
-		padding: 5px 20px !important;
-		height: 65px !important;
-		margin-top: 1rem;
-		margin-bottom: 1rem !important;
-		width: 100% !important;
-		background-position: right 2rem center !important;
-	}
-	.select__input {
-		flex-wrap: wrap;
-	}
-	.my-btn {
-		width: 100% !important;
-		height: 65px !important;
-	}
+  .NewCarPricing-Section1__h3 {
+    font-size: 25px;
+  }
+  .NewCarPricing-Section1-search__p {
+    font-size: 22px;
+  }
+  .my-select {
+    padding: 5px 20px !important;
+    height: 65px !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    background-position: right 2rem center !important;
+  }
+  .select__input {
+    flex-wrap: wrap;
+  }
+  .my-btn {
+    width: 100% !important;
+    height: 65px !important;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.NewCarPricing-Section1__h3 {
-		font-size: 25px;
-	}
-	.NewCarPricing-Section1-search__p {
-		font-size: 25px;
-	}
-	.select__input {
-		flex-wrap: wrap;
-		box-sizing: border-box;
-	}
-	.my-select {
-		margin: 1rem 0 !important;
-		width: 100% !important;
-	}
-	.my-select {
-		padding: 5px 20px !important;
-		height: 70px !important;
-		margin-top: 1rem;
-		margin-bottom: 1rem !important;
-		width: 32% !important;
-		background-position: right 2rem center !important;
-	}
-	.my-select:nth-of-type(2) {
-		margin-left: 15px !important;
-		margin-right: 15px !important;
-	}
-	.my-btn {
-		width: 100% !important;
-		height: 70px !important;
-		display: block;
-	}
+  .NewCarPricing-Section1__h3 {
+    font-size: 25px;
+  }
+  .NewCarPricing-Section1-search__p {
+    font-size: 25px;
+  }
+  .select__input {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+  }
+  .my-select {
+    margin: 1rem 0 !important;
+    width: 100% !important;
+  }
+  .my-select {
+    padding: 5px 20px !important;
+    height: 70px !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem !important;
+    width: 32% !important;
+    background-position: right 2rem center !important;
+  }
+  .my-select:nth-of-type(2) {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
+  .my-btn {
+    width: 100% !important;
+    height: 70px !important;
+    display: block;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.NewCarPricing-Section1 {
-		width: 100%;
-	}
+  .NewCarPricing-Section1 {
+    width: 100%;
+  }
 
-	.NewCarPricing-Section1__h3 {
-		font-size: 35px;
-	}
+  .NewCarPricing-Section1__h3 {
+    font-size: 35px;
+  }
 
-	.select-container {
-		flex-wrap: wrap;
-	}
+  .select-container {
+    flex-wrap: wrap;
+  }
 
-	.select__input {
-		flex-wrap: nowrap;
-	}
+  .select__input {
+    flex-wrap: nowrap;
+  }
 
-	.my-select {
-		padding: 0 25px !important;
-		margin-right: 1rem !important;
-	}
+  .my-select {
+    padding: 0 25px !important;
+    margin-right: 1rem !important;
+  }
 
-	.my-btn {
-		max-width: unset;
-	}
+  .my-btn {
+    max-width: unset;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
