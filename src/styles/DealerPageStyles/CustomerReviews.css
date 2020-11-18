@@ -1,141 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .customer-reviews {
-	margin-bottom: 60px;
-	font-family: 'Poppins', sans-serif;
+  margin-bottom: 60px;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 110px !important;
 }
 
 .customer-review-title {
-	font-size: 35px;
-	font-weight: 500;
-	color: #727272;
+  font-size: 35px;
+  font-weight: 500;
+  color: #727272;
 }
 .customer-reviews .special {
-	color: #d53535;
+  color: #d53535;
 }
 .customer-review-sub-title {
-	font-weight: 400;
-	color: #727272;
+  font-weight: 400;
+  color: #727272;
 }
 
 .customer-reviews button {
-	background-color: #d53535;
-	color: white;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px 100px;
-	font-size: 14px;
-	border-radius: 5px;
+  background-color: #d53535;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 .customer-reviews button svg {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .ratings-section {
-	padding: 20px 0 92px 0;
+  padding: 20px 0 92px 0;
 }
 
 .ratings-section h1 {
-	font-size: 100px;
-	color: #727272;
-	margin-bottom: 0px;
+  font-size: 100px;
+  color: #727272;
+  margin-bottom: 0px;
 }
 
 .ratings-section span {
-	font-size: 20px;
+  font-size: 20px;
 }
 .ratings-section p {
-	font-size: 15px;
-	color: #727272;
-	margin-bottom: 14px;
+  font-size: 15px;
+  color: #727272;
+  margin-bottom: 14px;
 }
 /* .ratings-section .big-star {
   width: 100%;
 } */
 .ratings-section img {
-	color: #727272;
+  color: #727272;
 }
 
 .ratings-section h2 {
-	font-size: 20px;
-	color: #c4c4c4;
-	padding-right: 15px;
+  font-size: 20px;
+  color: #c4c4c4;
+  padding-right: 15px;
 }
 
 .ratings-section svg {
-	height: 20px;
+  height: 20px;
 }
 
 .consumer-reviews h1 {
-	font-size: 35px;
-	font-weight: bold;
-	color: #727272;
+  font-size: 35px;
+  font-weight: bold;
+  color: #727272;
 }
 
 .consumer-reviews h2 {
-	font-size: 35px;
-	color: #727272;
-	margin: 0 45px 0 0;
-	font-weight: 500;
+  font-size: 35px;
+  color: #727272;
+  margin: 0 45px 0 0;
+  font-weight: 500;
 }
 
 .consumer-reviews p {
-	margin: 16px 0 16px 0;
-	color: #707070;
-	font-size: 14px;
+  margin: 16px 0 16px 0;
+  color: #707070;
+  font-size: 14px;
 }
 
 .review-title {
-	margin-top: 19px;
+  margin-top: 19px;
 }
 
 .consumer-reviews span {
-	font-size: 13px;
-	font-weight: 500;
-	color: #c4c4c4;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c4c4c4;
 }
 
 .consumer-reviews span::after {
-	content: '|';
-	margin: 0 20px 0 20px;
+  content: '|';
+  margin: 0 20px 0 20px;
 }
 .consumer-reviews .last::after {
-	content: '';
-	margin: 0 20px 0 20px;
+  content: '';
+  margin: 0 20px 0 20px;
 }
 
 .cursor-pointer {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .progress-container table tbody tr td {
-	padding: 0.2rem;
-	vertical-align: middle;
-	border: none;
+  padding: 0.2rem;
+  vertical-align: middle;
+  border: none;
 }
 
 .progress-container table tbody tr td .progress,
 .progress-container table tbody tr td .progress-bar {
-	border-radius: 50px;
+  border-radius: 50px;
 }
 
 .progress-container table tbody tr td .progress-bar {
-	background-color: #d53535;
+  background-color: #d53535;
 }
 
 .progress-container table tbody tr td:nth-of-type(1) {
-	width: 5%;
-	color: #727272;
+  width: 5%;
+  color: #727272;
 }
 
 .progress-container table tbody tr td:nth-of-type(2) {
-	width: 5%;
+  width: 5%;
 }
 
 .progress-container table tbody tr td:nth-of-type(3) {
-	width: 90%;
+  width: 90%;
 }
 
 /* .customer-reviews-container .banner-title {
@@ -186,3 +187,19 @@
     font-size: 21px;
   }
 } */
+@media (max-width: 1200px) {
+  .customer-reviews {
+    padding: 0 20px !important;
+  }
+}
+@media (max-width: 992px) {
+  .customer-review-title {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-review-title {
+    font-size: 29px;
+  }
+}
