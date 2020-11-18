@@ -139,54 +139,6 @@
   width: 90%;
 }
 
-/* .customer-reviews-container .banner-title {
-  font-size: 30px;
-  font-weight: 500;
-  padding-right: 85px;
-}
-.customer-reviews-container .banner-title span {
-  color: #d53535;
-}
-.customer-reviews-container .banner-price {
-  margin-top: 15px;
-  padding-right: 50px;
-}
-.customer-reviews-container .price-detail {
-  font-weight: 400;
-  font-size: 28px;
-  color: #727272;
-  margin-bottom: 0px;
-}
-.customer-reviews-container .price-range {
-  font-weight: 900;
-  font-size: 28px;
-  color: #727272;
-}
-@media (max-width: 1200px) {
-  .customer-reviews-container {
-    padding: 96px 20px;
-  }
-  .customer-reviews-container .banner-title {
-    font-size: 29px;
-  }
-  .customer-reviews-container .price-range {
-    font-size: 27px;
-  }
-}
-@media (max-width: 600px) {
-  .banner-content-container {
-    flex-direction: column;
-  }
-  .customer-reviews-container .banner-title {
-    padding-right: 0;
-  }
-  .customer-reviews-container .banner-price {
-    padding-right: 0;
-  }
-  .customer-reviews-container .banner-title {
-    font-size: 21px;
-  }
-} */
 @media (max-width: 1200px) {
   .customer-reviews {
     padding: 0 20px !important;
@@ -201,5 +153,12 @@
 @media (max-width: 768px) {
   .customer-review-title {
     font-size: 29px;
+  }
+  .consumer-reviews h1 {
+    font-size: 30px;
+  }
+  .consumer-reviews h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
   }
 }
