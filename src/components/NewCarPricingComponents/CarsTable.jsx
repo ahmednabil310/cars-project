@@ -13,7 +13,7 @@ function CarsTable() {
   return (
     <div className="row m-auto carsTable-container">
       <CarsCard img={Car1} />
-      <CarsCard img={Car2} />
+      <CarsCard img={Car3} />
       <CarsCard img={Car3} />
       <CarsCard img={Car4} />
     </div>
