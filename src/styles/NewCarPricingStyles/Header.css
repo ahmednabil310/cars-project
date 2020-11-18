@@ -1,32 +1,68 @@
 .NewCarPricing-Header {
-  background-color: #727272;
-  min-height: 183px;
-  padding: 43px 110px;
+	background-color: #727272;
+	min-height: 183px;
+	padding: 43px 110px;
+	margin-bottom: 25px;
 }
 
 .NewCarPricing-Header__text {
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 70px;
-  font-weight: bold;
-  text-transform: uppercase;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 55px;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@media (max-width: 991.98px) {
-  .NewCarPricing-Header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    min-height: 120px;
-  }
-  .NewCarPricing-Header__text {
-    font-size: 40px;
-  }
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.NewCarPricing-Header {
+		padding: 10px 0 !important;
+		padding-left: 2px !important;
+		min-height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+	.NewCarPricing-Header__text {
+		font-size: 26px !important;
+	}
 }
 
-@media (max-width: 767.98px) {
-  .NewCarPricing-Header__text {
-    font-size: 30px;
-  }
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.NewCarPricing-Header {
+		padding: 10px 0 !important;
+		padding-left: 2px !important;
+		min-height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+	.NewCarPricing-Header__text {
+		font-size: 40px;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.NewCarPricing-Header {
+		padding: 10px 0 !important;
+		min-height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+	.NewCarPricing-Header__text {
+		font-size: 40px;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.NewCarPricing-Header__text {
+		font-size: 30px;
+	}
 }

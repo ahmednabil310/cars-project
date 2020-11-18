@@ -7,10 +7,10 @@ function Section1() {
 				<h3 className='NewCarPricing-Section1__h3 NewCarPricing-Section1__h3--red'>
 					Choose
 				</h3>
-				<h3 className='NewCarPricing-Section1__h3'>
+				<h3 className='NewCarPricing-Section1__h3 desc'>
 					your car, learn what to pay
 				</h3>
-				<div className='NewCarPricing-Section1-search d-flex flex-wrap'>
+				<div className='NewCarPricing-Section1-search'>
 					<p className='NewCarPricing-Section1-search__p'>
 						Search by:
 					</p>
@@ -20,33 +20,26 @@ function Section1() {
 					<p className='NewCarPricing-Section1-search__p'>Type</p>
 					<p className='NewCarPricing-Section1-search__p'>Price</p>
 				</div>
-				<div className='row'>
-					<div className='col-md-3'>
-						<select className='custom-select my-select mr-xl-4 mr-0'>
-							<option>Any Make</option>
-							<option>op1</option>
-							<option>op2</option>
-						</select>
-					</div>
-					<div className='col-md-3'>
-						<select className='custom-select my-select mr-xl-4 mr-0'>
-							<option>Any Make</option>
-							<option>op1</option>
-							<option>op2</option>
-						</select>
-					</div>
-					<div className='col-md-3'>
-						<select className='custom-select my-select mr-0 mr-xl-3'>
-							<option>Any Make</option>
-							<option>op1</option>
-							<option>op2</option>
-						</select>
-					</div>
-					<div className='col-md-3'>
-						<button className='btn my-btn btn-primary btn-block'>
-							Submit
-						</button>
-					</div>
+				<div className='d-flex align-items-center justify-content-center select__input'>
+					<select className='custom-select my-select mr-xl-4'>
+						<option value='' disabled selected>Any Make</option>
+						<option>op1</option>
+						<option>op2</option>
+					</select>
+
+					<select className='custom-select my-select mr-xl-4'>
+						<option value='' disabled selected>Country</option>
+						<option>op1</option>
+						<option>op2</option>
+					</select>
+
+					<select className='custom-select my-select mr-xl-3'>
+						<option value='' disabled selected>Any Model</option>
+						<option>op1</option>
+						<option>op2</option>
+					</select>
+
+					<button className='btn my-btn btn-primary'>Submit</button>
 				</div>
 			</div>
 		</div>

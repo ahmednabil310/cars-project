@@ -16,18 +16,13 @@
 
 .carsTable-carCard-price {
 	color: #d53535;
-	font-size: 42px;
+	font-size: 36px;
 	font-weight: 500;
-}
-
-.carsTable-carCard-topCar {
-	padding-left: 20px;
 }
 
 .carsTable-carCard-topCar-topCategory {
 	font-size: 20px;
 	color: #707070;
-	padding-left: 41px;
 }
 
 .carsTable-carCard-topCar-topCarName {
@@ -37,7 +32,6 @@
 
 .carsTable-carCard-topCar-topCarName__span {
 	color: #d53535;
-	padding-right: 20px;
 }
 
 .carsTable-carCard-topCar--mid {
