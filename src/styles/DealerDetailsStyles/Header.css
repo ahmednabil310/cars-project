@@ -1,0 +1,70 @@
+.Dealer__Details__Header {
+	background-color: var(--mainGray);
+	min-height: 180px;
+	padding: 43px 110px;
+}
+
+.Dealer__Details__Header__text {
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 48px;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.Dealer__Details__Header {
+		padding: 10px 20px !important;
+		min-height: 120px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.Dealer__Details__Header__text {
+		font-size: 24px !important;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.Dealer__Details__Header {
+		padding: 10px 20px !important;
+		min-height: 140px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.Dealer__Details__Header__text {
+		font-size: 40px;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.Dealer__Details__Header {
+		padding: 10px 20px !important;
+		min-height: 140px;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+
+	.Dealer__Details__Header__text {
+		font-size: 40px;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.Dealer__Details__Header__text {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.Dealer__Details__Header {
+		background-color: #727272;
+		min-height: 180px;
+		align-items: center;
+		justify-content: start;
+	}
+}

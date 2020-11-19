@@ -1,0 +1,112 @@
+.About__And__Summary__Select {
+	height: 50px;
+	width: 250px;
+	padding: 5px 20px;
+	background: #fff url('../../images/Icon\ material-keyboard-arrow-down.png')
+		no-repeat right 1.5rem center/16px 10px;
+	border: 1px solid #707070;
+	box-shadow: 0px 1px 3px #707070;
+	border-radius: 5px;
+	appearance: none;
+}
+
+.About__And__Summary__Details_Item {
+	border-bottom: 1px solid #c4c4c4;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.Title__And__Inputs__Container {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.About__And__Summary__Inputs {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.Title__And__Inputs__Image {
+		margin-bottom: 0.5rem;
+	}
+	.About__And__Summary__Select {
+		height: 35px !important;
+		margin: 0.5rem 0 !important;
+	}
+	.About__And__Summary__Map .gmap_canvas iframe {
+		height: 430px;
+	}
+	.About__And__Summary__Details_Item .col:first-child {
+		margin-bottom: 0.75rem;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.Title__And__Inputs__Container {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.About__And__Summary__Inputs {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.Title__And__Inputs__Image {
+		margin-bottom: 0.5rem;
+	}
+	.About__And__Summary__Select {
+		height: 35px !important;
+		margin: 0.5rem 0 !important;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.Title__And__Inputs__Container {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.About__And__Summary__Inputs {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	.Title__And__Inputs__Image {
+		margin-bottom: 1rem;
+	}
+	.About__And__Summary__Select {
+		width: 360px;
+		height: 40px !important;
+		margin: 0.75rem 0 !important;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.Title__And__Inputs__Container {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+	}
+	.About__And__Summary__Inputs {
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+	}
+	.About__And__Summary__Select:first-child {
+		margin-right: 0.25rem;
+	}
+	.About__And__Summary__Select:last-child {
+		margin-left: 0.25rem;
+	}
+	.Title__And__Inputs__Image {
+		margin-right: 0.5rem;
+	}
+}
