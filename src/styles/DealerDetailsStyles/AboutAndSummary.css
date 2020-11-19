@@ -86,6 +86,17 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+	.Title__And__Inputs__Container {
+		display: block !important;
+		text-align: center;
+	}
+	.Title__And__Inputs__Image {
+		margin-bottom: 1.5rem;
+	}
+	.About__And__Summary__Inputs {
+		align-items: center;
+		justify-content: space-around;
+	}
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
