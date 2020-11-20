@@ -1,12 +1,13 @@
+import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 import '../styles/Nav.css';
 const Nav = () => {
   return (
     <div className="nav-container d-flex">
       <nav className="navbar navbar-expand-xl w-100 navbar-dark">
-        <a className="navbar-brand" href="#">
+        <NavLink className="navbar-brand" to="/">
           <img src={logo} alt="logo" />
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,14 +22,20 @@ const Nav = () => {
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <NavLink
+                className="nav-link"
+                to="/cardetail"
+                activeClassName="active-link">
                 Prices & spec
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                className="nav-link"
+                to="/newcarpricing"
+                activeClassName="active-link">
                 New Cars
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav-item">
@@ -42,9 +49,12 @@ const Nav = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                className="nav-link"
+                to="/dealer-details"
+                activeClassName="active-link">
                 Dealers
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="user-container">
