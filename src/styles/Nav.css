@@ -40,6 +40,9 @@
 .nav-container .navbar-toggler-icon {
   color: white;
 }
+.nav-container .active-link {
+  color: gray !important;
+}
 @media screen and (max-width: 1200px) {
   .nav-container .nav-link {
     margin-bottom: 10px !important;
