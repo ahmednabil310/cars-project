@@ -1,10 +1,33 @@
 import React, { useState } from 'react';
 import '../../styles/DealerPageStyles/CustomerReviews.css';
 import '../../styles/DealerDetailsStyles/ConsumerReviewing.css';
+
+// Images
 import bigstars from '../../images/dealer/bigstars.png';
 import singleStar from '../../images/dealer/singlestar.png';
+
+// Model Component
+import ModelFields from '../SubComponents/ModelFields/ModelFields';
+
 const ConsumerReviewing = () => {
-	const [openAddReviewPopup, setOpenAddReviewPopup] = useState(false);
+	const [modalShow, setModalShow] = useState(false);
+
+	const [review, setReview] = useState({
+		title: '',
+		rating: '',
+		comment: '',
+	});
+
+	const { title, rating, comment } = review;
+
+	const inputChangeHandler = event => {
+		setReview({ ...review, [event.target.name]: event.target.value });
+	};
+
+	const addReviewHandler = () => {
+		setModalShow(false);
+	};
+
 	return (
 		<>
 			<div className='container-fluid customer-reviews'>
@@ -85,7 +108,7 @@ const ConsumerReviewing = () => {
 						<button
 							type='button'
 							className='mr-0 mt-1 btn-block py-2'
-							onClick={() => setOpenAddReviewPopup(true)}
+							onClick={() => setModalShow(true)}
 						>
 							<div>
 								<svg
@@ -105,6 +128,44 @@ const ConsumerReviewing = () => {
 								Write a review
 							</div>
 						</button>
+						<ModelFields
+							show={modalShow}
+							onHide={() => setModalShow(false)}
+							submitHandler={addReviewHandler}
+							submitValid={comment}
+							title='Review'
+						>
+							<div class='form-group'>
+								<input
+									type='text'
+									className='form-control p-3 review__input review__input_title'
+									placeholder='Review title'
+									name='title'
+									value={title}
+									onChange={inputChangeHandler}
+								/>
+							</div>
+							<div className='form-group'>
+								<input
+									type='text'
+									className='form-control p-3 review__input review__input_rating'
+									placeholder='Review rating'
+									name='rating'
+									value={rating}
+									onChange={inputChangeHandler}
+								/>
+							</div>
+							<div className='form-group'>
+								<textarea
+									className='form-control p-3 review__input review__input_comment'
+									name='comment'
+									rows='5'
+									placeholder='Review rating Review details'
+									value={comment}
+									onChange={inputChangeHandler}
+								></textarea>
+							</div>
+						</ModelFields>
 					</div>
 				</div>
 				<div className='ratings-section row align-items-center'>
@@ -121,6 +182,7 @@ const ConsumerReviewing = () => {
 							<img
 								src={bigstars}
 								className='big-star'
+								alt='rating'
 								height='27px'
 							/>
 							<p className='mt-3'>10 Reviews</p>
@@ -137,6 +199,7 @@ const ConsumerReviewing = () => {
 										<td>
 											<img
 												src={singleStar}
+												alt='rating'
 												height='20px'
 												width='20px'
 											/>
@@ -160,6 +223,7 @@ const ConsumerReviewing = () => {
 										<td>
 											<img
 												src={singleStar}
+												alt='rating'
 												height='20px'
 												width='20px'
 											/>
@@ -183,6 +247,7 @@ const ConsumerReviewing = () => {
 										<td>
 											<img
 												src={singleStar}
+												alt='rating'
 												height='20px'
 												width='20px'
 											/>
@@ -206,6 +271,7 @@ const ConsumerReviewing = () => {
 										<td>
 											<img
 												src={singleStar}
+												alt='rating'
 												height='20px'
 												width='20px'
 											/>
@@ -229,6 +295,7 @@ const ConsumerReviewing = () => {
 										<td>
 											<img
 												src={singleStar}
+												alt='rating'
 												height='20px'
 												width='20px'
 											/>
@@ -260,6 +327,7 @@ const ConsumerReviewing = () => {
 							<h2>UAECLS is the best store in town</h2>
 							<img
 								src={bigstars}
+								alt='rating'
 								className='mb-1'
 								height='25px'
 							/>
@@ -322,6 +390,7 @@ const ConsumerReviewing = () => {
 							<h2>Don’t use UAECLS</h2>
 							<img
 								src={bigstars}
+								alt='rating'
 								className='mb-1'
 								height='25px'
 							/>
@@ -362,6 +431,7 @@ const ConsumerReviewing = () => {
 							<h2>Best wishes</h2>
 							<img
 								src={bigstars}
+								alt='rating'
 								className='mb-1'
 								height='25px'
 							/>

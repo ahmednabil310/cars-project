@@ -11,7 +11,7 @@ import singleStar from '../../../images/dealer/singlestar.png';
 const CarCard = ({ title, price, rating, imageUrl }) => {
 	return (
 		<div>
-			<div className='Car__Card mt-4 pb-4 my-2'>
+			<div className='Car__Card mt-4 pb-4 my-2 mb-5'>
 				<div className='Car__Header p-4 position-relative'>
 					<div className='d-flex justify-content-between align-items-center mb-1'>
 						<h6 className='text-capitalize font-weight-bold main__red mb-0'>

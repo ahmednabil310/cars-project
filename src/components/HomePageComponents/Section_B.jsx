@@ -12,6 +12,78 @@ import car4 from '../../images/car-details/car4.png';
 const Section_B = () => {
 	const [modalShow, setModalShow] = useState(false);
 
+	const [cardShow, setCardShow] = useState({
+		show: false,
+		card1: false,
+		card2: false,
+		card3: false,
+		card4: false,
+	});
+
+	const [vehicle, setVehicle] = useState({
+		make: '',
+		year: '',
+		model: '',
+		engine: '',
+	});
+
+	const { make, year, model, engine } = vehicle;
+
+	const { show, card1, card2, card3, card4 } = cardShow;
+
+	const inputChangeHandler = event => {
+		setVehicle({ ...vehicle, [event.target.name]: event.target.value });
+	};
+
+	const addVechileHandler = () => {
+		setVehicle({
+			make: '',
+			year: '',
+			model: '',
+			engine: '',
+		});
+
+		setModalShow(false);
+
+		setCardShow({
+			show: true,
+			card1: true,
+			card2: false,
+			card3: false,
+			card4: false,
+		});
+
+		if (card1) {
+			setCardShow({
+				show: true,
+				card1: true,
+				card2: true,
+				card3: false,
+				card4: false,
+			});
+		}
+
+		if (card1 && card2) {
+			setCardShow({
+				show: true,
+				card1: true,
+				card2: true,
+				card3: true,
+				card4: false,
+			});
+		}
+
+		if (card1 && card2 && card3) {
+			setCardShow({
+				show: true,
+				card1: true,
+				card2: true,
+				card3: true,
+				card4: true,
+			});
+		}
+	};
+
 	return (
 		<div className='section-b-homepage-container'>
 			<div className='d-flex sub-container'>
@@ -127,28 +199,99 @@ const Section_B = () => {
 			</div>
 			<div className='car-container-wrapper'>
 				<div className='row section-b_car-container'>
-					<AddVechile showModel={() => setModalShow(true)} />
-					<AddVechile showModel={() => setModalShow(true)} />
-					<AddVechile showModel={() => setModalShow(true)} />
-					<AddVechile showModel={() => setModalShow(true)} />
+					{!card1 && (
+						<AddVechile showModel={() => setModalShow(true)} />
+					)}
+					{!card2 && (
+						<AddVechile showModel={() => setModalShow(true)} />
+					)}
+					{!card3 && (
+						<AddVechile showModel={() => setModalShow(true)} />
+					)}
+					{!card4 && (
+						<AddVechile showModel={() => setModalShow(true)} />
+					)}
 					<ModelFields
 						show={modalShow}
 						onHide={() => setModalShow(false)}
-					/>
+						submitHandler={addVechileHandler}
+						submitValid={engine}
+						title='Vehicle'
+					>
+						<div class='form-group'>
+							<select
+								class='form-control p-3 model__add__vehicle__select'
+								style={{ height: 'auto' }}
+								name='make'
+								value={make}
+								onChange={inputChangeHandler}
+							>
+								<option defaultValue>Select make</option>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+							</select>
+						</div>
+						<div class='form-group'>
+							<select
+								class='form-control p-3 model__add__vehicle__select'
+								id='exampleFormControlSelect1'
+								style={{ height: 'auto' }}
+								disabled={make === ''}
+								name='year'
+								value={year}
+								onChange={inputChangeHandler}
+							>
+								<option defaultValue>Select year</option>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+							</select>
+						</div>
+						<div class='form-group'>
+							<select
+								class='form-control p-3 model__add__vehicle__select'
+								id='exampleFormControlSelect1'
+								style={{ height: 'auto' }}
+								disabled={year === ''}
+								name='model'
+								value={model}
+								onChange={inputChangeHandler}
+							>
+								<option defaultValue>Select model</option>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+							</select>
+						</div>
+						<div class='form-group'>
+							<select
+								class='form-control p-3 model__add__vehicle__select'
+								id='exampleFormControlSelect1'
+								style={{ height: 'auto' }}
+								property='voucherCategoryClass'
+								disabled={model === ''}
+								name='engine'
+								value={engine}
+								onChange={inputChangeHandler}
+							>
+								<option defaultValue>Select engine</option>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+							</select>
+						</div>
+					</ModelFields>
 				</div>
-				<div className='row'>
-					<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-						<CarCard imageUrl={car1} />
-					</div>
-					<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-						<CarCard imageUrl={car2} />
-					</div>
-					<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-						<CarCard imageUrl={car3} />
-					</div>
-					<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-						<CarCard imageUrl={car4} />
-					</div>
+			</div>
+			<div className='row'>
+				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+					{show && card1 && <CarCard imageUrl={car1} />}
+				</div>
+				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+					{show && card2 && <CarCard imageUrl={car2} />}
+				</div>
+				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+					{show && card3 && <CarCard imageUrl={car3} />}
+				</div>
+				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+					{show && card4 && <CarCard imageUrl={car4} />}
 				</div>
 			</div>
 		</div>

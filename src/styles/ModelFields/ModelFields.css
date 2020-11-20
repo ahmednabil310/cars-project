@@ -1,0 +1,21 @@
+/* Model style */
+.model__field {
+	border: 1px solid #707070 !important;
+	box-shadow: 0px 3px 26px #000;
+}
+
+.model__field .modal-header button.close {
+	color: #d53535;
+	padding: 0;
+	font-size: 2.5rem;
+	opacity: 0.9;
+	position: absolute;
+	right: 6%;
+	top: 4%;
+	outline: none;
+}
+
+.model__field__btn {
+	background-color: #d53535 !important;
+	color: #fff !important;
+}

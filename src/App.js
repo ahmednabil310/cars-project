@@ -5,8 +5,6 @@ import Home from './pages/Home';
 import NewCarPricing from './pages/NewCarPricing';
 import DealerDetails from './pages/DealerDetails';
 
-import CarCard from './components/SubComponents/CarCard/CarCard'
-
 function App() {
 	return (
 		<div className='App'>
