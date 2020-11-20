@@ -13,12 +13,18 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 		<div>
 			<div className='Car__Card mt-4 pb-4 my-2'>
 				<div className='Car__Header p-4 position-relative'>
-					<span className='main__red d-block position-absolute Close__Btn'>
-						<img className='img-fluid' src={close} alt='close' />
-					</span>
-					<h6 className='text-capitalize font-weight-bold main__red'>
-						2020 Aston Martin DB11
-					</h6>
+					<div className='d-flex justify-content-between align-items-center mb-1'>
+						<h6 className='text-capitalize font-weight-bold main__red mb-0'>
+							2020 Aston Martin DB11
+						</h6>
+						<div className='Close__Btn'>
+							<img
+								className='img-fluid'
+								src={close}
+								alt='close'
+							/>
+						</div>
+					</div>
 					<p className='main__gary mb-1'>
 						V8 Volante 2dr Convertible 4.0L 8c…
 					</p>

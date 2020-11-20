@@ -23,7 +23,7 @@
     min-height: 90px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .NewCarPricing-Header__text {
     font-size: 22px !important;
@@ -38,7 +38,7 @@
     min-height: 120px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .NewCarPricing-Header__text {
     font-size: 40px;
@@ -52,7 +52,7 @@
     min-height: 120px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .NewCarPricing-Header__text {
     font-size: 40px;

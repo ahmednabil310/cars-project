@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .cars-pros-container {
-  padding: 0 110px;
-  margin-bottom: 56px;
+	padding: 0 110px;
+	margin-bottom: 56px;
 }
 .car-pros .pros,
 .cons {
-  font-size: 33px;
-  font-weight: 500;
-  color: #1a1a1a;
-  font-family: 'Poppins', sans-serif;
+	font-size: 33px;
+	font-weight: 500;
+	color: #1a1a1a;
+	font-family: 'Poppins', sans-serif;
 }
 .pros-content {
-  display: flex;
-  align-items: end;
+	display: flex;
+	align-items: flex-end;
 }
 .pros-content h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  padding-bottom: 34px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	padding-bottom: 34px;
 }
 @media (max-width: 1200px) {
-  .cars-pros-container {
-    padding: 0 20px;
-  }
+	.cars-pros-container {
+		padding: 0 20px;
+	}
 }
 @media (max-width: 576px) {
-  .car-pros svg,
-  .car-cons svg {
-    width: 200px;
-  }
-  .pros-content h2 {
-    font-size: 12px;
-  }
+	.car-pros svg,
+	.car-cons svg {
+		width: 200px;
+	}
+	.pros-content h2 {
+		font-size: 12px;
+	}
 }

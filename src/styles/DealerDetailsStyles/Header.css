@@ -45,7 +45,7 @@
 		min-height: 140px;
 		display: flex;
 		align-items: center;
-		justify-content: start;
+		justify-content: flex-start;
 	}
 
 	.Dealer__Details__Header__text {
@@ -65,6 +65,6 @@
 		background-color: #727272;
 		min-height: 180px;
 		align-items: center;
-		justify-content: start;
+		justify-content: flex-start;
 	}
 }

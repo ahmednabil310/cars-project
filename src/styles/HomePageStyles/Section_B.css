@@ -43,10 +43,10 @@
 	margin-bottom: 85px;
 }
 .section-b_car-container {
-	margin: 0px !important;
+	/* margin: 0px !important; */
 }
 .section-b_car-sub-container {
-	padding-right: 25px !important;
+	/* padding-right: 25px !important; */
 }
 .section-b__addCar {
 	border: 1px solid #d53535;
