@@ -17,7 +17,7 @@ function App() {
 				<Route path='/newcarpricing' component={NewCarPricing} />
 				<Route path='/cardetail' component={Dealer} />
 				<Route path='/dealer-details' component={DealerDetails} />
-                <Route path='/cars-available' component={CarsAvailable} />
+                		<Route path='/cars-available' component={CarsAvailable} />
 			</Switch>
 			{/* <CarCard /> */}
 		</div>
