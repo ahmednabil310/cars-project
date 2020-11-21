@@ -6,6 +6,7 @@ import NewCarPricing from './pages/NewCarPricing';
 import DealerDetails from './pages/DealerDetails';
 
 import CarCard from './components/SubComponents/CarCard/CarCard'
+import CarsAvailable from "./pages/CarsAvailable";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/newcarpricing' component={NewCarPricing} />
 				<Route path='/cardetail' component={Dealer} />
 				<Route path='/dealer-details' component={DealerDetails} />
+                <Route path='/cars-available' component={CarsAvailable} />
 			</Switch>
 			{/* <CarCard /> */}
 		</div>
