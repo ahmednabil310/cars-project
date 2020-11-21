@@ -16,6 +16,19 @@
 	resize: none;
 }
 
+.review__input_title,
+.review__input_rating,
+.review__input_comment {
+	z-index: 1;
+}
+
+.review__input_rating__placeholder,
+.review__input_title__placeholder {
+	top: 50%;
+	left: 6%;
+	transform: translateY(-50%);
+}
+
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 	.customer-reviews h3 {

@@ -5,6 +5,7 @@ import '../../styles/DealerDetailsStyles/ConsumerReviewing.css';
 // Images
 import bigstars from '../../images/dealer/bigstars.png';
 import singleStar from '../../images/dealer/singlestar.png';
+import startsGroup from '../../images/starts_group.png';
 
 // Model Component
 import ModelFields from '../SubComponents/ModelFields/ModelFields';
@@ -26,6 +27,7 @@ const ConsumerReviewing = () => {
 
 	const addReviewHandler = () => {
 		setModalShow(false);
+		console.log(review);
 	};
 
 	return (
@@ -135,35 +137,78 @@ const ConsumerReviewing = () => {
 							submitValid={comment}
 							title='Review'
 						>
-							<div class='form-group'>
+							<div class='form-group position-relative'>
 								<input
 									type='text'
-									className='form-control p-3 review__input review__input_title'
-									placeholder='Review title'
+									className='form-control p-3 px-4 review__input review__input_title position-relative bg-transparent'
 									name='title'
 									value={title}
 									onChange={inputChangeHandler}
 								/>
+								{title.length === 0 && (
+									<div className='position-absolute review__input_title__placeholder'>
+										<span className='main__gary mr-2'>
+											Review title
+										</span>
+										<span
+											className='main__gary ml-2'
+											style={{ color: '#C4C4C4' }}
+										>
+											64 letters or numbers
+										</span>
+									</div>
+								)}
 							</div>
-							<div className='form-group'>
+							<div className='form-group position-relative'>
 								<input
 									type='text'
-									className='form-control p-3 review__input review__input_rating'
-									placeholder='Review rating'
+									className='form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent'
 									name='rating'
 									value={rating}
 									onChange={inputChangeHandler}
 								/>
+								{rating.length === 0 && (
+									<div className='position-absolute review__input_rating__placeholder'>
+										<span className='main__gary mr-2'>
+											Review rating
+										</span>
+										<span
+											className='ml-2 d-inline-block'
+											style={{ width: '135px' }}
+										>
+											<img
+												className='img-fluid'
+												src={startsGroup}
+												alt='startsGroup'
+											/>
+										</span>
+									</div>
+								)}
 							</div>
-							<div className='form-group'>
+							<div className='form-group position-relative'>
 								<textarea
-									className='form-control p-3 review__input review__input_comment'
+									className='form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent'
 									name='comment'
 									rows='5'
-									placeholder='Review rating Review details'
 									value={comment}
 									onChange={inputChangeHandler}
 								></textarea>
+								{comment.length === 0 && (
+									<div
+										className='position-absolute'
+										style={{ top: '12%', left: '6%' }}
+									>
+										<span className='main__gary mr-2'>
+											Review details
+										</span>
+										<span
+											className='main__gary ml-2'
+											style={{ color: '#C4C4C4' }}
+										>
+											360 letters or numbers
+										</span>
+									</div>
+								)}
 							</div>
 						</ModelFields>
 					</div>

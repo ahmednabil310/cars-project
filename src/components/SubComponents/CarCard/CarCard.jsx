@@ -1,23 +1,22 @@
 import React from 'react';
 import '../../../styles/CarCard/CarCard.css';
 
-import car1 from '../../../images/car-details/car1.png';
 import gallery from '../../../images/car-details/Icon-gallary.png';
 import close from '../../../images/close.png';
 
 import bigstars from '../../../images/dealer/bigstars.png';
 import singleStar from '../../../images/dealer/singlestar.png';
 
-const CarCard = ({ title, price, rating, imageUrl }) => {
+const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 	return (
 		<div>
-			<div className='Car__Card mt-4 pb-4 my-2 mb-5'>
+			<div className='Car__Card pb-4 mb-5'>
 				<div className='Car__Header p-4 position-relative'>
 					<div className='d-flex justify-content-between align-items-center mb-1'>
 						<h6 className='text-capitalize font-weight-bold main__red mb-0'>
 							2020 Aston Martin DB11
 						</h6>
-						<div className='Close__Btn'>
+						<div className='Close__Btn' onClick={closeModel}>
 							<img
 								className='img-fluid'
 								src={close}
@@ -28,17 +27,20 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 					<p className='main__gary mb-1'>
 						V8 Volante 2dr Convertible 4.0L 8c…
 					</p>
-					<a
-						href='#'
-						className='main__gary'
-						style={{ textDecoration: 'underline' }}
+					<button
+						className='main__gary pl-0'
+						style={{
+							textDecoration: 'underline',
+							border: 'none',
+							background: 'none',
+						}}
 					>
 						Change style
-					</a>
+					</button>
 				</div>
 				{/* =============== Car Image ================ */}
 				<div className='Car__Image'>
-					<img className='img-fluid' src={imageUrl} alt='car image' />
+					<img className='img-fluid' src={imageUrl} alt='car' />
 					<div className='Car__Image__Gallery d-flex pl-4 py-1'>
 						<img
 							className='img-fluid'
@@ -154,6 +156,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 									src={bigstars}
 									className='big-star'
 									height='27px'
+									alt='rating'
 								/>
 								<p className='mt-3 text-center'>
 									Based on 10 Reviews
@@ -171,6 +174,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 													src={singleStar}
 													height='20px'
 													width='20px'
+													alt='rating'
 												/>
 											</td>
 											<td className='ml-2'>
@@ -194,6 +198,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 													src={singleStar}
 													height='20px'
 													width='20px'
+													alt='rating'
 												/>
 											</td>
 											<td className='ml-2'>
@@ -217,6 +222,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 													src={singleStar}
 													height='20px'
 													width='20px'
+													alt='rating'
 												/>
 											</td>
 											<td className='ml-2'>
@@ -240,6 +246,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 													src={singleStar}
 													height='20px'
 													width='20px'
+													alt='rating'
 												/>
 											</td>
 											<td className='ml-2'>
@@ -263,6 +270,7 @@ const CarCard = ({ title, price, rating, imageUrl }) => {
 													src={singleStar}
 													height='20px'
 													width='20px'
+													alt='rating'
 												/>
 											</td>
 											<td className='ml-2'>
