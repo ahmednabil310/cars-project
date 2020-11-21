@@ -157,6 +157,19 @@
 	resize: none;
 }
 
+.review__input_title,
+.review__input_rating,
+.review__input_comment {
+	z-index: 1;
+}
+
+.review__input_rating__placeholder,
+.review__input_title__placeholder {
+	top: 50%;
+	left: 6%;
+	transform: translateY(-50%);
+}
+
 @media (max-width: 1200px) {
 	.customer-reviews {
 		padding: 0 20px !important;

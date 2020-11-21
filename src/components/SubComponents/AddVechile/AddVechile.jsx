@@ -3,7 +3,7 @@ import React from 'react';
 const AddVechile = ({ showModel }) => {
 	return (
 		<div
-			className=' col-3  section-b_car-sub-container'
+			className=' col-12 col-sm-12 col-md-6 col-lg-3 section-b_car-sub-container'
 			role='button'
 			onClick={showModel}
 		>

@@ -84,6 +84,34 @@ const Section_B = () => {
 		}
 	};
 
+	const closeModelHandler1 = () => {
+		setCardShow({
+			...cardShow,
+			card1: false,
+		});
+	};
+
+	const closeModelHandler2 = () => {
+		setCardShow({
+			...cardShow,
+			card2: false,
+		});
+	};
+
+	const closeModelHandler3 = () => {
+		setCardShow({
+			...cardShow,
+			card3: false,
+		});
+	};
+
+	const closeModelHandler4 = () => {
+		setCardShow({
+			...cardShow,
+			card4: false,
+		});
+	};
+
 	return (
 		<div className='section-b-homepage-container'>
 			<div className='d-flex sub-container'>
@@ -199,6 +227,38 @@ const Section_B = () => {
 			</div>
 			<div className='car-container-wrapper'>
 				<div className='row section-b_car-container'>
+					{show && card1 && (
+						<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+							<CarCard
+								imageUrl={car1}
+								closeModel={closeModelHandler1}
+							/>
+						</div>
+					)}
+					{show && card2 && (
+						<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+							<CarCard
+								imageUrl={car2}
+								closeModel={closeModelHandler2}
+							/>
+						</div>
+					)}
+					{show && card3 && (
+						<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+							<CarCard
+								imageUrl={car3}
+								closeModel={closeModelHandler3}
+							/>
+						</div>
+					)}
+					{show && card4 && (
+						<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
+							<CarCard
+								imageUrl={car4}
+								closeModel={closeModelHandler4}
+							/>
+						</div>
+					)}
 					{!card1 && (
 						<AddVechile showModel={() => setModalShow(true)} />
 					)}
@@ -278,20 +338,6 @@ const Section_B = () => {
 							</select>
 						</div>
 					</ModelFields>
-				</div>
-			</div>
-			<div className='row'>
-				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-					{show && card1 && <CarCard imageUrl={car1} />}
-				</div>
-				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-					{show && card2 && <CarCard imageUrl={car2} />}
-				</div>
-				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-					{show && card3 && <CarCard imageUrl={car3} />}
-				</div>
-				<div className='col-12 col-sm-12 col-md-6 col-lg-3'>
-					{show && card4 && <CarCard imageUrl={car4} />}
 				</div>
 			</div>
 		</div>
