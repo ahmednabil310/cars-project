@@ -5,12 +5,13 @@ import Home from './pages/Home';
 import NewCarPricing from './pages/NewCarPricing';
 import DealerDetails from './pages/DealerDetails';
 import CarCard from './components/SubComponents/CarCard/CarCard';
-
 import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
+import {CarProvider} from './contexts/cars/carState'
 
 function App() {
   return (
+  <CarProvider>
     <div className="App">
       <Nav />
       <Switch>
@@ -23,6 +24,7 @@ function App() {
       <Footer />
       {/* <CarCard /> */}
     </div>
+    </CarProvider>  
   );
 }
 

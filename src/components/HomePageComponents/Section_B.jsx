@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useContext,useEffect } from 'react';
 import '../../styles/HomePageStyles/Section_B.css';
 import AddVechile from '../SubComponents/AddVechile/AddVechile';
 import CarCard from '../SubComponents/CarCard/CarCard';
@@ -9,7 +9,26 @@ import car2 from '../../images/car-details/car2.png';
 import car3 from '../../images/car-details/car3.png';
 import car4 from '../../images/car-details/car4.png';
 
+import {carContext} from '../../contexts/cars/carState'
+
 const Section_B = () => {
+
+	const [years,setYears]=useState()
+	const {
+		Cars,
+		Engine,
+		Year,
+		Maker,
+		GetCarMake,
+		GetCarSubModel,
+		GetYear,
+		GetCarEngine} = useContext(carContext)
+	  
+   useEffect(()=>{
+	  GetYear();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+   },[])
+
 	const [modalShow, setModalShow] = useState(false);
 
 	const [cardShow, setCardShow] = useState({
