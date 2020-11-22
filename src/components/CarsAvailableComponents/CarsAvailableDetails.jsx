@@ -73,8 +73,8 @@ class CarsAvailableDetails extends Component {
                 <option value="default" disabled>
                   Brand
                 </option>
-                {this.state.Brands.map((item) => {
-                  return <option value={item}>{item}</option>;
+                {this.state.Brands.map((item,index) => {
+                  return <option key={index} value={item}>{item}</option>;
                 })}
               </select>
 
@@ -86,8 +86,8 @@ class CarsAvailableDetails extends Component {
                 <option value="default" disabled>
                   Country
                 </option>
-                {this.state.Countries.map((item) => {
-                  return <option value={item}>{item}</option>;
+                {this.state.Countries.map((item,index) => {
+                  return <option key={index} value={item}>{item}</option>;
                 })}
               </select>
 
@@ -155,8 +155,8 @@ class CarsAvailableDetails extends Component {
                     <option value="default" disabled>
                       Brand
                     </option>
-                    {this.state.Brands.map((item) => {
-                      return <option value={item}>{item}</option>;
+                    {this.state.Brands.map((item,index) => {
+                      return <option key={index} value={item}>{item}</option>;
                     })}
                   </select>
 
@@ -168,8 +168,8 @@ class CarsAvailableDetails extends Component {
                     <option value="default" disabled>
                       Country
                     </option>
-                    {this.state.Countries.map((item) => {
-                      return <option value={item}>{item}</option>;
+                    {this.state.Countries.map((item,index) => {
+                      return <option key={index} value={item}>{item}</option>;
                     })}
                   </select>
 

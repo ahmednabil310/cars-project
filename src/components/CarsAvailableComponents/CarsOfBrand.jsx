@@ -53,10 +53,11 @@ class CarsOfBrand extends Component {
   render() {
     return (
       <div className=" row m-0">
-        {this.state.CarsDetails.map((item) => {
+        {this.state.CarsDetails.map((item,index) => {
           return (
-            <div className="Cars-Available__container__carImgContainer col-12 col-sm-6 col-md-4 col-lg-4 p-0">
-              <img src={item.img}></img>
+            <div key={index} className="Cars-Available__container__carImgContainer col-12 col-sm-6 col-md-4 col-lg-4 " style={{padding:'0.2% 0.2%'}}>
+              <div className='Cars-Available__container__carImgContainer__shadowBox'/>
+              <img className='Cars-Available__container__carImgContainer__img' src={item.img}></img>
               <div className="Cars-Available__container__carImgContainer__title">
                 {item.title}
               </div>
