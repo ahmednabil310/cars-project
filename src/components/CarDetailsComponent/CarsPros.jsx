@@ -1,8 +1,23 @@
+import React,{useState,useContext,useEffect} from 'react';
 import '../../styles/DealerPageStyles/CarsPros.css';
 import check from '../../images/dealer/check.png';
 import close from '../../images/dealer/close.png';
 import magic from '../../images/dealer/magic.png';
+
+import {carContext} from '../../contexts/cars/carState'
+
 const CarsPros = () => {
+  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+		 
+	useEffect(() => {
+		if (CurrentEngine !== null) {
+			console.log(CurrentEngine)
+			GetCarData(CurrentEngine)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [CurrentEngine])
+ 
+	console.log(CarData);
   return (
     <div className="cars-pros-container">
       <div className="row">

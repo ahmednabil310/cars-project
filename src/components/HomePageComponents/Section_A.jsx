@@ -12,8 +12,10 @@ import nissan from '../../images/nissan.png';
 import honda from '../../images/honda.png';
 import lexus from '../../images/lexus.png';
 import SingleCar from '../SubComponents/SingleCar/SingleCar';
+import { Link } from "react-router-dom";
 
 const Section_A = () => {
+
   return (
     <div className="section-a-homepage-container">
       <div className="row">
@@ -71,14 +73,14 @@ const Section_A = () => {
           </h4>
           <div className="row">
             <div className="row w-100 pb-5">
-              <SingleCar name="Hatchback" image={Hatchback} />
-              <SingleCar name="Sedan" image={sedan} />
-              <SingleCar name="Midsize Sedan" image={midSizeSedan} />
+             <SingleCar name="Hatchback" image={Hatchback}  />
+             <SingleCar name="Sedan" image={sedan} />
+             <SingleCar name="Midsize Sedan" image={midSizeSedan} />
             </div>
             <div className="row w-100">
               <SingleCar name="Luxury Sedan" image={luxurySedan} />
-              <SingleCar name="Midsize SUV" image={midSizeSuv} />
-              <SingleCar name="Large SUV" image={largeSuv} />
+             <SingleCar name="Midsize SUV" image={midSizeSuv} />
+           <SingleCar name="Large SUV" image={largeSuv} />
             </div>
           </div>
         </div>

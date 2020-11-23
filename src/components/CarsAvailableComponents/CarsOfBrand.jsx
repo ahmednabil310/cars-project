@@ -56,7 +56,7 @@ class CarsOfBrand extends Component {
         {this.state.CarsDetails.map((item) => {
           return (
             <div className="Cars-Available__container__carImgContainer col-12 col-sm-6 col-md-4 col-lg-4 p-0">
-              <img src={item.img}></img>
+              <img src={item.img}  alt="img" ></img>
               <div className="Cars-Available__container__carImgContainer__title">
                 {item.title}
               </div>

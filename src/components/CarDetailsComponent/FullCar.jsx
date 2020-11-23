@@ -1,8 +1,23 @@
+import React,{useState,useContext,useEffect} from 'react';
+
 import '../../styles/DealerPageStyles/FullCar.css';
 import flag from '../../images/dealer/korea.png';
 import stars from '../../images/dealer/stars.png';
 import SingleDetail from '../SubComponents/SingleDetail/SingleDetail';
+import {carContext} from '../../contexts/cars/carState'
+
 const FullCar = () => {
+  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+		 
+	useEffect(() => {
+		if (CurrentEngine !== null) {
+			console.log(CurrentEngine)
+			GetCarData(CurrentEngine)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [CurrentEngine])
+ 
+	console.log(CarData);
   return (
     <div className="fullcar-container">
       <div className="row">

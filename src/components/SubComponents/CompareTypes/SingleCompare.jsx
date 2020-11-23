@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
   return (
     <>
@@ -5,7 +7,6 @@ const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
         <h1 className="compare-title">
           {mainTitle} <span style={{ color: textColor }}>{secondTitle}</span>
         </h1>
-
         <svg
           id="Component_6_3"
           data-name="Component 6 – 3"

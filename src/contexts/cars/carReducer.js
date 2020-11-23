@@ -19,7 +19,7 @@ export default (state, action) => {
                         ...state,
                         Engine : action.payload
                     };
-                    case "GetCarData":
+                    case "GETCARDATA":
                         return {
                               ...state,
                               CarData:action.payload
@@ -29,7 +29,7 @@ export default (state, action) => {
                                 ...state,
                                 HighRated : action.payload  
                             };
-                            case "GETTOPRATED":
+                            case "GETRANGEDCAR":
                                 return {
                                     ...state,
                                     RangedCars : action.payload
@@ -43,7 +43,17 @@ export default (state, action) => {
                                     return {
                                         ...state,
                                         ComparedCar : action.payload
-                                    }         
+                                    } 
+                                 case "SET_CURRENT":
+                                     return {
+                                         ...state,
+                                         CurrentEngine :action.payload
+                                     }  
+                                     case "SET_Name_Current":
+                                         return {
+                                             ...state,
+                                             CurrentName : action.payload
+                                         }         
                           default:
                                  return state; 
     }

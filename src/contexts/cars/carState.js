@@ -12,7 +12,9 @@ const initialState = {
   HighRated : [],
   RangedCars : [],
   CatagriodCars :[],
-  ComparedCar :[] 
+  ComparedCar :[],
+  CurrentEngine : null,
+  CurrentName :null
 };
 
 // create context
@@ -26,12 +28,24 @@ export const CarProvider = ({ children }) => {
 
 // GetCarMake
 const GetCarMake=async(year)=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get(`/api/Car/GetCarMake?Year=${year}`)
+        const res = await server.get(`/api/Car/GetCarMake?Year=${year}`,config)
+        if (res.request.readyState === 4 && res.request.status === 200) {    
+                console.log(res);
         dispatch({
             type : 'GETCARMAKE',
             payload : res.data
         })
+    }
     } catch (err) {
      console.log(err);   
     }
@@ -39,8 +53,17 @@ const GetCarMake=async(year)=>{
 
 // GetCarSubModel
 const GetCarSubModel=async(make,year)=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get(`/api/Car/GetCarSubModel?Make=${make}&Year=${year}`)
+        const res = await server.get(`/api/Car/GetCarSubModel?Make=${make}&Year=${year}`,config)
         dispatch({
             type : 'GETCARSUBMODEL',
             payload : res.data
@@ -52,27 +75,24 @@ const GetCarSubModel=async(make,year)=>{
 //GetYear
 const GetYear=async()=>{
 
-   /* const basicAuth ='Basic'+{   
-        username :'smartarzcompareapi',
-        password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
-      }*/
-        
-
   const config = {
         headers :{
             "Access-Control-Allow-Origin" : "*"
         },
-        Authorization :`Basic`[{   
+        auth :{   
             username :'smartarzcompareapi',
             password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
-          }]
+          }
     } 
     try {
         const res = await server.get(`/api/Car/GetYear`,config)
-        dispatch({
-            type : 'GETCARYEAR',
-            payload : res.data
-        })
+        if (res.request.readyState === 4 && res.request.status === 200) {
+            dispatch({
+                type : 'GETCARYEAR',
+                payload : res.data
+            })
+        }
+
     } catch (err) {
      console.log(err);   
     }
@@ -80,8 +100,17 @@ const GetYear=async()=>{
 
 //GetCarEngine
 const GetCarEngine=async(submodel,year)=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get(`/api/Car/GetCarEngine?SubModel=${submodel}&Year=${year}`)
+        const res = await server.get(`/api/Car/GetCarEngine?SubModel=${submodel}&Year=${year}`,config)
         dispatch({
             type : 'GETCARENGINE',
             payload : res.data
@@ -92,24 +121,48 @@ const GetCarEngine=async(submodel,year)=>{
 }
 // GetCarData
 const GetCarData=async(id)=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get(`/api/Car/GetCarData?Id=${id}`)
+        const res = await server.get(`/api/Car/GetCarData?Id=${id}`,config)
+        console.log(res);
+        if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type : 'GETCARDATA',
             payload : res.data
         })
+    }
     } catch (err) {
      console.log(err);   
     }
 }
 // get top rated cars
 const GetTopRatedCars=async()=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get('/api/Car/GetTopRatedCars')
+        const res = await server.get('/api/Car/GetTopRatedCars',config)
+        console.log(res,"jj");
+        if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type :"GETTOPRATED",
             payload : res.data
         })
+    }  
     } catch (err) {
         console.log(err);
     }
@@ -130,12 +183,24 @@ const GetCarByPriceRange =async()=>{
 
 // get car by catagry
 const GetCarByCategory =async(catagry)=>{
+    const config = {
+        headers :{
+            "Access-Control-Allow-Origin" : "*"
+        },
+        auth :{   
+            username :'smartarzcompareapi',
+            password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
+          }
+    } 
     try {
-        const res = await server.get(`/api/Car/GetCarByCategory?category=${catagry}`)
+        const res = await server.get(`/api/Car/GetCarByCategory?category=${catagry}`,config)
+        console.log(res,"jjll");
+        if (res.request.readyState === 4 && res.request.status === 200) {   
         dispatch({
             type : 'GETCARBTCATAGRY',
             payload : res.data
         })
+        }  
     } catch (err) {
         console.log(err);
     }
@@ -152,6 +217,22 @@ const CarComparsion =async(car1,car2,car3,car4)=>{
         console.log(err);
     }
 }
+//set currentName name
+ 
+const setCurrentName=(name)=>{
+    dispatch({
+        type: "SET_Name_Current",
+        payload :name
+    }) 
+}
+
+// current engine
+const setcurrentEngine=(engine)=>{
+    dispatch({
+        type: "SET_CURRENT",
+        payload :engine
+    }) 
+}
 
 return (
     <carContext.Provider
@@ -165,6 +246,8 @@ return (
           RangedCars : state.RangedCars, 
           CatagriodCars : state.CatagriodCars,
           ComparedCar : state.ComparedCar,
+          CurrentEngine: state.CurrentEngine,
+          CurrentName : state.CurrentName, 
           GetCarMake,
           GetCarSubModel,
           GetYear,
@@ -173,7 +256,9 @@ return (
           GetTopRatedCars,
           GetCarByPriceRange,
           GetCarByCategory,
-          CarComparsion
+          CarComparsion,
+          setCurrentName,
+          setcurrentEngine
       }}
     >
       {children}
