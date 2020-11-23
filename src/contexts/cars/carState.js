@@ -5,7 +5,6 @@ import server from '../../api/server';
 //initial State
 const initialState = {
   Cars: [],
-<<<<<<< HEAD
   Maker:[],
   Year : [],
   Engine : [],
@@ -16,16 +15,6 @@ const initialState = {
   ComparedCar :[],
   CurrentEngine : null,
   CurrentName :null
-=======
-  Maker: [],
-  Year: [],
-  Engine: [],
-  CarData: null,
-  HighRated: [],
-  RangedCars: [],
-  CatagriodCars: [],
-  ComparedCar: [],
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
 };
 
 // create context
@@ -37,7 +26,6 @@ export const CarProvider = ({ children }) => {
 
   // actions
 
-<<<<<<< HEAD
 // GetCarMake
 const GetCarMake=async(year)=>{
     const config = {
@@ -58,22 +46,11 @@ const GetCarMake=async(year)=>{
             payload : res.data
         })
     }
-=======
-  // GetCarMake
-  const GetCarMake = async (year) => {
-    try {
-      const res = await server.get(`/api/Car/GetCarMake?Year=${year}`);
-      dispatch({
-        type: 'GETCARMAKE',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
   };
 
-<<<<<<< HEAD
 // GetCarSubModel
 const GetCarSubModel=async(make,year)=>{
     const config = {
@@ -91,22 +68,9 @@ const GetCarSubModel=async(make,year)=>{
             type : 'GETCARSUBMODEL',
             payload : res.data
         })
-=======
-  // GetCarSubModel
-  const GetCarSubModel = async (make, year) => {
-    try {
-      const res = await server.get(
-        `/api/Car/GetCarSubModel?Make=${make}&Year=${year}`,
-      );
-      dispatch({
-        type: 'GETCARSUBMODEL',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
-<<<<<<< HEAD
 }
 //GetYear
 const GetYear=async()=>{
@@ -129,39 +93,11 @@ const GetYear=async()=>{
             })
         }
 
-=======
-  };
-  //GetYear
-  const GetYear = async () => {
-    /* const basicAuth ='Basic'+{   
-        username :'smartarzcompareapi',
-        password :'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF'
-      }*/
-
-    const config = {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-      Authorization: `Basic`[
-        {
-          username: 'smartarzcompareapi',
-          password: 'GYPKZNY1rG23YM9HT3rg2pL6MJo81iwF',
-        }
-      ],
-    };
-    try {
-      const res = await server.get(`/api/Car/GetYear`, config);
-      dispatch({
-        type: 'GETCARYEAR',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
   };
 
-<<<<<<< HEAD
 //GetCarEngine
 const GetCarEngine=async(submodel,year)=>{
     const config = {
@@ -179,22 +115,9 @@ const GetCarEngine=async(submodel,year)=>{
             type : 'GETCARENGINE',
             payload : res.data
         })
-=======
-  //GetCarEngine
-  const GetCarEngine = async (submodel, year) => {
-    try {
-      const res = await server.get(
-        `/api/Car/GetCarEngine?SubModel=${submodel}&Year=${year}`,
-      );
-      dispatch({
-        type: 'GETCARENGINE',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
-<<<<<<< HEAD
 }
 // GetCarData
 const GetCarData=async(id)=>{
@@ -216,21 +139,9 @@ const GetCarData=async(id)=>{
             payload : res.data
         })
     }
-=======
-  };
-  // GetCarData
-  const GetCarData = async (id) => {
-    try {
-      const res = await server.get(`/api/Car/GetCarData?Id=${id}`);
-      dispatch({
-        type: 'GETCARDATA',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
-<<<<<<< HEAD
 }
 // get top rated cars
 const GetTopRatedCars=async()=>{
@@ -252,17 +163,6 @@ const GetTopRatedCars=async()=>{
             payload : res.data
         })
     }  
-=======
-  };
-  // get top rated cars
-  const GetTopRatedCars = async () => {
-    try {
-      const res = await server.get('/api/Car/GetTopRatedCars');
-      dispatch({
-        type: 'GETTOPRATED',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
@@ -281,7 +181,6 @@ const GetTopRatedCars=async()=>{
     }
   };
 
-<<<<<<< HEAD
 // get car by catagry
 const GetCarByCategory =async(catagry)=>{
     const config = {
@@ -302,18 +201,6 @@ const GetCarByCategory =async(catagry)=>{
             payload : res.data
         })
         }  
-=======
-  // get car by catagry
-  const GetCarByCategory = async (catagry) => {
-    try {
-      const res = await server.get(
-        `/api/Car/GetCarByCategory?category=${catagry}`,
-      );
-      dispatch({
-        type: 'GETCARBTCATAGRY',
-        payload: res.data,
-      });
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
     } catch (err) {
       console.log(err);
     }
@@ -331,7 +218,6 @@ const GetCarByCategory =async(catagry)=>{
     } catch (err) {
       console.log(err);
     }
-<<<<<<< HEAD
 }
 //set currentName name
  
@@ -349,14 +235,10 @@ const setcurrentEngine=(engine)=>{
         payload :engine
     }) 
 }
-=======
-  };
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
 
   return (
     <carContext.Provider
       value={{
-<<<<<<< HEAD
           Cars : state.Cars,
           Maker : state.Maker,
           Year : state.Year,
@@ -381,27 +263,6 @@ const setcurrentEngine=(engine)=>{
           setcurrentEngine
       }}
     >
-=======
-        Cars: state.Cars,
-        Maker: state.Maker,
-        Year: state.Year,
-        Engine: state.Engine,
-        CarData: state.CarData,
-        HighRated: state.HighRated,
-        RangedCars: state.RangedCars,
-        CatagriodCars: state.CatagriodCars,
-        ComparedCar: state.ComparedCar,
-        GetCarMake,
-        GetCarSubModel,
-        GetYear,
-        GetCarEngine,
-        GetCarData,
-        GetTopRatedCars,
-        GetCarByPriceRange,
-        GetCarByCategory,
-        CarComparsion,
-      }}>
->>>>>>> 82497f130d62b1eb26bc74c0e068f437706e5ac6
       {children}
     </carContext.Provider>
   );

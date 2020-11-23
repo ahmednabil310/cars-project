@@ -60,8 +60,8 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 				</div>
 				{/* =============== Car Image ================ */}
 				<div className='Car__Image'>
-					<img className='img-fluid' src={imageUrl} alt='car' />
-					<div className='Car__Image__Gallery d-flex pl-4 py-1'>
+					{/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
+					<div className='Car__Image__Gallery d-flex flex-column '>
 						{CarData !== null ?
 						<img
 							className='img-fluid'
