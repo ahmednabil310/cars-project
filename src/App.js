@@ -8,6 +8,7 @@ import CarCard from './components/SubComponents/CarCard/CarCard';
 import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
 import {CarProvider} from './contexts/cars/carState'
+import ReviewPortal from "./pages/ReviewPortal";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/cardetail" component={Dealer} />
         <Route path="/dealer-details" component={DealerDetails} />
         <Route path="/cars-available" component={CarsAvailable} />
+        <Route path="/car-reviews" component={ReviewPortal} />
+
       </Switch>
       <Footer />
       {/* <CarCard /> */}

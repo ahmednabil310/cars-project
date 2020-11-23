@@ -43,7 +43,7 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-            <div className="Cars-Available__container__title">Choose</div>
+            <div className="Cars-Available__container__title">Select Brand</div>
           )}
 
           {this.state.SelectedCountry != 'default' ? (
@@ -54,7 +54,7 @@ class CarsAvailableDetails extends Component {
               </span>
             </div>
           ) : null}
-          <div className="Cars-Available__container__form mt-4">
+          <div className="Cars-Available__container__form my-4">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -133,7 +133,7 @@ class CarsAvailableDetails extends Component {
                 SelectedCountry={this.state.SelectedCountry}
               />
 
-              <div className="Cars-Available__container__form mt-4">
+              <div className="Cars-Available__container__form my-4">
                 <form
                   onSubmit={(e) => {
                     console.log(
