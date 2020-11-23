@@ -67,18 +67,17 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  box-shadow:inset 0 0 70px #000000;
-
+  box-shadow: inset 0 0 70px #000000;
 }
 
-
-.Cars-Available__container__carImgContainer:hover > .Cars-Available__container__carImgContainer__shadowBox {
-  box-shadow:inset 0 0 70px #000000;
+.Cars-Available__container__carImgContainer:hover
+  > .Cars-Available__container__carImgContainer__shadowBox {
+  box-shadow: inset 0 0 70px #000000;
 }
 .Cars-Available__container__carImgContainer:hover img {
   -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .Cars-Available__container__carImgContainer__title {
   display: flex;
@@ -87,8 +86,8 @@
   position: absolute;
   top: 75%;
   background: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 25%;
+  width: 99%;
+  height: 24%;
   color: white;
   font-weight: bold;
 }
