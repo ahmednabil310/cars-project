@@ -1,0 +1,32 @@
+.MostLikeReview{
+    padding: 40px 110px;
+}
+.mostLikedReview_header{
+    color: #727272;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0px;
+}
+.MostLikeReview_cards{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.MostLikeReview_participantCard{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mostLikeReview_title{
+    margin-top: 20px;
+    color: #D53535;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.mostLikeReview_desc{
+    margin-top: 10px;
+    color: #727272;
+    margin-bottom: 70px;
+}
