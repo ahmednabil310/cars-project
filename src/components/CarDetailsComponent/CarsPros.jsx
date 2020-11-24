@@ -8,10 +8,13 @@ import {carContext} from '../../contexts/cars/carState'
 
 const CarsPros = () => {
   const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+
+  const [loader,setLoader] = useState(true)
 		 
 	useEffect(() => {
 		if (CurrentEngine !== null) {
-			GetCarData(CurrentEngine)
+      GetCarData(CurrentEngine)
+      setLoader(false)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [CurrentEngine])

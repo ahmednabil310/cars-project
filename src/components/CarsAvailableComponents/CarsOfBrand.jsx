@@ -6,9 +6,12 @@ const CarsOfBrand=({SelectedBrand,SelectedCountry})=>{
   
   const { GetCarByCategory, CurrentName ,CatagriodCars} = useContext(carContext); 
 
+  const [loader,setLoader] = useState(true)
+ 
  useEffect(()=>{
     fetchCarsDetails()
     GetCarByCategory(CurrentName)
+    setLoader(false)
   },[])
 
   console.log(CatagriodCars);
@@ -17,10 +20,13 @@ const CarsOfBrand=({SelectedBrand,SelectedCountry})=>{
   const fetchCarsDetails=()=>{
     let SelectedBrands = SelectedBrand;
     let SelectedCountries = SelectedCountry;
-
-    setCarsDetails(
-      
+ 
+   if (loader === false) {
+     setCarsDetails(
+      GetCarByCategory
     ) 
+   }
+    
   }
   return (
     <div className=" row m-0">

@@ -14,9 +14,11 @@ import { Link } from 'react-router-dom';
 
 const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
   const { CurrentEngine, GetCarData, CarData } = useContext(carContext);
+  const [loader,setLoader]=useState(true)
   useEffect(() => {
     if (CurrentEngine !== null) {
       GetCarData(CurrentEngine);
+      setLoader(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [CurrentEngine]);
@@ -24,7 +26,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
  
    let goods=[];
    let Bads= [];
-     if(CarData.length>0){
+     if(loader === false){
         goods = CarData.good.split(",")
          Bads = CarData.bad.split(",")
      }
@@ -36,13 +38,13 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
         <div className="Car__Header p-4 position-relative">
           <div className="d-flex justify-content-between align-items-center mb-1">
             <h6 className="text-capitalize font-weight-bold main__red mb-0">
-              2020 Aston Martin DB11
+               {CarData.make}
             </h6>
             <div className="Close__Btn" onClick={closeModel}>
               <img className="img-fluid" src={close} alt="close" />
             </div>
           </div>
-          <p className="main__gary mb-1">V8 Volante 2dr Convertible 4.0L 8c…</p>
+             <p className="main__gary mb-1">{CarData.class}</p>
           <button
             className="main__gary pl-0"
             style={{
@@ -50,7 +52,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
               border: 'none',
               background: 'none',
             }}>
-            Change style
+            {CarData.model}
           </button>
         </div>
         {/* =============== Car Image ================ */}
@@ -95,7 +97,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
                </span>
                  {good}
              </li>) :""}
-             { Bads.length>0 ? Bads.map((bad)=>(
+             { Bads.length> 0 ? Bads.map((bad)=>(
              <li key={bad} >
               <span class="fa-li">
                 <i class="fas fa-times main__red"></i>
@@ -137,7 +139,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
             <br /> <strong></strong>
           </p>
           <p className="main__gary bg_custom_gray pl-4 py-2 mb-0">
-            Engine configuration
+            Engine configuration 
             <br /> <strong>{CarData.engine}</strong>
           </p>
           <p className="main__gary pl-4 py-2 mb-0">
