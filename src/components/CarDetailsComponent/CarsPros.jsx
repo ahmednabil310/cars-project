@@ -1,21 +1,21 @@
-import React,{useState,useContext,useEffect} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import '../../styles/DealerPageStyles/CarsPros.css';
 import check from '../../images/dealer/check.png';
 import close from '../../images/dealer/close.png';
 import magic from '../../images/dealer/magic.png';
 
-import {carContext} from '../../contexts/cars/carState'
+import { carContext } from '../../contexts/cars/carState';
 
 const CarsPros = () => {
-  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
-		 
-	useEffect(() => {
-		if (CurrentEngine !== null) {
-			GetCarData(CurrentEngine)
-		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [CurrentEngine])
- 
+  const { CurrentEngine, GetCarData, CarData } = useContext(carContext);
+
+  useEffect(() => {
+    if (CurrentEngine !== null) {
+      GetCarData(CurrentEngine);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [CurrentEngine]);
+
   return (
     <div className="cars-pros-container">
       <div className="row">
@@ -35,8 +35,8 @@ const CarsPros = () => {
                 x2="0.5"
                 y2="1"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#d53535" />
-                <stop offset="1" stop-color="#6b1b1b" />
+                <stop offset="0" stopColor="#d53535" />
+                <stop offset="1" stopColor="#6b1b1b" />
               </linearGradient>
               <linearGradient
                 id="linear-gradient-2"
@@ -44,8 +44,8 @@ const CarsPros = () => {
                 x2="0.777"
                 y2="1.686"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#efefef" />
-                <stop offset="1" stop-color="#c4c4c4" />
+                <stop offset="0" stopColor="#efefef" />
+                <stop offset="1" stopColor="#c4c4c4" />
               </linearGradient>
             </defs>
             <path
@@ -88,8 +88,8 @@ const CarsPros = () => {
                 x2="0.5"
                 y2="1"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#d53535" />
-                <stop offset="1" stop-color="#6b1b1b" />
+                <stop offset="0" stopColor="#d53535" />
+                <stop offset="1" stopColor="#6b1b1b" />
               </linearGradient>
               <linearGradient
                 id="linear-gradient-2"
@@ -97,8 +97,8 @@ const CarsPros = () => {
                 x2="0.777"
                 y2="1.686"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#efefef" />
-                <stop offset="1" stop-color="#c4c4c4" />
+                <stop offset="0" stopColor="#efefef" />
+                <stop offset="1" stopColor="#c4c4c4" />
               </linearGradient>
             </defs>
             <path
@@ -144,8 +144,8 @@ const CarsPros = () => {
                 x2="0.5"
                 y2="1"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#d53535" />
-                <stop offset="1" stop-color="#6b1b1b" />
+                <stop offset="0" stopColor="#d53535" />
+                <stop offset="1" stopColor="#6b1b1b" />
               </linearGradient>
               <linearGradient
                 id="linear-gradient-2"
@@ -153,8 +153,8 @@ const CarsPros = () => {
                 x2="0.777"
                 y2="1.686"
                 gradientUnits="objectBoundingBox">
-                <stop offset="0" stop-color="#efefef" />
-                <stop offset="1" stop-color="#c4c4c4" />
+                <stop offset="0" stopColor="#efefef" />
+                <stop offset="1" stopColor="#c4c4c4" />
               </linearGradient>
             </defs>
             <path
