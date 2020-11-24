@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../../../styles/CarCard/CarCard.css';
 
 import gallery from '../../../images/car-details/Icon-gallary.png';
@@ -7,7 +7,22 @@ import close from '../../../images/close.png';
 import bigstars from '../../../images/dealer/bigstars.png';
 import singleStar from '../../../images/dealer/singlestar.png';
 
+import { carContext } from '../../../contexts/cars/carState';
+
+import StarsRating from 'react-stars-rating';
+import { Link } from 'react-router-dom';
+
 const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
+  const { CurrentEngine, GetCarData, CarData } = useContext(carContext);
+
+  useEffect(() => {
+    if (CurrentEngine !== null) {
+      GetCarData(CurrentEngine);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [CurrentEngine]);
+  console.log(CarData);
+
   return (
     <div>
       <div className="Car__Card pb-4 mb-5">
@@ -33,18 +48,32 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
         </div>
         {/* =============== Car Image ================ */}
         <div className="Car__Image">
-          <img className="img-fluid" src={imageUrl} alt="car" />
-          <div className="Car__Image__Gallery d-flex pl-4 py-1">
-            <img className="img-fluid" src={gallery} alt="gallery" />
+          {/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
+          <div className="Car__Image__Gallery d-flex flex-column ">
+            {CarData !== null ? (
+              <Link to="/cardetail">
+                <img
+                  className="img-fluid w-100"
+                  src={CarData.result.image_1}
+                  alt="gallery"
+                />{' '}
+              </Link>
+            ) : (
+              ''
+            )}
             <p className="mb-0 ml-3 text-white">View all photos</p>
           </div>
         </div>
         {/* =============== Car Price ================ */}
         <div className="Car__Price pb-3">
           <h4 className="main__red pl-4 pt-4 text-capitalize">Pricing</h4>
-          <p className="main__gary pl-4 py-2 mb-0">
-            Starting MSRP <br /> $ <strong>220,900</strong>
-          </p>
+          {CarData !== null ? (
+            <p className="main__gary pl-4 py-2 mb-0">
+              Starting MSRP <br /> $ <strong>{CarData.result.price}</strong>
+            </p>
+          ) : (
+            ''
+          )}
           <p className="main__gary pl-4 py-2 mb-0">
             Average Price Paid <br /> $ <strong>220,900</strong>
           </p>
@@ -54,7 +83,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
           <h4 className="main__red pl-4 pt-4 text-capitalize">Rating</h4>
           <p className="main__gary pl-4 mb-0">
             <strong>
-              8.9 <sub style={{ position: 'relative', top: '0px' }}>/ 10</sub>{' '}
+              <sub style={{ position: 'relative', top: '0px' }}>8.9/ 10</sub>{' '}
             </strong>
           </p>
           <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>
@@ -104,11 +133,13 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
             </li>
           </ul>
           <div className="px-2 mb-4">
-            <button
-              className="btn btn-outline-danger Full__Review__Btn btn-block text-capitalize"
-              style={{ fontWeight: '500' }}>
-              Full Review
-            </button>
+            <Link to="/cardetail">
+              <button
+                className="btn btn-outline-danger Full__Review__Btn btn-block text-capitalize"
+                style={{ fontWeight: '500' }}>
+                Full Review
+              </button>
+            </Link>
           </div>
         </div>
         {/* =============== Car Rating ================ */}

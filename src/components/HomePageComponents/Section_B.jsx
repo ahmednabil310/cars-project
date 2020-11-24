@@ -13,7 +13,10 @@ import {carContext} from '../../contexts/cars/carState'
 
 const Section_B = () => {
 
-	const [years,setYears]=useState()
+	const [years,setYears]=useState([])
+	const [maker,setMakers]=useState([])
+	const [submodel,setSubModel]=useState([])
+	const [engineId,setEngineId]=useState([])
 	const {
 		Cars,
 		Engine,
@@ -22,12 +25,17 @@ const Section_B = () => {
 		GetCarMake,
 		GetCarSubModel,
 		GetYear,
-		GetCarEngine} = useContext(carContext)
+		GetCarEngine,
+		setcurrentEngine,
+		CurrentEngine
+	} = useContext(carContext)
 	  
    useEffect(()=>{
 	  GetYear();
     // eslint-disable-next-line react-hooks/exhaustive-deps
    },[])
+   
+   
 
 	const [modalShow, setModalShow] = useState(false);
 
@@ -38,29 +46,55 @@ const Section_B = () => {
 		card3: false,
 		card4: false,
 	});
+	
+	const [year,setYear]=useState('')
+	const [make,setMake]=useState('')
+	const [model,setModel]=useState('')
+	const [engine,setEngine]=useState('')
 
-	const [vehicle, setVehicle] = useState({
-		make: '',
-		year: '',
-		model: '',
-		engine: '',
-	});
+	// handle years selector
+	const handleSelectYear=(e)=>{
+		setYears(e.target.value)
+		//rendering Maker
+		GetCarMake(e.target.value)
+		setYear(e.target.value)
+	} 
 
-	const { make, year, model, engine } = vehicle;
+	//handle make selector
+    const handleMakeSelector=(e)=>{
+		setMakers(e.target.value)
+		//rendering Model
+		 GetCarSubModel(e.target.value,years)
+		setMake(e.target.value)
+	}
+	
+	// handle model change 
+	const handleModelsChange=(e)=>{
+		setSubModel(e.target.value)
+		//rendering engine
+		GetCarEngine(e.target.value,years)
+		setModel(e.target.value)
 
+	}
+	// handle engine change
+	const handleEngineSelector=(e)=>{
+		let index = e.target.selectedIndex
+		let element = e.target.childNodes[index]
+		setEngine(e.target.value)
+		setEngineId(element.id)
+	} 
+	
 	const { show, card1, card2, card3, card4 } = cardShow;
 
-	const inputChangeHandler = event => {
-		setVehicle({ ...vehicle, [event.target.name]: event.target.value });
-	};
+		const addVechileHandler = () => {
+		
+			setcurrentEngine(engineId)
+			
+		setYear('')
+		setMake('')
+		setModel('')
+		setEngine('')	
 
-	const addVechileHandler = () => {
-		setVehicle({
-			make: '',
-			year: '',
-			model: '',
-			engine: '',
-		});
 
 		setModalShow(false);
 
@@ -130,6 +164,7 @@ const Section_B = () => {
 			card4: false,
 		});
 	};
+ 
 
 	return (
 		<div className='section-b-homepage-container'>
@@ -301,13 +336,27 @@ const Section_B = () => {
 							<select
 								class='form-control p-3 model__add__vehicle__select'
 								style={{ height: 'auto' }}
+								name='year'
+								onChange={handleSelectYear} >
+                                 <option defaultValue>Select year</option>
+							{Year.result !== undefined ? Year.result.map((item, index) => 
+							(<option key={item.year}  value={item.year} >{item.year}</option>)):""}
+							</select>
+							
+						</div>
+						<div class='form-group'>
+							<select
+								class='form-control p-3 model__add__vehicle__select'
+								id='exampleFormControlSelect1'
+				 				style={{ height: 'auto' }}
+								disabled={year === ''}
 								name='make'
 								value={make}
-								onChange={inputChangeHandler}
+								onChange={handleMakeSelector}
 							>
 								<option defaultValue>Select make</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								{Maker.result !== undefined ?  Maker.result.map((item, index) => 
+							(<option key={item.make}  value={item.make} >{item.make}</option>)):""}
 							</select>
 						</div>
 						<div class='form-group'>
@@ -316,28 +365,14 @@ const Section_B = () => {
 								id='exampleFormControlSelect1'
 								style={{ height: 'auto' }}
 								disabled={make === ''}
-								name='year'
-								value={year}
-								onChange={inputChangeHandler}
-							>
-								<option defaultValue>Select year</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
-							</select>
-						</div>
-						<div class='form-group'>
-							<select
-								class='form-control p-3 model__add__vehicle__select'
-								id='exampleFormControlSelect1'
-								style={{ height: 'auto' }}
-								disabled={year === ''}
 								name='model'
 								value={model}
-								onChange={inputChangeHandler}
+								onChange={handleModelsChange}
+
 							>
 								<option defaultValue>Select model</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								{Cars.result !== undefined ?  Cars.result.map((item, index) => 
+							(<option key={item.model}  value={item.model} >{item.model}</option>)):""}
 							</select>
 						</div>
 						<div class='form-group'>
@@ -349,11 +384,13 @@ const Section_B = () => {
 								disabled={model === ''}
 								name='engine'
 								value={engine}
-								onChange={inputChangeHandler}
+								onChange={handleEngineSelector}
 							>
 								<option defaultValue>Select engine</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								{Engine.result !== undefined ?
+								 Engine.result.map((item, index) => 
+							(<option key={item.engine} id={item.id}   value={item.engine} >{item.engine}</option>))
+							:""}
 							</select>
 						</div>
 					</ModelFields>

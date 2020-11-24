@@ -8,9 +8,11 @@ import CarCard from './components/SubComponents/CarCard/CarCard';
 import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
 import {CarProvider} from './contexts/cars/carState'
+import {CommentProvider} from './contexts/comments/commentState'
 
 function App() {
   return (
+    <CommentProvider>
   <CarProvider>
     <div className="App">
       <Nav />
@@ -24,7 +26,8 @@ function App() {
       <Footer />
       {/* <CarCard /> */}
     </div>
-    </CarProvider>  
+    </CarProvider> 
+     </CommentProvider>
   );
 }
 

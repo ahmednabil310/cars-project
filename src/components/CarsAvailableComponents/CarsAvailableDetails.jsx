@@ -1,94 +1,181 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
 import carImage from '../../images/Cars/Car1.png';
 import CarsOfBrand from './CarsOfBrand';
-class CarsAvailableDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Countries: [],
-      Brands: [],
-      SelectedCountry: 'default',
-      SelectedBrand: 'default',
-    };
+import {carContext} from '../../contexts/cars/carState'
+ 
+const CarsAvailableDetails=(props)=>{
+   
+   const [SelectedCountry,setSelectedCountry]=useState('default')
+   const [SelectedBrand,setSelectedBrand]=useState('default')
+
+   const {
+     CatagriodCars
+    ,GetCarByCategory
+    ,CurrentName
+    ,Year,
+    GetYear,
+    Maker
+   ,GetCarMake}=useContext(carContext) 
+
+ 
+
+  useEffect(()=>{
+      if(CurrentName !== null){
+        GetCarByCategory(CurrentName)
+      }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[CurrentName])
+
+  console.log(CatagriodCars);
+
+  useEffect(()=>{
+      GetYear()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+  const handleyearChange=(e)=>{
+    GetCarMake(e.target.value)
   }
 
-  componentDidMount() {
-    this.fetchBrands();
-    this.fetchhCountries();
-  }
 
-  ///////////////////////////////////////// GET DROPDOWN DATA HERE
+  return(
+    <div>
+    <div className="Cars-Available__container">
+      {SelectedCountry != 'default' ? (
+        <div className="Cars-Available__container__title">
+          <span style={{ color: '#3e3e3e' }}>
+            {SelectedBrand}
+          </span>{' '}
+          UAE Prices & Specs
+        </div>
+      ) : (
+        <div className="Cars-Available__container__title">Choose</div>
+      )}
 
-  fetchBrands() {
-    // Fetch Brands Here
-    this.setState({ Brands: ['VW', 'BMW'] });
-  }
-  fetchhCountries() {
-    //Fetch Countries Here
-    this.setState({ Countries: ['UAE', 'EGY'] });
-  }
+      {SelectedCountry != 'default' ? (
+        <div className="Cars-Available__container__SubTitle mt-2">
+          HOME / PRICES & SPECS {SelectedCountry} /{' '}
+          <span style={{ color: '#3e3e3e' }}>
+            {SelectedBrand}
+          </span>
+        </div>
+      ) : null}
+      <div className="Cars-Available__container__form mt-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log('submited', e.target[0].value, e.target[1].value);
+              {setSelectedCountry(e.target[1].value)}
+              {setSelectedBrand(e.target[0].value)}
+          }}
+          action={''}>
+          <select
+            required
+            className="About__And__Summary__Select mx-3"
+            style={{ width: '150px' }}
+            onChange={handleyearChange}
+            defaultValue={SelectedBrand}>
+            <option value="default" disabled>
+              year
+            </option>
+            {Year.result !== undefined ?Year.result.map((item, index) => 
+							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
+							</select>
 
-  //////////////////////////////////////////
+          <select
+            required
+            className="About__And__Summary__Select mx-3"
+            style={{ width: '150px' }}
+            defaultValue={SelectedCountry}>
+            <option value="default" disabled>
+              maker
+            </option>
+            {Maker.result !== undefined ? 
+             Maker.result.map((item, index) => 
+							 (<option key={item.make}  value={item.make} >
+                 {item.make}</option>)) :""}
+          </select>
 
-  render() {
-    return (
-      <div>
-        <div className="Cars-Available__container">
-          {this.state.SelectedCountry != 'default' ? (
-            <div className="Cars-Available__container__title">
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedBrand}
-              </span>{' '}
-              UAE Prices & Specs
-            </div>
-          ) : (
-            <div className="Cars-Available__container__title">Choose</div>
-          )}
+          <button
+            className="Cars-Available__container__submitBtn"
+            type="submit">
+            Go
+          </button>
+        </form>
+      </div>
 
-          {this.state.SelectedCountry != 'default' ? (
-            <div className="Cars-Available__container__SubTitle mt-2">
-              HOME / PRICES & SPECS {this.state.SelectedCountry} /{' '}
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedBrand}
-              </span>
-            </div>
-          ) : null}
+      {SelectedBrand != 'default' ? (
+        <div>
+          <div className="Cars-Available__container__NewUSedBar">
+            <a
+              href=""
+              style={{
+                color: '#325c9a',
+                fontWeight: 'bold',
+                fontSize: '18px',
+              }}>
+              New {SelectedBrand} for Sale in
+              {SelectedCountry}
+            </a>
+            <a
+              href=""
+              style={{
+                color: '#325c9a',
+                fontWeight: 'bold',
+                fontSize: '18px',
+              }}>
+              Used {SelectedBrand} for Sale in
+              {SelectedCountry}
+            </a>
+          </div>
+
+          <div className="Cars-Available__container__ChoosedBrand">
+            Browse {SelectedBrand} Models
+          </div>
+
+          <CarsOfBrand
+            SelectedBrand={SelectedBrand}
+            SelectedCountry={SelectedCountry}
+          />
+
           <div className="Cars-Available__container__form mt-4">
             <form
               onSubmit={(e) => {
-                e.preventDefault();
-                console.log('submited', e.target[0].value, e.target[1].value);
-                this.setState({
-                  SelectedCountry: e.target[1].value,
-                  SelectedBrand: e.target[0].value,
-                });
+                console.log(
+                  'submited',
+                  e.target[0].value, 
+                  e.target[1].value,
+                )
+                   {setSelectedCountry(e.target[1].value)}
+                   {setSelectedBrand( e.target[0].value)}
               }}
               action={''}>
               <select
                 required
                 className="About__And__Summary__Select mx-3"
                 style={{ width: '150px' }}
-                defaultValue={this.state.SelectedBrand}>
+                defaultValue={SelectedBrand}>
+                  onChange={handleyearChange}
                 <option value="default" disabled>
-                  Brand
+                  year
                 </option>
-                {this.state.Brands.map((item,index) => {
-                  return <option key={index} value={item}>{item}</option>;
-                })}
+                {Year.result !== undefined ? Year.result.map((item, index) => 
+							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
               </select>
 
               <select
                 required
                 className="About__And__Summary__Select mx-3"
                 style={{ width: '150px' }}
-                defaultValue={this.state.SelectedCountry}>
+                defaultValue={SelectedCountry}>
                 <option value="default" disabled>
-                  Country
+                  maker
                 </option>
-                {this.state.Countries.map((item,index) => {
-                  return <option key={index} value={item}>{item}</option>;
-                })}
+                {Maker.result !== undefined ? 
+                   Maker.result.map((item, index) => 
+							 (<option key={item.make}  value={item.make} >
+                 {item.make}</option>)):""}
               </select>
 
               <button
@@ -98,94 +185,10 @@ class CarsAvailableDetails extends Component {
               </button>
             </form>
           </div>
-
-          {this.state.SelectedBrand != 'default' ? (
-            <div>
-              <div className="Cars-Available__container__NewUSedBar">
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  New {this.state.SelectedBrand} for Sale in
-                  {this.state.SelectedCountry}
-                </a>
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  Used {this.state.SelectedBrand} for Sale in
-                  {this.state.SelectedCountry}
-                </a>
-              </div>
-
-              <div className="Cars-Available__container__ChoosedBrand">
-                Browse {this.state.SelectedBrand} Models
-              </div>
-
-              <CarsOfBrand
-                SelectedBrand={this.state.SelectedBrand}
-                SelectedCountry={this.state.SelectedCountry}
-              />
-
-              <div className="Cars-Available__container__form mt-4">
-                <form
-                  onSubmit={(e) => {
-                    console.log(
-                      'submited',
-                      e.target[0].value,
-                      e.target[1].value,
-                    );
-                    this.setState({
-                      SelectedCountry: e.target[1].value,
-                      SelectedBrand: e.target[0].value,
-                    });
-                  }}
-                  action={''}>
-                  <select
-                    required
-                    className="About__And__Summary__Select mx-3"
-                    style={{ width: '150px' }}
-                    defaultValue={this.state.SelectedBrand}>
-                    <option value="default" disabled>
-                      Brand
-                    </option>
-                    {this.state.Brands.map((item,index) => {
-                      return <option key={index} value={item}>{item}</option>;
-                    })}
-                  </select>
-
-                  <select
-                    required
-                    className="About__And__Summary__Select mx-3"
-                    style={{ width: '150px' }}
-                    defaultValue={this.state.SelectedCountry}>
-                    <option value="default" disabled>
-                      Country
-                    </option>
-                    {this.state.Countries.map((item,index) => {
-                      return <option key={index} value={item}>{item}</option>;
-                    })}
-                  </select>
-
-                  <button
-                    className="Cars-Available__container__submitBtn"
-                    type="submit">
-                    Go
-                  </button>
-                </form>
-              </div>
-            </div>
-          ) : null}
         </div>
-      </div>
-    );
-  }
+      ) : null}
+    </div>
+  </div>
+  )
 }
-
-export default CarsAvailableDetails;
+export default CarsAvailableDetails

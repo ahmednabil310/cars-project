@@ -1,5 +1,18 @@
+import React,{useState,useContext,useEffect} from 'react';
 import '../../styles/DealerPageStyles/LastBanner.css';
+
+import {carContext} from '../../contexts/cars/carState'
+
 const LastBanner = () => {
+  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+		 
+	useEffect(() => {
+		if (CurrentEngine !== null) {
+			GetCarData(CurrentEngine)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [CurrentEngine])
+ 
   return (
     <div className="last-banner d-flex py-5">
       <div className="container-fluid ">
