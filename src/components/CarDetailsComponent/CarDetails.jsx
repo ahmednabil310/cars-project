@@ -19,13 +19,13 @@ const CarDetails = () => {
     <div className="car-details-container">
       <div className="row">
         <div className="col-lg-6 col-12 bigger-image">
-          {CarData !== null ?
-          <img src={CarData.result.image_1}  style={{width : "100%"}}  alt="img"/> : ""
+          {CarData !== [] ?
+          <img src={CarData.image_1}  style={{width : "100%"}}  alt="img"/> : ""
         }
         </div>
         <div className="col-lg-6 col-12 bigger-image">
-        {CarData !== null ?
-          <img src={CarData.result.image_2} alt="img" /> : ""
+        {CarData !== [] ?
+          <img src={CarData.image_2} alt="img" /> : ""
         }
         </div>
       </div>

@@ -8,7 +8,6 @@ const CarsAvailableDetails=(props)=>{
    
    const [SelectedCountry,setSelectedCountry]=useState('default')
    const [SelectedBrand,setSelectedBrand]=useState('default')
-   
    const [year,setYear]=useState([])
    
    const {
@@ -17,12 +16,11 @@ const CarsAvailableDetails=(props)=>{
     Maker
    ,GetCarMake,
    Cars,
-   GetCarSubModel
-    }=useContext(carContext) 
+   GetCarSubModel,
+   CurrentName
+ }=useContext(carContext) 
 
  
-
-  
 
   useEffect(()=>{
       GetYear()

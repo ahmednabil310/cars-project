@@ -8,7 +8,7 @@ const initialState = {
   Maker:[],
   Year : [],
   Engine : [],
-  CarData:null,
+  CarData: [],
   HighRated : [],
   RangedCars : [],
   CatagriodCars :[],
@@ -39,12 +39,10 @@ const GetCarMake=async(year)=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetCarMake?Year=${year}`,config)
-        if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type : 'GETCARMAKE',
             payload : res.data
         })
-    }
     } catch (err) {
       console.log(err);
     }
@@ -85,12 +83,10 @@ const GetYear=async()=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetYear`,config)
-        if (res.request.readyState === 4 && res.request.status === 200) {
             dispatch({
                 type : 'GETCARYEAR',
                 payload : res.data
             })
-        }
 
     } catch (err) {
       console.log(err);
@@ -131,12 +127,10 @@ const GetCarData=async(id)=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetCarData?Id=${id}`,config)
-        if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type : 'GETCARDATA',
-            payload : res.data
+            payload : res.data.result
         })
-    }
     } catch (err) {
       console.log(err);
     }
@@ -154,12 +148,10 @@ const GetTopRatedCars=async()=>{
     } 
     try {
         const res = await server.get('/api/Car/GetTopRatedCars',config)
-        if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type :"GETTOPRATED",
             payload : res.data
         })
-    }  
     } catch (err) {
       console.log(err);
     }
@@ -191,12 +183,10 @@ const GetCarByCategory =async(catagry)=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetCarByCategory?category=${catagry}`,config)
-        if (res.request.readyState === 4 && res.request.status === 200) {   
         dispatch({
             type : 'GETCARBTCATAGRY',
             payload : res.data
         })
-        }  
     } catch (err) {
       console.log(err);
     }
