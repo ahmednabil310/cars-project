@@ -2,40 +2,37 @@ import '../../styles/DealerPageStyles/FullCar.css';
 import flag from '../../images/dealer/korea.png';
 import stars from '../../images/dealer/stars.png';
 import SingleDetail from '../SubComponents/SingleDetail/SingleDetail';
+
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 const FullCar = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="fullcar-container">
       <div className="row">
         <div className="col-lg-6 brief-details">
-          <h1 className="brief">Brief About</h1>
-          <h2 className="car-type">Genesis G80 - 2020 - Ultimate</h2>
+          <h1 className="brief">{t("Brief About")}</h1>
+          <h2 className="car-type">{t("Genesis G80 - 2020 - Ultimate")}</h2>
           <div className="made-in d-flex align-items-center">
             <img src={flag} />
-            <span>Made: &nbsp; Korea Republic</span>
+            <span>{t("Made:")} &nbsp; {t("Korea Republic")}</span>
           </div>
           <p className="brief-content pb-5">
-            Going head to head with BMW’s 5 Series and Mercedes-Benz’s E-Class
-            is no easy feat, but the 2020 G80 sedan easily holds its own. The
-            G80’s roots date back to when the Genesis sedan was a model in the
-            Hyundai lineup, before Genesis was its own brand. Now serving as the
-            middle ground between the sportier G70 and the flagship G90, the G80
-            offers an appealing blend of comfort and power.
+            {t("brief about 1")}
           </p>
           <p className="brief-content">
-            Going head to head with BMW’s 5 Series and Mercedes-Benz’s E-Class
-            is no easy feat, but the 2020 G80 sedan easily holds its own. The
-            G80’s roots date back to when the Genesis sedan was a model in the
-            Hyundai lineup, before Genesis was its own brand. Now serving as the
-            middle ground between the sportier G70 and the flagship G90, the G80
-            offers an appealing blend of comfort and power.
+          {t("brief about 1")}
           </p>
         </div>
 
         <div className="col-lg-6 full-details">
           <div className="full-details__banner">
-            <h3 className="full-details-title brief">More details</h3>
+            <h3 className="full-details-title brief">{t("More details")}</h3>
             <h4 className="full-details-specs car-type">
-              Specs about This car
+              {t("Specs about This car")}
             </h4>
           </div>
           <SingleDetail />

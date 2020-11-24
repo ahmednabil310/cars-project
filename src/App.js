@@ -9,7 +9,13 @@ import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
 import {CarProvider} from './contexts/cars/carState'
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 function App() {
+  const { t, i18n } = useTranslation();
+
   return (
   <CarProvider>
     <div className="App">
@@ -22,7 +28,6 @@ function App() {
         <Route path="/cars-available" component={CarsAvailable} />
       </Switch>
       <Footer />
-      {/* <CarCard /> */}
     </div>
     </CarProvider>  
   );

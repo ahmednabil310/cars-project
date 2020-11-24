@@ -11,15 +11,21 @@ import Car8 from '../../images/Cars/Car8.png';
 import Coupes from '../../images/Cars/Coupes.png';
 import Sedan from '../../images/Cars/Sedan.png';
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 function Section3() {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className='custom__container NewCarPricing-Section3 m-auto'>
 			<div className='NewCarPricing-Section2-Heading'>
 				<h3 className='NewCarPricing-Section2-Heading__h3 NewCarPricing-Section2-Heading__h3--red'>
-					Best-rated
+				{t("Best-rated")}
 				</h3>
 				<h3 className='NewCarPricing-Section2-Heading__h3'>
-					cars by category
+					{t("cars by category")}
 				</h3>
 			</div>
 			<div className='row m-0'>

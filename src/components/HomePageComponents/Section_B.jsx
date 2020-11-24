@@ -11,6 +11,10 @@ import car4 from '../../images/car-details/car4.png';
 
 import {carContext} from '../../contexts/cars/carState'
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 const Section_B = () => {
 
 	const [years,setYears]=useState()
@@ -131,11 +135,13 @@ const Section_B = () => {
 		});
 	};
 
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className='section-b-homepage-container'>
 			<div className='d-flex sub-container'>
 				<h3>
-					<span className='special'>Compare</span> Cars Side-by-Side
+					<span className='special'>{t("Compare")}</span> {t("Cars Side-by-Side")}
 				</h3>
 				<svg
 					id='Component_6_2'
@@ -190,53 +196,53 @@ const Section_B = () => {
 							<ul className='navbar-nav '>
 								<li className='nav-item active'>
 									<a className='nav-link' href='#'>
-										Pricing
+										{t("Pricing1")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Rating
+										{t("Rating")}
 									</a>
 								</li>
 
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Consumer rating
+										{t("Consumer rating")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Waranty
+										{t("Waranty")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Features
+										{t("Features")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Specifications
+										{t("Specifications")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Fuel economy
+										{t("Fuel economy")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Dimensions
+										{t("Dimensions")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Ownership costs
+										{t("Ownership costs")}
 									</a>
 								</li>
 								<li className='nav-item'>
 									<a className='nav-link' href='#'>
-										Colors
+										{t("Colors")}
 									</a>
 								</li>
 							</ul>
@@ -305,9 +311,9 @@ const Section_B = () => {
 								value={make}
 								onChange={inputChangeHandler}
 							>
-								<option defaultValue>Select make</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								<option defaultValue>{t("Select make")}</option>
+								<option value='1'>{t("Select make")}</option>
+								<option value='2'>{t("Select make")}</option>
 							</select>
 						</div>
 						<div class='form-group'>
@@ -320,7 +326,7 @@ const Section_B = () => {
 								value={year}
 								onChange={inputChangeHandler}
 							>
-								<option defaultValue>Select year</option>
+								<option defaultValue>{t("Select year")}</option>
 								<option value='1'>1</option>
 								<option value='2'>2</option>
 							</select>
@@ -335,9 +341,9 @@ const Section_B = () => {
 								value={model}
 								onChange={inputChangeHandler}
 							>
-								<option defaultValue>Select model</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								<option defaultValue>{t("Select model")}</option>
+								<option value='1'>{t("Select model1")}</option>
+								<option value='2'>{t("Select model2")}</option>
 							</select>
 						</div>
 						<div class='form-group'>
@@ -351,9 +357,9 @@ const Section_B = () => {
 								value={engine}
 								onChange={inputChangeHandler}
 							>
-								<option defaultValue>Select engine</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
+								<option defaultValue>{t("Select engine")}</option>
+								<option value='1'>{t("Select engine1")}</option>
+								<option value='2'>{t("Select engine2")}</option>
 							</select>
 						</div>
 					</ModelFields>

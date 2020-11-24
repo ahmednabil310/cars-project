@@ -13,14 +13,18 @@ import honda from '../../images/honda.png';
 import lexus from '../../images/lexus.png';
 import SingleCar from '../SubComponents/SingleCar/SingleCar';
 
+// the hook
+import { useTranslation } from 'react-i18next';
+
 const Section_A = () => {
+  const { t, i18n } = useTranslation();
   return (
     <div className="section-a-homepage-container">
       <div className="row">
         <div className="choices-container col-xl-6 col-lg-12">
           <div className="d-flex choices-container-sub">
             <h3>
-              <span className="special">Common</span> types of choice
+              <span className="special">{t("Common")}</span> {t("types of choice")}
             </h3>
             <svg
               id="Component_6_1"
@@ -66,8 +70,7 @@ const Section_A = () => {
             </svg>
           </div>
           <h4 className="note">
-            You can quickly pick a category from here by clicking on one of the
-            following icons
+            {t("You can quickly pick a category from here by clicking on one of the following icons")}
           </h4>
           <div className="row">
             <div className="row w-100 pb-5">
@@ -86,7 +89,7 @@ const Section_A = () => {
         <div className="make-container col-xl-6 col-lg-12">
           <div className="d-flex  make-container-sub">
             <h3 className="d-inline">
-              <span className="special">Common</span> types of make
+              <span className="special">{t("Common")}</span> {t("types of make")}
             </h3>
             <svg
               id="Component_6_1"
@@ -132,8 +135,7 @@ const Section_A = () => {
             </svg>
           </div>
           <h4 className="note">
-            You can quickly pick a category from here by clicking on one of the
-            following icons
+          {t("You can quickly pick a category from here by clicking on one of the following icons1")}
           </h4>
           <div className="row  special-row">
             <div className="row w-100 pb-5">

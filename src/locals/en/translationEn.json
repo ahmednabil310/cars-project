@@ -1,0 +1,228 @@
+{
+
+    "_comment1":"NAVBAR",
+    "Prices & spec":"Prices & spec",
+    "New Cars":"New Cars",
+    "Reviews":"Reviews",
+    "News":"News",
+    "Dealers":"Dealers",
+    "Andrew Peki":"Andrew Peki",
+
+
+
+
+    "_comment2":"footer",
+    "footerParagph":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos deserunt laudantium rem. Quia quos nisi aut quibusdam, possimus ratione nobis quas facere cum officiis ut ab? Nulla nam totam ut?",
+    "Quick Links":"Quick Links",
+    
+
+
+
+
+    "_comment3":"NewCarPricingComp(Header)",
+    "New Car Pricing":"New Car Pricing",
+
+
+    "_comment4":"NewCarPricingComp(section1)",
+    "Choose":"Choose",
+    "learn what to pay":"your car, learn what to pay",
+    "Search by":"Search by:",
+    "Make/Model":"Make/Model",
+    "Type":"Type",
+    "Price":"Price",
+    "Any Make":"Any Make",
+    "Any Make1":"op1",
+    "Any Make2":"op2",
+    "Country":"Country",
+    "Country1":"op1",
+    "Country2":"op2",
+    "Any Model":"Any Model",
+    "Any Model1":"op1",
+    "Any Model2":"op2",
+    "Submit":"Submit",
+
+
+    "_comment5":"NewCarPricingComp(section2)",
+    "Best-rated":"Best-rated",
+    "Shop cars under $20k":"Shop cars under $20k",
+
+
+    "_comment6":"NewCarPricingComp(section3)",
+    "cars by category":"cars by category",
+
+
+
+
+
+
+
+    "_comment7":"DealerDetailsComp(Header)",
+    "Dealer details":"Dealer details",
+
+
+    "_comment8":"DealerDetailsComp(Banner)",
+    "UAE CAR LEASE SERVICES":"UAE CAR LEASE SERVICES",
+    "UAE Car Lease Services - Card":"UAE Car Lease Services - Card",
+
+
+    "_comment9":"DealerDetailsComp(AboutAndSummary)",
+    "About":"About",
+    "Select Countary":"Select Countary",
+    "Select Countary1":"op1",
+    "Select Countary2":"op2",
+    "Select Make":"Select Make",
+    "Select Make1":"op1",
+    "Select Make2":"op2",
+    "Summary":"Summary",
+    "Location":"Location",
+    "Address":"4th St - Al QuozAl Quoz Industrial Area 3 - Dubai - United Arab Emirates",
+    "Numbers":"Numbers",
+    "Start date":"Start date",
+    "date":"Jun, 1988",
+    "Total number":"Total number of cars they have",
+
+
+
+    "_comment10":"DealerDetailsComp(ConsumerReviewing)",
+    "Consumer":"Consumer",
+    "Reviewing UAE Car Lease Services":"Reviewing UAE Car Lease Services",
+    "Here is some reviews":"Here is some reviews customer made about this car store",
+    "Write a review":"Write a review",
+    "Review title":"Review title",
+    "letters or numbers":"64 letters or numbers",
+    "Review rating":"Review rating",
+    "Review details":"Review details",
+    "360 letters or numbers":"360 letters or numbers",
+    "10 Reviews":"10 Reviews",
+    "See all reviews":"See all reviews",
+    "Customer reviews":"Customer reviews",
+    "UAECLS is the best store in town":"UAECLS is the best store in town",
+    "UAECLS is the best store in town-p":"My 2020 G80 was a no brainer for me when my 2018 G80. lease was up. I started my love of the Genesis in. 2012 with the prior generation, when it was under the Hyundai nameplate. In 2015 I leased the current  generation Genesis (still under Hyundai nameplate). 2018 marked my 1st under its own division. I say the G80 is a no brainer simply because there isn’t any other vehicle within its price category that gives you as much as three G80 does. I’ve always had the 3.8 V6 and never once thought I needed more power. I enjoy the ultra quiet cabin as well as the exceptional seat comfort. The 3 years of Genesis valet is icing on the cake, never having to return to the dealer (for any reason) the valet service is simple thru the Genesis app on my smart phone. My car is picked up at my place of employment, a loaner dropped off and then returned when service is completed (nicely detailed, I might add). I always choose one convenience option package up from the base model, which gives me anything from smart cruise to lane departure to 3d view cameras to aid in parking, also included is heated seats front andback as well as air conditioned front seats. The Upgraded Lexicon sound system is among the best I’ve experienced in a vehicle. My combined MPG (mostly city than highway) is always around 21 mpg. I really hoped the GV80 suv was available when my lease was up but I’ll look forward to that in the next 30 months while I enjoy my 4 Genesis vehicle.",
+    "Phil Wilson":"Phil Wilson",
+    "date-cons":"Date : 03/17/2020.",
+    "detail-car":"3.8 4dr Sedan (3.8L 6cyl 8A)",
+    "likes":"50 people like this comment",
+    "Don’t use UAECLS":"Don’t use UAECLS",
+    "Don’t use UAECLS-p":"I just took delivery of a 2020 G80 5.0 Ultimate model. Last year for the G80 V8. This car is impressive in so many ways. It may not quite match the German V8 cars for power, but for $20,000 less it is very impressive nonetheless. I think 420 HP is plenty for me. In addition, Genesis is rated higher than the German brands for reliability. If you don’t need the perceived “snob appeal” of",
+    "Best wishes":"Best wishes",
+    "Best wishes-p":"Stylish and comfortable. Ride a bit stiff but getting use to it. Features galore.",
+    
+    
+
+
+    "_comment11":"CarDetailsComp(Banner)",
+    "2020 Genesis H80":"2020 Genesis H80",
+    "Overview":"Overview",
+    "Review":"Review",
+    "Pricing":"Pricing",
+
+
+    "_comment12":"CarDetailsComp(CarsPros)",
+    "Pros":"Pros",
+    "Costs less than comparable luxury sedans in its class":"Costs less than comparable luxury sedans in its class",
+    "Roomy interior stays very quiet at highway speeds":"Roomy interior stays very quiet at highway speeds",
+    "Cons":"Cons",
+    "Ride quality isn’t as cushy or refined as that of some rival sedans":"Ride quality isn’t as cushy or refined as that of some rival sedans",
+    "Rear headroom is a little tight for this class":"Rear headroom is a little tight for this class",
+    "What's New":"What's New",
+    "New blind-spot collision-avoidance assist helps with lane changes":"New blind-spot collision-avoidance assist helps with lane changes",
+    "Optional 9.2-inch infotainment system now has customizable home screen":"Optional 9.2-inch infotainment system now has customizable home screen",
+
+
+    "_comment13":"CarDetailsComp(FullCar)",
+    "Brief About":"Brief About",
+    "Genesis G80 - 2020 - Ultimate":"Genesis G80 - 2020 - Ultimate",
+    "Made:":"Made:",
+    "Korea Republic":"Korea Republic",
+    "brief about 1":"Going head to head with BMW’s 5 Series and Mercedes-Benz’s E-Class is no easy feat, but the 2020 G80 sedan easily holds its own. The G80’s roots date back to when the Genesis sedan was a model in the Hyundai lineup, before Genesis was its own brand. Now serving as the middle ground between the sportier G70 and the flagship G90, the G80 offers an appealing blend of comfort and power.",
+    "brief about 2":"Going head to head with BMW’s 5 Series and Mercedes-Benz’s E-Class is no easy feat, but the 2020 G80 sedan easily holds its own. The G80’s roots date back to when the Genesis sedan was a model in the Hyundai lineup, before Genesis was its own brand. Now serving as the middle ground between the sportier G70 and the flagship G90, the G80 offers an appealing blend of comfort and power.",
+    "More details":"More details",
+    "Specs about This car":"Specs about This car",
+
+
+    "_comment14":"singleDetails",
+    "Reliability":"Reliability",
+
+
+
+
+
+    "_comment15":"CarDetailsComp(LastBanner)",
+    "Approximate Price":"Approximate Price",
+    "for each model":"for each model",
+    "Popular":"Popular",
+    "price-range":"$ 50,000",
+    "Sport":"Sport",
+    "Ultimate":"Ultimate",
+
+
+    "_comment16":"CarDetailsComp(CustomerReview)",
+    "Customer":"Customer",
+    "Reviews1":"Reviews",
+    "Read what other owners think about the 2020 Genesis G80":"Read what other owners think about the 2020 Genesis G80.",
+    "Most helpful consumer reviews":"Most helpful consumer reviews",
+    "My 3rd consecutive Genesis":"My 3rd consecutive Genesis",
+    "My 3rd consecutive Genesis-p":"My 2020 G80 was a no brainer for me when my 2018 G80. lease was up. I started my love of the Genesis in. 2012 with the prior generation, when it was under the Hyundai nameplate. In 2015 I leased the current  generation Genesis (still under Hyundai nameplate). 2018 marked my 1st under its own division. I say the G80 is a no brainer simply because there isn’t any other vehicle within its price category that gives you as much as three G80 does. I’ve always had the 3.8 V6 and never once thought I needed more power. I enjoy the ultra quiet cabin as well as the exceptional seat comfort. The 3 years of Genesis valet is icing on the cake, never having to return to the dealer (for any reason) the valet service is simple thru the Genesis app on my smart phone. My car is picked up at my place of employment, a loaner dropped off and then returned when service is completed (nicely detailed, I might add). I always choose one convenience option package up from the base model, which gives me anything from smart cruise to lane departure to 3d view cameras to aid in parking, also included is heated seats front andback as well as air conditioned front seats. The Upgraded Lexicon sound system is among the best I’ve experienced in a vehicle. My combined MPG (mostly city than highway) is always around 21 mpg. I really hoped the GV80 suv was available when my lease was up but I’ll look forward to that in the next 30 months while I enjoy my 4 Genesis vehicle.",
+    "My 3rd consecutive Genesis-p2":"I just took delivery of a 2020 G80 5.0 Ultimate model. Last year for the G80 V8. This car is impressive in so many ways. It may not quite match the German V8 cars for power, but for $20,000 less it is very impressive nonetheless. I think 420 HP is plenty for me. In addition, Genesis is rated higher than the German brands for reliability. If you don’t need the perceived “snob appeal” of",
+    "My 3rd consecutive Genesis-p3":"Stylish and comfortable. Ride a bit stiff but getting use to it. Features galore.",
+
+
+    "_comment17":"HOME(Header)",
+    "WORRIED":"WORRIED!",
+    "WHICH CAR TO CHOOSE":"WHICH CAR TO CHOOSE?",
+
+
+    "_comment18":"HOME(sectionA)",
+    "Common":"Common",
+    "types of choice":"types of choice",
+    "You can quickly pick a category from here by clicking on one of the following icons":"You can quickly pick a category from here by clicking on one of the following icons",
+    "types of make":"types of make",
+
+    "_comment19":"HOME(sectionB)",
+    "You can quickly pick a category from here by clicking on one of the following icons1":"You can quickly pick a category from here by clicking on one of the following icons",
+    "Compare":"Compare",
+    "Cars Side-by-Side":"Cars Side-by-Side",
+    "Pricing1":"Pricing",
+    "Rating":"Rating",
+    "Consumer rating":"Consumer rating",
+    "Waranty":"Waranty",
+    "Features":"Features",
+    "Specifications":"Specifications",
+    "Fuel economy":"Fuel economy",
+    "Dimensions":"Dimensions",
+    "Ownership costs":"Ownership costs",
+    "Colors":"Colors",
+    "Select make":"Select make",
+    "Select make1":"1",
+    "Select make2":"2",
+    "Select year":"Select year",
+    "Select year1":"1",
+    "Select year2":"2",
+    "Select model":"Select model",
+    "Select model1":"1",
+    "Select model2":"2",
+    "Select engine":"Select engine",
+    "Select engine1":"1",
+    "Select engine2":"2"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,7 +1,24 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 import '../styles/Nav.css';
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
+import i18n from '../i18n';
+
+
+const changelanguage = (lan) => {
+  return () =>{
+    i18n.changeLanguage(lan);
+  }
+}
+
 const Nav = () => {
+  const { t, i18n } = useTranslation();
+
+  
+
   return (
     <div className="nav-container d-flex">
       <nav className="navbar navbar-expand-xl w-100 navbar-dark">
@@ -26,7 +43,7 @@ const Nav = () => {
                 className="nav-link"
                 to="/cardetail"
                 activeClassName="active-link">
-                Prices & spec
+                {t("Prices & spec")}
               </NavLink>
             </li>
             <li className="nav-item">
@@ -34,18 +51,18 @@ const Nav = () => {
                 className="nav-link"
                 to="/newcarpricing"
                 activeClassName="active-link">
-                New Cars
+                {t("New Cars")}
               </NavLink>
             </li>
 
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Reviews
+                {t("Reviews")}
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                News
+              {t("News")}
               </a>
             </li>
             <li className="nav-item">
@@ -53,14 +70,18 @@ const Nav = () => {
                 className="nav-link"
                 to="/dealer-details"
                 activeClassName="active-link">
-                Dealers
+                {t("Dealers")}
               </NavLink>
             </li>
           </ul>
           <div className="user-container">
             <i className="fas fa-user-alt pr-2 user-icon"></i>
-            <span className="username">Andrew Peki</span>
+            <span className="username">{t("Andrew Peki")}</span>
           </div>
+
+          <button onClick={changelanguage("ar")}>Ar</button>
+          <button onClick={changelanguage("en")}>en</button>
+
         </div>
       </nav>
     </div>

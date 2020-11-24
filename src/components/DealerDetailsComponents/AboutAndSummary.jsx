@@ -9,14 +9,21 @@ import arrowForward from '../../images/dealerdetails/arrow-forward.png';
 // Component
 import SummaryCar from '../SubComponents/SummaryCar/SummaryCar';
 
+
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 const AboutAndSummary = () => {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<section className='About__And__Summary custom__container py-5'>
 			<div className='row'>
 				<div className='col-sm-12 col-lg-7'>
 					<div className='About__And__Summary__Title'>
 						<div className='d-flex justify-content-start align-items-center'>
-							<h2 className='text-capitalize my-2'>About</h2>
+							<h2 className='text-capitalize my-2'>{t("About")}</h2>
 						</div>
 						<img
 							className='img-fluid mt-3'
@@ -35,17 +42,17 @@ const AboutAndSummary = () => {
 						<div className='About__And__Summary__Inputs d-flex'>
 							<select className='About__And__Summary__Select'>
 								<option value='' disabled selected>
-									Select Countary
+									{t("Select Countary")}
 								</option>
-								<option>op1</option>
-								<option>op2</option>
+								<option>{t("Select Countary1")}</option>
+								<option>{t("Select Countary2")}</option>
 							</select>
 							<select className='About__And__Summary__Select'>
 								<option value='' disabled selected>
-									Select Make
+									{t("Select Make")}
 								</option>
-								<option>op1</option>
-								<option>op2</option>
+								<option>{t("Select Make1")}</option>
+								<option>{t("Select Make2")}</option>
 							</select>
 						</div>
 					</div>
@@ -70,7 +77,7 @@ const AboutAndSummary = () => {
 				<div className='col-sm-12 col-lg-5'>
 					<div className='About__And__Summary__Title'>
 						<div className='d-flex justify-content-start align-items-center'>
-							<h2 className='text-capitalize my-2'>Summary</h2>
+							<h2 className='text-capitalize my-2'>{t("Summary")}</h2>
 						</div>
 						<img
 							className='img-fluid mt-3'
@@ -87,13 +94,12 @@ const AboutAndSummary = () => {
 									alt='arrowForward'
 								/>
 								<h5 className='font-weight-bold text-capitalize mb-0 ml-3'>
-									Location
+									{t("Location")}
 								</h5>
 							</div>
 							<div>
 								<p className='ml-4 mt-3 mb-0 main__gary'>
-									4th St - Al QuozAl Quoz Industrial Area 3 -
-									Dubai - United Arab Emirates
+									{t("Address")}
 								</p>
 							</div>
 						</div>
@@ -106,7 +112,7 @@ const AboutAndSummary = () => {
 									alt='arrowForward'
 								/>
 								<h5 className='font-weight-bold text-capitalize mb-0 ml-3'>
-									Numbers
+									{t("Numbers")}
 								</h5>
 							</div>
 							<div>
@@ -194,12 +200,12 @@ const AboutAndSummary = () => {
 									alt='arrowForward'
 								/>
 								<h5 className='font-weight-bold text-capitalize mb-0 ml-3'>
-									Start date
+									{t("Start date")}
 								</h5>
 							</div>
 							<div>
 								<p className='ml-4 mt-3 mb-0 main__gary'>
-									Jun, 1988
+									{t("date")}
 								</p>
 							</div>
 						</div>
@@ -212,7 +218,7 @@ const AboutAndSummary = () => {
 									alt='arrowForward'
 								/>
 								<h5 className='font-weight-bold text-capitalize mb-0 ml-3'>
-									Total number of cars they have
+									{t("Total number")}
 								</h5>
 							</div>
 							<div>

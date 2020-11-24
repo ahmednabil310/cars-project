@@ -1,7 +1,13 @@
 import React from 'react';
 import '../../styles/NewCarPricingStyles/CarsTable.css';
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 function CarsCard({ img, price, arrow, mb }) {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className='carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5'>
 			<div className='carsTable-cardimg' style={{marginBottom: mb}}>
@@ -46,7 +52,7 @@ function CarsCard({ img, price, arrow, mb }) {
 					</p>
 				</div>
 				<a href='#' className='carsTable-shop'>
-					Shop cars under $20k
+					{t("Shop cars under $20k")}
 				</a>
 			</div>
 		</div>

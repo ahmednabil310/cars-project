@@ -9,7 +9,14 @@ import startsGroup from '../../images/starts_group.png';
 // Model Component
 import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
+
 const CustomerReviews = () => {
+	const { t, i18n } = useTranslation();
+
 	const [modalShow, setModalShow] = useState(false);
 
 	const [review, setReview] = useState({
@@ -39,13 +46,13 @@ const CustomerReviews = () => {
 								style={{ marginBottom: 0 }}
 								className='customer-review-title'
 							>
-								<span className='special'>Customer</span>{' '}
-								Reviews
+								<span className='special'>{t("Customer")}</span>{' '}
+								{t("Reviews1")}
 							</h3>
 							<div className='d-flex align-items-center'>
 								<h6 className='customer-review-sub-title'>
-									Read what other owners think about the 2020
-									Genesis G80.
+									{t("Read what other owners think about the 2020 Genesis G80")}
+									
 								</h6>
 								<svg
 									id='Component_6_1'
@@ -129,7 +136,7 @@ const CustomerReviews = () => {
 										fill='#fff'
 									/>
 								</svg>
-								Write a review
+								{t("Write a review")}
 							</div>
 						</button>
 						<ModelFields
@@ -150,13 +157,13 @@ const CustomerReviews = () => {
 								{title.length === 0 && (
 									<div className='position-absolute review__input_title__placeholder'>
 										<span className='main__gary mr-2'>
-											Review title
+											{t("Review title")}
 										</span>
 										<span
 											className='main__gary ml-2'
 											style={{ color: '#C4C4C4' }}
 										>
-											64 letters or numbers
+											{t("64 letters or numbers")}
 										</span>
 									</div>
 								)}
@@ -172,7 +179,7 @@ const CustomerReviews = () => {
 								{rating.length === 0 && (
 									<div className='position-absolute review__input_rating__placeholder'>
 										<span className='main__gary mr-2'>
-											Review rating
+											{t("Review rating")}
 										</span>
 										<span
 											className='ml-2 d-inline-block'
@@ -201,13 +208,13 @@ const CustomerReviews = () => {
 										style={{ top: '12%', left: '6%' }}
 									>
 										<span className='main__gary mr-2'>
-											Review details
+											{t("Review details")}
 										</span>
 										<span
 											className='main__gary ml-2'
 											style={{ color: '#C4C4C4' }}
 										>
-											360 letters or numbers
+											{t("360 letters or numbers")}
 										</span>
 									</div>
 								)}
@@ -231,9 +238,9 @@ const CustomerReviews = () => {
 								className='big-star'
 								height='27px'
 							/>
-							<p className='mt-3'>10 Reviews</p>
-							<p>See all reviews</p>
-							<p className=''>Write a review</p>
+							<p className='mt-3'>{t("10 Reviews")}</p>
+							<p>{t("See all reviews")}</p>
+							<p className=''>{t("Write a review")}</p>
 						</div>
 					</div>
 					<div className='col-sm-12 col-md-12 col-lg-6 offset-lg-1'>
@@ -362,10 +369,10 @@ const CustomerReviews = () => {
 				</div>
 
 				<div className='consumer-reviews'>
-					<h1>Most helpful consumer reviews</h1>
+					<h1>{t("Most helpful consumer reviews")}</h1>
 					<div className='review'>
 						<div className='review-title d-flex flex-row flex-wrap align-items-center'>
-							<h2>My 3rd consecutive Genesis</h2>
+							<h2>{t("My 3rd consecutive Genesis")}</h2>
 							<img
 								src={bigstars}
 								className='mb-1'
@@ -373,41 +380,14 @@ const CustomerReviews = () => {
 							/>
 						</div>
 						<p>
-							My 2020 G80 was a no brainer for me when my 2018 G80
-							lease was up. I started my love of the Genesis in
-							2012 with the prior generation, when it was under
-							the Hyundai nameplate. In 2015 I leased the current
-							generation Genesis (still under Hyundai nameplate).
-							2018 marked my 1st under its own division. I say the
-							G80 is a no brainer simply because there isn’t any
-							other vehicle within its price category that gives
-							you as much as three G80 does. I’ve always had the
-							3.8 V6 and never once thought I needed more power. I
-							enjoy the ultra quiet cabin as well as the
-							exceptional seat comfort. The 3 years of Genesis
-							valet is icing on the cake, never having to return
-							to the dealer (for any reason) the valet service is
-							simple thru the Genesis app on my smart phone. My
-							car is picked up at my place of employment, a loaner
-							dropped off and then returned when service is
-							completed (nicely detailed, I might add). I always
-							choose one convenience option package up from the
-							base model, which gives me anything from smart
-							cruise to lane departure to 3d view cameras to aid
-							in parking, also included is heated seats front and
-							back as well as air conditioned front seats. The
-							Upgraded Lexicon sound system is among the best I’ve
-							experienced in a vehicle. My combined MPG (mostly
-							city than highway) is always around 21 mpg. I really
-							hoped the GV80 suv was available when my lease was
-							up but I’ll look forward to that in the next 30
-							months while I enjoy my 4 Genesis vehicle.
+							{t("My 3rd consecutive Genesis-p")}
+							
 						</p>
-						<span>Phil Wilson</span>
-						<span>Date : 03/17/2020.</span>
-						<span>3.8 4dr Sedan (3.8L 6cyl 8A)</span>
+						<span>{t("Phil Wilson")}</span>
+						<span>{t("date-cons")}</span>
+						<span>{t("detail-car")}</span>
 						<span className='last'>
-							50 people like this comment
+							{t("likes")}
 						</span>
 						<svg
 							className='cursor-pointer'
@@ -427,7 +407,7 @@ const CustomerReviews = () => {
 					</div>
 					<div className='review'>
 						<div className='review-title d-flex flex-row flex-wrap align-items-center'>
-							<h2>My 3rd consecutive Genesis</h2>
+							<h2>{t("My 3rd consecutive Genesis")}</h2>
 							<img
 								src={bigstars}
 								className='mb-1'
@@ -435,20 +415,14 @@ const CustomerReviews = () => {
 							/>
 						</div>
 						<p>
-							I just took delivery of a 2020 G80 5.0 Ultimate
-							model. Last year for the G80 V8. This car is
-							impressive in so many ways. It may not quite match
-							the German V8 cars for power, but for $20,000 less
-							it is very impressive nonetheless. I think 420 HP is
-							plenty for me. In addition, Genesis is rated higher
-							than the German brands for reliability. If you don’t
-							need the perceived “snob appeal” of
+							{t("My 3rd consecutive Genesis-p2")}
+							
 						</p>
-						<span>Phil Wilson</span>
-						<span>Date : 03/17/2020.</span>
-						<span>3.8 4dr Sedan (3.8L 6cyl 8A)</span>
+						<span>{t("Phil Wilson")}</span>
+						<span>{t("date-cons")}</span>
+						<span>{t("detail-car")}</span>
 						<span className='last'>
-							50 people like this comment
+							{t("likes")}
 						</span>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -467,7 +441,7 @@ const CustomerReviews = () => {
 					</div>
 					<div className='review'>
 						<div className='review-title d-flex flex-row flex-wrap align-items-center'>
-							<h2>My 3rd consecutive Genesis</h2>
+							<h2>{t("My 3rd consecutive Genesis")}</h2>
 							<img
 								src={bigstars}
 								className='mb-1'
@@ -475,14 +449,14 @@ const CustomerReviews = () => {
 							/>
 						</div>
 						<p>
-							Stylish and comfortable. Ride a bit stiff but
-							getting use to it. Features galore.
+						{t("My 3rd consecutive Genesis-p3")}
+							
 						</p>
-						<span>Phil Wilson</span>
-						<span>Date : 03/17/2020.</span>
-						<span>3.8 4dr Sedan (3.8L 6cyl 8A)</span>
+						<span>{t("Phil Wilson")}</span>
+						<span>{t("date-cons")}</span>
+						<span>{t("detail-car")}</span>
 						<span className='last'>
-							50 people like this comment
+							{t("likes")}
 						</span>
 						<svg
 							className='cursor-pointer'
