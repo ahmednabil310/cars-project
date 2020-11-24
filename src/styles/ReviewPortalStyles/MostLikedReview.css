@@ -5,28 +5,92 @@
     color: #727272;
     font-size: 30px;
     font-weight: bold;
-    margin: 40px 0px;
+    margin: 30px 0px;
 }
 .MostLikeReview_cards{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.MostLikeReview_participantCard{
+.MostLikeReview_cardContainer{
+    margin-top: 22px;
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.mostLikeReview_desc{
+    color: #727272;
+    margin-bottom: 4%;
+    font-weight: 500;
 }
 .mostLikeReview_title{
-    margin-top: 20px;
+    margin: 5% 0;
     color: #D53535;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.mostLikedReviewCarCard_img{
+    width:37%;
+    height: 95px;
+    border-radius: 20px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border: 0.1px solid white;
+    margin-right: 10%;
+}
+.mostLikedReviewCarCard_details{}
+.mostLikedReviewCarCard_title{
+    color: #727272;
     font-size: 20px;
     font-weight: bold;
+}
+.mostLikedReviewCarCard_desc{
+    color: #727272;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+
+
+
+.mostLikedReviewParticipantCard_img{
+    width:30%;
+    height: 90px;
+    border-radius: 20px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border: 0.1px solid white;
+    margin-right: 10%;
+}
+.mostLikedReviewParticipantCard_details{}
+.mostLikedReviewParticipantCard_title{
+    color: #727272;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mostLikedReviewParticipantCard_subTitle{
+    color: #727272;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .mostLikedReviewCarCard_img{
+        width: 25%;
+    }
+    .mostLikedReviewParticipantCard_img{
+        width: 20%;
+    }
 
 }
-.mostLikeReview_desc{
-    margin-top: 10px;
-    color: #727272;
-    margin-bottom: 70px;
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .mostLikedReviewCarCard_img{
+        width: 25%;
+    }
+    .mostLikedReviewParticipantCard_img{
+        width: 20%;
+    }
 }

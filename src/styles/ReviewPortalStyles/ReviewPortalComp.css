@@ -1,3 +1,6 @@
+.paddingSchema{
+    padding:0px 110px;
+}
 .ReviewPortalTitle{
     padding: 22px 110px;
     background: #727272;
@@ -81,6 +84,66 @@
     margin-left: auto;
 }
 
+.writeReviewBtn{
+    height:85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    background: #D53535;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .paddingSchema{
+        padding:0px 20px;
+    }
+    .ReviewPortalTitle{
+        padding: 22px 20px;
+        font-size: 30px;
+    }
 
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .paddingSchema{
+        padding:0px 20px;
+    }
+    .ReviewPortalTitle{
+        padding: 22px 20px;
+        font-size: 40px;
+    }
+    .mostLikedReviewCarCard_img{
+        width: 25%;
+    }
+    .mostLikedReviewParticipantCard_img{
+        width: 20%;
+    }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .paddingSchema{
+        padding:0px 20px;
+    }
+    .ReviewPortalTitle{
+        padding: 22px 20px;
+    }
+    .reviewPortal_sectionTitle{
+        font-size: 25px;
+    }
+    .mostLikedReviewCarCard_img{
+        width: 25%;
+
+    }
+    .mostLikedReviewParticipantCard_img{
+        width: 20%;
+    }
+}
