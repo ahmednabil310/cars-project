@@ -40,7 +40,6 @@ const GetCarMake=async(year)=>{
     try {
         const res = await server.get(`/api/Car/GetCarMake?Year=${year}`,config)
         if (res.request.readyState === 4 && res.request.status === 200) {    
-                console.log(res);
         dispatch({
             type : 'GETCARMAKE',
             payload : res.data
@@ -132,7 +131,6 @@ const GetCarData=async(id)=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetCarData?Id=${id}`,config)
-        console.log(res);
         if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type : 'GETCARDATA',
@@ -156,7 +154,6 @@ const GetTopRatedCars=async()=>{
     } 
     try {
         const res = await server.get('/api/Car/GetTopRatedCars',config)
-        console.log(res,"jj");
         if (res.request.readyState === 4 && res.request.status === 200) {    
         dispatch({
             type :"GETTOPRATED",
@@ -194,7 +191,6 @@ const GetCarByCategory =async(catagry)=>{
     } 
     try {
         const res = await server.get(`/api/Car/GetCarByCategory?category=${catagry}`,config)
-        console.log(res,"jjll");
         if (res.request.readyState === 4 && res.request.status === 200) {   
         dispatch({
             type : 'GETCARBTCATAGRY',

@@ -9,7 +9,8 @@ const CarsAvailableDetails=(props)=>{
    const [SelectedCountry,setSelectedCountry]=useState('default')
    const [SelectedBrand,setSelectedBrand]=useState('default')
 
-   const {CatagriodCars
+   const {
+     CatagriodCars
     ,GetCarByCategory
     ,CurrentName
     ,Year,
@@ -21,18 +22,17 @@ const CarsAvailableDetails=(props)=>{
 
   useEffect(()=>{
       if(CurrentName !== null){
-        console.log(CurrentName);
         GetCarByCategory(CurrentName)
       }
      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[CurrentName])
 
+  console.log(CatagriodCars);
 
   useEffect(()=>{
       GetYear()
         // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  console.log(Year);
 
   const handleyearChange=(e)=>{
     GetCarMake(e.target.value)
@@ -77,10 +77,10 @@ const CarsAvailableDetails=(props)=>{
             onChange={handleyearChange}
             defaultValue={SelectedBrand}>
             <option value="default" disabled>
-              Brand
+              year
             </option>
-            {Year.result === undefined ? console.log('nullable') : Year.result.map((item, index) => 
-							 (<option key={item.year}  value={item.year} >{item.year}</option>))}
+            {Year.result !== undefined ?Year.result.map((item, index) => 
+							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
 							</select>
 
           <select
@@ -89,12 +89,12 @@ const CarsAvailableDetails=(props)=>{
             style={{ width: '150px' }}
             defaultValue={SelectedCountry}>
             <option value="default" disabled>
-              Country
+              maker
             </option>
-            {Maker.result === undefined ? console.log('null5') :
+            {Maker.result !== undefined ? 
              Maker.result.map((item, index) => 
 							 (<option key={item.make}  value={item.make} >
-                 {item.make}</option>))}
+                 {item.make}</option>)) :""}
           </select>
 
           <button
@@ -158,10 +158,10 @@ const CarsAvailableDetails=(props)=>{
                 defaultValue={SelectedBrand}>
                   onChange={handleyearChange}
                 <option value="default" disabled>
-                  Brand
+                  year
                 </option>
-                {Year.result === undefined ? console.log('nullable') : Year.result.map((item, index) => 
-							 (<option key={item.year}  value={item.year} >{item.year}</option>))}
+                {Year.result !== undefined ? Year.result.map((item, index) => 
+							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
               </select>
 
               <select
@@ -170,12 +170,12 @@ const CarsAvailableDetails=(props)=>{
                 style={{ width: '150px' }}
                 defaultValue={SelectedCountry}>
                 <option value="default" disabled>
-                  Country
+                  maker
                 </option>
-                {Maker.result === undefined ? console.log('null5') :
+                {Maker.result !== undefined ? 
                    Maker.result.map((item, index) => 
 							 (<option key={item.make}  value={item.make} >
-                 {item.make}</option>))}
+                 {item.make}</option>)):""}
               </select>
 
               <button

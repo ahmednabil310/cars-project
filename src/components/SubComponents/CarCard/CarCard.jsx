@@ -19,14 +19,11 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 		 
 	useEffect(() => {
 		if (CurrentEngine !== null) {
-			console.log(CurrentEngine)
 			GetCarData(CurrentEngine)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [CurrentEngine])
- 
-	console.log(CarData);
-	
+  console.log(CarData);
 
 	return (
 		<div>
@@ -63,11 +60,12 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 					{/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
 					<div className='Car__Image__Gallery d-flex flex-column '>
 						{CarData !== null ?
+						<Link to="/cardetail">
 						<img
 							className='img-fluid'
 							src={CarData.result.image_1}
 							alt='gallery'
-						/> : ""
+						/> </Link>: ""
 						}
 						<p className='mb-0 ml-3 text-white'>View all photos</p>
 					</div>
@@ -93,7 +91,6 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 					</h4>
 					<p className='main__gary pl-4 mb-0'>
 						<strong>
-							      <StarsRating rating={5} />
 							<sub style={{ position: 'relative', top: '0px' }}>
 								8.9/ 10
 							</sub>{' '}
@@ -103,6 +100,7 @@ const CarCard = ({ title, price, rating, imageUrl, closeModel }) => {
 						Pros & Cons
 					</p>
 					<ul class='fa-ul px-2'>
+						
 						<li>
 							<span class='fa-li'>
 								<i class='fas fa-check'></i>

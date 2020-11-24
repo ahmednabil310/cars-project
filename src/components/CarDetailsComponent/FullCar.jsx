@@ -11,13 +11,11 @@ const FullCar = () => {
 		 
 	useEffect(() => {
 		if (CurrentEngine !== null) {
-			console.log(CurrentEngine)
 			GetCarData(CurrentEngine)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [CurrentEngine])
  
-	console.log(CarData);
   return (
     <div className="fullcar-container">
       <div className="row">

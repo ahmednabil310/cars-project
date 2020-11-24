@@ -65,7 +65,6 @@ const Section_B = () => {
 		setMakers(e.target.value)
 		//rendering Model
 		 GetCarSubModel(e.target.value,years)
-		 console.log(Cars);
 		setMake(e.target.value)
 	}
 	
@@ -79,13 +78,10 @@ const Section_B = () => {
 	}
 	// handle engine change
 	const handleEngineSelector=(e)=>{
-		console.log(e.target.selectedIndex);
 		let index = e.target.selectedIndex
 		let element = e.target.childNodes[index]
-		console.log(element.id,"id");
 		setEngine(e.target.value)
 		setEngineId(element.id)
-		console.log(engineId,"lk");
 	} 
 	
 	const { show, card1, card2, card3, card4 } = cardShow;
@@ -169,8 +165,6 @@ const Section_B = () => {
 		});
 	};
  
-	console.log(CurrentEngine);
-
 
 	return (
 		<div className='section-b-homepage-container'>
@@ -345,8 +339,8 @@ const Section_B = () => {
 								name='year'
 								onChange={handleSelectYear} >
                                  <option defaultValue>Select year</option>
-							{Year.result === undefined ? console.log('nullable') : Year.result.map((item, index) => 
-							(<option key={item.year}  value={item.year} >{item.year}</option>))}
+							{Year.result !== undefined ? Year.result.map((item, index) => 
+							(<option key={item.year}  value={item.year} >{item.year}</option>)):""}
 							</select>
 							
 						</div>
@@ -361,8 +355,8 @@ const Section_B = () => {
 								onChange={handleMakeSelector}
 							>
 								<option defaultValue>Select make</option>
-								{Maker.result === undefined ? console.log('nullable') : Maker.result.map((item, index) => 
-							(<option key={item.make}  value={item.make} >{item.make}</option>))}
+								{Maker.result !== undefined ?  Maker.result.map((item, index) => 
+							(<option key={item.make}  value={item.make} >{item.make}</option>)):""}
 							</select>
 						</div>
 						<div class='form-group'>
@@ -377,8 +371,8 @@ const Section_B = () => {
 
 							>
 								<option defaultValue>Select model</option>
-								{Cars.result === undefined ? console.log('null2') : Cars.result.map((item, index) => 
-							(<option key={item.model}  value={item.model} >{item.model}</option>))}
+								{Cars.result !== undefined ?  Cars.result.map((item, index) => 
+							(<option key={item.model}  value={item.model} >{item.model}</option>)):""}
 							</select>
 						</div>
 						<div class='form-group'>
@@ -393,9 +387,10 @@ const Section_B = () => {
 								onChange={handleEngineSelector}
 							>
 								<option defaultValue>Select engine</option>
-								{Engine.result === undefined ? console.log('null3') :
+								{Engine.result !== undefined ?
 								 Engine.result.map((item, index) => 
-							(<option key={item.engine} id={item.id}   value={item.engine} >{item.engine}</option>))}
+							(<option key={item.engine} id={item.id}   value={item.engine} >{item.engine}</option>))
+							:""}
 							</select>
 						</div>
 					</ModelFields>

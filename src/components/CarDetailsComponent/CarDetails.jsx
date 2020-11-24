@@ -8,13 +8,13 @@ const CarDetails = () => {
 		 
 	useEffect(() => {
 		if (CurrentEngine !== null) {
-			console.log(CurrentEngine)
 			GetCarData(CurrentEngine)
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [CurrentEngine])
  
-	console.log(CarData);
+  //console.log(CarData);
+  
   return (
     <div className="car-details-container">
       <div className="row">

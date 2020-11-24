@@ -1,33 +1,29 @@
 .Car__Header p {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .Car__Header .Close__Btn {
-	width: 16px;
-	cursor: pointer;
+  width: 16px;
+  cursor: pointer;
 }
 
 .Car__Card {
-	border: 1px solid var(--mainRed);
-	box-shadow: 2px 6px 9px #707070;
+  border: 1px solid var(--mainRed);
+  box-shadow: 2px 6px 9px #707070;
 }
 
 .Car__Image__Gallery {
-	background-color: var(--mainGray);
-}
-
-.Car__Image__Gallery img {
-	transform: rotate(90deg);
+  background-color: var(--mainGray);
 }
 
 .Car__Price p:last-child {
-	background-color: #efefef;
+  background-color: #efefef;
 }
 
 .Full__Review__Btn {
-	border-color: var(--mainRed);
+  border-color: var(--mainRed);
 }
 
 .bg_custom_gray {
-	background-color: #efefef;
+  background-color: #efefef;
 }

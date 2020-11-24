@@ -7,7 +7,7 @@ const SingleCar = ({ name, image }) => {
   return (
     <div className="col-md-4 col-12   cars-container d-flex flex-column align-items-center" key={name}>
       <img src={image} alt="img" />
-      <Link to='/cars-available'  onClick={()=>setCurrentName(name)}  className="stretched-link">
+      <Link to='/cars-available'  onClick={()=>setCurrentName(name)}  style={{textDecoration:"none"}}  className="stretched-link">
         <h4 className="car-name">{name}</h4>
       </Link>
     </div>
