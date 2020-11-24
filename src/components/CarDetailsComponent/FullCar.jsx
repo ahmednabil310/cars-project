@@ -1,7 +1,10 @@
+import React,{useState,useContext,useEffect} from 'react';
+
 import '../../styles/DealerPageStyles/FullCar.css';
 import flag from '../../images/dealer/korea.png';
 import stars from '../../images/dealer/stars.png';
 import SingleDetail from '../SubComponents/SingleDetail/SingleDetail';
+<<<<<<< HEAD
 
 
 // the hook
@@ -10,6 +13,20 @@ import { useTranslation } from 'react-i18next';
 const FullCar = () => {
   const { t, i18n } = useTranslation();
 
+=======
+import {carContext} from '../../contexts/cars/carState'
+
+const FullCar = () => {
+  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+		 
+	useEffect(() => {
+		if (CurrentEngine !== null) {
+			GetCarData(CurrentEngine)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [CurrentEngine])
+ 
+>>>>>>> master
   return (
     <div className="fullcar-container">
       <div className="row">

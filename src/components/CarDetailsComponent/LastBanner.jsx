@@ -1,5 +1,7 @@
+import React,{useState,useContext,useEffect} from 'react';
 import '../../styles/DealerPageStyles/LastBanner.css';
 
+<<<<<<< HEAD
 
 // the hook
 import { useTranslation } from 'react-i18next';
@@ -8,6 +10,20 @@ import { useTranslation } from 'react-i18next';
 const LastBanner = () => {
   const { t, i18n } = useTranslation();
 
+=======
+import {carContext} from '../../contexts/cars/carState'
+
+const LastBanner = () => {
+  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
+		 
+	useEffect(() => {
+		if (CurrentEngine !== null) {
+			GetCarData(CurrentEngine)
+		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [CurrentEngine])
+ 
+>>>>>>> master
   return (
     <div className="last-banner d-flex py-5">
       <div className="container-fluid ">

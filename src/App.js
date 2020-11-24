@@ -8,6 +8,7 @@ import CarCard from './components/SubComponents/CarCard/CarCard';
 import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
 import {CarProvider} from './contexts/cars/carState'
+import {CommentProvider} from './contexts/comments/commentState'
 
 
 // the hook
@@ -17,6 +18,7 @@ function App() {
   const { t, i18n } = useTranslation();
 
   return (
+    <CommentProvider>
   <CarProvider>
     <div className="App">
       <Nav />
@@ -29,7 +31,8 @@ function App() {
       </Switch>
       <Footer />
     </div>
-    </CarProvider>  
+    </CarProvider> 
+     </CommentProvider>
   );
 }
 
