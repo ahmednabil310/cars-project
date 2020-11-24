@@ -8,26 +8,21 @@ const CarsAvailableDetails=(props)=>{
    
    const [SelectedCountry,setSelectedCountry]=useState('default')
    const [SelectedBrand,setSelectedBrand]=useState('default')
-
+   
+   const [year,setYear]=useState([])
+   
    const {
-     CatagriodCars
-    ,GetCarByCategory
-    ,CurrentName
-    ,Year,
+    Year,
     GetYear,
     Maker
-   ,GetCarMake}=useContext(carContext) 
+   ,GetCarMake,
+   Cars,
+   GetCarSubModel
+    }=useContext(carContext) 
 
  
 
-  useEffect(()=>{
-      if(CurrentName !== null){
-        GetCarByCategory(CurrentName)
-      }
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[CurrentName])
-
-  console.log(CatagriodCars);
+  
 
   useEffect(()=>{
       GetYear()
@@ -36,8 +31,14 @@ const CarsAvailableDetails=(props)=>{
 
   const handleyearChange=(e)=>{
     GetCarMake(e.target.value)
+    setYear(e.target.value)
   }
 
+  const handleMakeChange=(e)=>{
+     GetCarSubModel(e.target.value,year) 
+  }
+
+  console.log(Cars);
 
   return(
     <div>
@@ -87,7 +88,9 @@ const CarsAvailableDetails=(props)=>{
             required
             className="About__And__Summary__Select mx-3"
             style={{ width: '150px' }}
-            defaultValue={SelectedCountry}>
+            defaultValue={SelectedCountry} 
+            onChange={handleMakeChange}
+            >
             <option value="default" disabled>
               maker
             </option>
@@ -115,7 +118,7 @@ const CarsAvailableDetails=(props)=>{
                 fontWeight: 'bold',
                 fontSize: '18px',
               }}>
-              New {SelectedBrand} for Sale in
+              New {SelectedBrand} for Sale in {" "}
               {SelectedCountry}
             </a>
             <a
@@ -125,7 +128,7 @@ const CarsAvailableDetails=(props)=>{
                 fontWeight: 'bold',
                 fontSize: '18px',
               }}>
-              Used {SelectedBrand} for Sale in
+              Used {SelectedBrand} for Sale in {" "}
               {SelectedCountry}
             </a>
           </div>
