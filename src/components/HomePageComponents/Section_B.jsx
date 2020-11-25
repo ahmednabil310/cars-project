@@ -9,11 +9,11 @@ import car2 from '../../images/car-details/car2.png';
 import car3 from '../../images/car-details/car3.png';
 import car4 from '../../images/car-details/car4.png';
 
+// the hook
+import { useTranslation } from 'react-i18next';
 
 const Section_B = () => {
-  
-
-   const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   const [cardShow, setCardShow] = useState({
     show: false,
@@ -27,31 +27,39 @@ const Section_B = () => {
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [engine, setEngine] = useState('');
-  
 
-  const handleYearChange=(e)=>{
-    setYear(e.target.value)
-}
+  const handleYearChange = (e) => {
+    setYear(e.target.value);
+  };
 
-  const handleMakeChange=(e)=>{
-      setMake(e.target.value)
-  }
+  const handleMakeChange = (e) => {
+    setMake(e.target.value);
+  };
 
+  const handleModelChange = (e) => {
+    setModel(e.target.value);
+  };
 
-  const handleModelChange=(e)=>{
-    setModel(e.target.value)
-}
+  const handleEngineChange = (e) => {
+    setEngine(e.target.value);
+  };
 
- 
-const handleEngineChange=(e)=>{
-  setEngine(e.target.value)
-}
+  const closeModelHandler3 = () => {
+    setCardShow({
+      ...cardShow,
+      card3: false,
+    });
+  };
 
-
+  const closeModelHandler4 = () => {
+    setCardShow({
+      ...cardShow,
+      card4: false,
+    });
+  };
   const { show, card1, card2, card3, card4 } = cardShow;
 
   const addVechileHandler = () => {
-
     setYear('');
     setMake('');
     setModel('');
@@ -112,25 +120,14 @@ const handleEngineChange=(e)=>{
     });
   };
 
-  const closeModelHandler3 = () => {
-    setCardShow({
-      ...cardShow,
-      card3: false,
-    });
-  };
-
-  const closeModelHandler4 = () => {
-    setCardShow({
-      ...cardShow,
-      card4: false,
-    });
-  };
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="section-b-homepage-container">
       <div className="d-flex sub-container">
         <h3>
-          <span className="special">Compare</span> Cars Side-by-Side
+          <span className="special">{t('Compare')}</span>{' '}
+          {t('Cars Side-by-Side')}
         </h3>
         <svg
           id="Component_6_2"
@@ -146,8 +143,8 @@ const handleEngineChange=(e)=>{
               x2="0.5"
               y2="1"
               gradientUnits="objectBoundingBox">
-              <stop offset="0" stopColor="#d53535" />
-              <stop offset="1" stopColor="#6b1b1b" />
+              <stop offset="0" stop-color="#d53535" />
+              <stop offset="1" stop-color="#6b1b1b" />
             </linearGradient>
             <linearGradient
               id="linear-gradient-2"
@@ -155,8 +152,8 @@ const handleEngineChange=(e)=>{
               x2="0.777"
               y2="1.686"
               gradientUnits="objectBoundingBox">
-              <stop offset="0" stopColor="#efefef" />
-              <stop offset="1" stopColor="#c4c4c4" />
+              <stop offset="0" stop-color="#efefef" />
+              <stop offset="1" stop-color="#c4c4c4" />
             </linearGradient>
           </defs>
           <path
@@ -182,53 +179,53 @@ const handleEngineChange=(e)=>{
               <ul className="navbar-nav ">
                 <li className="nav-item active">
                   <a className="nav-link" href="#">
-                    Pricing
+                    {t('Pricing1')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Rating
+                    {t('Rating')}
                   </a>
                 </li>
 
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Consumer rating
+                    {t('Consumer rating')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Waranty
+                    {t('Waranty')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Features
+                    {t('Features')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Specifications
+                    {t('Specifications')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Fuel economy
+                    {t('Fuel economy')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Dimensions
+                    {t('Dimensions')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Ownership costs
+                    {t('Ownership costs')}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Colors
+                    {t('Colors')}
                   </a>
                 </li>
               </ul>
@@ -268,66 +265,55 @@ const handleEngineChange=(e)=>{
             submitHandler={addVechileHandler}
             submitValid={engine}
             title="Vehicle">
-            <div className="form-group">
+            <div class="form-group">
               <select
-                className="form-control p-3 model__add__vehicle__select"
+                class="form-control p-3 model__add__vehicle__select"
                 style={{ height: 'auto' }}
-                name="year"
-                value={year}
-                onChange={handleYearChange}
-                >
-                <option defaultValue>Select year</option>
-                 <option>1</option>
-                 <option>2</option>
-
-              </select>
-            </div>
-            <div className="form-group">
-              <select
-                className="form-control p-3 model__add__vehicle__select"
-                id="exampleFormControlSelect1"
-                style={{ height: 'auto' }}
-                disabled={year === ''}
                 name="make"
-                value={make}
-                onChange={handleMakeChange}
-
-                >
-                <option defaultValue>Select make</option>
-                <option>1</option>
-                 <option>2</option>
+                value={make}>
+                <option defaultValue>{t('Select make')}</option>
+                <option value="1">{t('Select make')}</option>
+                <option value="2">{t('Select make')}</option>
               </select>
             </div>
-            <div className="form-group">
+            <div class="form-group">
               <select
-                className="form-control p-3 model__add__vehicle__select"
+                class="form-control p-3 model__add__vehicle__select"
                 id="exampleFormControlSelect1"
                 style={{ height: 'auto' }}
                 disabled={make === ''}
-                name="model"
-                value={model}
-                onChange={handleModelChange}
-
-            >
-                <option defaultValue>Select model</option>
-                <option>1</option>
-                 <option>2</option>
+                name="year"
+                value={year}>
+                <option defaultValue>{t('Select year')}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
               </select>
             </div>
-            <div className="form-group">
+            <div class="form-group">
               <select
-                className="form-control p-3 model__add__vehicle__select"
+                class="form-control p-3 model__add__vehicle__select"
+                id="exampleFormControlSelect1"
+                style={{ height: 'auto' }}
+                disabled={year === ''}
+                name="model"
+                value={model}>
+                <option defaultValue>{t('Select model')}</option>
+                <option value="1">{t('Select model1')}</option>
+                <option value="2">{t('Select model2')}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select
+                class="form-control p-3 model__add__vehicle__select"
                 id="exampleFormControlSelect1"
                 style={{ height: 'auto' }}
                 property="voucherCategoryClass"
                 disabled={model === ''}
                 name="engine"
-                value={engine}
-                onChange={handleEngineChange}
-                >
-                <option defaultValue>Select engine</option>
-                <option>1</option>
-                 <option>2</option>
+                value={engine}>
+                <option defaultValue>{t('Select engine')}</option>
+                <option value="1">{t('Select engine1')}</option>
+                <option value="2">{t('Select engine2')}</option>
               </select>
             </div>
           </ModelFields>

@@ -9,7 +9,13 @@ import CarsAvailable from './pages/CarsAvailable';
 import Footer from './components/Footer';
 import ReviewPortal from './pages/ReviewPortal';
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 function App() {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="App">
       <Nav />
@@ -22,7 +28,6 @@ function App() {
         <Route path="/car-reviews" component={ReviewPortal} />
       </Switch>
       <Footer />
-      {/* <CarCard /> */}
     </div>
   );
 }

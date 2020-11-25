@@ -1,17 +1,20 @@
-import React  from 'react';
+import React from 'react';
 import '../../styles/DealerPageStyles/CarsPros.css';
 import check from '../../images/dealer/check.png';
 import close from '../../images/dealer/close.png';
 import magic from '../../images/dealer/magic.png';
-
+import { useTranslation } from 'react-i18next';
 
 const CarsPros = () => {
+  // the hook
+
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="cars-pros-container">
       <div className="row">
         <div className="col-lg-4 col-md-12 car-pros">
-          <h3 className="pros">Pros</h3>
+          <h3 className="pros">{t('Pros')}</h3>
           <svg
             id="Component_6_11"
             data-name="Component 6 – 11"
@@ -56,15 +59,17 @@ const CarsPros = () => {
           </svg>
           <div className="pros-content pt-4">
             <img src={check} className="pr-4" />
-            <h2>Costs less than comparable luxury sedans in its class</h2>
+            <h2>
+              {t('Costs less than comparable luxury sedans in its class')}
+            </h2>
           </div>
           <div className="pros-content">
             <img src={check} className="pr-4" />
-            <h2>Roomy interior stays very quiet at highway speeds</h2>
+            <h2>{t('Roomy interior stays very quiet at highway speeds')}</h2>
           </div>
         </div>
         <div className="col-lg-4 col-md-12 car-cons">
-          <h3 className="cons">Cons</h3>
+          <h3 className="cons">{t('Cons')}</h3>
           <svg
             id="Component_6_11"
             data-name="Component 6 – 11"
@@ -110,17 +115,18 @@ const CarsPros = () => {
           <div className="pros-content pt-4">
             <img src={close} className="pr-4" />
             <h2>
-              Ride quality isn’t as cushy or refined as that of some rival
-              sedans
+              {t(
+                'Ride quality isn’t as cushy or refined as that of some rival sedans',
+              )}
             </h2>
           </div>
           <div className="pros-content">
             <img src={close} className="pr-4" />
-            <h2>Rear headroom is a little tight for this class</h2>
+            <h2>{t('Rear headroom is a little tight for this class')}</h2>
           </div>
         </div>
         <div className="col-lg-4 col-md-12 car-cons">
-          <h3 className="cons">What's New</h3>
+          <h3 className="cons">{t("What's New")}</h3>
           <svg
             id="Component_6_11"
             data-name="Component 6 – 11"
@@ -166,14 +172,17 @@ const CarsPros = () => {
           <div className="pros-content pt-4">
             <img src={magic} className="pr-4" />
             <h2>
-              New blind-spot collision-avoidance assist helps with lane changes
+              {t(
+                'New blind-spot collision-avoidance assist helps with lane changes',
+              )}
             </h2>
           </div>
           <div className="pros-content">
             <img src={magic} className="pr-4" />
             <h2>
-              Optional 9.2-inch infotainment system now has customizable home
-              screen
+              {t(
+                'Optional 9.2-inch infotainment system now has customizable home screen',
+              )}
             </h2>
           </div>
         </div>

@@ -8,7 +8,13 @@ import carImage2 from '../../images/dealerdetails/2.png';
 import carImage3 from '../../images/dealerdetails/3.png';
 import carImage4 from '../../images/dealerdetails/4.png';
 
+
+// the hook
+import { useTranslation } from 'react-i18next';
+
 const Banner = () => {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<div className='Banner position-relative'>
 			<div className='Banner__Overlay position-absolute w-100 h-100'></div>
@@ -19,7 +25,7 @@ const Banner = () => {
 						src={crown}
 						alt='crown'
 					/>
-					UAE CAR LEASE SERVICES
+					{t("UAE CAR LEASE SERVICES")}
 				</h2>
 			</div>
 			<div className='Banner__Images position-absolute'>
@@ -30,7 +36,7 @@ const Banner = () => {
 			</div>
 			<div className='Banner__Slugan bg-white position-absolute d-flex justify-content-center align-items-center flex-nowrap'>
 				<h4 className='main__red mb-0'>
-					UAE Car Lease Services - Card
+					{t("UAE Car Lease Services - Card")}
 				</h4>
 				<div
 					// className='d-inline-block'
