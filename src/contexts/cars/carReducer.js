@@ -53,7 +53,12 @@ export default (state, action) => {
                                          return {
                                              ...state,
                                              CurrentName : action.payload
-                                         }         
+                                         }   
+                                         case "SET_Current_Models":
+                                            return {
+                                                ...state,
+                                                currentModels : action.payload
+                                            }         
                           default:
                                  return state; 
     }

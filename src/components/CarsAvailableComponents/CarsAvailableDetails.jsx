@@ -76,7 +76,7 @@ const CarsAvailableDetails=(props)=>{
             onChange={handleyearChange}
             defaultValue={SelectedBrand}>
             <option value="default" disabled>
-              year
+              {"2020"}
             </option>
             {Year.result !== undefined ?Year.result.map((item, index) => 
 							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
@@ -90,7 +90,7 @@ const CarsAvailableDetails=(props)=>{
             onChange={handleMakeChange}
             >
             <option value="default" disabled>
-              maker
+              {CurrentName}
             </option>
             {Maker.result !== undefined ? 
              Maker.result.map((item, index) => 

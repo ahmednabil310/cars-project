@@ -3,36 +3,29 @@ import { carContext } from '../../contexts/cars/carState';
 import CarDetails from '../CarDetailsComponent/CarDetails';
 
 const CarsOfBrand = ({ SelectedBrand, SelectedCountry }) => {
-  const { GetCarByCategory, CurrentName, CatagriodCars } = useContext(
+  const {  CurrentName , GetCarSubModel,Cars } = useContext(
     carContext,
   );
+  
+  const [load,setLoad]=useState(true)
 
-  const [loader,setLoader] = useState(true)
- 
  useEffect(()=>{
-    fetchCarsDetails()
-    GetCarByCategory(CurrentName)
-    setLoader(false)
+     GetCarSubModel(CurrentName,2020)
   },[])
 
-  console.log(CatagriodCars);
+  if (Cars.length >0) {
+     setLoad(false) 
+  }
 
   const [CarsDetails, setCarsDetails] = useState([]);
   const fetchCarsDetails = () => {
     let SelectedBrands = SelectedBrand;
     let SelectedCountries = SelectedCountry;
- 
-   if (loader === false) {
-     setCarsDetails(
-      GetCarByCategory
-    ) 
-   }
-    
   }
   return (
     <div className=" row m-0">
-      {CarDetails.length > 0
-        ? CarsDetails.result.map((item, index) => {
+      {load === false 
+        ? Cars.result.map((item, index) => {
             return (
               <div
                 key={index}
@@ -41,7 +34,7 @@ const CarsOfBrand = ({ SelectedBrand, SelectedCountry }) => {
                 <div className="Cars-Available__container__carImgContainer__shadowBox" />
                 <img
                   className="Cars-Available__container__carImgContainer__img"
-                  src={item.image_1}></img>
+                  src={item.image_1}  alt="img"></img>
                 <div className="Cars-Available__container__carImgContainer__title">
                   {item.model}
                 </div>

@@ -14,7 +14,8 @@ const initialState = {
   CatagriodCars :[],
   ComparedCar :[],
   CurrentEngine : null,
-  CurrentName :null
+  CurrentName :null,
+  currentModels : null
 };
 
 // create context
@@ -214,6 +215,15 @@ const setCurrentName=(name)=>{
     }) 
 }
 
+//set currentName name
+ 
+const setCurrentModels=(models)=>{
+  dispatch({
+      type: "SET_Current_Models",
+      payload :models
+  }) 
+}
+
 // current engine
 const setcurrentEngine=(engine)=>{
     dispatch({
@@ -236,6 +246,7 @@ const setcurrentEngine=(engine)=>{
           ComparedCar : state.ComparedCar,
           CurrentEngine: state.CurrentEngine,
           CurrentName : state.CurrentName, 
+          currentModels : state.currentModels,
           GetCarMake,
           GetCarSubModel,
           GetYear,
@@ -246,7 +257,8 @@ const setcurrentEngine=(engine)=>{
           GetCarByCategory,
           CarComparsion,
           setCurrentName,
-          setcurrentEngine
+          setcurrentEngine,
+          setCurrentModels  
       }}
     >
       {children}
