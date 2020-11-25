@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
   return (
     <>
@@ -21,8 +19,8 @@ const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
               x2="0.5"
               y2="1"
               gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#d53535" />
-              <stop offset="1" stop-color="#6b1b1b" />
+              <stop offset="0" stopColor="#d53535" />
+              <stop offset="1" stopColor="#6b1b1b" />
             </linearGradient>
             <linearGradient
               id="linear-gradient-2"
@@ -30,8 +28,8 @@ const SingleCompare = ({ mainTitle, width, secondTitle, textColor }) => {
               x2="0.777"
               y2="1.686"
               gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#efefef" />
-              <stop offset="1" stop-color="#c4c4c4" />
+              <stop offset="0" stopColor="#efefef" />
+              <stop offset="1" stopColor="#c4c4c4" />
             </linearGradient>
           </defs>
           <path

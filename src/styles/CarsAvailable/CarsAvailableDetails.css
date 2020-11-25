@@ -57,23 +57,48 @@
 }
 
 .Cars-Available__container__carImgContainer img {
-  transition: all 0.7s;
+  /*transition: all 0.7s;*/
+  /*width: 100%;*/
+  /*height: 100%;*/
   width: 100%;
   height: 100%;
+  -webkit-transition: all .8s;
+  -o-transition: all .8s;
+  transition: all .8s;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .Cars-Available__container__carImgContainer__shadowBox {
-  transition: all 0.7s;
   position: absolute;
-  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
   width: 100%;
-  box-shadow: inset 0 0 70px #000000;
+  height: 100%;
+  background-image: -webkit-linear-gradient(290deg, black, transparent);
+  background-image: -o-linear-gradient(290deg, black, transparent);
+  background-image: linear-gradient(160deg, black, transparent);
+  opacity: .15;
+  -webkit-transition: all .8s;
+  -o-transition: all .8s;
+  transition: all .8s;
+
+
 }
 
 .Cars-Available__container__carImgContainer:hover
-  > .Cars-Available__container__carImgContainer__shadowBox {
-  box-shadow: inset 0 0 70px #000000;
+  .Cars-Available__container__carImgContainer__shadowBox {
+  webkit-background-size: 125% 110%;
+  background-size: 125% 110%;
+  opacity: 1;
+  -webkit-transition: all .8s;
+  -o-transition: all .8s;
+  transition: all .8s;
 }
+
 .Cars-Available__container__carImgContainer:hover img {
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
