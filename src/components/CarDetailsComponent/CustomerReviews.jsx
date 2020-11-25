@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import '../../styles/DealerPageStyles/CustomerReviews.css';
 
 // Images
@@ -9,18 +9,9 @@ import startsGroup from '../../images/starts_group.png';
 // Model Component
 import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
-import { commentContext } from '../../contexts/comments/commentState';
 
 const CustomerReviews = () => {
-  const { Reviews, GetTopRiviews } = useContext(commentContext);
 
-  useEffect(
-    () => GetTopRiviews(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
-
-  console.log(Reviews);
 
   const [modalShow, setModalShow] = useState(false);
 

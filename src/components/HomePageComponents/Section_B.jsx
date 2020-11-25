@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState } from 'react';
 import '../../styles/HomePageStyles/Section_B.css';
 import AddVechile from '../SubComponents/AddVechile/AddVechile';
 import CarCard from '../SubComponents/CarCard/CarCard';
@@ -9,32 +9,11 @@ import car2 from '../../images/car-details/car2.png';
 import car3 from '../../images/car-details/car3.png';
 import car4 from '../../images/car-details/car4.png';
 
-import { carContext } from '../../contexts/cars/carState';
 
 const Section_B = () => {
-  const [years, setYears] = useState([]);
-  const [maker, setMakers] = useState([]);
-  const [submodel, setSubModel] = useState([]);
-  const [engineId, setEngineId] = useState([]);
-  const {
-    Cars,
-    Engine,
-    Year,
-    Maker,
-    GetCarMake,
-    GetCarSubModel,
-    GetYear,
-    GetCarEngine,
-    setcurrentEngine,
-    CurrentEngine,
-  } = useContext(carContext);
+  
 
-  useEffect(() => {
-    GetYear();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const [modalShow, setModalShow] = useState(false);
+   const [modalShow, setModalShow] = useState(false);
 
   const [cardShow, setCardShow] = useState({
     show: false,
@@ -48,42 +27,30 @@ const Section_B = () => {
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
   const [engine, setEngine] = useState('');
+  
 
-  // handle years selector
-  const handleSelectYear = (e) => {
-    setYears(e.target.value);
-    //rendering Maker
-    GetCarMake(e.target.value);
-    setYear(e.target.value);
-  };
+  const handleYearChange=(e)=>{
+    setYear(e.target.value)
+}
 
-  //handle make selector
-  const handleMakeSelector = (e) => {
-    setMakers(e.target.value);
-    //rendering Model
-    GetCarSubModel(e.target.value, years);
-    setMake(e.target.value);
-  };
+  const handleMakeChange=(e)=>{
+      setMake(e.target.value)
+  }
 
-  // handle model change
-  const handleModelsChange = (e) => {
-    setSubModel(e.target.value);
-    //rendering engine
-    GetCarEngine(e.target.value, years);
-    setModel(e.target.value);
-  };
-  // handle engine change
-  const handleEngineSelector = (e) => {
-    let index = e.target.selectedIndex;
-    let element = e.target.childNodes[index];
-    setEngine(e.target.value);
-    setEngineId(element.id);
-  };
+
+  const handleModelChange=(e)=>{
+    setModel(e.target.value)
+}
+
+ 
+const handleEngineChange=(e)=>{
+  setEngine(e.target.value)
+}
+
 
   const { show, card1, card2, card3, card4 } = cardShow;
 
   const addVechileHandler = () => {
-    setcurrentEngine(engineId);
 
     setYear('');
     setMake('');
@@ -306,15 +273,13 @@ const Section_B = () => {
                 className="form-control p-3 model__add__vehicle__select"
                 style={{ height: 'auto' }}
                 name="year"
-                onChange={handleSelectYear}>
+                value={year}
+                onChange={handleYearChange}
+                >
                 <option defaultValue>Select year</option>
-                {Year.result !== undefined
-                  ? Year.result.map((item, index) => (
-                      <option key={item.year} value={item.year}>
-                        {item.year}
-                      </option>
-                    ))
-                  : ''}
+                 <option>1</option>
+                 <option>2</option>
+
               </select>
             </div>
             <div className="form-group">
@@ -325,15 +290,12 @@ const Section_B = () => {
                 disabled={year === ''}
                 name="make"
                 value={make}
-                onChange={handleMakeSelector}>
+                onChange={handleMakeChange}
+
+                >
                 <option defaultValue>Select make</option>
-                {Maker.result !== undefined
-                  ? Maker.result.map((item, index) => (
-                      <option key={item.make} value={item.make}>
-                        {item.make}
-                      </option>
-                    ))
-                  : ''}
+                <option>1</option>
+                 <option>2</option>
               </select>
             </div>
             <div className="form-group">
@@ -344,15 +306,12 @@ const Section_B = () => {
                 disabled={make === ''}
                 name="model"
                 value={model}
-                onChange={handleModelsChange}>
+                onChange={handleModelChange}
+
+            >
                 <option defaultValue>Select model</option>
-                {Cars.result !== undefined
-                  ? Cars.result.map((item, index) => (
-                      <option key={item.model} value={item.model}>
-                        {item.model}
-                      </option>
-                    ))
-                  : ''}
+                <option>1</option>
+                 <option>2</option>
               </select>
             </div>
             <div className="form-group">
@@ -364,18 +323,11 @@ const Section_B = () => {
                 disabled={model === ''}
                 name="engine"
                 value={engine}
-                onChange={handleEngineSelector}>
+                onChange={handleEngineChange}
+                >
                 <option defaultValue>Select engine</option>
-                {Engine.result !== undefined
-                  ? Engine.result.map((item, index) => (
-                      <option
-                        key={item.engine}
-                        id={item.id}
-                        value={item.engine}>
-                        {item.engine}
-                      </option>
-                    ))
-                  : ''}
+                <option>1</option>
+                 <option>2</option>
               </select>
             </div>
           </ModelFields>

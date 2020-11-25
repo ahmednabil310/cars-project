@@ -1,24 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React  from 'react';
 import '../../styles/DealerPageStyles/CarsPros.css';
 import check from '../../images/dealer/check.png';
 import close from '../../images/dealer/close.png';
 import magic from '../../images/dealer/magic.png';
 
-import { carContext } from '../../contexts/cars/carState';
 
 const CarsPros = () => {
-  const {CurrentEngine , GetCarData , CarData}= useContext(carContext)
 
-  const [loader,setLoader] = useState(true)
-		 
-	useEffect(() => {
-		if (CurrentEngine !== null) {
-      GetCarData(CurrentEngine)
-      setLoader(false)
-		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [CurrentEngine])
- 
   return (
     <div className="cars-pros-container">
       <div className="row">

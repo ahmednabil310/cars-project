@@ -1,42 +1,12 @@
-import React, { useEffect, useState,useContext } from 'react';
+import React, { useState } from 'react';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
 import carImage from '../../images/Cars/Car1.png';
 import CarsOfBrand from './CarsOfBrand';
-import {carContext} from '../../contexts/cars/carState'
  
 const CarsAvailableDetails=(props)=>{
    
    const [SelectedCountry,setSelectedCountry]=useState('default')
    const [SelectedBrand,setSelectedBrand]=useState('default')
-   const [year,setYear]=useState([])
-   
-   const {
-    Year,
-    GetYear,
-    Maker
-   ,GetCarMake,
-   Cars,
-   GetCarSubModel,
-   CurrentName
- }=useContext(carContext) 
-
- 
-
-  useEffect(()=>{
-      GetYear()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-
-  const handleyearChange=(e)=>{
-    GetCarMake(e.target.value)
-    setYear(e.target.value)
-  }
-
-  const handleMakeChange=(e)=>{
-     GetCarSubModel(e.target.value,year) 
-  }
-
-  console.log(Cars);
 
   return(
     <div>
@@ -73,13 +43,13 @@ const CarsAvailableDetails=(props)=>{
             required
             className="About__And__Summary__Select mx-3"
             style={{ width: '150px' }}
-            onChange={handleyearChange}
+           
             defaultValue={SelectedBrand}>
             <option value="default" disabled>
-              {"2020"}
+              year
             </option>
-            {Year.result !== undefined ?Year.result.map((item, index) => 
-							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
+                <option>1</option>
+							 <option>2</option>
 							</select>
 
           <select
@@ -87,15 +57,12 @@ const CarsAvailableDetails=(props)=>{
             className="About__And__Summary__Select mx-3"
             style={{ width: '150px' }}
             defaultValue={SelectedCountry} 
-            onChange={handleMakeChange}
             >
             <option value="default" disabled>
-              {CurrentName}
+             Maker
             </option>
-            {Maker.result !== undefined ? 
-             Maker.result.map((item, index) => 
-							 (<option key={item.make}  value={item.make} >
-                 {item.make}</option>)) :""}
+            <option>1</option>
+            <option>2</option>
           </select>
 
           <button
@@ -157,12 +124,10 @@ const CarsAvailableDetails=(props)=>{
                 className="About__And__Summary__Select mx-3"
                 style={{ width: '150px' }}
                 defaultValue={SelectedBrand}>
-                  onChange={handleyearChange}
                 <option value="default" disabled>
                   year
                 </option>
-                {Year.result !== undefined ? Year.result.map((item, index) => 
-							 (<option key={item.year}  value={item.year} >{item.year}</option>)):""}
+                <option>1</option>
               </select>
 
               <select
@@ -173,10 +138,8 @@ const CarsAvailableDetails=(props)=>{
                 <option value="default" disabled>
                   maker
                 </option>
-                {Maker.result !== undefined ? 
-                   Maker.result.map((item, index) => 
-							 (<option key={item.make}  value={item.make} >
-                 {item.make}</option>)):""}
+                <option>1</option>
+                <option>2</option>
               </select>
 
               <button
