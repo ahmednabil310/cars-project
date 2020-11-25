@@ -1,0 +1,47 @@
+.topCarsRated_title{
+
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 7%;
+    height: 100px;
+    background: #EFEFEF;
+    border-radius: 15px;
+    color: #D53535;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.topRatedCarCard{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #EFEFEF;
+    height: 130px;
+}
+.topRatedCarCard_details{
+    width: 100%;
+}
+.topRatedCarCard_img{
+    width:25%;
+    height: 85px;
+    border-radius: 20px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border: 0.1px solid white;
+    margin-right: 7%;
+}
+.topRatedCarCard_title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.topRatedCarCard_reviewCard{
+    display: flex;
+    width: auto;
+}
+.topRatedCarCard_rateNum{
+    font-size: 35px;
+    font-weight: 500;
+    margin-right: 15%;
+    color: #727272;
+}
+.topRatedCarCard_reteDetails{
+    color: #727272;
+
+}
