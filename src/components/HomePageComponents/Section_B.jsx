@@ -23,47 +23,25 @@ const Section_B = () => {
     card4: false,
   });
 
-  const [year, setYear] = useState('');
-  const [make, setMake] = useState('');
-  const [model, setModel] = useState('');
-  const [engine, setEngine] = useState('');
+  const [vehicle, setVehicle] = useState({
+    make: '',
+    year: '',
+    model: '',
+    engine: '',
+  });
+  const { make, year, model, engine } = vehicle;
 
-  const handleYearChange = (e) => {
-    setYear(e.target.value);
-  };
-
-  const handleMakeChange = (e) => {
-    setMake(e.target.value);
-  };
-
-  const handleModelChange = (e) => {
-    setModel(e.target.value);
-  };
-
-  const handleEngineChange = (e) => {
-    setEngine(e.target.value);
-  };
-
-  const closeModelHandler3 = () => {
-    setCardShow({
-      ...cardShow,
-      card3: false,
-    });
-  };
-
-  const closeModelHandler4 = () => {
-    setCardShow({
-      ...cardShow,
-      card4: false,
-    });
-  };
   const { show, card1, card2, card3, card4 } = cardShow;
-
+  const inputChangeHandler = (event) => {
+    setVehicle({ ...vehicle, [event.target.name]: event.target.value });
+  };
   const addVechileHandler = () => {
-    setYear('');
-    setMake('');
-    setModel('');
-    setEngine('');
+    setVehicle({
+      make: '',
+      year: '',
+      model: '',
+      engine: '',
+    });
 
     setModalShow(false);
 
@@ -117,6 +95,20 @@ const Section_B = () => {
     setCardShow({
       ...cardShow,
       card2: false,
+    });
+  };
+
+  const closeModelHandler3 = () => {
+    setCardShow({
+      ...cardShow,
+      card3: false,
+    });
+  };
+
+  const closeModelHandler4 = () => {
+    setCardShow({
+      ...cardShow,
+      card4: false,
     });
   };
 
@@ -270,10 +262,11 @@ const Section_B = () => {
                 class="form-control p-3 model__add__vehicle__select"
                 style={{ height: 'auto' }}
                 name="make"
-                value={make}>
+                value={make}
+                onChange={inputChangeHandler}>
                 <option defaultValue>{t('Select make')}</option>
-                <option value="1">{t('Select make')}</option>
-                <option value="2">{t('Select make')}</option>
+                <option value="1">{t('1')}</option>
+                <option value="2">{t('2')}</option>
               </select>
             </div>
             <div class="form-group">
@@ -283,7 +276,8 @@ const Section_B = () => {
                 style={{ height: 'auto' }}
                 disabled={make === ''}
                 name="year"
-                value={year}>
+                value={year}
+                onChange={inputChangeHandler}>
                 <option defaultValue>{t('Select year')}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -296,10 +290,11 @@ const Section_B = () => {
                 style={{ height: 'auto' }}
                 disabled={year === ''}
                 name="model"
-                value={model}>
+                value={model}
+                onChange={inputChangeHandler}>
                 <option defaultValue>{t('Select model')}</option>
-                <option value="1">{t('Select model1')}</option>
-                <option value="2">{t('Select model2')}</option>
+                <option value="1">{t('1')}</option>
+                <option value="2">{t('2')}</option>
               </select>
             </div>
             <div class="form-group">
@@ -310,10 +305,11 @@ const Section_B = () => {
                 property="voucherCategoryClass"
                 disabled={model === ''}
                 name="engine"
-                value={engine}>
+                value={engine}
+                onChange={inputChangeHandler}>
                 <option defaultValue>{t('Select engine')}</option>
-                <option value="1">{t('Select engine1')}</option>
-                <option value="2">{t('Select engine2')}</option>
+                <option value="1">{t('1')}</option>
+                <option value="2">{t('2')}</option>
               </select>
             </div>
           </ModelFields>
