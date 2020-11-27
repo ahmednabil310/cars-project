@@ -12,6 +12,11 @@ class Dealer extends Component {
 
     let objId;
 
+    if(this.props.location.search === "")
+    {
+      props.history.goBack();
+    }
+
     const query = new URLSearchParams(this.props.location.search);
 
     for (let params of query.entries()) {

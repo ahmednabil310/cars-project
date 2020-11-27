@@ -20,21 +20,25 @@ class CarCard extends Component {
     const euroNCAP_Overall_Adult_Rating = Object.keys(this.props.data)[18];
 
     const listGood = good.map((item, index) => {
-      <li key={index}>
-        <span className="fa-li">
-          <i className="fas fa-check"></i>
-        </span>
-        {item}
-      </li>;
+      return (
+        <li key={index}>
+          <span className="fa-li">
+            <i className="fas fa-check"></i>
+          </span>
+          {item}
+        </li>
+      );
     });
 
     const listbad = bad.map((item, index) => {
-      <li key={index}>
-        <span className="fa-li">
-          <i className="fas fa-times main__red"></i>
-        </span>
-        {item}
-      </li>;
+      return (
+        <li key={index}>
+          <span className="fa-li">
+            <i className="fas fa-times main__red"></i>
+          </span>
+          {item}
+        </li>
+      );
     });
 
     return (
@@ -62,7 +66,12 @@ class CarCard extends Component {
             </button>
           </div>
           {/* =============== Car Image ================ */}
-          <div className="Car__Image">
+          <div
+            className="Car__Image"
+            onClick={() =>
+              this.props.history.push(`/cardetail?type=${this.props.data.id}`)
+            }
+          >
             {/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
             <div className="Car__Image__Gallery d-flex flex-column ">
               <Link to="/cardetail">
@@ -81,7 +90,7 @@ class CarCard extends Component {
 
             <p className="main__gary pl-4 py-2 mb-0">
               Starting MSRP <br />
-              {this.props.data.price.replace(";", " - ")}
+              {this.props.data.price.replaceAll(";", " - ")}
             </p>
           </div>
           {/* =============== Car Rating ================ */}
@@ -89,39 +98,41 @@ class CarCard extends Component {
             <h4 className="main__red pl-4 pt-4 text-capitalize">Rating</h4>
             <div className="px-4">
               <div>
-                {reliability.replace("_", " ")}{" "}
+                {reliability.replaceAll("_", " ")}{" "}
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
-                  value={this.props.data.reliability}
+                  value={parseInt(this.props.data.reliability)}
                 />
               </div>
               <div>
-                {resale_Value.replace("_", " ")}{" "}
+                {resale_Value.replaceAll("_", " ")}{" "}
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
-                  value={this.props.data.resale_Value}
+                  value={parseInt(this.props.data.resale_Value)}
                 />
               </div>
               <div>
-                {nhtsA_Driver_Frontal_Rating.replace("_", " ")}
+                {nhtsA_Driver_Frontal_Rating.replaceAll("_", " ")}
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
-                  value={this.props.data.nhtsA_Driver_Frontal_Rating}
+                  value={parseInt(this.props.data.nhtsA_Driver_Frontal_Rating)}
                 />
               </div>
               <div>
-                {euroNCAP_Overall_Adult_Rating.replace("_", " ")}
+                {euroNCAP_Overall_Adult_Rating.replaceAll("_", " ")}
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
-                  value={this.props.data.euroNCAP_Overall_Adult_Rating}
+                  value={parseInt(
+                    this.props.data.euroNCAP_Overall_Adult_Rating
+                  )}
                 />
               </div>
             </div>
@@ -133,7 +144,9 @@ class CarCard extends Component {
                 className="btn btn-outline-danger Full__Review__Btn btn-block text-capitalize"
                 style={{ fontWeight: "500" }}
                 onClick={() =>
-                  this.props.history.push(`/cardetail?type=${this.props.data.id}`)
+                  this.props.history.push(
+                    `/cardetail?type=${this.props.data.id}`
+                  )
                 }
               >
                 Full Review

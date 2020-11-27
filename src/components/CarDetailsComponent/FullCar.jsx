@@ -42,11 +42,61 @@ const FullCar = (props) => {
               {t("Specs about This car")}
             </h4>
           </div>
-          <SingleDetail title={""}/>
-          <SingleDetail />
-          <SingleDetail />
-          <SingleDetail />
-         
+          <SingleDetail
+            title={"Reliability"}
+            hasStar={true}
+            rate={props.data.reliability}
+          />
+          <SingleDetail
+            title={"Resale Value"}
+            hasStar={true}
+            rate={props.data.resale_Value}
+          />
+          <SingleDetail
+            title={"NhtsA Driver Frontal Rating"}
+            hasStar={true}
+            rate={props.data.nhtsA_Driver_Frontal_Rating}
+          />
+          <SingleDetail
+            title={"EuroNCAP Overall Adult Rating"}
+            hasStar={true}
+            rate={props.data.euroNCAP_Overall_Adult_Rating}
+          />
+          <SingleDetail
+            title={"Power Hp"}
+            hasStar={false}
+            SpecificationsValue={props.data.power_hp}
+          />
+          <SingleDetail
+            title={"Torque NM"}
+            hasStar={false}
+            SpecificationsValue={props.data.torque_Nm}
+          />
+          <SingleDetail
+            title={" Gear Box"}
+            hasStar={false}
+            SpecificationsValue={props.data.gearbox}
+          />
+          <SingleDetail
+            title={" Engine"}
+            hasStar={false}
+            SpecificationsValue={props.data.engine}
+          />
+          <SingleDetail
+            title={" Top Speed KPH"}
+            hasStar={false}
+            SpecificationsValue={props.data.top_speed_kph}
+          />
+          <SingleDetail
+            title={" Ful Econ L 100km"}
+            hasStar={false}
+            SpecificationsValue={props.data.fuel_Econ_L_100km}
+          />
+          <SingleDetail
+            title={"  Ful Econ KM L"}
+            hasStar={false}
+            SpecificationsValue={props.data.fuel_Econ_km_L}
+          />
         </div>
       </div>
     </div>

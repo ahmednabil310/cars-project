@@ -12,31 +12,15 @@ class CarsPros extends Component {
     super(props);
     const good = props.data.good.split(",");
     const bad = props.data.bad.split(",");
+    const knone = props.data.known_Problems.split(".");
     this.state = {
       good: good,
       bad: bad,
+      knone: knone,
     };
   }
 
   render() {
-    const listGood = this.state.good.map((item, index) => {
-      return (
-        <div className="pros-content pt-4">
-          <img src={check} className="pr-4" />
-          <h2>{item}</h2>
-        </div>
-      );
-    });
-
-    const listBad = this.state.bad.map((item, index) => {
-      return (
-        <div className="pros-content pt-4">
-          <img src={close} className="pr-4" />
-          <h2>{item}</h2>
-        </div>
-      );
-    });
-
     return (
       <div className="cars-pros-container">
         <div className="row">
@@ -87,11 +71,14 @@ class CarsPros extends Component {
                 fill="url(#linear-gradient-2)"
               />
             </svg>
-            {listGood}
-            {/* <div className="pros-content">
-              <img src={check} className="pr-4" />
-              <h2>{t('Roomy interior stays very quiet at highway speeds')}</h2>
-            </div> */}
+            {this.state.good.map((item, index) => {
+              return (
+                <div className="pros-content pt-4" key={index}>
+                  <img src={check} className="pr-4" />
+                  <h2>{item}</h2>
+                </div>
+              );
+            })}
           </div>
           <div className="col-lg-4 col-md-12 car-cons">
             <h3 className="cons">{"Cons"}</h3>
@@ -141,14 +128,17 @@ class CarsPros extends Component {
               />
             </svg>
 
-            {listBad}
-            {/* <div className="pros-content">
-              <img src={close} className="pr-4" />
-              <h2>{t("Rear headroom is a little tight for this class")}</h2>
-            </div> */}
+            {this.state.bad.map((item, index) => {
+              return (
+                <div className="pros-content pt-4" key={index}>
+                  <img src={close} className="pr-4" />
+                  <h2>{item}</h2>
+                </div>
+              );
+            })}
           </div>
           <div className="col-lg-4 col-md-12 car-cons">
-            <h3 className="cons">{"known Problems"}</h3>
+            <h3 className="cons">{"Known Problems"}</h3>
             <svg
               id="Component_6_11"
               data-name="Component 6 – 11"
@@ -194,22 +184,14 @@ class CarsPros extends Component {
                 fill="url(#linear-gradient-2)"
               />
             </svg>
-            <div className="pros-content pt-4">
-              <img src={magic} className="pr-4" />
-              <h2>
-                {
-                  "New blind-spot collision-avoidance assist helps with lane changes"
-                }
-              </h2>
-            </div>
-            <div className="pros-content">
-              <img src={magic} className="pr-4" />
-              <h2>
-                {
-                  "Optional 9.2-inch infotainment system now has customizable home screen"
-                }
-              </h2>
-            </div>
+            {this.state.knone.map((item, index) => {
+              return (
+                <div className="pros-content pt-4" key={index}>
+                  <img src={magic} className="pr-4" />
+                  <h2>{item}</h2>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
