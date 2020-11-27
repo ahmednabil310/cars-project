@@ -1,201 +1,168 @@
-import React, { Component } from 'react';
-import '../../styles/CarsAvailable/CarsAvailableDetails.css';
-import carImage from '../../images/Cars/Car1.png';
-import CarsOfBrand from './CarsOfBrand';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import actions from "../../redux/actions";
+import { bindActionCreators } from "redux";
+import "../../styles/CarsAvailable/CarsAvailableDetails.css"; 
+import CarsOfBrand from "./CarsOfBrand";
+import Select from "react-select";
+import { withRouter } from "react-router-dom";
+import { Form } from "react-bootstrap";
+
 class CarsAvailableDetails extends Component {
   constructor(props) {
     super(props);
+
+    const query = new URLSearchParams(this.props.location.search);
+
+    let makeID = "";
+
+    for (let params of query.entries()) {
+      makeID = params[1];
+    }
+
     this.state = {
-      Countries: [],
-      Brands: [],
-      SelectedCountry: 'default',
-      SelectedBrand: 'default',
+      Years: [],
+      Make: [],
+      SelectedYears: { label: "2020", value: "2020" },
+      SelectedMake: { label: makeID, value: makeID },
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  // life cycle of react calling when any change of props
+  componentWillReceiveProps(nextState, prevState) {
+    if (
+      (nextState.listYears && nextState.listYears.length > 0) ||
+      (nextState.listMake && nextState.listMake.length > 0)
+    ) {
+      this.setState({
+        isLoading: false,
+        show: false,
+        showConfirme: false,
+      });
+    } else {
+      this.setState({
+        isLoading: false,
+        showConfirme: false,
+      });
+    }
+  }
+
+  setFieldValue = (type, option) => {
+    this.setState({
+      [type]: option,
+    });
+  };
+
+  // life cycle of react calling when page is loading
   componentDidMount() {
-    this.fetchBrands();
-    this.fetchhCountries();
+    this.props.actions.makeList();
+    this.props.actions.makeYears();
+    this.props.actions.getMakeByYears(
+      this.state.SelectedMake.value,
+      this.state.SelectedYears.value
+    );
   }
 
-  ///////////////////////////////////////// GET DROPDOWN DATA HERE
-
-  fetchBrands() {
-    // Fetch Brands Here
-    this.setState({ Brands: ['VW', 'BMW'] });
+  handleClick() {
+    this.props.actions.getMakeByYears(
+      this.state.SelectedMake.value,
+      this.state.SelectedYears.value
+    );
   }
-  fetchhCountries() {
-    //Fetch Countries Here
-    this.setState({ Countries: ['UAE', 'EGY'] });
-  }
-
-  //////////////////////////////////////////
 
   render() {
     return (
       <div>
         <div className="Cars-Available__container">
-          {this.state.SelectedCountry != 'default' ? (
+          {this.state.SelectedMake.value != "default" ? (
             <div className="Cars-Available__container__title">
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedBrand}
-              </span>{' '}
+              <span style={{ color: "#3e3e3e" }}>
+                {this.state.SelectedMake.label}
+              </span>{" "}
               UAE Prices & Specs
             </div>
           ) : (
             <div className="Cars-Available__container__title">Choose</div>
           )}
 
-          {this.state.SelectedCountry != 'default' ? (
+          {this.state.SelectedMake.value != "default" ? (
             <div className="Cars-Available__container__SubTitle mt-2">
-              HOME / PRICES & SPECS {this.state.SelectedCountry} /{' '}
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedBrand}
+              HOME / PRICES & SPECS {this.state.SelectedMake.label} /{" "}
+              <span style={{ color: "#3e3e3e" }}>
+                {this.state.SelectedMake.label}
               </span>
             </div>
           ) : null}
           <div className="Cars-Available__container__form mt-4">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                console.log('submited', e.target[0].value, e.target[1].value);
-                this.setState({
-                  SelectedCountry: e.target[1].value,
-                  SelectedBrand: e.target[0].value,
-                });
-              }}
-              action={''}>
-              <select
-                required
-                className="About__And__Summary__Select mx-3"
-                style={{ width: '150px' }}
-                defaultValue={this.state.SelectedBrand}>
-                <option value="default" disabled>
-                  Brand
-                </option>
-                {this.state.Brands.map((item, index) => {
-                  return (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  );
-                })}
-              </select>
-
-              <select
-                required
-                className="About__And__Summary__Select mx-3"
-                style={{ width: '150px' }}
-                defaultValue={this.state.SelectedCountry}>
-                <option value="default" disabled>
-                  Country
-                </option>
-                {this.state.Countries.map((item, index) => {
-                  return (
-                    <option key={index} value={item}>
-                      {item}
-                    </option>
-                  );
-                })}
-              </select>
-
-              <button
-                className="Cars-Available__container__submitBtn"
-                type="submit">
-                Go
-              </button>
-            </form>
+            <Form.Group controlId="makeId" style={{ width: "150px", marginRight: "20px" }}>
+              <Select
+                name="makeId"
+                id="makeId"
+                value={this.state.SelectedMake}
+                onChange={(opt) => {
+                  this.setFieldValue("SelectedMake", opt);
+                }}
+                options={this.props.listMake}
+              />
+            </Form.Group>
+            <Form.Group
+              controlId="year"
+              style={{ width: "150px" }}
+            >
+              <Select
+                name="year"
+                id="year"
+                value={this.state.SelectedYears}
+                onChange={(opt) => {
+                  this.setFieldValue("SelectedYears", opt);
+                }}
+                width="200px"
+                options={this.props.listYears}
+              />
+            </Form.Group>
+            <button
+              onClick={this.handleClick}
+              className="Cars-Available__container__submitBtn"
+              type="button"
+            >
+              Go
+            </button>
           </div>
 
-          {this.state.SelectedBrand != 'default' ? (
+          {this.state.SelectedMake.label != "default" ? (
             <div>
               <div className="Cars-Available__container__NewUSedBar">
                 <a
                   href=""
                   style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  New {this.state.SelectedBrand} for Sale in
-                  {this.state.SelectedCountry}
+                    color: "#325c9a",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                  }}
+                >
+                  New {this.state.SelectedMake.label} for Sale in
+                  {this.state.SelectedMake.label}
                 </a>
                 <a
                   href=""
                   style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  Used {this.state.SelectedBrand} for Sale in
-                  {this.state.SelectedCountry}
+                    color: "#325c9a",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                  }}
+                >
+                  Used {this.state.SelectedMake.label} for Sale in
+                  {this.state.SelectedMake.label}
                 </a>
               </div>
 
               <div className="Cars-Available__container__ChoosedBrand">
-                Browse {this.state.SelectedBrand} Models
+                Browse {this.state.SelectedMake.label} Models
               </div>
 
-              <CarsOfBrand
-                SelectedBrand={this.state.SelectedBrand}
-                SelectedCountry={this.state.SelectedCountry}
-              />
-
-              <div className="Cars-Available__container__form mt-4">
-                <form
-                  onSubmit={(e) => {
-                    console.log(
-                      'submited',
-                      e.target[0].value,
-                      e.target[1].value,
-                    );
-                    this.setState({
-                      SelectedCountry: e.target[1].value,
-                      SelectedBrand: e.target[0].value,
-                    });
-                  }}
-                  action={''}>
-                  <select
-                    required
-                    className="About__And__Summary__Select mx-3"
-                    style={{ width: '150px' }}
-                    defaultValue={this.state.SelectedBrand}>
-                    <option value="default" disabled>
-                      Brand
-                    </option>
-                    {this.state.Brands.map((item, index) => {
-                      return (
-                        <option key={index} value={item}>
-                          {item}
-                        </option>
-                      );
-                    })}
-                  </select>
-
-                  <select
-                    required
-                    className="About__And__Summary__Select mx-3"
-                    style={{ width: '150px' }}
-                    defaultValue={this.state.SelectedCountry}>
-                    <option value="default" disabled>
-                      Country
-                    </option>
-                    {this.state.Countries.map((item, index) => {
-                      return (
-                        <option key={index} value={item}>
-                          {item}
-                        </option>
-                      );
-                    })}
-                  </select>
-
-                  <button
-                    className="Cars-Available__container__submitBtn"
-                    type="submit">
-                    Go
-                  </button>
-                </form>
-              </div>
+              <CarsOfBrand CarsDetails={this.props.listMakeYears} />
             </div>
           ) : null}
         </div>
@@ -204,4 +171,17 @@ class CarsAvailableDetails extends Component {
   }
 }
 
-export default CarsAvailableDetails;
+const mapStateToProps = (state, ownProps) => ({
+  listYears: state.reduces.listYears,
+  listMake: state.reduces.listMake,
+  listMakeYears: state.reduces.listMakeYears,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(CarsAvailableDetails));

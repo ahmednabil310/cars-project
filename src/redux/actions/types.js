@@ -1,0 +1,7 @@
+export const GETMAKELIST = "GETMAKELIST";
+export const GETYEARSLIST = "GETYEARSLIST";
+export const GETMAKEYEARS = "GETMAKEYEARS";
+export const GETCARS = "GETCARS";
+export const GETSUBCARS = "GETSUBCARS";
+export const GETENGINE = "GETENGINE";
+export const GETCARDATA = "GETCARDATA";

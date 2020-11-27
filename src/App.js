@@ -1,35 +1,25 @@
-import { Route, Switch } from 'react-router-dom';
-import Nav from './components/Nav';
-import Dealer from './pages/Dealer';
-import Home from './pages/Home';
-import NewCarPricing from './pages/NewCarPricing';
-import DealerDetails from './pages/DealerDetails';
-import CarCard from './components/SubComponents/CarCard/CarCard';
-import CarsAvailable from './pages/CarsAvailable';
-import Footer from './components/Footer';
-import ReviewPortal from './pages/ReviewPortal';
-
-
-// the hook
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import createStore from './redux/store'; 
+import Router from './router/router';
+import 'toastr/build/toastr.min.css';
 import { useTranslation } from 'react-i18next';
+const store = createStore.create();
+ 
+class App extends Component {
+  constructor(props) {
+    super(props); 
+  }
 
-function App() {
-  const { t, i18n } = useTranslation();
+ 
 
-  return (
-    <div className="App">
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/newcarpricing" component={NewCarPricing} />
-        <Route path="/cardetail" component={Dealer} />
-        <Route path="/dealer-details" component={DealerDetails} />
-        <Route path="/cars-available" component={CarsAvailable} />
-        <Route path="/car-reviews" component={ReviewPortal} />
-      </Switch>
-      <Footer />
-    </div>
-  );
+  render() {
+    return (
+      <Provider store={store}>
+       <Router />  
+      </Provider>
+    );
+  }
 }
 
 export default App;
