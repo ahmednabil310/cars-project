@@ -6,4 +6,8 @@ export default {
   listSubCars: [],
   listEngine: [],
   listCarData: [],
+  listComment: [],
+  listReviews: [],
+  ListParticipants: [],
+  ListMostLike: [],
 };

@@ -81,6 +81,15 @@ class Section_B extends Component {
           });
           break;
       }
+    } else if (nextState.listCarData.length === 4) {
+      let objCard = this.state.cardShow;
+      objCard.card1 = true;
+      objCard.card2 = true;
+      objCard.card3 = true;
+      objCard.card4 = true;
+      objCard.show = true;
+
+      this.setState({ cardShow: objCard });
     }
   }
 
@@ -183,6 +192,19 @@ class Section_B extends Component {
   };
 
   render() {
+    const customStyles = {
+      control: (base) => ({
+        ...base,
+        height: "72px!important",
+        width: "100%!important",
+        padding: "6px 30px!important",
+        marginBottom: "3px!important",
+        border: "1px solid #707070!important",
+        marginTop: "3px",
+        boxShadow: "0 1px 3px #707070",
+      }),
+    };
+
     return (
       <div className="section-b-homepage-container">
         <div className="d-flex sub-container">
@@ -370,6 +392,7 @@ class Section_B extends Component {
                     this.setFieldValue("SelectedYears", opt);
                   }}
                   options={this.props.listYears}
+                  styles={customStyles}
                 />
               </Form.Group>
               <Form.Group controlId="makeId">
@@ -382,6 +405,7 @@ class Section_B extends Component {
                   }}
                   options={this.props.listCars}
                   isDisabled={this.state.SelectedYears.label === "Select Years"}
+                  styles={customStyles}
                 />
               </Form.Group>
               <Form.Group controlId="submakeId">
@@ -392,6 +416,7 @@ class Section_B extends Component {
                   onChange={(opt) => {
                     this.setFieldValue("SelectedSubMake", opt);
                   }}
+                  styles={customStyles}
                   options={this.props.listSubCars}
                   isDisabled={this.state.SelectedMake.label === "Select Make"}
                 />
@@ -404,6 +429,7 @@ class Section_B extends Component {
                   onChange={(opt) => {
                     this.setFieldValue("SelectedEngine", opt);
                   }}
+                  styles={customStyles}
                   options={this.props.listEngine}
                   isDisabled={
                     this.state.SelectedSubMake.label === "Select SubMake"
@@ -417,60 +443,6 @@ class Section_B extends Component {
     );
   }
 }
-
-// const Section_B = () => {
-//   const [modalShow, setModalShow] = useState(false);
-
-//   const [cardShow, setCardShow] = useState({
-//     show: false,
-//     card1: false,
-//     card2: false,
-//     card3: false,
-//     card4: false,
-//   });
-
-//   const [vehicle, setVehicle] = useState({
-//     make: "",
-//     year: "",
-//     model: "",
-//     engine: "",
-//   });
-//   const { make, year, model, engine } = vehicle;
-
-//   const { show, card1, card2, card3, card4 } = cardShow;
-//   const inputChangeHandler = (event) => {
-//     setVehicle({ ...vehicle, [event.target.name]: event.target.value });
-//   };
-
-//   const closeModelHandler1 = () => {
-//     setCardShow({
-//       ...cardShow,
-//       card1: false,
-//     });
-//   };
-
-//   const closeModelHandler2 = () => {
-//     setCardShow({
-//       ...cardShow,
-//       card2: false,
-//     });
-//   };
-
-//   const closeModelHandler3 = () => {
-//     setCardShow({
-//       ...cardShow,
-//       card3: false,
-//     });
-//   };
-
-//   const closeModelHandler4 = () => {
-//     setCardShow({
-//       ...cardShow,
-//       card4: false,
-//     });
-//   };
-//
-// };
 
 const mapStateToProps = (state, ownProps) => ({
   listYears: state.reduces.listYears,

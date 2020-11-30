@@ -83,16 +83,55 @@ export default function (state = initialState, action) {
       });
 
       return {
-        ...state, 
+        ...state,
         listEngine: Engine,
       };
 
     case "GETCARDATA":
       const listCar = [...state.listCarData, action.data];
-      localStorage.setItem("CarData",JSON.stringify(listCar));
+      localStorage.setItem("CarData", JSON.stringify(listCar));
       return {
-        ...state, 
+        ...state,
         listCarData: listCar,
+      };
+
+    case "GETCOMMENTLIST":
+      return {
+        ...state,
+        listComment: action.data,
+      };
+
+    case "GETCARCOMPARISON":
+      let listCars = [];
+
+      listCars.push(action.data["car1"]);
+      listCars.push(action.data["car2"]);
+      listCars.push(action.data["car3"]);
+      listCars.push(action.data["car4"]);
+
+      localStorage.setItem("CarData", JSON.stringify(listCars));
+
+      return {
+        ...state,
+        listCarData: listCars,
+      };
+
+    case "GETTOPREVIEW":
+      return {
+        ...state,
+        listReviews: action.data,
+      };
+
+    case "GETTOPPARTICIPANTS":
+      return {
+        ...state,
+        ListParticipants: action.data,
+      };
+
+    case "GETMOSTLIKE":
+      return {
+        ...state,
+        ListMostLike: action.data,
       };
     default:
       return {

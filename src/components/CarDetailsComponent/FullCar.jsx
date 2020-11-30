@@ -1,8 +1,6 @@
-import React from "react";
-
+import React from "react"; 
 import "../../styles/DealerPageStyles/FullCar.css";
-import flag from "../../images/dealer/korea.png";
-import stars from "../../images/dealer/stars.png";
+import flag from "../../images/dealer/korea.png"; 
 import SingleDetail from "../SubComponents/SingleDetail/SingleDetail";
 import { useTranslation } from "react-i18next";
 const FullCar = (props) => {

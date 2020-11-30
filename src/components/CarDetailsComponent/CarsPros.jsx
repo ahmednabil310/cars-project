@@ -185,12 +185,14 @@ class CarsPros extends Component {
               />
             </svg>
             {this.state.knone.map((item, index) => {
-              return (
-                <div className="pros-content pt-4" key={index}>
-                  <img src={magic} className="pr-4" />
-                  <h2>{item}</h2>
-                </div>
-              );
+              if (item !== "") {
+                return (
+                  <div className="pros-content pt-4" key={index}>
+                    <img src={magic} className="pr-4" />
+                    <h2>{item}</h2>
+                  </div>
+                );
+              }
             })}
           </div>
         </div>

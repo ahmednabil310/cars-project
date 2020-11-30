@@ -1,4 +1,3 @@
-import stars from "../../../images/dealer/stars.png";
 import ReactStars from "react-rating-stars-component";
 
 // the hook

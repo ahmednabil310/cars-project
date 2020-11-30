@@ -115,3 +115,109 @@ export function getCarData(id) {
       });
   };
 }
+
+export function getCommentList(id) {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetCommentList?CarId=${id}`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCOMMENTLIST,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getCommentList: ", error);
+      });
+  };
+}
+
+export function getMultipleComparison(car1, car2, car3, car4) {
+  return (dispatch) => {
+    axiosDocs
+      .get(
+        `api/Car/GetMultipleComparison?car1=${car1}&car2=${car2}&car3=${car3}&car4=${car4}`
+      )
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARCOMPARISON,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMultipleComparison: ", error);
+      });
+  };
+}
+
+export function addComment(param) {
+  return (dispatch) => {
+    axiosDocs
+      .post(`api/Comment/Add`, param)
+      .then(function () {
+        toastr.success("Add Comment Success");
+        axiosDocs
+          .get(`api/Comment/GetCommentList?CarId=${param.carId}`)
+          .then(function (response) {
+            dispatch({
+              type: types.GETCOMMENTLIST,
+              data: response.data.result,
+            });
+          })
+          .catch(function (error) {
+            console.log("getCommentListfromAdd: ", error);
+          });
+      })
+      .catch(function (error) {
+        console.log("addComment: ", error);
+      });
+  };
+}
+
+export function getTopReview() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetTopReview`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETTOPREVIEW,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getTopReview: ", error);
+      });
+  };
+}
+
+export function getTopParticipants() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetTopParticipants`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETTOPPARTICIPANTS,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getTopParticipants: ", error);
+      });
+  };
+}
+
+export function getMostLike() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetMostLiked`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETMOSTLIKE,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+}
