@@ -1,10 +1,10 @@
-import React, { Component, useState, useEffect, useContext } from "react";
-import "../../../styles/CarCard/CarCard.css";
-import close from "../../../images/close.png";
-import { Link } from "react-router-dom";
-import SingleDetail from "../SingleDetail/SingleDetail";
-import ReactStars from "react-rating-stars-component";
-import { withRouter } from "react-router-dom";
+import React, { Component, useState, useEffect, useContext } from 'react';
+import '../../../styles/CarCard/CarCard.css';
+import close from '../../../images/close.png';
+import { Link } from 'react-router-dom';
+import SingleDetail from '../SingleDetail/SingleDetail';
+import ReactStars from 'react-rating-stars-component';
+import { withRouter } from 'react-router-dom';
 
 class CarCard extends Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class CarCard extends Component {
   }
 
   render() {
-    const good = this.props.data.good.split(",");
-    const bad = this.props.data.bad.split(",");
+    const good = this.props.data.good.split(',');
+    const bad = this.props.data.bad.split(',');
     const reliability = Object.keys(this.props.data)[14];
     const resale_Value = Object.keys(this.props.data)[15];
     const nhtsA_Driver_Frontal_Rating = Object.keys(this.props.data)[17];
@@ -57,11 +57,10 @@ class CarCard extends Component {
             <button
               className="main__gary pl-0"
               style={{
-                textDecoration: "underline",
-                border: "none",
-                background: "none",
-              }}
-            >
+                textDecoration: 'underline',
+                border: 'none',
+                background: 'none',
+              }}>
               {this.props.data.class}
             </button>
           </div>
@@ -70,8 +69,7 @@ class CarCard extends Component {
             className="Car__Image"
             onClick={() =>
               this.props.history.push(`/cardetail?type=${this.props.data.id}`)
-            }
-          >
+            }>
             {/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
             <div className="Car__Image__Gallery d-flex flex-column ">
               <img
@@ -88,7 +86,7 @@ class CarCard extends Component {
 
             <p className="main__gary pl-4 py-2 mb-0">
               Starting MSRP <br />
-              {this.props.data.price.replaceAll(";", " - ")}
+              {this.props.data.price.replaceAll(';', ' - ')}
             </p>
           </div>
           {/* =============== Car Rating ================ */}
@@ -96,8 +94,7 @@ class CarCard extends Component {
             <h4 className="main__red pl-4 pt-4 text-capitalize">Rating</h4>
             <div className="px-4">
               <div>
-                {reliability.replaceAll("_", " ")}{" "}
-                <div> </div>
+                {reliability.replaceAll('_', ' ')} <div> </div>
                 <ReactStars
                   count={5}
                   size={24}
@@ -106,7 +103,7 @@ class CarCard extends Component {
                 />
               </div>
               <div>
-                {resale_Value.replaceAll("_", " ")}{" "}
+                {resale_Value.replaceAll('_', ' ')}{' '}
                 <ReactStars
                   count={5}
                   size={24}
@@ -115,7 +112,7 @@ class CarCard extends Component {
                 />
               </div>
               <div>
-                {nhtsA_Driver_Frontal_Rating.replaceAll("_", " ")}
+                {nhtsA_Driver_Frontal_Rating.replaceAll('_', ' ')}
                 <ReactStars
                   count={5}
                   size={24}
@@ -124,13 +121,13 @@ class CarCard extends Component {
                 />
               </div>
               <div>
-                {euroNCAP_Overall_Adult_Rating.replaceAll("_", " ")}
+                {euroNCAP_Overall_Adult_Rating.replaceAll('_', ' ')}
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
                   value={parseInt(
-                    this.props.data.euroNCAP_Overall_Adult_Rating
+                    this.props.data.euroNCAP_Overall_Adult_Rating,
                   )}
                 />
               </div>
@@ -141,13 +138,12 @@ class CarCard extends Component {
             <div className="px-2 mb-4">
               <button
                 className="btn btn-outline-danger Full__Review__Btn btn-block text-capitalize"
-                style={{ fontWeight: "500" }}
+                style={{ fontWeight: '500' }}
                 onClick={() =>
                   this.props.history.push(
-                    `/cardetail?type=${this.props.data.id}`
+                    `/cardetail?type=${this.props.data.id}`,
                   )
-                }
-              >
+                }>
                 Full Review
               </button>
             </div>
@@ -182,7 +178,7 @@ class CarCard extends Component {
               Ful Econ L 100km
               <br /> <strong>{this.props.data.fuel_Econ_L_100km}</strong>
             </p>
-            <p className="main__gary bg_custom_gray pl-4 py-2 mb-0">
+            <p className="main__gary  pl-4 py-2 mb-0">
               Ful Econ KM L
               <br /> <strong>{this.props.data.fuel_Econ_km_L}</strong>
             </p>

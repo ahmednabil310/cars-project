@@ -1,32 +1,32 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import actions from "../../redux/actions";
-import { bindActionCreators } from "redux";
-import "../../styles/DealerPageStyles/CustomerReviews.css";
-import ReactStars from "react-rating-stars-component";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../../redux/actions';
+import { bindActionCreators } from 'redux';
+import '../../styles/DealerPageStyles/CustomerReviews.css';
+import ReactStars from 'react-rating-stars-component';
 // Images
-import bigstars from "../../images/dealer/bigstars.png";
-import singleStar from "../../images/dealer/singlestar.png";
+import bigstars from '../../images/dealer/bigstars.png';
+import singleStar from '../../images/dealer/singlestar.png';
 // Model Component
-import ModelFields from "../SubComponents/ModelFields/ModelFields";
+import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 //const { t, i18n } = useTranslation();
 
 const isLoginGmail =
-  window.localStorage.getItem("accessTokenGmail") !== null ? true : false;
+  window.localStorage.getItem('accessTokenGmail') !== null ? true : false;
 
 const isLoginFB =
-  window.localStorage.getItem("accessTokenFB") !== null ? true : false;
+  window.localStorage.getItem('accessTokenFB') !== null ? true : false;
 
 class CustomerReviews extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: "",
-      rating: "",
-      comment: "",
+      title: '',
+      rating: '',
+      comment: '',
       rate: 0,
       modalShow: false,
       carId: props.data.id,
@@ -75,13 +75,12 @@ class CustomerReviews extends Component {
               <div className="d-flex flex-column">
                 <h3
                   style={{ marginBottom: 0 }}
-                  className="customer-review-title"
-                >
-                  <span className="special">{"Customer"}</span> {"Reviews1"}
+                  className="customer-review-title">
+                  <span className="special">{'Customer'}</span> {'Reviews1'}
                 </h3>
                 <div className="d-flex align-items-center">
                   <h6 className="customer-review-sub-title">
-                    {"Read what other owners think about the 2020 Genesis G80"}
+                    {'Read what other owners think about the 2020 Genesis G80'}
                   </h6>
                   <svg
                     id="Component_6_1"
@@ -90,28 +89,25 @@ class CustomerReviews extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     width="243.729"
                     height="36.969"
-                    viewBox="0 0 243.729 36.969"
-                  >
+                    viewBox="0 0 243.729 36.969">
                     <defs>
                       <linearGradient
                         id="linear-gradient"
                         x1="0.5"
                         x2="0.5"
                         y2="1"
-                        gradientUnits="objectBoundingBox"
-                      >
-                        <stop offset="0" stop-color="#d53535" />
-                        <stop offset="1" stop-color="#6b1b1b" />
+                        gradientUnits="objectBoundingBox">
+                        <stop offset="0" stopColor="#d53535" />
+                        <stop offset="1" stopColor="#6b1b1b" />
                       </linearGradient>
                       <linearGradient
                         id="linear-gradient-2"
                         x1="0.777"
                         x2="0.777"
                         y2="1.686"
-                        gradientUnits="objectBoundingBox"
-                      >
-                        <stop offset="0" stop-color="#efefef" />
-                        <stop offset="1" stop-color="#c4c4c4" />
+                        gradientUnits="objectBoundingBox">
+                        <stop offset="0" stopColor="#efefef" />
+                        <stop offset="1" stopColor="#c4c4c4" />
                       </linearGradient>
                     </defs>
                     <path
@@ -136,15 +132,13 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2"
-                onClick={() => this.viewReviewHandler(true)}
-              >
+                onClick={() => this.viewReviewHandler(true)}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="15"
                     height="15"
-                    viewBox="0 0 15 15"
-                  >
+                    viewBox="0 0 15 15">
                     <path
                       id="Icon_material-add"
                       data-name="Icon material-add"
@@ -153,7 +147,7 @@ class CustomerReviews extends Component {
                       fill="#fff"
                     />
                   </svg>
-                  {"Write a review"}
+                  {'Write a review'}
                 </div>
               </button>
               <ModelFields
@@ -161,9 +155,8 @@ class CustomerReviews extends Component {
                 onHide={() => this.viewReviewHandler(false)}
                 submitHandler={this.addReviewHandler}
                 //submitValid={comment}
-                title="Review"
-              >
-                <div class="form-group position-relative">
+                title="Review">
+                <div className="form-group position-relative">
                   <input
                     type="text"
                     className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
@@ -173,12 +166,11 @@ class CustomerReviews extends Component {
                   />
                   {this.state.title.length === 0 && (
                     <div className="position-absolute review__input_title__placeholder">
-                      <span className="main__gary mr-2">{"Review title"}</span>
+                      <span className="main__gary mr-2">{'Review title'}</span>
                       <span
                         className="main__gary ml-2"
-                        style={{ color: "#C4C4C4" }}
-                      >
-                        {"64 letters or numbers"}
+                        style={{ color: '#C4C4C4' }}>
+                        {'64 letters or numbers'}
                       </span>
                     </div>
                   )}
@@ -187,15 +179,13 @@ class CustomerReviews extends Component {
                   <div
                     style={{ zIndex: 0 }}
                     className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
-                    name="rating"
-                  ></div>
+                    name="rating"></div>
                   {this.state.rating.length === 0 && (
                     <div className="position-absolute review__input_rating__placeholder">
-                      <span className="main__gary mr-2">{"Review rating"}</span>
+                      <span className="main__gary mr-2">{'Review rating'}</span>
                       <span
                         className="ml-2 d-inline-block"
-                        style={{ width: "135px" }}
-                      >
+                        style={{ width: '135px' }}>
                         <ReactStars
                           count={5}
                           size={24}
@@ -213,21 +203,18 @@ class CustomerReviews extends Component {
                     name="comment"
                     rows="5"
                     value={this.state.comment}
-                    onChange={this.inputChangeHandler}
-                  ></textarea>
+                    onChange={this.inputChangeHandler}></textarea>
                   {this.state.comment.length === 0 && (
                     <div
                       className="position-absolute"
-                      style={{ top: "12%", left: "6%" }}
-                    >
+                      style={{ top: '12%', left: '6%' }}>
                       <span className="main__gary mr-2">
-                        {"Review details"}
+                        {'Review details'}
                       </span>
                       <span
                         className="main__gary ml-2"
-                        style={{ color: "#C4C4C4" }}
-                      >
-                        {"360 letters or numbers"}
+                        style={{ color: '#C4C4C4' }}>
+                        {'360 letters or numbers'}
                       </span>
                     </div>
                   )}
@@ -247,14 +234,14 @@ class CustomerReviews extends Component {
             <div className="col-sm-8 col-md-6 col-lg-2 offset-md-1 offset-lg-0 d-flex justify-content-start align-items-center">
               <div className="ml-2">
                 <img src={bigstars} className="big-star" height="27px" />
-                <p className="mt-3">{"10 Reviews"}</p>
-                <p>{"See all reviews "}</p>
-                <p className="">{"Write a review"}</p>
+                <p className="mt-3">{'10 Reviews'}</p>
+                <p>{'See all reviews '}</p>
+                <p className="">{'Write a review'}</p>
               </div>
             </div>
             <div className="col-sm-12 col-md-12 col-lg-6 offset-lg-1">
               <div className="progress-container">
-                <table class="table mb-0">
+                <table className="table mb-0">
                   <tbody>
                     <tr>
                       <td>5</td>
@@ -262,15 +249,14 @@ class CustomerReviews extends Component {
                         <img src={singleStar} height="20px" width="20px" />
                       </td>
                       <td className="ml-2">
-                        <div class="progress">
+                        <div className="progress">
                           <div
-                            class="progress-bar"
+                            className="progress-bar"
                             role="progressbar"
-                            style={{ width: "85%" }}
+                            style={{ width: '85%' }}
                             aria-valuenow="85"
                             aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
+                            aria-valuemax="100"></div>
                         </div>
                       </td>
                       <td className="pl-3">85%</td>
@@ -281,15 +267,14 @@ class CustomerReviews extends Component {
                         <img src={singleStar} height="20px" width="20px" />
                       </td>
                       <td className="ml-2">
-                        <div class="progress">
+                        <div className="progress">
                           <div
-                            class="progress-bar"
+                            className="progress-bar"
                             role="progressbar"
-                            style={{ width: "75%" }}
+                            style={{ width: '75%' }}
                             aria-valuenow="75"
                             aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
+                            aria-valuemax="100"></div>
                         </div>
                       </td>
                       <td className="pl-3">75%</td>
@@ -300,15 +285,14 @@ class CustomerReviews extends Component {
                         <img src={singleStar} height="20px" width="20px" />
                       </td>
                       <td className="ml-2">
-                        <div class="progress">
+                        <div className="progress">
                           <div
-                            class="progress-bar"
+                            className="progress-bar"
                             role="progressbar"
-                            style={{ width: "60%" }}
+                            style={{ width: '60%' }}
                             aria-valuenow="60"
                             aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
+                            aria-valuemax="100"></div>
                         </div>
                       </td>
                       <td className="pl-3">60%</td>
@@ -319,15 +303,14 @@ class CustomerReviews extends Component {
                         <img src={singleStar} height="20px" width="20px" />
                       </td>
                       <td className="ml-2">
-                        <div class="progress">
+                        <div className="progress">
                           <div
-                            class="progress-bar"
+                            className="progress-bar"
                             role="progressbar"
-                            style={{ width: "45%" }}
+                            style={{ width: '45%' }}
                             aria-valuenow="45"
                             aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
+                            aria-valuemax="100"></div>
                         </div>
                       </td>
                       <td className="pl-3">45%</td>
@@ -338,15 +321,14 @@ class CustomerReviews extends Component {
                         <img src={singleStar} height="20px" width="20px" />
                       </td>
                       <td className="ml-2">
-                        <div class="progress">
+                        <div className="progress">
                           <div
-                            class="progress-bar"
+                            className="progress-bar"
                             role="progressbar"
-                            style={{ width: "10%" }}
+                            style={{ width: '10%' }}
                             aria-valuenow="10"
                             aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
+                            aria-valuemax="100"></div>
                         </div>
                       </td>
                       <td className="pl-3">10%</td>
@@ -358,7 +340,7 @@ class CustomerReviews extends Component {
           </div>
 
           <div className="consumer-reviews">
-            <h1>{"Most helpful consumer reviews"}</h1>
+            <h1>{'Most helpful consumer reviews'}</h1>
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
@@ -376,16 +358,15 @@ class CustomerReviews extends Component {
                       </div>
                       <p>{item.subject}</p>
                       <span>{item.fullName}</span>
-                      <span>{"date-cons"}</span>
-                      <span>{"detail-car"}</span>
-                      <span className="last">{"likes"}</span>
+                      <span>{'date-cons'}</span>
+                      <span>{'detail-car'}</span>
+                      <span className="last">{'likes'}</span>
                       <svg
                         className="cursor-pointer"
                         xmlns="http://www.w3.org/2000/svg"
                         width="29.25"
                         height="27"
-                        viewBox="0 0 29.25 27"
-                      >
+                        viewBox="0 0 29.25 27">
                         <path
                           id="Icon_ionic-md-heart-empty"
                           data-name="Icon ionic-md-heart-empty"
@@ -397,7 +378,7 @@ class CustomerReviews extends Component {
                       {isLoginGmail || isLoginFB ? (
                         <>
                           <button>EditComment</button>
-                          <button>DeleteComment</button>{" "}
+                          <button>DeleteComment</button>{' '}
                         </>
                       ) : null}
                     </div>

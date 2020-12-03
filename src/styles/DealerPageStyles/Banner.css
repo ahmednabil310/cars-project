@@ -8,7 +8,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 .banner-title {
-  font-size: 50px;
+  font-size: 32px;
   font-weight: bold;
 }
 .banner-list {
@@ -16,16 +16,16 @@
 }
 .banner-list li:nth-child(1) {
   padding-right: 51px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 }
 .banner-list li:nth-child(2) {
   padding-right: 51px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 }
 .banner-list li:nth-child(3) {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
 }
 @media (max-width: 1200px) {

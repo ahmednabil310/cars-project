@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import actions from "../../redux/actions";
-import { bindActionCreators } from "redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../../redux/actions';
+import { bindActionCreators } from 'redux';
 
 class TopParticipants extends Component {
   constructor(props) {
@@ -15,15 +15,15 @@ class TopParticipants extends Component {
   render() {
     return (
       <>
-        <div className={"reviewPortal_sectionTitle"}>Top Participants</div>
+        <div className={'reviewPortal_sectionTitle'}>Top Participants</div>
         <div
-          className={"reviewPortal_sectionSeparator"}
-          style={{ marginBottom: "13%" }}
+          className={'reviewPortal_sectionSeparator'}
+          style={{ marginBottom: '13%' }}
         />
         <div className="participantsReviewCard">
           <img
             src={
-              "https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg"
+              'https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg'
             }
             className="participantsReviewCard_img"
           />
@@ -36,12 +36,11 @@ class TopParticipants extends Component {
               Reviews : (188)
             </div>
           </div>
-          <div className="participantsReviewCard_order">#{1}</div>
         </div>
         <div className="participantsReviewCard">
           <img
             src={
-              "https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg"
+              'https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg'
             }
             className="participantsReviewCard_img"
           />
@@ -54,12 +53,11 @@ class TopParticipants extends Component {
               Reviews : (188)
             </div>
           </div>
-          <div className="participantsReviewCard_order">#{2}</div>
         </div>
         <div className="participantsReviewCard">
           <img
             src={
-              "https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg"
+              'https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg'
             }
             className="participantsReviewCard_img"
           />
@@ -72,13 +70,11 @@ class TopParticipants extends Component {
               Reviews : (188)
             </div>
           </div>
-          <div className="participantsReviewCard_order">#{3}</div>
         </div>
       </>
     );
   }
 }
- 
 
 const mapStateToProps = (state, ownProps) => ({
   ListParticipants: state.reduces.ListParticipants,

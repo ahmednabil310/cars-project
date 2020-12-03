@@ -27,12 +27,11 @@
 .compare-labels .labels-title {
   font-weight: bold;
   font-size: 21px;
-  padding-bottom: 15px;
+  padding-top: 10px;
 }
 .compare-labels .labels-types {
   font-weight: 400;
   font-size: 14px !important;
-  padding-bottom: 34px;
 }
 
 @media (max-width: 1200px) {

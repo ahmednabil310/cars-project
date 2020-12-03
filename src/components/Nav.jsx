@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import logo from "../images/logo.png";
-import "../styles/Nav.css";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
-import FacebookLogin from "react-facebook-login";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../images/logo.png';
+import '../styles/Nav.css';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 // the hook
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import i18n from "../i18n";
+import i18n from '../i18n';
 //const { t, i18n } = useTranslation();
 
 // const changelanguage = (lan) => {
@@ -17,20 +17,21 @@ import i18n from "../i18n";
 //   };
 // };
 
-const CLIENT_ID = "132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com";
-const Client_Secret = "dCkN2EUohUrctqyXFTrjB7rq";
+const CLIENT_ID =
+  '132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com';
+const Client_Secret = 'dCkN2EUohUrctqyXFTrjB7rq';
 
 class Nav extends Component {
   constructor(props) {
     super(props);
 
-    const isLoginGmail = localStorage.getItem("accessTokenGmail");
-    const isLoginFB = localStorage.getItem("accessTokenFB");
+    const isLoginGmail = localStorage.getItem('accessTokenGmail');
+    const isLoginFB = localStorage.getItem('accessTokenFB');
 
     this.state = {
       isLoginedGmail: isLoginGmail !== null ? true : false,
       isLoginedFB: isLoginFB !== null ? true : false,
-      accessToken: "",
+      accessToken: '',
     };
 
     this.login = this.login.bind(this);
@@ -41,7 +42,7 @@ class Nav extends Component {
 
   login(response) {
     if (response.accessToken) {
-      localStorage.setItem("accessTokenGmail", response.accessToken);
+      localStorage.setItem('accessTokenGmail', response.accessToken);
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
@@ -50,30 +51,30 @@ class Nav extends Component {
   }
 
   logout() {
-    localStorage.removeItem("accessTokenGmail");
+    localStorage.removeItem('accessTokenGmail');
     this.setState((state) => ({
       isLoginedGmail: false,
-      accessToken: "",
+      accessToken: '',
     }));
   }
 
   handleLoginFailure(response) {
-    alert("Failed to log in");
+    alert('Failed to log in');
   }
 
   handleLogoutFailure(response) {
-    alert("Failed to log out");
+    alert('Failed to log out');
   }
 
   responseFacebook = (response) => {
-    localStorage.setItem("accessTokenFB", response.accessToken);
+    localStorage.setItem('accessTokenFB', response.accessToken);
     this.setState({
       isLoginedFB: true,
     });
   };
 
   logOUtFB = () => {
-    localStorage.removeItem("accessTokenFB");
+    localStorage.removeItem('accessTokenFB');
     this.setState({
       isLoginedFB: false,
     });
@@ -93,60 +94,54 @@ class Nav extends Component {
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div
             className="collapse navbar-collapse "
-            id="navbarSupportedContent"
-          >
+            id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <NavLink
                   className="nav-link"
-                  to="/cardetail"
-                  activeClassName="active-link"
-                >
-                  {"Prices & spec"}
+                  to="/"
+                  exact
+                  activeClassName="active-link">
+                  {'Prices & spec'}
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
                   to="/newcarpricing"
-                  activeClassName="active-link"
-                >
-                  {"New Cars"}
+                  activeClassName="active-link">
+                  {'New Cars'}
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  {"Reviews"}
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  {"News"}
-                </a>
-              </li>
-              <li className="nav-item">
                 <NavLink
                   className="nav-link"
-                  to="/dealer-details"
                   activeClassName="active-link"
-                >
-                  {"Dealers"}
+                  to="/car-reviews">
+                  {'Reviews'}
                 </NavLink>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  target="_blank"
+                  href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE">
+                  {'Used Car'}
+                </a>
               </li>
             </ul>
             <div className="user-container">
               <i className="fas fa-user-alt pr-2 user-icon"></i>
-              <span className="username">{"Andrew Peki"}</span>
+              <span className="username">{'Andrew Peki'}</span>
             </div>
-            <button
+            {/* <button
             //onClick={changelanguage("ar")}
             >
               Ar
@@ -155,46 +150,45 @@ class Nav extends Component {
             //onClick={changelanguage("en")}
             >
               en
-            </button>
+            </button> */}
           </div>
         </nav>
-
+        {/* 
         {this.state.isLoginedGmail ? (
-          <div style={{ paddingTop: "40px" }}>
+          <div style={{ paddingTop: '40px' }}>
             <GoogleLogout
               clientId={CLIENT_ID}
               buttonText="Logout"
               onLogoutSuccess={this.logout}
-              onFailure={this.handleLogoutFailure}
-            ></GoogleLogout>
+              onFailure={this.handleLogoutFailure}></GoogleLogout>
           </div>
         ) : (
-          <div style={{ paddingTop: "40px" }}>
+          <div style={{ paddingTop: '40px' }}>
             <GoogleLogin
               clientId={CLIENT_ID}
               buttonText="Login"
               onSuccess={this.login}
               onFailure={this.handleLoginFailure}
-              cookiePolicy={"single_host_origin"}
+              cookiePolicy={'single_host_origin'}
               responseType="code,token"
             />
           </div>
         )}
         {this.state.isLoginedFB ? (
-          <div style={{ paddingTop: "40px" }}>
+          <div style={{ paddingTop: '40px' }}>
             <button onClick={this.logOUtFB}> LogOut</button>
           </div>
         ) : (
-          <div style={{ paddingTop: "40px" }}>
+          <div style={{ paddingTop: '40px' }}>
             <FacebookLogin
-              buttonStyle={{ padding: "6px" }}
+              buttonStyle={{ padding: '6px' }}
               appId="1063436714175495"
               autoLoad={false}
               fields="name,email,picture"
               callback={this.responseFacebook}
             />
           </div>
-        )}
+        )} */}
       </div>
     );
   }

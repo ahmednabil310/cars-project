@@ -1,19 +1,19 @@
-import React, { Component, useState } from "react";
-import { connect } from "react-redux";
-import actions from "../../redux/actions";
-import { bindActionCreators } from "redux";
+import React, { Component, useState } from 'react';
+import { connect } from 'react-redux';
+import actions from '../../redux/actions';
+import { bindActionCreators } from 'redux';
 
-import "../../styles/HomePageStyles/Section_B.css";
-import AddVechile from "../SubComponents/AddVechile/AddVechile";
-import CarCard from "../SubComponents/CarCard/CarCard";
-import ModelFields from "../SubComponents/ModelFields/ModelFields";
+import '../../styles/HomePageStyles/Section_B.css';
+import AddVechile from '../SubComponents/AddVechile/AddVechile';
+import CarCard from '../SubComponents/CarCard/CarCard';
+import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
-import car1 from "../../images/car-details/car1.png";
-import car2 from "../../images/car-details/car2.png";
-import car3 from "../../images/car-details/car3.png";
-import car4 from "../../images/car-details/car4.png";
-import Select from "react-select";
-import { Form } from "react-bootstrap";
+import car1 from '../../images/car-details/car1.png';
+import car2 from '../../images/car-details/car2.png';
+import car3 from '../../images/car-details/car3.png';
+import car4 from '../../images/car-details/car4.png';
+import Select from 'react-select';
+import { Form } from 'react-bootstrap';
 
 // the hook
 // import { useTranslation } from "react-i18next";
@@ -29,10 +29,10 @@ class Section_B extends Component {
     this.state = {
       Years: [],
       Make: [],
-      SelectedYears: { label: "Select Years", value: "Select Years" }, //t(
-      SelectedMake: { label: "Select Make", value: "Select Make" }, //t(
-      SelectedSubMake: { label: "Select SubMake", value: "Select  SubMake" }, //t(
-      SelectedEngine: { label: "Select Engine", value: "Select Engine" }, //t(
+      SelectedYears: { label: 'Select Years', value: 'Select Years' }, //t(
+      SelectedMake: { label: 'Select Make', value: 'Select Make' }, //t(
+      SelectedSubMake: { label: 'Select SubMake', value: 'Select  SubMake' }, //t(
+      SelectedEngine: { label: 'Select Engine', value: 'Select Engine' }, //t(
       cardShow: {
         show: false,
         card1: false,
@@ -42,7 +42,7 @@ class Section_B extends Component {
       },
       carNumber: 0,
       modalShow: false,
-      engine: "",
+      engine: '',
     };
   }
 
@@ -101,7 +101,7 @@ class Section_B extends Component {
 
   closeModelHandler1 = () => {
     let lastData = this.state.cardShow;
-    lastData["card1"] = false;
+    lastData['card1'] = false;
 
     this.setState({
       cardShow: lastData,
@@ -110,7 +110,7 @@ class Section_B extends Component {
 
   closeModelHandler2 = () => {
     let lastData = this.state.cardShow;
-    lastData["card2"] = false;
+    lastData['card2'] = false;
 
     this.setState({
       cardShow: lastData,
@@ -119,7 +119,7 @@ class Section_B extends Component {
 
   closeModelHandler3 = () => {
     let lastData = this.state.cardShow;
-    lastData["card3"] = false;
+    lastData['card3'] = false;
 
     this.setState({
       cardShow: lastData,
@@ -128,7 +128,7 @@ class Section_B extends Component {
 
   closeModelHandler4 = () => {
     let lastData = this.state.cardShow;
-    lastData["card4"] = false;
+    lastData['card4'] = false;
 
     this.setState({
       cardShow: lastData,
@@ -138,10 +138,10 @@ class Section_B extends Component {
   setModalShow = (type) => {
     this.setState({
       modalShow: type,
-      SelectedYears: { label: "Select Years", value: "Select Years" },
-      SelectedMake: { label: "Select Make", value: "Select Make" },
-      SelectedSubMake: { label: "Select SubMake", value: "Select  SubMake" },
-      SelectedEngine: { label: "Select Engine", value: "Select Engine" },
+      SelectedYears: { label: 'Select Years', value: 'Select Years' },
+      SelectedMake: { label: 'Select Make', value: 'Select Make' },
+      SelectedSubMake: { label: 'Select SubMake', value: 'Select  SubMake' },
+      SelectedEngine: { label: 'Select Engine', value: 'Select Engine' },
     });
   };
 
@@ -179,19 +179,19 @@ class Section_B extends Component {
 
   setFieldValue = (type, option) => {
     switch (type) {
-      case "SelectedYears":
+      case 'SelectedYears':
         this.props.actions.getCars(option.value);
         break;
-      case "SelectedMake":
+      case 'SelectedMake':
         this.props.actions.getSubCars(
           option.value,
-          this.state.SelectedYears.value
+          this.state.SelectedYears.value,
         );
         break;
-      case "SelectedSubMake":
+      case 'SelectedSubMake':
         this.props.actions.getEngine(
           option.value,
-          this.state.SelectedYears.value
+          this.state.SelectedYears.value,
         );
         break;
     }
@@ -205,13 +205,13 @@ class Section_B extends Component {
     const customStyles = {
       control: (base) => ({
         ...base,
-        height: "72px!important",
-        width: "100%!important",
-        padding: "6px 30px!important",
-        marginBottom: "3px!important",
-        border: "1px solid #707070!important",
-        marginTop: "3px",
-        boxShadow: "0 1px 3px #707070",
+        height: '72px!important',
+        width: '100%!important',
+        padding: '6px 10px 6px 16px!important',
+        marginBottom: '3px!important',
+        border: '1px solid #707070!important',
+        marginTop: '3px',
+        boxShadow: '0 1px 3px #707070',
       }),
     };
 
@@ -220,8 +220,8 @@ class Section_B extends Component {
         <div className="d-flex sub-container">
           <h3>
             {/* //t( */}
-            <span className="special">{"Compare"}</span> {/* t( */}
-            {"Cars Side-by-Side"}
+            <span className="special">{'Compare'}</span> {/* t( */}
+            {'Cars Side-by-Side'}
           </h3>
           <svg
             id="Component_6_2"
@@ -229,28 +229,25 @@ class Section_B extends Component {
             xmlns="http://www.w3.org/2000/svg"
             width="1003.729"
             height="36.969"
-            viewBox="0 0 1003.729 36.969"
-          >
+            viewBox="0 0 1003.729 36.969">
             <defs>
               <linearGradient
                 id="linear-gradient"
                 x1="0.5"
                 x2="0.5"
                 y2="1"
-                gradientUnits="objectBoundingBox"
-              >
-                <stop offset="0" stop-color="#d53535" />
-                <stop offset="1" stop-color="#6b1b1b" />
+                gradientUnits="objectBoundingBox">
+                <stop offset="0" stopColor="#d53535" />
+                <stop offset="1" stopColor="#6b1b1b" />
               </linearGradient>
               <linearGradient
                 id="linear-gradient-2"
                 x1="0.777"
                 x2="0.777"
                 y2="1.686"
-                gradientUnits="objectBoundingBox"
-              >
-                <stop offset="0" stop-color="#efefef" />
-                <stop offset="1" stop-color="#c4c4c4" />
+                gradientUnits="objectBoundingBox">
+                <stop offset="0" stopColor="#efefef" />
+                <stop offset="1" stopColor="#c4c4c4" />
               </linearGradient>
             </defs>
             <path
@@ -269,76 +266,7 @@ class Section_B extends Component {
             />
           </svg>
         </div>
-        <div className="section-b__nav">
-          <div className="nav-container d-flex">
-            <nav className="navbar navbar-expand-xl w-100 navbar-dark">
-              <div className="m-auto" id="navbarSupportedContent">
-                <ul className="navbar-nav ">
-                  <li className="nav-item active">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Pricing1"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Rating"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Consumer rating"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Waranty"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Features"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Specifications"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Fuel economy"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Dimensions"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Ownership costs"}
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      {/* t( */}
-                      {"Colors"}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
+
         <div className="car-container-wrapper">
           <div className="row section-b_car-container" ref={this.refCSS}>
             {this.state.cardShow.show && this.state.cardShow.card1 && (
@@ -391,15 +319,14 @@ class Section_B extends Component {
               onHide={() => this.setModalShow(false)}
               submitHandler={this.addVechileHandler}
               submitValid={this.state.SelectedEngine.label}
-              title="Vehicle"
-            >
+              title="Vehicle">
               <Form.Group controlId="yearsId">
                 <Select
                   name="yearsId"
                   id="yearsId"
                   value={this.state.SelectedYears}
                   onChange={(opt) => {
-                    this.setFieldValue("SelectedYears", opt);
+                    this.setFieldValue('SelectedYears', opt);
                   }}
                   options={this.props.listYears}
                   styles={customStyles}
@@ -411,10 +338,10 @@ class Section_B extends Component {
                   id="makeId"
                   value={this.state.SelectedMake}
                   onChange={(opt) => {
-                    this.setFieldValue("SelectedMake", opt);
+                    this.setFieldValue('SelectedMake', opt);
                   }}
                   options={this.props.listCars}
-                  isDisabled={this.state.SelectedYears.label === "Select Years"}
+                  isDisabled={this.state.SelectedYears.label === 'Select Years'}
                   styles={customStyles}
                 />
               </Form.Group>
@@ -424,11 +351,11 @@ class Section_B extends Component {
                   id="submakeId"
                   value={this.state.SelectedSubMake}
                   onChange={(opt) => {
-                    this.setFieldValue("SelectedSubMake", opt);
+                    this.setFieldValue('SelectedSubMake', opt);
                   }}
                   styles={customStyles}
                   options={this.props.listSubCars}
-                  isDisabled={this.state.SelectedMake.label === "Select Make"}
+                  isDisabled={this.state.SelectedMake.label === 'Select Make'}
                 />
               </Form.Group>
               <Form.Group controlId="engine">
@@ -437,12 +364,12 @@ class Section_B extends Component {
                   id="engine"
                   value={this.state.SelectedEngine}
                   onChange={(opt) => {
-                    this.setFieldValue("SelectedEngine", opt);
+                    this.setFieldValue('SelectedEngine', opt);
                   }}
                   styles={customStyles}
                   options={this.props.listEngine}
                   isDisabled={
-                    this.state.SelectedSubMake.label === "Select SubMake"
+                    this.state.SelectedSubMake.label === 'Select SubMake'
                   }
                 />
               </Form.Group>

@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import actions from "../../redux/actions";
-import { bindActionCreators } from "redux";
-import "../../styles/ReviewPortalStyles/ReviewPortalComp.css";
-import LatestCarReview from "./LatestCarReview";
-import TopReviews from "./TopReviews";
-import TopParticipants from "./TopParticipants";
-import MostLikeReview from "./MostLikedReview";
-import TopRatedCars from "./TopRatedCarsComp"; 
-import ReactStars from "react-rating-stars-component";
-import ModelFields from "../SubComponents/ModelFields/ModelFields";
-import "../../styles/DealerPageStyles/CustomerReviews.css";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../../redux/actions';
+import { bindActionCreators } from 'redux';
+import '../../styles/ReviewPortalStyles/ReviewPortalComp.css';
+import LatestCarReview from './LatestCarReview';
+import TopReviews from './TopReviews';
+import TopParticipants from './TopParticipants';
+import MostLikeReview from './MostLikedReview';
+import TopRatedCars from './TopRatedCarsComp';
+import ReactStars from 'react-rating-stars-component';
+import ModelFields from '../SubComponents/ModelFields/ModelFields';
+import '../../styles/DealerPageStyles/CustomerReviews.css';
 
 class ReviewPortalComp extends Component {
   constructor(props) {
@@ -18,9 +18,9 @@ class ReviewPortalComp extends Component {
 
     this.state = {
       modalShow: false,
-      title: "",
+      title: '',
       rate: 0,
-      comment: "",
+      comment: '',
     };
   }
 
@@ -76,13 +76,6 @@ class ReviewPortalComp extends Component {
           <div className="col-12 col-sm-12 col-md-8 col-lg-8  pl-0">
             <MostLikeReview />
           </div>
-          <div className="col-12 col-sm-12 col-md-4 col-lg-4  pl-0">
-            <div className="writeReviewBtn" onClick={this.handleClickReview}>
-              + Write a review
-            </div>
-            {/* <NewMembersOnTheList /> */}
-            <TopRatedCars />
-          </div>
         </div>
 
         <ModelFields
@@ -90,8 +83,7 @@ class ReviewPortalComp extends Component {
           onHide={this.handleClickReview}
           submitHandler={this.addReviewHandler}
           //submitValid={comment}
-          title="Review"
-        >
+          title="Review">
           <div class="form-group position-relative">
             <input
               type="text"
@@ -102,9 +94,9 @@ class ReviewPortalComp extends Component {
             />
             {this.state.title.length === 0 && (
               <div className="position-absolute review__input_title__placeholder">
-                <span className="main__gary mr-2">{"Review title"}</span>
-                <span className="main__gary ml-2" style={{ color: "#C4C4C4" }}>
-                  {"64 letters or numbers"}
+                <span className="main__gary mr-2">{'Review title'}</span>
+                <span className="main__gary ml-2" style={{ color: '#C4C4C4' }}>
+                  {'64 letters or numbers'}
                 </span>
               </div>
             )}
@@ -113,12 +105,11 @@ class ReviewPortalComp extends Component {
             <div
               style={{ zIndex: 0 }}
               className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
-              name="rating"
-            ></div>
+              name="rating"></div>
 
             <div className="position-absolute review__input_rating__placeholder">
-              <span className="main__gary mr-2">{"Review rating"}</span>
-              <span className="ml-2 d-inline-block" style={{ width: "135px" }}>
+              <span className="main__gary mr-2">{'Review rating'}</span>
+              <span className="ml-2 d-inline-block" style={{ width: '135px' }}>
                 <ReactStars
                   count={5}
                   size={24}
@@ -135,16 +126,14 @@ class ReviewPortalComp extends Component {
               name="comment"
               rows="5"
               value={this.state.comment}
-              onChange={this.inputChangeHandler}
-            ></textarea>
+              onChange={this.inputChangeHandler}></textarea>
             {this.state.comment.length === 0 && (
               <div
                 className="position-absolute"
-                style={{ top: "12%", left: "6%" }}
-              >
-                <span className="main__gary mr-2">{"Review details"}</span>
-                <span className="main__gary ml-2" style={{ color: "#C4C4C4" }}>
-                  {"360 letters or numbers"}
+                style={{ top: '12%', left: '6%' }}>
+                <span className="main__gary mr-2">{'Review details'}</span>
+                <span className="main__gary ml-2" style={{ color: '#C4C4C4' }}>
+                  {'360 letters or numbers'}
                 </span>
               </div>
             )}
@@ -156,7 +145,7 @@ class ReviewPortalComp extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  listReviews: state.reduces.listReviews, 
+  listReviews: state.reduces.listReviews,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -55,7 +55,6 @@
 }
 .full-details hr {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-  padding-bottom: 10px;
 }
 @media (max-width: 1200px) {
   .fullcar-container {

@@ -45,6 +45,9 @@
 .make-container-sub .special-row {
   justify-content: flex-end;
 }
+.css-u4avqg-control {
+  padding: 0px !important;
+}
 @media (min-width: 1200px) {
   .section-a-homepage-container .cars-container {
     flex: 0 0 27.333333% !important;
