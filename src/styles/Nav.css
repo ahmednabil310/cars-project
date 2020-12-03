@@ -67,3 +67,61 @@
     padding: 0 20px !important;
   }
 }
+.login-popup{
+  position: absolute;
+  width:40%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px #7070706b;
+  color: #d53535;
+  padding: 15px;
+  z-index: 100;
+}
+
+.login-popup-header{
+  display: flex;
+  justify-content: space-between;
+
+}
+.login-popup-header-closeBTN{
+  cursor: pointer;
+  background:#7070706b ;
+  width: 4%;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.login-popupBTNS{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.fb-login-btn{
+  width :55%;
+  display: flex;
+  background: blue;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 2%;
+  cursor: pointer;
+}
+.google-login-btn{
+  margin-bottom: 2%;
+  width :55%;
+  display: flex;
+  background: rgb(226, 4, 4);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}

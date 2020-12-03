@@ -32,6 +32,7 @@ class Nav extends Component {
       isLoginedGmail: isLoginGmail !== null ? true : false,
       isLoginedFB: isLoginFB !== null ? true : false,
       accessToken: '',
+      showPopUp:false,
     };
 
     this.login = this.login.bind(this);
@@ -87,6 +88,7 @@ class Nav extends Component {
           <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="logo" />
           </NavLink>
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -128,6 +130,7 @@ class Nav extends Component {
                   {'Reviews'}
                 </NavLink>
               </li>
+              
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -135,6 +138,14 @@ class Nav extends Component {
                   href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE">
                   {'Used Car'}
                 </a>
+              </li>
+              <li className="nav-item" onClick={()=>this.setState({showPopUp:true})}>
+                <div
+                  className="nav-link"
+                  activeClassName="active-link"
+                  >
+                  {'Login'}
+                </div>
               </li>
             </ul>
             <div className="user-container">
@@ -153,8 +164,7 @@ class Nav extends Component {
             </button> */}
           </div>
         </nav>
-        {/* 
-        {this.state.isLoginedGmail ? (
+        {/* {this.state.isLoginedGmail ? (
           <div style={{ paddingTop: '40px' }}>
             <GoogleLogout
               clientId={CLIENT_ID}
@@ -188,7 +198,66 @@ class Nav extends Component {
               callback={this.responseFacebook}
             />
           </div>
-        )} */}
+        )}  */}
+        <div className='login-popup' hidden={!this.state.showPopUp}>
+          <div className='login-popup-header'>
+            <div style={{fontWeight:'bold'}}>Login</div>
+            <div className='login-popup-header-closeBTN' onClick={()=>{this.setState({showPopUp:!this.state.showPopUp})}}>X</div>
+          </div>
+          <div className='login-popupBTNS'>
+
+
+
+
+
+
+          {this.state.isLoginedGmail ? (
+          <div style={{ paddingTop: '40px' }}>
+            <GoogleLogout
+              clientId={CLIENT_ID}
+              buttonText="Logout"
+              onLogoutSuccess={this.logout}
+              onFailure={this.handleLogoutFailure}></GoogleLogout>
+          </div>
+        ) : (
+          <div style={{ paddingTop: '40px' }}>
+            <GoogleLogin
+              clientId={CLIENT_ID}
+              buttonText="Continue with Google"
+              onSuccess={this.login}
+              onFailure={this.handleLoginFailure}
+              cookiePolicy={'single_host_origin'}
+              responseType="code,token"
+            />
+          </div>
+        )}
+        {this.state.isLoginedFB ? (
+          <div style={{ paddingTop: '40px' }}>
+            <button onClick={this.logOUtFB}> LogOut</button>
+          </div>
+        ) : (
+          <div style={{ paddingTop: '40px' }}>
+            <FacebookLogin
+              buttonStyle={{ padding: '6px' }}
+              appId="1063436714175495"
+              autoLoad={false}
+              fields="name,email,picture"
+              callback={this.responseFacebook}
+              textButton='Continue with Facebook'
+            />
+          </div>
+        )}
+
+
+
+
+
+
+
+
+            
+          </div>
+        </div>
       </div>
     );
   }
