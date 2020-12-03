@@ -13,6 +13,12 @@ import ModelFields from "../SubComponents/ModelFields/ModelFields";
 import { useTranslation } from "react-i18next";
 //const { t, i18n } = useTranslation();
 
+const isLoginGmail =
+  window.localStorage.getItem("accessTokenGmail") !== null ? true : false;
+
+const isLoginFB =
+  window.localStorage.getItem("accessTokenFB") !== null ? true : false;
+
 class CustomerReviews extends Component {
   constructor(props) {
     super(props);
@@ -353,16 +359,18 @@ class CustomerReviews extends Component {
 
           <div className="consumer-reviews">
             <h1>{"Most helpful consumer reviews"}</h1>
+
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
                   return (
-                    <div className="review">
+                    <div className="review" key={item.id}>
                       <div className="review-title d-flex flex-row flex-wrap align-items-center">
                         <h2>{item.title}</h2>
                         <ReactStars
                           count={5}
                           size={24}
                           activeColor="#d53535"
+                          classNames="consumer-reviews"
                           value={parseInt(item.ratingStar)}
                         />
                       </div>
@@ -386,6 +394,12 @@ class CustomerReviews extends Component {
                           fill="#c4c4c4"
                         />
                       </svg>
+                      {isLoginGmail || isLoginFB ? (
+                        <>
+                          <button>EditComment</button>
+                          <button>DeleteComment</button>{" "}
+                        </>
+                      ) : null}
                     </div>
                   );
                 })

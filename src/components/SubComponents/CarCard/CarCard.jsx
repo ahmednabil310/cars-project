@@ -74,13 +74,11 @@ class CarCard extends Component {
           >
             {/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
             <div className="Car__Image__Gallery d-flex flex-column ">
-              <Link to="/cardetail">
-                <img
-                  className="img-fluid w-100"
-                  src={this.props.data.image_1}
-                  alt="gallery"
-                />
-              </Link>
+              <img
+                className="img-fluid w-100"
+                src={this.props.data.image_1}
+                alt="gallery"
+              />
               <p className="mb-0 ml-3 text-white">View all photos</p>
             </div>
           </div>
@@ -99,6 +97,7 @@ class CarCard extends Component {
             <div className="px-4">
               <div>
                 {reliability.replaceAll("_", " ")}{" "}
+                <div> </div>
                 <ReactStars
                   count={5}
                   size={24}

@@ -17,9 +17,8 @@ import i18n from "../i18n";
 //   };
 // };
 
-const CLIENT_ID =
-  "1079177198113-h0hfr6hpj1nprjihj5hcni6gut859f2u.apps.googleusercontent.com";
-const Client_Secret = "g6o8L2-HR_1HDdWpo58VTQ9f";
+const CLIENT_ID = "132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com";
+const Client_Secret = "dCkN2EUohUrctqyXFTrjB7rq";
 
 class Nav extends Component {
   constructor(props) {
@@ -189,7 +188,7 @@ class Nav extends Component {
           <div style={{ paddingTop: "40px" }}>
             <FacebookLogin
               buttonStyle={{ padding: "6px" }}
-              appId="781310785786387"
+              appId="1063436714175495"
               autoLoad={false}
               fields="name,email,picture"
               callback={this.responseFacebook}

@@ -24,6 +24,8 @@ class Section_B extends Component {
   constructor(props) {
     super(props);
 
+    this.refCSS = React.createRef();
+
     this.state = {
       Years: [],
       Make: [],
@@ -88,7 +90,7 @@ class Section_B extends Component {
       objCard.card3 = true;
       objCard.card4 = true;
       objCard.show = true;
-
+      this.refCSS.current.scrollIntoView();
       this.setState({ cardShow: objCard });
     }
   }
@@ -98,30 +100,38 @@ class Section_B extends Component {
   }
 
   closeModelHandler1 = () => {
+    let lastData = this.state.cardShow;
+    lastData["card1"] = false;
+
     this.setState({
-      ...this.state.cardShow,
-      card1: false,
+      cardShow: lastData,
     });
   };
 
   closeModelHandler2 = () => {
+    let lastData = this.state.cardShow;
+    lastData["card2"] = false;
+
     this.setState({
-      ...this.state.cardShow,
-      card2: false,
+      cardShow: lastData,
     });
   };
 
   closeModelHandler3 = () => {
+    let lastData = this.state.cardShow;
+    lastData["card3"] = false;
+
     this.setState({
-      ...this.state.cardShow,
-      card3: false,
+      cardShow: lastData,
     });
   };
 
   closeModelHandler4 = () => {
+    let lastData = this.state.cardShow;
+    lastData["card4"] = false;
+
     this.setState({
-      ...this.state.cardShow,
-      card4: false,
+      cardShow: lastData,
     });
   };
 
@@ -330,7 +340,7 @@ class Section_B extends Component {
           </div>
         </div>
         <div className="car-container-wrapper">
-          <div className="row section-b_car-container">
+          <div className="row section-b_car-container" ref={this.refCSS}>
             {this.state.cardShow.show && this.state.cardShow.card1 && (
               <div className="col-12 col-sm-12 col-md-6 col-lg-3">
                 <CarCard

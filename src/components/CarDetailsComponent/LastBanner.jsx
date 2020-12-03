@@ -6,6 +6,8 @@ const LastBanner = (props) => {
 
   const { t, i18n } = useTranslation();
 
+  let prices = props.data.price.split(";");
+
   return (
     <div className="last-banner d-flex py-5">
       <div className="container-fluid ">
@@ -20,7 +22,10 @@ const LastBanner = (props) => {
           <div className="col-lg-7 d-flex banner-content container-fluid">
             <div className="banner-price">
               <h2 className="price-detail">{t("Popular")}</h2>
-              <h3 className="price-range">{props.data.price}</h3>
+              {prices.map((item,i)=>{
+                return    <h3 className="price-range">{item}</h3>
+              })}
+           
             </div>
           </div>
         </div>

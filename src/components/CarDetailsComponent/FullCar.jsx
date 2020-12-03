@@ -23,10 +23,9 @@ const FullCar = (props) => {
                 props.data.year
             )}
           </h2>
-          <div className="made-in d-flex align-items-center">
-            <img src={flag} />
+          <div className="made-in d-flex align-items-center"> 
             <span>
-              {t("Made:")} &nbsp; {t(props.data.country_of_Origin)}
+            Country Of Origin : &nbsp; {t(props.data.country_of_Origin)}
             </span>
           </div>
           <p className="brief-content pb-5">{t(props.data.overview)}</p>
