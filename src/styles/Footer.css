@@ -37,3 +37,18 @@
   color: white;
   cursor: pointer;
 }
+.footerItem{
+  margin-bottom: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+.footerItem:hover{
+  text-decoration: none !important;
+  color: white !important;
+}
+.sepratorline{
+  border-bottom: 2px solid rgb(124, 124, 255);
+  width: 95%;
+  margin:0px 2.5%;
+}
