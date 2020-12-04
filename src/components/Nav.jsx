@@ -145,6 +145,7 @@ class Nav extends Component {
                 <div
                   className="nav-link"
                   activeClassName="active-link"
+                  style={{cursor:'pointer'}}
                   >
                   {'Login'}
                 </div>
@@ -203,13 +204,13 @@ class Nav extends Component {
         )}  */}
 
 
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+    <div class="modal-content" style={{backgroundColor:'black'}}>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style={{color:'black'}}>Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <div class="modal-title" id="exampleModalLabel" style={{marginTop:'5px'}}><img src={logo}/></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style={{color:'white', opacity:'1'}}>
+          <span aria-hidden="true" >&times;</span>
         </button>
       </div>
       <div class="modal-body" >
