@@ -181,7 +181,7 @@ class CustomerReviews extends Component {
                     className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
                     name="rating"></div>
                   {this.state.rating.length === 0 && (
-                    <div className="position-absolute review__input_rating__placeholder">
+                    <div className="position-absolute review__input_rating__placeholder" style={{display:'flex',alignItems:'center'}}>
                       <span className="main__gary mr-2">{'Review rating'}</span>
                       <span
                         className="ml-2 d-inline-block"
