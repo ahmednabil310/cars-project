@@ -5,7 +5,7 @@
 
 .NewCarPricing-Section1__h3 {
   font-weight: 500;
-  font-size: 38px;
+  font-size: 30px;
   color: #727272;
 }
 
@@ -30,8 +30,8 @@
 }
 
 .my-select {
-  height: 72px !important;
-  width: 350px !important;
+  height: 50px !important;
+  width: 250px !important;
   padding: 6px 30px !important;
   margin-bottom: 3px !important;
   background: #fff url('../../images/Icon\ material-keyboard-arrow-down.png')
@@ -42,8 +42,8 @@
 }
 
 .my-btn {
-  width: 556px !important;
-  height: 72px;
+  width: 250px !important;
+  height: 50px;
   background-color: #d53535 !important;
   border-color: #d53535 !important;
   box-shadow: 0px 1px 3px #707070;
@@ -56,7 +56,7 @@
   }
   .my-select {
     padding: 5px 20px !important;
-    height: 58px !important;
+    height: 50px !important;
     margin-top: 1rem;
     margin-bottom: 1rem !important;
     width: 100% !important;
@@ -64,7 +64,7 @@
   }
   .my-btn {
     width: 100% !important;
-    height: 58px !important;
+    height: 50px !important;
   }
   .NewCarPricing-Section1__h3 {
     font-size: 24px;
@@ -102,7 +102,7 @@
   }
   .my-select {
     padding: 5px 20px !important;
-    height: 65px !important;
+    height: 50px !important;
     margin-top: 1rem;
     margin-bottom: 1rem !important;
     width: 100% !important;
@@ -113,7 +113,7 @@
   }
   .my-btn {
     width: 100% !important;
-    height: 65px !important;
+    height: 50px !important;
   }
 }
 
@@ -135,10 +135,10 @@
   }
   .my-select {
     padding: 5px 20px !important;
-    height: 70px !important;
+    height: 50px !important;
     margin-top: 1rem;
     margin-bottom: 1rem !important;
-    width: 32% !important;
+    width: 30% !important;
     background-position: right 2rem center !important;
   }
   .my-select:nth-of-type(2) {
@@ -146,8 +146,8 @@
     margin-right: 15px !important;
   }
   .my-btn {
-    width: 100% !important;
-    height: 70px !important;
+    width: 30% !important;
+    height: 50px !important;
     display: block;
   }
 }
@@ -159,7 +159,7 @@
   }
 
   .NewCarPricing-Section1__h3 {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .select-container {

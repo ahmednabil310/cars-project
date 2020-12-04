@@ -1,14 +1,17 @@
 .NewCarPricing-Header {
-  background-color: #727272;
-  min-height: 183px;
-  padding: 43px 110px;
+  /* min-height: 183px; */
   margin-bottom: 25px;
+  padding: 35px 110px;
+  background: #727272;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
 }
 
 .NewCarPricing-Header__text {
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
@@ -18,12 +21,12 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .NewCarPricing-Header {
-    padding: 10px 20px !important;
-
-    min-height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    margin-bottom: 25px;
+  padding: 35px 20px;
+  background: #727272;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
   }
   .NewCarPricing-Header__text {
     font-size: 22px !important;
@@ -33,12 +36,12 @@
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .NewCarPricing-Header {
-    padding: 10px 20px !important;
-
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    margin-bottom: 25px;
+  padding: 35px 20px;
+  background: #727272;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
   }
   .NewCarPricing-Header__text {
     font-size: 40px;
@@ -48,28 +51,29 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .NewCarPricing-Header {
-    padding: 10px 20px !important;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    margin-bottom: 25px;
+  padding: 35px 20px;
+  background: #727272;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
   }
   .NewCarPricing-Header__text {
     font-size: 40px;
   }
 }
 
-/* // Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .NewCarPricing-Header__text {
-    font-size: 30px;
-  }
-}
-@media (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
   .NewCarPricing-Header {
-    background-color: #727272;
-    min-height: 183px;
-    padding: 43px 20px;
     margin-bottom: 25px;
-  }
+  padding: 35px 20px;
+  background: #727272;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
+  }   
 }
+
+
+

@@ -16,7 +16,7 @@ function Section1() {
 				<h3 className='NewCarPricing-Section1__h3 desc'>
 					{t("learn what to pay")}
 				</h3>
-				<div className='NewCarPricing-Section1-search'>
+				{/* <div className='NewCarPricing-Section1-search'>
 					<p className='NewCarPricing-Section1-search__p'>
 						{t("Search by")}
 					</p>
@@ -25,19 +25,19 @@ function Section1() {
 					</p>
 					<p className='NewCarPricing-Section1-search__p'>{t("Type")}</p>
 					<p className='NewCarPricing-Section1-search__p'>{t("Price")}</p>
-				</div>
-				<div className='d-flex align-items-center justify-content-center select__input'>
+				</div> */}
+				<div className='d-flex align-items-center justify-content-center select__input mt-5'>
 					<select className='custom-select my-select mr-xl-4'>
 						<option value='' disabled selected>{t("Any Make")}</option>
 						<option>{t("Any Make1")}</option>
 						<option>{t("Any Make2")}</option>
 					</select>
 
-					<select className='custom-select my-select mr-xl-4'>
+					{/* <select className='custom-select my-select mr-xl-4'>
 						<option value='' disabled selected>{t("Country")}</option>
 						<option>{t("Country1")}</option>
 						<option>{t("Country2")}</option>
-					</select>
+					</select> */}
 
 					<select className='custom-select my-select mr-xl-3'>
 						<option value='' disabled selected>{t("Any Model")}</option>

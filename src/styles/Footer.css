@@ -2,14 +2,17 @@
 .footer-container {
   background: #1a1a1a;
 }
+
 .footer-container__red {
   height: 21px;
   background: linear-gradient(to right, #d53535, #6b1b1b);
 }
+
 .footer-container__content {
   padding: 50px 110px 44px;
   font-family: 'Poppins', sans-serif;
 }
+
 .footer-container__content--first-column {
   width: 338px;
   padding-right: 15px;
@@ -22,33 +25,64 @@
   line-height: 40px;
   padding-bottom: 20px;
 }
+
 .footer-container__content--second-column {
   padding-top: 10px;
   margin-right: 20px;
 }
+
 .footer-container__content--second-column .second-column-title {
   font-weight: bold;
   font-size: 18px;
   padding-bottom: 15px;
   color: white;
 }
+
 .language{
   margin-bottom: 10px;
   color: white;
   cursor: pointer;
 }
+
 .footerItem{
   margin-bottom: 10px;
   color: white;
   cursor: pointer;
   font-size: 14px;
 }
+
 .footerItem:hover{
   text-decoration: none !important;
   color: white !important;
 }
+
 .sepratorline{
   border-bottom: 2px solid rgb(124, 124, 255);
-  width: 95%;
-  margin:0px 2.5%;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .footer-container__content {
+    padding: 50px 20px 44px;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .footer-container__content {
+    padding: 50px 20px 44px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .footer-container__content {
+    padding: 50px 20px 44px;
+    font-family: 'Poppins', sans-serif;
+  }
 }

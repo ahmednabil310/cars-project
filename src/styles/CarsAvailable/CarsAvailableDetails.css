@@ -116,7 +116,9 @@
   color: white;
   font-weight: bold;
 }
-
+.css-yk16xz-control{
+  height: 50px;
+}
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .Cars-Available__container {

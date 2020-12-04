@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-container__red"></div>
-      <div className="footer-container__content d-flex row m-0">
+      <div className="footer-container__content d-flex justify-content-between row m-0">
         
         <div className="footer-container__content--first-column d-flex flex-column">
           <NavLink className="navbar-brand" to="/">
@@ -59,11 +59,11 @@ const Footer = () => {
         </div>
 
       </div>
-      <div className='sepratorline'/>
-      <div className='row m-0' style={{color:'white',padding:'2.5%  '}}>
-        <di className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 ">This site is powered and designed by <span style={{fontWeight:'bold'}}>Smarter</span>, All rights are reserved @2020</di>
-        <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mt-3">Privacy Polices</div>
-        <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mt-3">Rules & Regulations</div>
+      <div className='paddingSchema'><div className='sepratorline '/></div>
+      <div className='row m-0 paddingSchema' style={{color:'white'}}>
+        <di className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">This site is powered and designed by <span style={{fontWeight:'bold'}}>Smarter</span>, All rights are reserved @2020</di>
+        <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">Privacy Polices</div>
+        <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">Rules & Regulations</div>
         
       </div>
     </footer>

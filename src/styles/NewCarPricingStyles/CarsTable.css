@@ -16,17 +16,17 @@
 
 .carsTable-carCard-price {
 	color: #d53535;
-	font-size: 36px;
+	font-size: 30px;
 	font-weight: 500;
 }
 
 .carsTable-carCard-topCar-topCategory {
-	font-size: 20px;
+	font-size: 18px;
 	color: #707070;
 }
 
 .carsTable-carCard-topCar-topCarName {
-	font-size: 22px;
+	font-size: 18px;
 	color: #1a1a1a;
 }
 
@@ -42,7 +42,7 @@
 .carsTable-shop:hover {
 	color: #707070;
 	text-decoration: underline;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 table {
@@ -51,13 +51,13 @@ table {
 
 @media (max-width: 1199.98px) {
 	.carsTable-carCard-price {
-		font-size: 50px;
+		font-size: 25px;
 	}
 	.carsTable-carCard-topCar-topCarName {
-		font-size: 30px;
+		font-size: 20px;
 	}
 	.carsTable-carCard-topCar-topCategory {
-		font-size: 18px;
+		font-size: 16px;
 	}
 	.carsTable-shop,
 	.carsTable-shop:hover {
@@ -67,7 +67,7 @@ table {
 
 @media (max-width: 767.98px) {
 	.carsTable-carCard-price {
-		font-size: 35px;
+		font-size: 25px;
 	}
 
 	.carsTable-carCard-topCar-topCarName {

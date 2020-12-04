@@ -96,7 +96,7 @@ class CarsAvailableDetails extends Component {
             </div>
           ) : null}
           <div className="Cars-Available__container__form mt-4">
-            <Form.Group controlId="makeId" style={{ width: "150px", marginRight: "20px" }}>
+            <Form.Group controlId="makeId" style={{ width: "250px", margin: "0px 20px 0px 0px " }}>
               <Select
                 name="makeId"
                 id="makeId"
@@ -105,11 +105,12 @@ class CarsAvailableDetails extends Component {
                   this.setFieldValue("SelectedMake", opt);
                 }}
                 options={this.props.listMake}
+                className='optGroup'
               />
             </Form.Group>
             <Form.Group
               controlId="year"
-              style={{ width: "150px" }}
+              style={{ width: "250px", margin: "0px 20px 0px 0px " }}
             >
               <Select
                 name="year"
