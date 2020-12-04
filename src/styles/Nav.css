@@ -100,28 +100,67 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
 }
 .fb-login-btn{
-  width :55%;
-  display: flex;
-  background: blue;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  margin-top: 2%;
-  cursor: pointer;
+  color: white !important;
+    width: 250px;
+    height: 35px;
+    display: flex !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    background-color: #3b5998 !important;
+    margin-top: 20px;
+    border-radius: 3px !important;
+    padding: 0px 8px !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
 }
 .google-login-btn{
-  margin-bottom: 2%;
-  width :55%;
-  display: flex;
-  background: rgb(226, 4, 4);
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+  color: white !important;
+    width: 250px;
+    height: 35px;
+    display: flex !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    background-color: rgb(204, 22, 22) !important;
+    margin-top: 20px;
+    border-radius: 3px !important;
+    padding: 0px 8px !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    box-shadow: none !important;
+    
+    
+     
+    
+}
+.google-login-btn>span{
+  padding: 0 !important;
+  font-weight: inherit !important;
+}
+.google-login-btn>div{
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 30px;
+  height: 30px;
+
+}
+
+.btnContaier{
+    color: white !important;
+    width: 250px;
+    height: 35px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+    background-color: #3b5998 !important;
+    margin-top: 20px;
+    border-radius: 3px !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
 }
