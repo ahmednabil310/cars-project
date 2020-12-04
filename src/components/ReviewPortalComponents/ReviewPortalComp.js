@@ -76,6 +76,14 @@ class ReviewPortalComp extends Component {
           <div className="col-12 col-sm-12 col-md-8 col-lg-8  pl-0">
             <MostLikeReview />
           </div>
+
+
+          <div className='col-12 col-sm-12 col-md-4 col-lg-4  pl-0'>
+                    <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div>
+                    
+                </div>
+
+
         </div>
 
         <ModelFields
@@ -107,7 +115,7 @@ class ReviewPortalComp extends Component {
               className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
               name="rating"></div>
 
-            <div className="position-absolute review__input_rating__placeholder">
+            <div className="position-absolute review__input_rating__placeholder " style={{display:'flex',alignItems:'center'}}>
               <span className="main__gary mr-2">{'Review rating'}</span>
               <span className="ml-2 d-inline-block" style={{ width: '135px' }}>
                 <ReactStars
