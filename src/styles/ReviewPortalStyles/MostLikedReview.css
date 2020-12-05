@@ -25,6 +25,8 @@
     font-weight: 500;
 }
 .mostLikeReview_title{
+    align-items: center;
+    display: flex;
     margin: 5% 0;
     color: #D53535;
     font-weight: bold;

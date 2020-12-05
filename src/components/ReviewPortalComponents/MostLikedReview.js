@@ -73,8 +73,13 @@ class MostLikeReview extends Component {
                     value={parseFloat(item.ratingStar)}
                   />
                 </span>
-                <svg
-                  className="cursor-pointer float-right"
+                <i class="far fa-heart cursor-pointer  ml-auto" style={{color:'grey'}}></i>
+                <i class="fas fa-heart cursor-pointer  ml-auto"></i>
+
+
+                {/* <svg
+                  
+                  className=""
                   xmlns="http://www.w3.org/2000/svg"
                   width="29.25"
                   height="27"
@@ -87,6 +92,7 @@ class MostLikeReview extends Component {
                     fill="#c4c4c4"
                   />
                 </svg>
+               */}
               </div>
               <div className="mostLikeReview_desc">
                 Going head to head with BMW’s 5 Series and Mercedes-Benz’s
