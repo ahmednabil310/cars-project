@@ -18,7 +18,7 @@ class CarCard extends Component {
     const resale_Value = Object.keys(this.props.data)[15];
     const nhtsA_Driver_Frontal_Rating = Object.keys(this.props.data)[17];
     const euroNCAP_Overall_Adult_Rating = Object.keys(this.props.data)[18];
-    const listPrice = this.props.data.price.split(';')
+    const listPrice = this.props.data.price.split(';');
 
     const listGood = good.map((item, index) => {
       return (
@@ -43,11 +43,10 @@ class CarCard extends Component {
     });
 
     const listPrices = listPrice.map((item, i) => {
-      return <>{item}</>
-    })
+      return <>{item}</>;
+    });
 
     return (
-
       <div>
         <div className="Car__Card pb-4 mb-5">
           <div className="Car__Header p-4 position-relative">
@@ -101,7 +100,7 @@ class CarCard extends Component {
           <div className="Car__Rating pb-3">
             <h4 className="main__red pl-4 pt-4 text-capitalize">Rating</h4>
             <div className="px-4">
-              <div>
+              <div style={{ textTransform: 'capitalize' }}>
                 {reliability.replaceAll('_', ' ')} <div> </div>
                 <ReactStars
                   count={5}
@@ -110,7 +109,7 @@ class CarCard extends Component {
                   value={parseInt(this.props.data.reliability)}
                 />
               </div>
-              <div>
+              <div style={{ textTransform: 'capitalize' }}>
                 {resale_Value.replaceAll('_', ' ')}{' '}
                 <ReactStars
                   count={5}
@@ -119,7 +118,7 @@ class CarCard extends Component {
                   value={parseInt(this.props.data.resale_Value)}
                 />
               </div>
-              <div>
+              <div style={{ textTransform: 'capitalize' }}>
                 {nhtsA_Driver_Frontal_Rating.replaceAll('_', ' ')}
                 <ReactStars
                   count={5}
@@ -128,7 +127,7 @@ class CarCard extends Component {
                   value={parseInt(this.props.data.nhtsA_Driver_Frontal_Rating)}
                 />
               </div>
-              <div>
+              <div style={{ textTransform: 'capitalize' }}>
                 {euroNCAP_Overall_Adult_Rating.replaceAll('_', ' ')}
                 <ReactStars
                   count={5}

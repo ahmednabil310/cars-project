@@ -120,11 +120,11 @@ const Footer = () => {
       <div
         className="row m-0 paddingSchema last-footer"
         style={{ color: 'white' }}>
-        <di className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">
           This site is powered and designed by{' '}
           <span style={{ fontWeight: 'bold' }}>Smarter</span>, All rights are
           reserved @2020
-        </di>
+        </div>
         <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
           Privacy Polices
         </div>

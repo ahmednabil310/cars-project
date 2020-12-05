@@ -137,7 +137,7 @@
   }
   .section-b_car-container {
     margin: 0px !important;
-    /* width: 1200px; */
+    width: 1200px;
   }
 }
 @media screen and (max-width: 768px) {

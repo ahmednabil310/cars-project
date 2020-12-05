@@ -142,7 +142,7 @@ class CarsAvailableDetails extends Component {
                     fontWeight: 'bold',
                     fontSize: '18px',
                   }}>
-                  New {this.state.SelectedMake.label} for Sale in &nbsp;
+                  New {this.state.SelectedMake.label} for Sale in&nbsp;
                   {this.state.SelectedMake.label}
                 </a>
                 <a
@@ -152,7 +152,7 @@ class CarsAvailableDetails extends Component {
                     fontWeight: 'bold',
                     fontSize: '18px',
                   }}>
-                  Used {this.state.SelectedMake.label} for Sale in &nbsp;
+                  Used {this.state.SelectedMake.label} for Sale in&nbsp;
                   {this.state.SelectedMake.label}
                 </a>
               </div>

@@ -68,6 +68,16 @@
 .footer-container hr {
   border-top: 1px solid gray;
 }
+@media (max-width: 1200px) {
+  .footer-container__content {
+    padding: 50px 20px 44px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .last-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .footer-container__content {
