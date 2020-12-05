@@ -18,7 +18,7 @@
 	color: #727272;
 }
 
-.customer-reviews button {
+.customer-reviews-writeReview {
 	background-color: #d53535;
 	color: white;
 	border: none;
@@ -169,7 +169,28 @@
 	left: 6%;
 	transform: translateY(-50%);
 }
-
+.edit-delete-btns-container{
+	display: flex;
+	margin-top: 20px;
+}
+.consumerReviewBtn{
+	margin:0px;
+}
+.consumerReviewBtn{
+	background-color: #d53535 !important;
+	color: white !important;
+	border: none !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 10px !important;
+	font-size: 14px !important;
+	border-radius: 5px !important;
+	margin-right: 10px !important;
+}
+.consumerReviewBtn:focus{
+	outline: none;
+}
 @media (max-width: 1200px) {
 	.customer-reviews {
 		padding: 0 20px !important;

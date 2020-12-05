@@ -4,6 +4,8 @@ import logo from '../images/logo.png';
 import '../styles/Nav.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import fbLogo from '../images/facebook-logo-png-white.png';
+// import googleLogo from '../images/google-logo-png-white.png'
 
 // the hook
 import { useTranslation } from 'react-i18next';
@@ -35,7 +37,7 @@ class Nav extends Component {
       isLoginedFB: isLoginFB !== null ? true : false,
       accessToken: '',
       showPopUp: false,
-      name: nameFB || nameGmail
+      name: nameFB || nameGmail,
     };
 
     this.login = this.login.bind(this);
@@ -52,7 +54,7 @@ class Nav extends Component {
         isLoginedGmail: true,
         accessToken: response.accessToken,
         name: response.name,
-        showPopUp: false
+        showPopUp: false,
       }));
     }
   }
@@ -63,7 +65,7 @@ class Nav extends Component {
 
     this.setState((state) => ({
       isLoginedGmail: false,
-      accessToken: ''
+      accessToken: '',
     }));
   }
 
@@ -81,7 +83,7 @@ class Nav extends Component {
     this.setState({
       isLoginedFB: true,
       name: response.name,
-      showPopUp: false
+      showPopUp: false,
     });
   };
 
@@ -150,11 +152,14 @@ class Nav extends Component {
                   {'Used Car'}
                 </a>
               </li>
-              <li className="nav-item" onClick={() => this.setState({ showPopUp: true })}>
+              <li
+                className="nav-item"
+                data-toggle="modal"
+                data-target="#exampleModal">
                 <div
                   className="nav-link"
                   activeClassName="active-link"
-                >
+                  style={{ cursor: 'pointer' }}>
                   {'Login'}
                 </div>
               </li>
@@ -210,49 +215,72 @@ class Nav extends Component {
             />
           </div>
         )}  */}
-        <div className='login-popup' hidden={!this.state.showPopUp}>
-          <div className='login-popup-header'>
-            <div style={{ fontWeight: 'bold' }}>Login</div>
-            <div className='login-popup-header-closeBTN' onClick={() => { this.setState({ showPopUp: !this.state.showPopUp }) }}>X</div>
-          </div>
-          <div className='login-popupBTNS'>
-            {this.state.isLoginedGmail ? (
-              <div style={{ paddingTop: '40px' }}>
-                <GoogleLogout
-                  clientId={CLIENT_ID}
-                  buttonText="Logout"
-                  onLogoutSuccess={this.logout}
-                  onFailure={this.handleLogoutFailure}></GoogleLogout>
-              </div>
-            ) : (
-                <div style={{ paddingTop: '40px' }}>
-                  <GoogleLogin
-                    clientId={CLIENT_ID}
-                    buttonText="Continue with Google"
-                    onSuccess={this.login}
-                    onFailure={this.handleLoginFailure}
-                    cookiePolicy={'single_host_origin'}
-                    responseType="code,token"
-                  />
+
+        <div
+          class="modal fade "
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style={{ backgroundColor: 'black' }}>
+              <div class="modal-header">
+                <div
+                  class="modal-title"
+                  id="exampleModalLabel"
+                  style={{ marginTop: '5px' }}>
+                  <img src={logo} />
                 </div>
-              )}
-            {this.state.isLoginedFB ? (
-              <div style={{ paddingTop: '40px' }}>
-                <button onClick={this.logOUtFB}> LogOut</button>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  style={{ color: 'white', opacity: '1' }}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            ) : (
-                <div style={{ paddingTop: '40px' }}>
-                  <FacebookLogin
-                    buttonStyle={{ padding: '6px' }}
-                    //appId="1063436714175495"
-                    appId="781310785786387"
-                    autoLoad={false}
-                    fields="name,email,picture"
-                    callback={this.responseFacebook}
-                    textButton='Continue with Facebook'
-                  />
+              <div class="modal-body">
+                <div className="login-popupBTNS">
+                  {this.state.isLoginedGmail ? (
+                    <GoogleLogout
+                      icon={<img width="30px" height="30px" src={fbLogo} />}
+                      className="google-login-btn"
+                      clientId={CLIENT_ID}
+                      buttonText="Logout"
+                      onLogoutSuccess={this.logout}
+                      onFailure={this.handleLogoutFailure}></GoogleLogout>
+                  ) : (
+                    <GoogleLogin
+                      clientId={CLIENT_ID}
+                      buttonText="Continue with Google"
+                      icon={fbLogo}
+                      onSuccess={this.login}
+                      onFailure={this.handleLoginFailure}
+                      cookiePolicy={'single_host_origin'}
+                      responseType="code,token"
+                      className="google-login-btn"
+                    />
+                  )}
+                  {this.state.isLoginedFB ? (
+                    <button onClick={this.logOUtFB} className="fb-login-btn">
+                      {' '}
+                      Log Out
+                    </button>
+                  ) : (
+                    <FacebookLogin
+                      appId="1063436714175495"
+                      autoLoad={false}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      textButton="Continue with Facebook"
+                      cssClass="fb-login-btn"
+                      icon={<img width="30px" height="30px" src={fbLogo} />}
+                    />
+                  )}
                 </div>
-              )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
