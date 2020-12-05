@@ -34,6 +34,13 @@
 .nav-container .navbar-toggler {
   border-color: rgba(255, 255, 255, 0) !important;
 }
+.nav-container .nav-link {
+  font-size: 16px;
+  padding: 0 12px !important;
+  font-weight: 400;
+  color: white !important;
+  border-left: 1px solid white;
+}
 .navbar-toggler:focus {
   outline: 0px;
 }

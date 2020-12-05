@@ -108,7 +108,7 @@ class Nav extends Component {
             <ul className="navbar-nav">
               <li className="nav-item active">
                 <NavLink
-                  className="nav-link"
+                  className="less-padding nav-link "
                   to="/"
                   exact
                   activeClassName="active-link">
