@@ -18,8 +18,7 @@ function Section2() {
           </h3>
           <h3 className="NewCarPricing-Section2-Heading__h3">{t("cars by price")}</h3>
         </div>
-        <CarsTable />
-        <CarsTable />
+        <CarsTable /> 
       </div>
     </div>
   );

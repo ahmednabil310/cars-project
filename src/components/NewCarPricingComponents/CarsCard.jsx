@@ -5,31 +5,31 @@ import '../../styles/NewCarPricingStyles/CarsTable.css';
 // the hook
 import { useTranslation } from 'react-i18next';
 
-function CarsCard({ img, price, arrow, mb }) {
+function CarsCard(props) {
 	const { t, i18n } = useTranslation();
 
 	return (
-		<div className='carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5'>
-			<div className='carsTable-cardimg' style={{marginBottom: mb}}>
-				<img className='img-fluid h-auto' src={img} alt='car' />
+		<div className='carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5' key={props.key}>
+			<div className='carsTable-cardimg' style={{ marginBottom: '5px' }}>
+				<img className='img-fluid h-auto' src={props.data.image_1} alt='car' />
 			</div>
 			<div className='carsTable-carCard-price'>
-				{' '}
-				{arrow && <i class='fas fa-angle-left'></i>} {price} $
+
+				{<i class='fas fa-angle-left'></i>} {props.data.scoreRange} $
 			</div>
 			<div className='carsTable-carCard-topCarsContainer'>
 				<div className='carsTable-carCard-topCar'>
 					<p className='carsTable-carCard-topCar-topCategory ml-3'>
-						Top Sedan
+						{props.data.class}
 					</p>
 					<p className='carsTable-carCard-topCar-topCarName'>
 						<span className='carsTable-carCard-topCar-topCarName__span mr-2'>
 							&gt;
 						</span>
-						Toyota Yaris
+						{props.data.make + "  " + props.data.model}
 					</p>
 				</div>
-				<div className='carsTable-carCard-topCar carsTable-carCard-topCar--mid'>
+				{/* <div className='carsTable-carCard-topCar carsTable-carCard-topCar--mid'>
 					<p className='carsTable-carCard-topCar-topCategory'>
 						Top SUV
 					</p>
@@ -50,7 +50,7 @@ function CarsCard({ img, price, arrow, mb }) {
 						</span>
 						Hyundai Veloster
 					</p>
-				</div>
+				</div> */}
 				<a href='#' className='carsTable-shop'>
 					{t("Shop cars under $20k")}
 				</a>

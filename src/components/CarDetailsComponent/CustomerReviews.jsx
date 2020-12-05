@@ -30,10 +30,11 @@ class CustomerReviews extends Component {
       rate: 0,
       modalShow: false,
       carId: props.data.id,
+      isLike: false
     };
   }
 
-  componentWillReceiveProps(nextState, prevState) {}
+  componentWillReceiveProps(nextState, prevState) { }
 
   componentDidMount() {
     this.props.actions.getCommentList(this.state.carId);
@@ -65,6 +66,24 @@ class CustomerReviews extends Component {
   viewReviewHandler = (type) => {
     this.setState({ modalShow: type });
   };
+
+  handleLike = () => {
+    this.setState({ isLike: !this.state.isLike });
+  };
+
+  handleEditComment() {
+    const obj = {
+      ratingStar: this.state.rating,
+      title: this.state.title,
+      subject: this.state.comment,
+      id: 0 //useId
+    }
+    this.props.actions.updateComment(obj);
+  }
+  handleDeleteComment() {
+    //send paramter of id
+    this.props.actions.deleteComment();
+  }
 
   render() {
     return (
@@ -344,46 +363,48 @@ class CustomerReviews extends Component {
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
-                  return (
-                    <div className="review" key={item.id}>
-                      <div className="review-title d-flex flex-row flex-wrap align-items-center">
-                        <h2>{item.title}</h2>
-                        <ReactStars
-                          count={5}
-                          size={24}
-                          activeColor="#d53535"
-                          classNames="consumer-reviews"
-                          value={parseInt(item.ratingStar)}
-                        />
-                      </div>
-                      <p>{item.subject}</p>
-                      <span>{item.fullName}</span>
-                      <span>{'date-cons'}</span>
-                      <span>{'detail-car'}</span>
-                      <span className="last">{'likes'}</span>
-                      <svg
-                        className="cursor-pointer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="29.25"
-                        height="27"
-                        viewBox="0 0 29.25 27">
-                        <path
-                          id="Icon_ionic-md-heart-empty"
-                          data-name="Icon ionic-md-heart-empty"
-                          d="M24.581,4.5A8.652,8.652,0,0,0,18,7.587,8.652,8.652,0,0,0,11.419,4.5a7.952,7.952,0,0,0-8.044,8.093c0,5.59,4.971,10.076,12.5,16.995L18,31.5l2.123-1.913c7.53-6.919,12.5-11.4,12.5-16.995A7.952,7.952,0,0,0,24.581,4.5ZM18.9,27.654l-.3.274-.6.548-.6-.548-.3-.274a89.372,89.372,0,0,1-8.627-8.578c-1.969-2.44-2.841-4.437-2.841-6.483A5.848,5.848,0,0,1,7.3,8.423a5.722,5.722,0,0,1,4.12-1.673,6.449,6.449,0,0,1,4.859,2.285L18,11.081l1.723-2.046A6.425,6.425,0,0,1,24.581,6.75a5.75,5.75,0,0,1,4.127,1.673,5.86,5.86,0,0,1,1.666,4.17c0,2.039-.879,4.043-2.841,6.483A89.552,89.552,0,0,1,18.9,27.654Z"
-                          transform="translate(-3.375 -4.5)"
-                          fill="#c4c4c4"
-                        />
-                      </svg>
-                      {isLoginGmail || isLoginFB ? (
-                        <>
-                          <button>EditComment</button>
-                          <button>DeleteComment</button>{' '}
-                        </>
-                      ) : null}
+                return (
+                  <div className="review" key={item.id}>
+                    <div className="review-title d-flex flex-row flex-wrap align-items-center">
+                      <h2>{item.title}</h2>
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        activeColor="#d53535"
+                        classNames="consumer-reviews"
+                        value={parseInt(item.ratingStar)}
+                      />
                     </div>
-                  );
-                })
+                    <p>{item.subject}</p>
+                    <span>{item.fullName}</span>
+                    <span>{'date-cons'}</span>
+                    <span>{'detail-car'}</span>
+                    <span className="last">{'likes'}</span>
+                    <svg
+                      style={{ background: this.state.isLike ? "red" : '' }}
+                      onClick={this.handleLike}
+                      className="cursor-pointer"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29.25"
+                      height="27"
+                      viewBox="0 0 29.25 27">
+                      <path
+                        id="Icon_ionic-md-heart-empty"
+                        data-name="Icon ionic-md-heart-empty"
+                        d="M24.581,4.5A8.652,8.652,0,0,0,18,7.587,8.652,8.652,0,0,0,11.419,4.5a7.952,7.952,0,0,0-8.044,8.093c0,5.59,4.971,10.076,12.5,16.995L18,31.5l2.123-1.913c7.53-6.919,12.5-11.4,12.5-16.995A7.952,7.952,0,0,0,24.581,4.5ZM18.9,27.654l-.3.274-.6.548-.6-.548-.3-.274a89.372,89.372,0,0,1-8.627-8.578c-1.969-2.44-2.841-4.437-2.841-6.483A5.848,5.848,0,0,1,7.3,8.423a5.722,5.722,0,0,1,4.12-1.673,6.449,6.449,0,0,1,4.859,2.285L18,11.081l1.723-2.046A6.425,6.425,0,0,1,24.581,6.75a5.75,5.75,0,0,1,4.127,1.673,5.86,5.86,0,0,1,1.666,4.17c0,2.039-.879,4.043-2.841,6.483A89.552,89.552,0,0,1,18.9,27.654Z"
+                        transform="translate(-3.375 -4.5)"
+                        fill="#c4c4c4"
+                      />
+                    </svg>
+                    {isLoginGmail || isLoginFB ? (
+                      <>
+                        <button>EditComment</button>
+                        <button>DeleteComment</button>{' '}
+                      </>
+                    ) : null}
+                  </div>
+                );
+              })
               : null}
           </div>
         </div>

@@ -27,12 +27,15 @@ class Nav extends Component {
 
     const isLoginGmail = localStorage.getItem('accessTokenGmail');
     const isLoginFB = localStorage.getItem('accessTokenFB');
+    const nameFB = localStorage.getItem('nameFB');
+    const nameGmail = localStorage.getItem('nameGmail');
 
     this.state = {
       isLoginedGmail: isLoginGmail !== null ? true : false,
       isLoginedFB: isLoginFB !== null ? true : false,
       accessToken: '',
-      showPopUp:false,
+      showPopUp: false,
+      name: nameFB || nameGmail
     };
 
     this.login = this.login.bind(this);
@@ -44,18 +47,23 @@ class Nav extends Component {
   login(response) {
     if (response.accessToken) {
       localStorage.setItem('accessTokenGmail', response.accessToken);
+      localStorage.setItem('nameGmail', response.name);
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
+        name: response.name,
+        showPopUp: false
       }));
     }
   }
 
   logout() {
     localStorage.removeItem('accessTokenGmail');
+    localStorage.removeItem('nameGmail');
+
     this.setState((state) => ({
       isLoginedGmail: false,
-      accessToken: '',
+      accessToken: ''
     }));
   }
 
@@ -69,8 +77,11 @@ class Nav extends Component {
 
   responseFacebook = (response) => {
     localStorage.setItem('accessTokenFB', response.accessToken);
+    localStorage.setItem('nameFB', response.name);
     this.setState({
       isLoginedFB: true,
+      name: response.name,
+      showPopUp: false
     });
   };
 
@@ -88,7 +99,7 @@ class Nav extends Component {
           <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="logo" />
           </NavLink>
-          
+
           <button
             className="navbar-toggler"
             type="button"
@@ -130,7 +141,7 @@ class Nav extends Component {
                   {'Reviews'}
                 </NavLink>
               </li>
-              
+
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -139,18 +150,18 @@ class Nav extends Component {
                   {'Used Car'}
                 </a>
               </li>
-              <li className="nav-item" onClick={()=>this.setState({showPopUp:true})}>
+              <li className="nav-item" onClick={() => this.setState({ showPopUp: true })}>
                 <div
                   className="nav-link"
                   activeClassName="active-link"
-                  >
+                >
                   {'Login'}
                 </div>
               </li>
             </ul>
             <div className="user-container">
               <i className="fas fa-user-alt pr-2 user-icon"></i>
-              <span className="username">{'Andrew Peki'}</span>
+              <span className="username">{this.state.name}</span>
             </div>
             {/* <button
             //onClick={changelanguage("ar")}
@@ -201,61 +212,47 @@ class Nav extends Component {
         )}  */}
         <div className='login-popup' hidden={!this.state.showPopUp}>
           <div className='login-popup-header'>
-            <div style={{fontWeight:'bold'}}>Login</div>
-            <div className='login-popup-header-closeBTN' onClick={()=>{this.setState({showPopUp:!this.state.showPopUp})}}>X</div>
+            <div style={{ fontWeight: 'bold' }}>Login</div>
+            <div className='login-popup-header-closeBTN' onClick={() => { this.setState({ showPopUp: !this.state.showPopUp }) }}>X</div>
           </div>
           <div className='login-popupBTNS'>
-
-
-
-
-
-
-          {this.state.isLoginedGmail ? (
-          <div style={{ paddingTop: '40px' }}>
-            <GoogleLogout
-              clientId={CLIENT_ID}
-              buttonText="Logout"
-              onLogoutSuccess={this.logout}
-              onFailure={this.handleLogoutFailure}></GoogleLogout>
-          </div>
-        ) : (
-          <div style={{ paddingTop: '40px' }}>
-            <GoogleLogin
-              clientId={CLIENT_ID}
-              buttonText="Continue with Google"
-              onSuccess={this.login}
-              onFailure={this.handleLoginFailure}
-              cookiePolicy={'single_host_origin'}
-              responseType="code,token"
-            />
-          </div>
-        )}
-        {this.state.isLoginedFB ? (
-          <div style={{ paddingTop: '40px' }}>
-            <button onClick={this.logOUtFB}> LogOut</button>
-          </div>
-        ) : (
-          <div style={{ paddingTop: '40px' }}>
-            <FacebookLogin
-              buttonStyle={{ padding: '6px' }}
-              appId="1063436714175495"
-              autoLoad={false}
-              fields="name,email,picture"
-              callback={this.responseFacebook}
-              textButton='Continue with Facebook'
-            />
-          </div>
-        )}
-
-
-
-
-
-
-
-
-            
+            {this.state.isLoginedGmail ? (
+              <div style={{ paddingTop: '40px' }}>
+                <GoogleLogout
+                  clientId={CLIENT_ID}
+                  buttonText="Logout"
+                  onLogoutSuccess={this.logout}
+                  onFailure={this.handleLogoutFailure}></GoogleLogout>
+              </div>
+            ) : (
+                <div style={{ paddingTop: '40px' }}>
+                  <GoogleLogin
+                    clientId={CLIENT_ID}
+                    buttonText="Continue with Google"
+                    onSuccess={this.login}
+                    onFailure={this.handleLoginFailure}
+                    cookiePolicy={'single_host_origin'}
+                    responseType="code,token"
+                  />
+                </div>
+              )}
+            {this.state.isLoginedFB ? (
+              <div style={{ paddingTop: '40px' }}>
+                <button onClick={this.logOUtFB}> LogOut</button>
+              </div>
+            ) : (
+                <div style={{ paddingTop: '40px' }}>
+                  <FacebookLogin
+                    buttonStyle={{ padding: '6px' }}
+                    //appId="1063436714175495"
+                    appId="781310785786387"
+                    autoLoad={false}
+                    fields="name,email,picture"
+                    callback={this.responseFacebook}
+                    textButton='Continue with Facebook'
+                  />
+                </div>
+              )}
           </div>
         </div>
       </div>

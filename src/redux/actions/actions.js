@@ -173,6 +173,38 @@ export function addComment(param) {
       });
   };
 }
+export function updateComment(param) {
+  return (dispatch) => {
+    axiosDocs
+      .post(`api/Comment/Update`, param)
+      .then(function (response) {
+        toastr.success("Update Comment Success");
+        dispatch({
+          type: types.UPDATECOMMENT,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("addComment: ", error);
+      });
+  };
+}
+export function deleteComment(param) {
+  return (dispatch) => {
+    axiosDocs
+      .post(`api/Comment/Delete`, param)
+      .then(function (response) {
+        toastr.success("Delete Comment Success");
+        dispatch({
+          type: types.DELETECOMMENT,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("addComment: ", error);
+      });
+  };
+}
 
 export function getTopReview() {
   return (dispatch) => {
@@ -213,6 +245,54 @@ export function getMostLike() {
       .then(function (response) {
         dispatch({
           type: types.GETMOSTLIKE,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+}
+
+export function getCarByPriceRange() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Car/GetCarByPriceRange`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARPRICE,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+}
+
+export function getCarByCategory() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Car/GetTopRatedCars`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARCATEGORY,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+}
+
+export function getMostLikes() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetMostLiked`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETMOSTLIKES,
           data: response.data.result,
         });
       })

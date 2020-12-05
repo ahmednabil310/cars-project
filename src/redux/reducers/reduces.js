@@ -133,6 +133,22 @@ export default function (state = initialState, action) {
         ...state,
         ListMostLike: action.data,
       };
+    case "GETCARPRICE":
+      return {
+        ...state,
+        ListCarPrice: action.data,
+      };
+    case "GETCARCATEGORY":
+      return {
+        ...state,
+        ListCarCategory: action.data,
+      };
+
+      case "GETMOSTLIKES":
+        return {
+          ...state,
+          ListLike: action.data,
+        };
     default:
       return {
         ...state,
