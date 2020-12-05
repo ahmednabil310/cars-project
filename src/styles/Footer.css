@@ -38,30 +38,36 @@
   color: white;
 }
 
-.language{
+.language {
   margin-bottom: 10px;
   color: white;
   cursor: pointer;
 }
 
-.footerItem{
+.footerItem {
   margin-bottom: 10px;
   color: white;
   cursor: pointer;
   font-size: 14px;
 }
 
-.footerItem:hover{
+.footerItem:hover {
   text-decoration: none !important;
   color: white !important;
 }
 
-.sepratorline{
+.sepratorline {
   border-bottom: 2px solid rgb(124, 124, 255);
   width: 100%;
   margin-bottom: 25px;
 }
-
+.last-footer {
+  padding-left: 110px;
+  padding-right: 110px;
+}
+.footer-container hr {
+  border-top: 1px solid gray;
+}
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .footer-container__content {
@@ -76,7 +82,6 @@
     padding: 50px 20px 44px;
     font-family: 'Poppins', sans-serif;
   }
-
 }
 
 /* // Medium devices (tablets, 768px and up) */

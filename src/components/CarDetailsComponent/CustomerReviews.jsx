@@ -98,7 +98,7 @@ class CustomerReviews extends Component {
                 <h3
                   style={{ marginBottom: 0 }}
                   className="customer-review-title">
-                  <span className="special">{'Customer'}</span> {'Reviews1'}
+                  <span className="special">{'Customer'}</span> {'Reviews'}
                 </h3>
                 <div className="d-flex align-items-center">
                   <h6 className="customer-review-sub-title">
@@ -246,122 +246,7 @@ class CustomerReviews extends Component {
               </ModelFields>
             </div>
           </div>
-          <div className="ratings-section row align-items-center">
-            <div className="col-sm-4 col-md-5 col-lg-2 text-center rating-score-container ">
-              <div className="d-flex justify-content-center align-items-center">
-                <div>
-                  <h1 className="mb-0">4.0</h1>
-                  <span className="d-block mb-5">(4/5)</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-8 col-md-6 col-lg-2 offset-md-1 offset-lg-0 d-flex justify-content-start align-items-center">
-              <div className="ml-2">
-                <img src={bigstars} className="big-star" height="27px" />
-                <p className="mt-3">{'10 Reviews'}</p>
-                <p>{'See all reviews '}</p>
-                <p className="">{'Write a review'}</p>
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 offset-lg-1">
-              <div className="progress-container">
-                <table className="table mb-0">
-                  <tbody>
-                    <tr>
-                      <td>5</td>
-                      <td>
-                        <img src={singleStar} height="20px" width="20px" />
-                      </td>
-                      <td className="ml-2">
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            style={{ width: '85%' }}
-                            aria-valuenow="85"
-                            aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td className="pl-3">85%</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>
-                        <img src={singleStar} height="20px" width="20px" />
-                      </td>
-                      <td className="ml-2">
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            style={{ width: '75%' }}
-                            aria-valuenow="75"
-                            aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td className="pl-3">75%</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>
-                        <img src={singleStar} height="20px" width="20px" />
-                      </td>
-                      <td className="ml-2">
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            style={{ width: '60%' }}
-                            aria-valuenow="60"
-                            aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td className="pl-3">60%</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>
-                        <img src={singleStar} height="20px" width="20px" />
-                      </td>
-                      <td className="ml-2">
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            style={{ width: '45%' }}
-                            aria-valuenow="45"
-                            aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td className="pl-3">45%</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>
-                        <img src={singleStar} height="20px" width="20px" />
-                      </td>
-                      <td className="ml-2">
-                        <div className="progress">
-                          <div
-                            className="progress-bar"
-                            role="progressbar"
-                            style={{ width: '10%' }}
-                            aria-valuenow="10"
-                            aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td className="pl-3">10%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          <div className="ratings-section row align-items-center"></div>
 
           <div className="consumer-reviews">
             <h1>{'Most helpful consumer reviews'}</h1>
@@ -372,6 +257,15 @@ class CustomerReviews extends Component {
                     <div className="review" key={item.id}>
                       <div className="review-title d-flex flex-row flex-wrap align-items-center">
                         <h2>{item.title}</h2>
+                        <div
+                          style={{
+                            zIndex: 99,
+                            top: '2px',
+                            left: '100px',
+                            width: '105px',
+                          }}
+                          className=" p-3 px-4  position-relative bg-transparent"
+                          name="rating"></div>
                         <ReactStars
                           count={5}
                           size={24}

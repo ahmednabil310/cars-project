@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import actions from "../../redux/actions";
-import { bindActionCreators } from "redux";
-import "../../styles/CarsAvailable/CarsAvailableDetails.css"; 
-import CarsOfBrand from "./CarsOfBrand";
-import Select from "react-select";
-import { withRouter } from "react-router-dom";
-import { Form } from "react-bootstrap";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../../redux/actions';
+import { bindActionCreators } from 'redux';
+import '../../styles/CarsAvailable/CarsAvailableDetails.css';
+import CarsOfBrand from './CarsOfBrand';
+import Select from 'react-select';
+import { withRouter } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
 
 class CarsAvailableDetails extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class CarsAvailableDetails extends Component {
 
     const query = new URLSearchParams(this.props.location.search);
 
-    let makeID = "";
+    let makeID = '';
 
     for (let params of query.entries()) {
       makeID = params[1];
@@ -23,7 +23,7 @@ class CarsAvailableDetails extends Component {
     this.state = {
       Years: [],
       Make: [],
-      SelectedYears: { label: "2020", value: "2020" },
+      SelectedYears: { label: '2020', value: '2020' },
       SelectedMake: { label: makeID, value: makeID },
     };
 
@@ -61,14 +61,14 @@ class CarsAvailableDetails extends Component {
     this.props.actions.makeYears();
     this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value
+      this.state.SelectedYears.value,
     );
   }
 
   handleClick() {
     this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value
+      this.state.SelectedYears.value,
     );
   }
 
@@ -76,48 +76,49 @@ class CarsAvailableDetails extends Component {
     return (
       <div>
         <div className="Cars-Available__container">
-          {this.state.SelectedMake.value != "default" ? (
+          {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__title">
-              <span style={{ color: "#3e3e3e" }}>
+              <span style={{ color: '#3e3e3e' }}>
                 {this.state.SelectedMake.label}
-              </span>{" "}
+              </span>{' '}
               UAE Prices & Specs
             </div>
           ) : (
             <div className="Cars-Available__container__title">Choose</div>
           )}
 
-          {this.state.SelectedMake.value != "default" ? (
+          {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2">
-              HOME / PRICES & SPECS {this.state.SelectedMake.label} /{" "}
-              <span style={{ color: "#3e3e3e" }}>
+              HOME / PRICES & SPECS {this.state.SelectedMake.label} /{' '}
+              <span style={{ color: '#3e3e3e' }}>
                 {this.state.SelectedMake.label}
               </span>
             </div>
           ) : null}
           <div className="Cars-Available__container__form mt-4">
-            <Form.Group controlId="makeId" style={{ width: "250px", margin: "0px 20px 0px 0px " }}>
+            <Form.Group
+              controlId="makeId"
+              style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
               <Select
                 name="makeId"
                 id="makeId"
                 value={this.state.SelectedMake}
                 onChange={(opt) => {
-                  this.setFieldValue("SelectedMake", opt);
+                  this.setFieldValue('SelectedMake', opt);
                 }}
                 options={this.props.listMake}
-                className='optGroup'
+                className="optGroup"
               />
             </Form.Group>
             <Form.Group
               controlId="year"
-              style={{ width: "250px", margin: "0px 20px 0px 0px " }}
-            >
+              style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
               <Select
                 name="year"
                 id="year"
                 value={this.state.SelectedYears}
                 onChange={(opt) => {
-                  this.setFieldValue("SelectedYears", opt);
+                  this.setFieldValue('SelectedYears', opt);
                 }}
                 width="200px"
                 options={this.props.listYears}
@@ -126,35 +127,32 @@ class CarsAvailableDetails extends Component {
             <button
               onClick={this.handleClick}
               className="Cars-Available__container__submitBtn"
-              type="button"
-            >
+              type="button">
               Go
             </button>
           </div>
 
-          {this.state.SelectedMake.label != "default" ? (
+          {this.state.SelectedMake.label != 'default' ? (
             <div>
               <div className="Cars-Available__container__NewUSedBar">
                 <a
                   href=""
                   style={{
-                    color: "#325c9a",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                  }}
-                >
-                  New {this.state.SelectedMake.label} for Sale in
+                    color: '#325c9a',
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                  }}>
+                  New {this.state.SelectedMake.label} for Sale in &nbsp;
                   {this.state.SelectedMake.label}
                 </a>
                 <a
                   href=""
                   style={{
-                    color: "#325c9a",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                  }}
-                >
-                  Used {this.state.SelectedMake.label} for Sale in
+                    color: '#325c9a',
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                  }}>
+                  Used {this.state.SelectedMake.label} for Sale in &nbsp;
                   {this.state.SelectedMake.label}
                 </a>
               </div>
@@ -184,5 +182,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(withRouter(CarsAvailableDetails));
