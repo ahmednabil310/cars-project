@@ -73,14 +73,14 @@ class ReviewPortalComp extends Component {
         </div>
 
         <div className="row m-0 paddingSchema">
-          <div className="col-12 col-sm-12 col-md-8 col-lg-8  pl-0">
+          <div className="col-12 col-sm-12 col-md-8 col-lg-8  pl-0 pr-5">
             <MostLikeReview />
           </div>
 
 
           <div className='col-12 col-sm-12 col-md-4 col-lg-4  pl-0'>
-                    <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div>
-                    
+                    {/* <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div> */}
+                    <TopRatedCars/>
                 </div>
 
 
