@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 import '../styles/Nav.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
-import fbLogo from '../images/facebook-logo-png-white.png'
+import fbLogo from '../images/facebook-logo-png-white.png';
 // import googleLogo from '../images/google-logo-png-white.png'
 
 // the hook
@@ -29,12 +29,15 @@ class Nav extends Component {
 
     const isLoginGmail = localStorage.getItem('accessTokenGmail');
     const isLoginFB = localStorage.getItem('accessTokenFB');
+    const nameFB = localStorage.getItem('nameFB');
+    const nameGmail = localStorage.getItem('nameGmail');
 
     this.state = {
       isLoginedGmail: isLoginGmail !== null ? true : false,
       isLoginedFB: isLoginFB !== null ? true : false,
       accessToken: '',
-      showPopUp:false,
+      showPopUp: false,
+      name: nameFB || nameGmail,
     };
 
     this.login = this.login.bind(this);
@@ -46,15 +49,20 @@ class Nav extends Component {
   login(response) {
     if (response.accessToken) {
       localStorage.setItem('accessTokenGmail', response.accessToken);
+      localStorage.setItem('nameGmail', response.name);
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
+        name: response.name,
+        showPopUp: false,
       }));
     }
   }
 
   logout() {
     localStorage.removeItem('accessTokenGmail');
+    localStorage.removeItem('nameGmail');
+
     this.setState((state) => ({
       isLoginedGmail: false,
       accessToken: '',
@@ -71,8 +79,11 @@ class Nav extends Component {
 
   responseFacebook = (response) => {
     localStorage.setItem('accessTokenFB', response.accessToken);
+    localStorage.setItem('nameFB', response.name);
     this.setState({
       isLoginedFB: true,
+      name: response.name,
+      showPopUp: false,
     });
   };
 
@@ -90,7 +101,7 @@ class Nav extends Component {
           <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="logo" />
           </NavLink>
-          
+
           <button
             className="navbar-toggler"
             type="button"
@@ -132,7 +143,7 @@ class Nav extends Component {
                   {'Reviews'}
                 </NavLink>
               </li>
-              
+
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -141,19 +152,21 @@ class Nav extends Component {
                   {'Used Car'}
                 </a>
               </li>
-              <li className="nav-item"  data-toggle="modal" data-target="#exampleModal" >
+              <li
+                className="nav-item"
+                data-toggle="modal"
+                data-target="#exampleModal">
                 <div
                   className="nav-link"
                   activeClassName="active-link"
-                  style={{cursor:'pointer'}}
-                  >
+                  style={{ cursor: 'pointer' }}>
                   {'Login'}
                 </div>
               </li>
             </ul>
             <div className="user-container">
               <i className="fas fa-user-alt pr-2 user-icon"></i>
-              <span className="username">{'Andrew Peki'}</span>
+              <span className="username">{this.state.name}</span>
             </div>
             {/* <button
             //onClick={changelanguage("ar")}
@@ -203,61 +216,74 @@ class Nav extends Component {
           </div>
         )}  */}
 
-
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style={{backgroundColor:'black'}}>
-      <div class="modal-header">
-        <div class="modal-title" id="exampleModalLabel" style={{marginTop:'5px'}}><img src={logo}/></div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style={{color:'white', opacity:'1'}}>
-          <span aria-hidden="true" >&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" >
-      <div className='login-popupBTNS'>
-          {this.state.isLoginedGmail ? (
-            <GoogleLogout
-              icon={<img width='30px' height='30px' src={fbLogo}/>}
-
-              className='google-login-btn'
-              clientId={CLIENT_ID}
-              buttonText="Logout"
-              onLogoutSuccess={this.logout}
-              onFailure={this.handleLogoutFailure}></GoogleLogout>
-        ) : (
-            <GoogleLogin
-              clientId={CLIENT_ID}
-              buttonText="Continue with Google"
-              icon={fbLogo}
-              onSuccess={this.login}
-              onFailure={this.handleLoginFailure}
-              cookiePolicy={'single_host_origin'}
-              responseType="code,token"
-              className='google-login-btn'
-              
-            />
-        )}
-        {this.state.isLoginedFB ? (
-            <button onClick={this.logOUtFB} className='fb-login-btn'> Log Out</button>
-          
-        ) : (
-            <FacebookLogin
-              appId="1063436714175495"
-              autoLoad={false}
-              fields="name,email,picture"
-              callback={this.responseFacebook}
-              textButton='Continue with Facebook'
-              cssClass='fb-login-btn'
-              icon={<img width='30px' height='30px' src={fbLogo}/>}
-            />
-          
-        )}
+        <div
+          class="modal fade "
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style={{ backgroundColor: 'black' }}>
+              <div class="modal-header">
+                <div
+                  class="modal-title"
+                  id="exampleModalLabel"
+                  style={{ marginTop: '5px' }}>
+                  <img src={logo} />
+                </div>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  style={{ color: 'white', opacity: '1' }}>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div className="login-popupBTNS">
+                  {this.state.isLoginedGmail ? (
+                    <GoogleLogout
+                      icon={<img width="30px" height="30px" src={fbLogo} />}
+                      className="google-login-btn"
+                      clientId={CLIENT_ID}
+                      buttonText="Logout"
+                      onLogoutSuccess={this.logout}
+                      onFailure={this.handleLogoutFailure}></GoogleLogout>
+                  ) : (
+                    <GoogleLogin
+                      clientId={CLIENT_ID}
+                      buttonText="Continue with Google"
+                      icon={fbLogo}
+                      onSuccess={this.login}
+                      onFailure={this.handleLoginFailure}
+                      cookiePolicy={'single_host_origin'}
+                      responseType="code,token"
+                      className="google-login-btn"
+                    />
+                  )}
+                  {this.state.isLoginedFB ? (
+                    <button onClick={this.logOUtFB} className="fb-login-btn">
+                      {' '}
+                      Log Out
+                    </button>
+                  ) : (
+                    <FacebookLogin
+                      appId="1063436714175495"
+                      autoLoad={false}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      textButton="Continue with Facebook"
+                      cssClass="fb-login-btn"
+                      icon={<img width="30px" height="30px" src={fbLogo} />}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
+      </div>
     );
   }
 }

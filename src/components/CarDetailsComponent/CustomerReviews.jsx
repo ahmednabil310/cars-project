@@ -31,6 +31,7 @@ class CustomerReviews extends Component {
       rate: 0,
       modalShow: false,
       carId: props.data.id,
+      isLike: false,
     };
   }
 
@@ -67,8 +68,26 @@ class CustomerReviews extends Component {
     this.setState({ modalShow: type });
   };
 
+  handleLike = () => {
+    this.setState({ isLike: !this.state.isLike });
+  };
+
+  handleEditComment() {
+    const obj = {
+      ratingStar: this.state.rating,
+      title: this.state.title,
+      subject: this.state.comment,
+      id: 0, //useId
+    };
+    this.props.actions.updateComment(obj);
+  }
+  handleDeleteComment() {
+    //send paramter of id
+    this.props.actions.deleteComment();
+  }
+
   render() {
-    console.log(this.props.listComment)
+    console.log(this.props.listComment);
 
     return (
       <>
@@ -135,7 +154,6 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-
                 onClick={() => this.viewReviewHandler(true)}>
                 <div>
                   <svg
@@ -185,7 +203,9 @@ class CustomerReviews extends Component {
                     className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
                     name="rating"></div>
                   {this.state.rating.length === 0 && (
-                    <div className="position-absolute review__input_rating__placeholder" style={{display:'flex',alignItems:'center'}}>
+                    <div
+                      className="position-absolute review__input_rating__placeholder"
+                      style={{ display: 'flex', alignItems: 'center' }}>
                       <span className="main__gary mr-2">{'Review rating'}</span>
                       <span
                         className="ml-2 d-inline-block"
@@ -351,9 +371,8 @@ class CustomerReviews extends Component {
                   return (
                     <div className="review" key={item.id}>
                       <div className="review-title d-flex flex-row flex-wrap align-items-center">
-                        <h2 >{item.title}</h2>
+                        <h2>{item.title}</h2>
                         <ReactStars
-                          
                           count={5}
                           size={24}
                           activeColor="#d53535"
@@ -380,18 +399,44 @@ class CustomerReviews extends Component {
                           fill="#c4c4c4"
                         />
                       </svg>
-                      {isLoginGmail || isLoginFB || true? (
-                        <div className='edit-delete-btns-container'>
-                        
-                          <button className='consumerReviewBtn'  onClick={()=>{this.setState({editingItem:item,editformshow:true})}}> <i class="fas fa-pen mr-2"></i>Edit Comment</button>
-                          <button className='consumerReviewBtn' data-toggle="modal" data-target="#DeleteCofirm"><i class="fas fa-trash-alt mr-2"></i>Delete Comment</button>{' '}
-
-                          <div class="modal fade" id="DeleteCofirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      {isLoginGmail || isLoginFB || true ? (
+                        <div className="edit-delete-btns-container">
+                          <button
+                            className="consumerReviewBtn"
+                            onClick={() => {
+                              this.setState({
+                                editingItem: item,
+                                editformshow: true,
+                              });
+                            }}>
+                            {' '}
+                            <i class="fas fa-pen mr-2"></i>Edit Comment
+                          </button>
+                          <button
+                            className="consumerReviewBtn"
+                            data-toggle="modal"
+                            data-target="#DeleteCofirm">
+                            <i class="fas fa-trash-alt mr-2"></i>Delete Comment
+                          </button>{' '}
+                          <div
+                            class="modal fade"
+                            id="DeleteCofirm"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <h5
+                                    class="modal-title"
+                                    id="exampleModalLabel">
+                                    Delete
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
@@ -399,20 +444,26 @@ class CustomerReviews extends Component {
                                   Are you sure want to delete this comment ?
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                  <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                  <button type="button" className="btn btn-danger " >Delete</button>
+                                  <button
+                                    type="button"
+                                    className="btn btn-secondary"
+                                    data-dismiss="modal">
+                                    Cancel
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="btn btn-danger ">
+                                    Delete
+                                  </button>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          
-
-
-
                           <ModelFields
                             show={this.state.editformshow}
-                            onHide={() =>{ this.setState({editformshow:false})}}
-                            
+                            onHide={() => {
+                              this.setState({ editformshow: false });
+                            }}
                             //submitValid={comment}
                             title="Review">
                             <div className="form-group position-relative">
@@ -420,18 +471,25 @@ class CustomerReviews extends Component {
                                 type="text"
                                 className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                                 name="title"
-                                defaultValue={this.state.editingItem?this.state.editingItem.title:null}
+                                defaultValue={
+                                  this.state.editingItem
+                                    ? this.state.editingItem.title
+                                    : null
+                                }
                               />
-                              {this.state.editingItem && this.state.editingItem.title.length==0 && (
-                                <div className="position-absolute review__input_title__placeholder">
-                                  <span className="main__gary mr-2">{'Review title'}</span>
-                                  <span
-                                    className="main__gary ml-2"
-                                    style={{ color: '#C4C4C4' }}>
-                                    {'64 letters or numbers'}
-                                  </span>
-                                </div>
-                              )}
+                              {this.state.editingItem &&
+                                this.state.editingItem.title.length == 0 && (
+                                  <div className="position-absolute review__input_title__placeholder">
+                                    <span className="main__gary mr-2">
+                                      {'Review title'}
+                                    </span>
+                                    <span
+                                      className="main__gary ml-2"
+                                      style={{ color: '#C4C4C4' }}>
+                                      {'64 letters or numbers'}
+                                    </span>
+                                  </div>
+                                )}
                             </div>
                             <div className="form-group position-relative">
                               <div
@@ -439,8 +497,15 @@ class CustomerReviews extends Component {
                                 className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
                                 name="rating"></div>
                               {this.state.editingItem && (
-                                <div className="position-absolute review__input_rating__placeholder" style={{display:'flex',alignItems:'center'}}>
-                                  <span className="main__gary mr-2">{'Review rating'}</span>
+                                <div
+                                  className="position-absolute review__input_rating__placeholder"
+                                  style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                  }}>
+                                  <span className="main__gary mr-2">
+                                    {'Review rating'}
+                                  </span>
                                   <span
                                     className="ml-2 d-inline-block"
                                     style={{ width: '135px' }}>
@@ -460,33 +525,30 @@ class CustomerReviews extends Component {
                                 className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                                 name="comment"
                                 rows="5"
-                                defaultValue={this.state.editingItem?this.state.editingItem.subject:null}
+                                defaultValue={
+                                  this.state.editingItem
+                                    ? this.state.editingItem.subject
+                                    : null
+                                }
                                 // onChange={this.inputChangeHandler}
-                                >
-
-                              </textarea>
-                              {this.state.editingItem && this.state.editingItem.subject.length==0 && (
-                                <div
-                                  className="position-absolute"
-                                  style={{ top: '12%', left: '6%' }}>
-                                  <span className="main__gary mr-2">
-                                    {'Review details'}
-                                  </span>
-                                  <span
-                                    className="main__gary ml-2"
-                                    style={{ color: '#C4C4C4' }}>
-                                    {'360 letters or numbers'}
-                                  </span>
-                                </div>
-                              )}
+                              ></textarea>
+                              {this.state.editingItem &&
+                                this.state.editingItem.subject.length == 0 && (
+                                  <div
+                                    className="position-absolute"
+                                    style={{ top: '12%', left: '6%' }}>
+                                    <span className="main__gary mr-2">
+                                      {'Review details'}
+                                    </span>
+                                    <span
+                                      className="main__gary ml-2"
+                                      style={{ color: '#C4C4C4' }}>
+                                      {'360 letters or numbers'}
+                                    </span>
+                                  </div>
+                                )}
                             </div>
                           </ModelFields>
-            
-
-
-
-
-
                         </div>
                       ) : null}
                     </div>

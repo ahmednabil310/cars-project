@@ -10,4 +10,7 @@ export default {
   listReviews: [],
   ListParticipants: [],
   ListMostLike: [],
+  ListCarPrice: [],
+  ListCarCategory: [],
+  ListLike: [],
 };
