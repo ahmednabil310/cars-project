@@ -18,7 +18,17 @@
 	color: #727272;
 }
 
-
+.customer-reviews-writeReview {
+	background-color: #d53535;
+	color: white;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 0px;
+	font-size: 14px;
+	border-radius: 5px;
+}
 
 .customer-reviews button svg {
 	margin-right: 5px;
@@ -164,16 +174,19 @@
 	margin-top: 20px;
 }
 .consumerReviewBtn{
-	background-color: #d53535;
-	color: white;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	font-size: 14px;
-	border-radius: 5px;
-	margin-right: 10px;
+	margin:0px;
+}
+.consumerReviewBtn{
+	background-color: #d53535 !important;
+	color: white !important;
+	border: none !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 10px !important;
+	font-size: 14px !important;
+	border-radius: 5px !important;
+	margin-right: 10px !important;
 }
 .consumerReviewBtn:focus{
 	outline: none;
