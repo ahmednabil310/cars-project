@@ -164,83 +164,57 @@ class Nav extends Component {
                 </div>
               </li>
             </ul>
-            <div className="user-container">
+            {/* <div className="user-container">
               <i className="fas fa-user-alt pr-2 user-icon"></i>
               <span className="username">{this.state.name}</span>
+            </div> */}
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle d-flex align-items-center dropdown-nav"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+                <i className="fas fa-user-alt pr-2 user-icon"></i>
+                <span className="username">{this.state.name}</span>
+              </button>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="#">
+                  Log Out
+                </a>
+              </div>
             </div>
-            {/* <button
-            //onClick={changelanguage("ar")}
-            >
-              Ar
-            </button>
-            <button
-            //onClick={changelanguage("en")}
-            >
-              en
-            </button> */}
           </div>
         </nav>
-        {/* {this.state.isLoginedGmail ? (
-          <div style={{ paddingTop: '40px' }}>
-            <GoogleLogout
-              clientId={CLIENT_ID}
-              buttonText="Logout"
-              onLogoutSuccess={this.logout}
-              onFailure={this.handleLogoutFailure}></GoogleLogout>
-          </div>
-        ) : (
-          <div style={{ paddingTop: '40px' }}>
-            <GoogleLogin
-              clientId={CLIENT_ID}
-              buttonText="Login"
-              onSuccess={this.login}
-              onFailure={this.handleLoginFailure}
-              cookiePolicy={'single_host_origin'}
-              responseType="code,token"
-            />
-          </div>
-        )}
-        {this.state.isLoginedFB ? (
-          <div style={{ paddingTop: '40px' }}>
-            <button onClick={this.logOUtFB}> LogOut</button>
-          </div>
-        ) : (
-          <div style={{ paddingTop: '40px' }}>
-            <FacebookLogin
-              buttonStyle={{ padding: '6px' }}
-              appId="1063436714175495"
-              autoLoad={false}
-              fields="name,email,picture"
-              callback={this.responseFacebook}
-            />
-          </div>
-        )}  */}
 
         <div
-          class="modal fade "
+          className="modal fade "
           id="exampleModal"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style={{ backgroundColor: 'black' }}>
-              <div class="modal-header">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content" style={{ backgroundColor: 'black' }}>
+              <div className="modal-header">
                 <div
-                  class="modal-title"
+                  className="modal-title"
                   id="exampleModalLabel"
                   style={{ marginTop: '5px' }}>
                   <img src={logo} />
                 </div>
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   data-dismiss="modal"
                   aria-label="Close"
                   style={{ color: 'white', opacity: '1' }}>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 <div className="login-popupBTNS">
                   {this.state.isLoginedGmail ? (
                     <GoogleLogout
@@ -274,7 +248,7 @@ class Nav extends Component {
                       fields="name,email,picture"
                       callback={this.responseFacebook}
                       textButton="Continue with Facebook"
-                      cssClass="fb-login-btn"
+                      cssclassName="fb-login-btn"
                       icon={<img width="30px" height="30px" src={fbLogo} />}
                     />
                   )}

@@ -304,40 +304,41 @@ class CustomerReviews extends Component {
                               });
                             }}>
                             {' '}
-                            <i class="fas fa-pen mr-2"></i>Edit Comment
+                            <i className="fas fa-pen mr-2"></i>Edit Comment
                           </button>
                           <button
                             className="consumerReviewBtn"
                             data-toggle="modal"
                             data-target="#DeleteCofirm">
-                            <i class="fas fa-trash-alt mr-2"></i>Delete Comment
+                            <i className="fas fa-trash-alt mr-2"></i>Delete
+                            Comment
                           </button>{' '}
                           <div
-                            class="modal fade"
+                            className="modal fade"
                             id="DeleteCofirm"
                             tabindex="-1"
                             aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
+                            <div className="modal-dialog modal-dialog-centered">
+                              <div className="modal-content">
+                                <div className="modal-header">
                                   <h5
-                                    class="modal-title"
+                                    className="modal-title"
                                     id="exampleModalLabel">
                                     Delete
                                   </h5>
                                   <button
                                     type="button"
-                                    class="close"
+                                    className="close"
                                     data-dismiss="modal"
                                     aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <div class="modal-body text-center">
+                                <div className="modal-body text-center">
                                   Are you sure want to delete this comment ?
                                 </div>
-                                <div class="modal-footer justify-content-center">
+                                <div className="modal-footer justify-content-center">
                                   <button
                                     type="button"
                                     className="btn btn-secondary"

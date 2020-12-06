@@ -23,6 +23,13 @@
 .nav-container .active .nav-link {
   border: 0;
 }
+.dropdown-nav {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.dropdown-nav:focus {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
 .user-container .username {
   font-size: 17px;
   font-weight: 400;
@@ -74,9 +81,9 @@
     padding: 0 20px !important;
   }
 }
-.login-popup{
+.login-popup {
   position: absolute;
-  width:40%;
+  width: 40%;
   height: 50%;
   top: 25%;
   left: 25%;
@@ -88,20 +95,19 @@
   z-index: 100;
 }
 
-.login-popup-header{
+.login-popup-header {
   display: flex;
   justify-content: space-between;
-
 }
-.login-popup-header-closeBTN{
+.login-popup-header-closeBTN {
   cursor: pointer;
-  background:#7070706b ;
+  background: #7070706b;
   width: 4%;
   text-align: center;
   border-radius: 4px;
   font-weight: bolder;
 }
-.login-popupBTNS{
+.login-popupBTNS {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -109,65 +115,60 @@
   justify-content: center;
   margin-bottom: 25px;
 }
-.fb-login-btn{
+.fb-login-btn {
   color: white !important;
-    width: 250px;
-    height: 35px;
-    display: flex !important;
-    align-items: center !important;
-    border: 1px solid transparent !important;
-    background-color: #3b5998 !important;
-    margin-top: 20px;
-    border-radius: 3px !important;
-    padding: 0px 8px !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
+  width: 250px;
+  height: 35px;
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid transparent !important;
+  background-color: #3b5998 !important;
+  margin-top: 20px;
+  border-radius: 3px !important;
+  padding: 0px 8px !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
 }
-.google-login-btn{
+.google-login-btn {
   color: white !important;
-    width: 250px;
-    height: 35px;
-    display: flex !important;
-    align-items: center !important;
-    border: 1px solid transparent !important;
-    background-color: rgb(204, 22, 22) !important;
-    margin-top: 20px;
-    border-radius: 3px !important;
-    padding: 0px 8px !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
-    box-shadow: none !important;
-    
-    
-     
-    
+  width: 250px;
+  height: 35px;
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid transparent !important;
+  background-color: rgb(204, 22, 22) !important;
+  margin-top: 20px;
+  border-radius: 3px !important;
+  padding: 0px 8px !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  box-shadow: none !important;
 }
-.google-login-btn>span{
+.google-login-btn > span {
   padding: 0 !important;
   font-weight: inherit !important;
 }
-.google-login-btn>div{
+.google-login-btn > div {
   background: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
   width: 30px;
   height: 30px;
-
 }
 
-.btnContaier{
-    color: white !important;
-    width: 250px;
-    height: 35px;
-    display: flex !important;
-    justify-content: center;
-    align-items: center !important;
-    border: 1px solid transparent !important;
-    background-color: #3b5998 !important;
-    margin-top: 20px;
-    border-radius: 3px !important;
-    padding: 0 !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
+.btnContaier {
+  color: white !important;
+  width: 250px;
+  height: 35px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center !important;
+  border: 1px solid transparent !important;
+  background-color: #3b5998 !important;
+  margin-top: 20px;
+  border-radius: 3px !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
 }

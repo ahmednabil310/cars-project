@@ -42,8 +42,8 @@
 }
 
 .my-btn {
-  width: 250px !important;
-  height: 50px;
+  width: 100% !important;
+  height: 73px;
   background-color: #d53535 !important;
   border-color: #d53535 !important;
   box-shadow: 0px 1px 3px #707070;
@@ -62,10 +62,7 @@
     width: 100% !important;
     background-position: right 2rem center !important;
   }
-  .my-btn {
-    width: 100% !important;
-    height: 50px !important;
-  }
+
   .NewCarPricing-Section1__h3 {
     font-size: 24px;
   }
@@ -146,9 +143,10 @@
     margin-right: 15px !important;
   }
   .my-btn {
-    width: 30% !important;
+    width: 100% !important;
     height: 50px !important;
     display: block;
+    margin-top: 3px;
   }
 }
 

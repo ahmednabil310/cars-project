@@ -77,13 +77,10 @@ class ReviewPortalComp extends Component {
             <MostLikeReview />
           </div>
 
-
-          <div className='col-12 col-sm-12 col-md-4 col-lg-4  pl-0'>
-                    {/* <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div> */}
-                    <TopRatedCars/>
-                </div>
-
-
+          <div className="col-12 col-sm-12 col-md-4 col-lg-4  pl-0">
+            {/* <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div> */}
+            <TopRatedCars />
+          </div>
         </div>
 
         <ModelFields
@@ -92,7 +89,7 @@ class ReviewPortalComp extends Component {
           submitHandler={this.addReviewHandler}
           //submitValid={comment}
           title="Review">
-          <div class="form-group position-relative">
+          <div className="form-group position-relative">
             <input
               type="text"
               className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
@@ -115,7 +112,9 @@ class ReviewPortalComp extends Component {
               className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
               name="rating"></div>
 
-            <div className="position-absolute review__input_rating__placeholder " style={{display:'flex',alignItems:'center'}}>
+            <div
+              className="position-absolute review__input_rating__placeholder "
+              style={{ display: 'flex', alignItems: 'center' }}>
               <span className="main__gary mr-2">{'Review rating'}</span>
               <span className="ml-2 d-inline-block" style={{ width: '135px' }}>
                 <ReactStars

@@ -70,78 +70,63 @@ class Section1 extends Component {
       <div className=" d-flex justify-content-center">
         <div className="custom__container NewCarPricing-Section1">
           <h3 className="NewCarPricing-Section1__h3 NewCarPricing-Section1__h3--red">
-            {/* {t("Choose")} */}
             Choose
           </h3>
-          <h3 className="NewCarPricing-Section1__h3 desc">
-            {/* {t("learn what to pay")} */}
-            learn what to pay
-          </h3>
-          {/* <div className='NewCarPricing-Section1-search'>
-						<p className='NewCarPricing-Section1-search__p'>
-							{t("Search by")}
-						</p>
-						<p className='NewCarPricing-Section1-search__p'>
-							{t("Make/Model")}
-						</p>
-						<p className='NewCarPricing-Section1-search__p'>{t("Type")}</p>
-						<p className='NewCarPricing-Section1-search__p'>{t("Price")}</p>
-					</div> */}
-          <div className="d-flex align-items-center justify-content-center select__input">
-            <Select
-              name="yearsId"
-              id="yearsId"
-              value={this.state.SelectedYears}
-              onChange={(opt) => {
-                this.setFieldValue('SelectedYears', opt);
-              }}
-              styles={customStyles}
-              options={this.props.listYears}
-            />
-            <Select
-              name="makeId"
-              id="makeId"
-              value={this.state.SelectedMake}
-              onChange={(opt) => {
-                this.setFieldValue('SelectedMake', opt);
-              }}
-              options={this.props.listCars}
-              isDisabled={this.state.SelectedYears.label === 'Select Years'}
-              styles={customStyles}
-            />
-            <Select
-              name="submakeId"
-              id="submakeId"
-              value={this.state.SelectedSubMake}
-              onChange={(opt) => {
-                this.setFieldValue('SelectedSubMake', opt);
-              }}
-              styles={customStyles}
-              options={this.props.listSubCars}
-              isDisabled={this.state.SelectedMake.label === 'Select Make'}
-            />
+          <h3 className="NewCarPricing-Section1__h3 desc">learn what to pay</h3>
 
-            <Select
-              name="engine"
-              id="engine"
-              value={this.state.SelectedEngine}
-              onChange={(opt) => {
-                this.setFieldValue('SelectedEngine', opt);
-              }}
-              styles={customStyles}
-              options={this.props.listEngine}
-              isDisabled={this.state.SelectedSubMake.label === 'Select SubMake'}
-            />
-
-            <button
-              className="btn my-btn btn-primary"
-              onClick={() =>
-                this.props.history.push(
-                  `/cardetail?type=${this.state.SelectedEngine.value}`,
-                )
-              }>
-              Submit
-            </button>
+          <div className="d-flex align-items-center select__input row">
+            <div className="col-lg-3 col-sm-12">
+              <Select
+                name="makeId"
+                id="makeId"
+                value={this.state.SelectedMake}
+                onChange={(opt) => {
+                  this.setFieldValue('SelectedMake', opt);
+                }}
+                options={this.props.listCars}
+                isDisabled={this.state.SelectedYears.label === 'Select Years'}
+                styles={customStyles}
+              />
+            </div>
+            <div className="col-lg-3 col-sm-12">
+              <Select
+                name="submakeId"
+                id="submakeId"
+                value={this.state.SelectedSubMake}
+                onChange={(opt) => {
+                  this.setFieldValue('SelectedSubMake', opt);
+                }}
+                styles={customStyles}
+                options={this.props.listSubCars}
+                isDisabled={this.state.SelectedMake.label === 'Select Make'}
+              />
+            </div>
+            <div className="col-lg-3 col-sm-12">
+              <Select
+                name="engine"
+                id="engine"
+                value={this.state.SelectedEngine}
+                onChange={(opt) => {
+                  this.setFieldValue('SelectedEngine', opt);
+                }}
+                styles={customStyles}
+                options={this.props.listEngine}
+                isDisabled={
+                  this.state.SelectedSubMake.label === 'Select SubMake'
+                }
+              />
+            </div>
+            <div className="col-lg-3">
+              <button
+                className="btn my-btn btn-primary"
+                onClick={() =>
+                  this.props.history.push(
+                    `/cardetail?type=${this.state.SelectedEngine.value}`,
+                  )
+                }>
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>

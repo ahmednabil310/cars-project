@@ -81,6 +81,7 @@ class CarCard extends Component {
                 className="img-fluid w-100"
                 src={this.props.data.image_1}
                 alt="gallery"
+                style={{ cursor: 'pointer' }}
               />
               <p className="mb-0 ml-3 text-white">View all photos</p>
             </div>
@@ -140,8 +141,12 @@ class CarCard extends Component {
               </div>
             </div>
             <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>
-            <ul className="fa-ul px-2">{listGood}</ul>
-            <ul className="fa-ul px-2">{listbad}</ul>
+            <ul className="fa-ul px-2" style={{ textTransform: 'capitalize' }}>
+              {listGood}
+            </ul>
+            <ul className="fa-ul px-2" style={{ textTransform: 'capitalize' }}>
+              {listbad}
+            </ul>
             <div className="px-2 mb-4">
               <button
                 className="btn btn-outline-danger Full__Review__Btn btn-block text-capitalize"

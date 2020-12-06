@@ -73,10 +73,10 @@ class MostLikeReview extends Component {
                     value={parseFloat(item.ratingStar)}
                   />
                 </span>
-                <i class="far fa-heart cursor-pointer  ml-auto" style={{color:'grey'}}></i>
-                <i class="fas fa-heart cursor-pointer  ml-auto"></i>
-
-
+                <i
+                  className="far fa-heart cursor-pointer  ml-auto"
+                  style={{ color: 'grey' }}></i>
+                <i className="fas fa-heart cursor-pointer  ml-auto"></i>
                 {/* <svg
                   
                   className=""
