@@ -32,6 +32,8 @@ class CustomerReviews extends Component {
       modalShow: false,
       carId: props.data.id,
       isLike: false,
+      currentIdComment: 0,
+      id: 0,
     };
   }
 
@@ -48,8 +50,26 @@ class CustomerReviews extends Component {
     });
   };
 
+  inputChangeHandlerEdit = (event) => {
+    let lastData = this.state.editingItem;
+    lastData['subject'] = event.target.value;
+    this.setState({ editingItem: lastData });
+  };
+
+  inputChangeHandlerTitleEdit = (event) => {
+    let lastData = this.state.editingItem;
+    lastData['title'] = event.target.value;
+    this.setState({ editingItem: lastData });
+  };
+
   inputRateHandler = (event) => {
     this.setState({ ...this.state.review, rate: event });
+  };
+
+  inputRateHandlerEdit = (event) => {
+    let lastData = this.state.editingItem;
+    lastData['ratingStar'] = event;
+    this.setState({ editingItem: lastData });
   };
 
   addReviewHandler = () => {
@@ -68,27 +88,62 @@ class CustomerReviews extends Component {
     this.setState({ modalShow: type });
   };
 
-  handleLike = () => {
-    this.setState({ isLike: !this.state.isLike });
-  };
-
   handleEditComment() {
     const obj = {
-      ratingStar: this.state.rating,
-      title: this.state.title,
-      subject: this.state.comment,
-      id: 0, //useId
+      ratingStar: this.state.editingItem.ratingStar.toString(),
+      title: this.state.editingItem.title,
+      subject: this.state.editingItem.subject,
+      id: this.state.editingItem.id, //useId
+      ratingStar: '0',
+      title: '',
+      subject: '',
+      totalView: '',
+      totalLike: '',
+      status: '',
+      postedon: '',
     };
+    this.setState({ editformshow: false });
+
     this.props.actions.updateComment(obj);
   }
   handleDeleteComment() {
-    //send paramter of id
-    this.props.actions.deleteComment();
+    const userId = localStorage.getItem('UserIDFB');
+
+    const obj = {
+      id: this.state.id,
+      userId: userId,
+      carId: this.props.data.id,
+      ratingStar: '0',
+      title: '',
+      subject: '',
+      totalView: '',
+      totalLike: '',
+      status: '',
+      postedon: '',
+    };
+    this.props.actions.deleteComment(obj);
   }
 
-  render() {
-    console.log(this.props.listComment);
+  hnadleLike(id) {
+    const userId = localStorage.getItem('UserIDFB');
+    const obj = {
+      id: id,
+      userId: userId,
+      carId: this.props.data.id,
+      ratingStar: '0',
+      title: '',
+      subject: '',
+      totalView: '',
+      totalLike: '',
+      status: '',
+      postedon: '',
+    };
 
+    this.setState({ isLike: !this.state.isLike });
+
+    this.props.actions.likeComment(obj);
+  }
+  render() {
     return (
       <>
         <div className="container-fluid customer-reviews">
@@ -280,6 +335,8 @@ class CustomerReviews extends Component {
                       <span>{'detail-car'}</span>
                       <span className="last">{'likes'}</span>
                       <svg
+                        onClick={() => this.hnadleLike(item.id)}
+                        style={{ background: this.state.isLike ? 'red' : '' }}
                         className="cursor-pointer"
                         xmlns="http://www.w3.org/2000/svg"
                         width="29.25"
@@ -307,6 +364,11 @@ class CustomerReviews extends Component {
                             <i className="fas fa-pen mr-2"></i>Edit Comment
                           </button>
                           <button
+                            onClick={() =>
+                              this.setState({
+                                id: item.id,
+                              })
+                            }
                             className="consumerReviewBtn"
                             data-toggle="modal"
                             data-target="#DeleteCofirm">
@@ -346,6 +408,9 @@ class CustomerReviews extends Component {
                                     Cancel
                                   </button>
                                   <button
+                                    onClick={this.handleDeleteComment.bind(
+                                      this,
+                                    )}
                                     type="button"
                                     className="btn btn-danger ">
                                     Delete
@@ -359,7 +424,6 @@ class CustomerReviews extends Component {
                             onHide={() => {
                               this.setState({ editformshow: false });
                             }}
-                            //submitValid={comment}
                             title="Review">
                             <div className="form-group position-relative">
                               <input
@@ -371,6 +435,7 @@ class CustomerReviews extends Component {
                                     ? this.state.editingItem.title
                                     : null
                                 }
+                                onChange={this.inputChangeHandlerTitleEdit}
                               />
                               {this.state.editingItem &&
                                 this.state.editingItem.title.length == 0 && (
@@ -409,7 +474,7 @@ class CustomerReviews extends Component {
                                       size={24}
                                       activeColor="#d53535"
                                       value={this.state.editingItem.ratingStar}
-                                      onChange={this.inputRateHandler}
+                                      onChange={this.inputRateHandlerEdit}
                                     />
                                   </span>
                                 </div>
@@ -425,8 +490,9 @@ class CustomerReviews extends Component {
                                     ? this.state.editingItem.subject
                                     : null
                                 }
-                                // onChange={this.inputChangeHandler}
-                              ></textarea>
+                                onChange={
+                                  this.inputChangeHandlerEdit
+                                }></textarea>
                               {this.state.editingItem &&
                                 this.state.editingItem.subject.length == 0 && (
                                   <div

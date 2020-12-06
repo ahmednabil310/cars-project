@@ -13,9 +13,10 @@ class Section1 extends Component {
     super(props);
 
     this.refCSS = React.createRef();
-
+    var d = new Date();
+    var year = d.getFullYear();
     this.state = {
-      Years: [],
+      Years: year,
       Make: [],
       SelectedYears: { label: 'Select Years', value: 'Select Years' }, //t(
       SelectedMake: { label: 'Select Make', value: 'Select Make' }, //t(
@@ -26,7 +27,7 @@ class Section1 extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.makeYears();
+    this.props.actions.getCars(this.state.Years);
   }
 
   setFieldValue = (type, option) => {
@@ -35,16 +36,10 @@ class Section1 extends Component {
         this.props.actions.getCars(option.value);
         break;
       case 'SelectedMake':
-        this.props.actions.getSubCars(
-          option.value,
-          this.state.SelectedYears.value,
-        );
+        this.props.actions.getSubCars(option.value, this.state.Years);
         break;
       case 'SelectedSubMake':
-        this.props.actions.getEngine(
-          option.value,
-          this.state.SelectedYears.value,
-        );
+        this.props.actions.getEngine(option.value, this.state.Years);
         break;
     }
 
@@ -84,7 +79,6 @@ class Section1 extends Component {
                   this.setFieldValue('SelectedMake', opt);
                 }}
                 options={this.props.listCars}
-                isDisabled={this.state.SelectedYears.label === 'Select Years'}
                 styles={customStyles}
               />
             </div>
