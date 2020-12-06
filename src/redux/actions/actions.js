@@ -189,6 +189,25 @@ export function updateComment(param) {
       });
   };
 }
+
+export function likeComment(param) {
+  return (dispatch) => {
+    axiosDocs
+      .post(`api/Comment/Likes`, param)
+      .then(function (response) {
+        // dispatch({
+        //   type: types.UPDATECOMMENT,
+        //   data: response.data.result,
+        // });
+      })
+      .catch(function (error) {
+        console.log("likeComment: ", error);
+      });
+  };
+}
+
+
+
 export function deleteComment(param) {
   return (dispatch) => {
     axiosDocs
@@ -197,7 +216,7 @@ export function deleteComment(param) {
         toastr.success("Delete Comment Success");
         dispatch({
           type: types.DELETECOMMENT,
-          data: response.data.result,
+          data: param.id,
         });
       })
       .catch(function (error) {
@@ -300,4 +319,4 @@ export function getMostLikes() {
         console.log("getMostLike: ", error);
       });
   };
-}
+} 

@@ -93,6 +93,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         listCarData: listCar,
+        objCarData: action.data
       };
 
     case "GETCOMMENTLIST":
@@ -144,11 +145,19 @@ export default function (state = initialState, action) {
         ListCarCategory: action.data,
       };
 
-      case "GETMOSTLIKES":
-        return {
-          ...state,
-          ListLike: action.data,
-        };
+    case "GETMOSTLIKES":
+      return {
+        ...state,
+        ListLike: action.data,
+      };
+    case "DELETECOMMENT":
+
+      let listComm = state.listComment.filter(x => x.id !== action.data);
+
+      return {
+        ...state,
+        listComment: listComm,
+      };
     default:
       return {
         ...state,

@@ -13,4 +13,5 @@ export default {
   ListCarPrice: [],
   ListCarCategory: [],
   ListLike: [],
+  objCarData: {},
 };
