@@ -12,118 +12,53 @@ class TopRatedCars extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.getMostLike();
+    this.props.actions.getCarsRate();
   }
 
   render() {
     return (
-      <>
+      <div>
         <div className="topCarsRated_title">
           <div>Top Rated</div>
           <div style={{ color: "#727272" }}>Cars</div>
         </div>
-        <div className="topRatedCarCard">
-          <img
-            className="topRatedCarCard_img"
-            src={
-              "https://s3.caradvice.com.au/wp-content/uploads/2015/12/2016-Lexus-GS200t_10.jpg"
-            }
-          />
-          <div className="topRatedCarCard_details">
-            <div className="topRatedCarCard_title">Gensis G80</div>
-            <div className="topRatedCarCard_reviewCard">
-              <div className="topRatedCarCard_rateNum">5.0</div>
-              <div className="topRatedCarCard_reteDetails">
-                <div>255 reviews</div>
-                <div>
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    activeColor="#d53535"
-                    value={4}
-                  />
+
+        {this.props.ListCarsRate.length > 0 ?
+          this.props.ListCarsRate.map((item, i) => {
+            return <div className="topRatedCarCard">
+              <img
+                className="topRatedCarCard_img"
+                src={
+                  item.imageURL
+                }
+              />
+              <div className="topRatedCarCard_details">
+                <div className="topRatedCarCard_title">{item.make + "  " + item.model}</div>
+                <div className="topRatedCarCard_reviewCard">
+                  <div className="topRatedCarCard_rateNum">{item.reliability}</div>
+                  <div className="topRatedCarCard_reteDetails">
+                    <div>255 reviews</div>
+                    <div>
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        activeColor="#d53535"
+                        value={parseInt(item.reliability)}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="topRatedCarCard">
-          <img
-            className="topRatedCarCard_img"
-            src={
-              "https://s3.caradvice.com.au/wp-content/uploads/2015/12/2016-Lexus-GS200t_10.jpg"
-            }
-          />
-          <div className="topRatedCarCard_details">
-            <div className="topRatedCarCard_title">Gensis G80</div>
-            <div className="topRatedCarCard_reviewCard">
-              <div className="topRatedCarCard_rateNum">5.0</div>
-              <div className="topRatedCarCard_reteDetails">
-                <div>255 reviews</div>
-                <div>
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    activeColor="#d53535"
-                    value={1}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="topRatedCarCard">
-          <img
-            className="topRatedCarCard_img"
-            src={
-              "https://s3.caradvice.com.au/wp-content/uploads/2015/12/2016-Lexus-GS200t_10.jpg"
-            }
-          />
-          <div className="topRatedCarCard_details">
-            <div className="topRatedCarCard_title">Gensis G80</div>
-            <div className="topRatedCarCard_reviewCard">
-              <div className="topRatedCarCard_rateNum">5.0</div>
-              <div className="topRatedCarCard_reteDetails">
-                <div>255 reviews</div>
-                <div>
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    activeColor="#d53535"
-                    value={3}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="topRatedCarCard">
-          <img
-            className="topRatedCarCard_img"
-            src={
-              "https://s3.caradvice.com.au/wp-content/uploads/2015/12/2016-Lexus-GS200t_10.jpg"
-            }
-          />
-          <div className="topRatedCarCard_details">
-            <div className="topRatedCarCard_title">Gensis G80</div>
-            <div className="topRatedCarCard_reviewCard">
-              <div className="topRatedCarCard_rateNum">5.0</div>
-              <div className="topRatedCarCard_reteDetails">
-                <div>255 reviews</div>
-                <div>
-                  <img src={stars} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
+          })
+          : null}
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  ListMostLike: state.reduces.ListMostLike,
+  ListCarsRate: state.reduces.ListCarsRate,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

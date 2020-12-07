@@ -340,6 +340,22 @@ export function getLatestReview() {
   };
 } 
 
+export function getCarsRate() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Car/GetTopRatedCars`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARRATED,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+} 
+
 export function clearCar(index) {
   return (dispatch) => {
     dispatch({

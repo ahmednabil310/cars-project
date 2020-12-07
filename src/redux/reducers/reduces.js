@@ -164,13 +164,19 @@ export default function (state = initialState, action) {
  
       return {
         ...state,
-        listCarData: listCarData,
+        listCarData: state.listCarData,
       };
     case "GETCARREVIEW":
  
       return {
         ...state,
         ListCarLike: action.data,
+      };
+    case "GETCARRATED":
+ 
+      return {
+        ...state,
+        ListCarsRate: action.data.sort((a,b) => b-a).slice(0,5)
       };
     default:
       return {

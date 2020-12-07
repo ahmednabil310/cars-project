@@ -105,6 +105,9 @@ class Section_B extends Component {
 
     this.setState({
       cardShow: lastData,
+      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
+    },()=>{
+      this.props.actions.clearCar(0);
     });
   };
 
@@ -114,6 +117,9 @@ class Section_B extends Component {
 
     this.setState({
       cardShow: lastData,
+      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
+    },()=>{
+      this.props.actions.clearCar(1);
     });
   };
 
@@ -123,6 +129,9 @@ class Section_B extends Component {
 
     this.setState({
       cardShow: lastData,
+      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
+    },()=>{
+      this.props.actions.clearCar(2);
     });
   };
 
@@ -132,6 +141,9 @@ class Section_B extends Component {
 
     this.setState({
       cardShow: lastData,
+      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
+    },()=>{
+      this.props.actions.clearCar(3);
     });
   };
 

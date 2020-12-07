@@ -516,6 +516,7 @@ class CustomerReviews extends Component {
                                   Cancel
                                   </button>
                                 <button
+                                data-dismiss="modal"
                                   onClick={this.handleDeleteComment.bind(this)}
                                   type="button"
                                   className="btn btn-danger ">

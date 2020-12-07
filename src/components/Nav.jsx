@@ -37,7 +37,7 @@ class Nav extends Component {
   login(response) {
     if (response.accessToken) {
       localStorage.setItem('accessTokenGmail', response.accessToken);
-      localStorage.setItem('nameGmail', response.name);
+      localStorage.setItem('nameGmail', response.profileObj.name);
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
