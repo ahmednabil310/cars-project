@@ -158,6 +158,20 @@ export default function (state = initialState, action) {
         ...state,
         listComment: listComm,
       };
+    case "DELETECAR":
+
+      let listCarData = state.listCarData.splice(action.data,1);
+ 
+      return {
+        ...state,
+        listCarData: listCarData,
+      };
+    case "GETCARREVIEW":
+ 
+      return {
+        ...state,
+        ListCarLike: action.data,
+      };
     default:
       return {
         ...state,

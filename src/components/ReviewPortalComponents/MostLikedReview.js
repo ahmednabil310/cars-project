@@ -23,12 +23,12 @@ class MostLikeReview extends Component {
         </div>
         {this.props.ListLike.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <div className="MostLikeReview_cards row m-0">
                 <div className="MostLikeReview_cardContainer col-12 col-xl-6 col-lg-6 col-sm-12 col-md-12">
                   <img
                     src={
-                      'https://img.freepik.com/free-photo/half-profile-close-up-image-self-determined-focused-young-caucasian-unshaven-businessman-formal-clothes-posing-against-white-studio-wall-background-with-copyspace-your-text-content_343059-950.jpg?size=626&ext=jpg'
+                     item.imageURL
                     }
                     className="mostLikedReviewParticipantCard_img"
                   />
@@ -103,7 +103,7 @@ class MostLikeReview extends Component {
                 the flagship G90, the G80 offers an appealing blend of comfort
                 and power.
               </div>
-            </>
+            </div>
           );
         })}
       </>

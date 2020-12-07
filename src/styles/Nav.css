@@ -48,6 +48,9 @@
   color: white !important;
   border-left: 1px solid white;
 }
+.nav-container .special-login {
+  border-left: 0px solid white;
+}
 .navbar-toggler:focus {
   outline: 0px;
 }
@@ -63,6 +66,12 @@
   }
   .nav-container .active .nav-link {
     border-left: 1px solid white;
+  }
+  .nav-container .special-login {
+    border-left: 1px solid white;
+  }
+  .nav-container .dropdown {
+    right: 18px;
   }
   .navbar-brand img {
     width: 125px;

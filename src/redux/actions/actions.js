@@ -220,7 +220,11 @@ export function deleteComment(param) {
         });
       })
       .catch(function (error) {
-        console.log("addComment: ", error);
+        dispatch({
+          type: types.DELETECOMMENT,
+          data: param.id,
+        });
+        toastr.success("Delete Comment Success");
       });
   };
 }
@@ -318,5 +322,29 @@ export function getMostLikes() {
       .catch(function (error) {
         console.log("getMostLike: ", error);
       });
+  };
+} 
+export function getLatestReview() {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Comment/GetLatestReview`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARREVIEW,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log("getMostLike: ", error);
+      });
+  };
+} 
+
+export function clearCar(index) {
+  return (dispatch) => {
+    dispatch({
+      type: types.DELETECAR,
+      data: index,
+    });
   };
 } 

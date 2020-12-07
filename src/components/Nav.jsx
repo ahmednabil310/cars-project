@@ -5,19 +5,6 @@ import '../styles/Nav.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import fbLogo from '../images/facebook-logo-png-white.png';
-// import googleLogo from '../images/google-logo-png-white.png'
-
-// the hook
-import { useTranslation } from 'react-i18next';
-
-import i18n from '../i18n';
-//const { t, i18n } = useTranslation();
-
-// const changelanguage = (lan) => {
-//   return () => {
-//     i18n.changeLanguage(lan);
-//   };
-// };
 
 const CLIENT_ID =
   '132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com';
@@ -38,6 +25,7 @@ class Nav extends Component {
       accessToken: '',
       showPopUp: false,
       name: nameFB || nameGmail,
+      loggedIn: false,
     };
 
     this.login = this.login.bind(this);
@@ -55,6 +43,7 @@ class Nav extends Component {
         accessToken: response.accessToken,
         name: response.name,
         showPopUp: false,
+        loggedIn: true,
       }));
     }
   }
@@ -80,10 +69,12 @@ class Nav extends Component {
   responseFacebook = (response) => {
     localStorage.setItem('accessTokenFB', response.accessToken);
     localStorage.setItem('nameFB', response.name);
+    localStorage.setItem('UserIDFB', response.userID);
     this.setState({
       isLoginedFB: true,
       name: response.name,
       showPopUp: false,
+      loggedIn: true,
     });
   };
 
@@ -116,7 +107,9 @@ class Nav extends Component {
           <div
             className="collapse navbar-collapse "
             id="navbarSupportedContent">
-            <ul className="navbar-nav">
+            <ul
+              className="navbar-nav"
+              style={{ width: this.state.loggedIn ? '72%' : '71%' }}>
               <li className="nav-item active">
                 <NavLink
                   className="less-padding nav-link "
@@ -148,52 +141,59 @@ class Nav extends Component {
                 <a
                   className="nav-link"
                   target="_blank"
+                  rel="noreferrer"
                   href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE">
                   {'Used Car'}
                 </a>
               </li>
+            </ul>
+            {this.state.loggedIn ? (
+              <div className="dropdown">
+                <button
+                  className="btn btn-secondary dropdown-toggle d-flex align-items-center dropdown-nav"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  <i className="fas fa-user-alt pr-2 user-icon"></i>
+                  <span className="username">{this.state.name}</span>
+                </button>
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton">
+                  <li data-toggle="modal" data-target="#exampleModal">
+                    <div
+                      style={{
+                        cursor: 'pointer',
+                        color: 'black',
+                        paddingLeft: '10px',
+                      }}>
+                      Log Out
+                    </div>
+                  </li>
+                </div>
+              </div>
+            ) : (
               <li
-                className="nav-item"
+                className="nav-item d-flex"
                 data-toggle="modal"
                 data-target="#exampleModal">
                 <div
-                  className="nav-link"
+                  className="nav-link special-login"
                   activeClassName="active-link"
                   style={{ cursor: 'pointer' }}>
                   {'Login'}
                 </div>
               </li>
-            </ul>
-            {/* <div className="user-container">
-              <i className="fas fa-user-alt pr-2 user-icon"></i>
-              <span className="username">{this.state.name}</span>
-            </div> */}
-            <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle d-flex align-items-center dropdown-nav"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                <i className="fas fa-user-alt pr-2 user-icon"></i>
-                <span className="username">{this.state.name}</span>
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href="#">
-                  Log Out
-                </a>
-              </div>
-            </div>
+            )}
           </div>
         </nav>
 
         <div
           className="modal fade "
           id="exampleModal"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered">
@@ -244,6 +244,7 @@ class Nav extends Component {
                   ) : (
                     <FacebookLogin
                       appId="1063436714175495"
+                      // appId="781310785786387"
                       autoLoad={false}
                       fields="name,email,picture"
                       callback={this.responseFacebook}

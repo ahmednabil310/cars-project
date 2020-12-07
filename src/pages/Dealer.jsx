@@ -1,4 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import actions from '../redux/actions';
+import { bindActionCreators } from 'redux';
 import Banner from "../components/CarDetailsComponent/Banner";
 import CarDetails from "../components/CarDetailsComponent/CarDetails";
 import CarsPros from "../components/CarDetailsComponent/CarsPros";
@@ -12,8 +15,7 @@ class Dealer extends Component {
 
     let objId;
 
-    if(this.props.location.search === "")
-    {
+    if (this.props.location.search === "") {
       props.history.goBack();
     }
 
@@ -23,27 +25,35 @@ class Dealer extends Component {
       objId = params[1];
     }
 
-    let objData = JSON.parse(localStorage.getItem("CarData"));
+    // let objData = JSON.parse(localStorage.getItem("CarData"));
 
-    objData = objData.find((x) => x.id === parseInt(objId));
+    // objData = objData.find((x) => x.id === parseInt(objId));
 
     this.state = {
-      objData: objData,
+      objData: objId,
       loading: true,
     };
+  }
+
+  componentWillReceiveProps(nextState, prevState) { 
+this.setState({loading:false})
+
+  }
+  componentDidMount() {
+    this.props.actions.getCarData(this.state.objData);
   }
 
   render() {
     return (
       <div>
-        {this.state.loading ? (
+        {this.state.loading === false? (
           <>
-            <Banner data={this.state.objData} />
-            <CarDetails data={this.state.objData} />
-            <CarsPros data={this.state.objData} />
-            <FullCar data={this.state.objData} />
-            <LastBanner data={this.state.objData} />
-            <CustomerReviews data={this.state.objData} />{" "}
+            <Banner data={this.props.objCarData} />
+            <CarDetails data={this.props.objCarData} />
+            <CarsPros data={this.props.objCarData} />
+            <FullCar data={this.props.objCarData} />
+            <LastBanner data={this.props.objCarData} />
+            <CustomerReviews data={this.props.objCarData} /> 
           </>
         ) : null}
       </div>
@@ -51,4 +61,17 @@ class Dealer extends Component {
   }
 }
 
-export default Dealer;
+
+
+const mapStateToProps = (state, ownProps) => ({
+  objCarData: state.reduces.objCarData
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Dealer); 

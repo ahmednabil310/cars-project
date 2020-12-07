@@ -19,7 +19,7 @@ class TopReviews extends Component {
         <div className={"reviewPortal_sectionSeparator"} />
         {this.props.listReviews.map((item, index) => {
           return (
-            <div className="carReviewCard">
+            <div className="carReviewCard" key={index}>
               <img src={item.carImage} className="carReviewCard_img" />
               <div className="carReviewCard_details">
                 <div className="carReviewCard_title">{item.make}</div>
