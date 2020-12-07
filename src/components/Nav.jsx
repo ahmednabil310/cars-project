@@ -41,7 +41,7 @@ class Nav extends Component {
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
-        name: response.name,
+        name: response.profileObj.name,
         showPopUp: false,
         loggedIn: true,
       }));
