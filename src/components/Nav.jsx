@@ -250,7 +250,7 @@ class Nav extends Component {
                       callback={this.responseFacebook}
                       textButton="Continue with Facebook"
                       cssclassName="fb-login-btn"
-                      icon={<img width="30px" height="30px" src={fbLogo} />}
+                      icon={<i className="fab fa-facebook-f px-2"></i>}
                     />
                   )}
                 </div>
