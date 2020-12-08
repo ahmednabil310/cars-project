@@ -95,13 +95,13 @@ class CustomerReviews extends Component {
       title: this.state.editingItem.title,
       subject: this.state.editingItem.subject,
       id: this.state.editingItem.id, //useId
-      ratingStar:"0",
-      title:"",
-      subject:"",
-      totalView:"",
-      totalLike:"",
-      status:"",
-      postedon:""
+      ratingStar: "0",
+      title: "",
+      subject: "",
+      totalView: "",
+      totalLike: "",
+      status: "",
+      postedon: ""
     };
     this.setState({ editformshow: false });
 
@@ -116,30 +116,30 @@ class CustomerReviews extends Component {
       id: this.state.id,
       userId: userId,
       carId: this.props.data.id,
-      ratingStar:"0",
-      title:"",
-      subject:"",
-      totalView:"",
-      totalLike:"",
-      status:"",
-      postedon:""
+      ratingStar: "0",
+      title: "",
+      subject: "",
+      totalView: "",
+      totalLike: "",
+      status: "",
+      postedon: ""
     };
     this.props.actions.deleteComment(obj);
   }
 
-  hnadleLike(id) {
+  hnadleLike(id, ratingStar) {
     const userId = localStorage.getItem("UserIDFB");
     const obj = {
       id: id,
       userId: userId,
       carId: this.props.data.id,
-      ratingStar:"0",
-      title:"",
-      subject:"",
-      totalView:"",
-      totalLike:"",
-      status:"",
-      postedon:""
+      ratingStar: ratingStar,
+      title: "",
+      subject: "",
+      totalView: "",
+      totalLike: "",
+      status: "",
+      postedon: ""
     };
 
     this.setState({ isLike: !this.state.isLike });
@@ -446,8 +446,8 @@ class CustomerReviews extends Component {
                     <span>{'detail-car'}</span>
                     <span className="last">{'likes'}</span>
                     <svg
-                      onClick={() => this.hnadleLike(item.id)}
-                      style={{ background: this.state.isLike ? "red" : "" }}
+                      onClick={() => this.hnadleLike(item.id, parseInt(item.ratingStar))}
+                      //style={{ background: this.state.isLike ? "red" : "" }}
                       className="cursor-pointer"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29.25"
@@ -461,7 +461,7 @@ class CustomerReviews extends Component {
                         fill="#c4c4c4"
                       />
                     </svg>
-                    {isLoginGmail || isLoginFB || true ? (
+                    {isLoginGmail === item.userId || isLoginFB === item.userId ? (
                       <div className="edit-delete-btns-container">
                         <button
                           className="consumerReviewBtn"
@@ -516,7 +516,7 @@ class CustomerReviews extends Component {
                                   Cancel
                                   </button>
                                 <button
-                                data-dismiss="modal"
+                                  data-dismiss="modal"
                                   onClick={this.handleDeleteComment.bind(this)}
                                   type="button"
                                   className="btn btn-danger ">

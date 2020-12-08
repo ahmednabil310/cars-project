@@ -100,7 +100,7 @@ export function getEngine(submodel, year) {
   };
 }
 
-export function getCarData(id) {
+export function getCarData(id, index) {
   return (dispatch) => {
     axiosDocs
       .get(`api/Car/GetCarData?Id=${id}`)
@@ -108,6 +108,7 @@ export function getCarData(id) {
         dispatch({
           type: types.GETCARDATA,
           data: response.data.result,
+          index: (index - 1)
         });
       })
       .catch(function (error) {
@@ -195,6 +196,7 @@ export function likeComment(param) {
     axiosDocs
       .post(`api/Comment/Likes`, param)
       .then(function (response) {
+        toastr.success("Like Comment Success");
         // dispatch({
         //   type: types.UPDATECOMMENT,
         //   data: response.data.result,
@@ -323,7 +325,7 @@ export function getMostLikes() {
         console.log("getMostLike: ", error);
       });
   };
-} 
+}
 export function getLatestReview() {
   return (dispatch) => {
     axiosDocs
@@ -338,7 +340,7 @@ export function getLatestReview() {
         console.log("getMostLike: ", error);
       });
   };
-} 
+}
 
 export function getCarsRate() {
   return (dispatch) => {
@@ -354,7 +356,7 @@ export function getCarsRate() {
         console.log("getMostLike: ", error);
       });
   };
-} 
+}
 
 export function clearCar(index) {
   return (dispatch) => {

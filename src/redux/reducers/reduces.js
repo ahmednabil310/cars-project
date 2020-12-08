@@ -90,9 +90,13 @@ export default function (state = initialState, action) {
     case "GETCARDATA":
       const listCar = [...state.listCarData, action.data];
       localStorage.setItem("CarData", JSON.stringify(listCar));
+
+      let listCarIndex = [{}, {}, {}, {}];
+
+      listCarIndex[action.index] = action.data
       return {
         ...state,
-        listCarData: listCar,
+        listCarData: listCarIndex,
         objCarData: action.data
       };
 
@@ -160,23 +164,24 @@ export default function (state = initialState, action) {
       };
     case "DELETECAR":
 
-      let listCarData = state.listCarData.splice(action.data,1);
- 
+      let listCarData = state.listCarData;
+      listCarData[action.data] = {};
+
       return {
         ...state,
-        listCarData: state.listCarData,
+        listCarData: listCarData,
       };
     case "GETCARREVIEW":
- 
+
       return {
         ...state,
         ListCarLike: action.data,
       };
     case "GETCARRATED":
- 
+
       return {
         ...state,
-        ListCarsRate: action.data.sort((a,b) => b-a).slice(0,5)
+        ListCarsRate: action.data.sort((a, b) => b - a).slice(0, 5)
       };
     default:
       return {

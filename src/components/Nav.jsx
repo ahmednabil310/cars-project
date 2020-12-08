@@ -56,6 +56,7 @@ class Nav extends Component {
       isLoginedGmail: false,
       accessToken: '',
     }));
+    window.location.reload();
   }
 
   handleLoginFailure(response) {
@@ -83,6 +84,7 @@ class Nav extends Component {
     this.setState({
       isLoginedFB: false,
     });
+    window.location.reload();
   };
 
   render() {
@@ -109,7 +111,7 @@ class Nav extends Component {
             id="navbarSupportedContent">
             <ul
               className="navbar-nav"
-              style={{ width: this.state.loggedIn ? '72%' : '71%' }}>
+              style={{ width: this.state.loggedIn ? '64%' : '71%' }}>
               <li className="nav-item active">
                 <NavLink
                   className="less-padding nav-link "
