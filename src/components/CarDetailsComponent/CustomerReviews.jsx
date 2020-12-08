@@ -75,12 +75,14 @@ class CustomerReviews extends Component {
   addReviewHandler = () => {
     this.setState({ modalShow: !this.state.modalShow });
     const userId = localStorage.getItem('UserIDFB');
+    const userIdGmail = localStorage.getItem('GmailId');
+
     const param = {
       carId: this.state.carId,
       ratingStar: this.state.rate.toString(),
       title: this.state.title,
       subject: this.state.comment,
-      userId: userId,
+      userId: userId || userIdGmail,
     };
 
     this.props.actions.addComment(param);
@@ -91,12 +93,15 @@ class CustomerReviews extends Component {
   };
 
   handleEditComment() {
+    const userId = localStorage.getItem('UserIDFB');
+    const userIdGmail = localStorage.getItem('GmailId');
+
     const obj = {
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
       subject: this.state.editingItem.subject,
       id: this.state.editingItem.id, //useId
-      userId: localStorage.getItem('UserIDFB'),
+      userId: userId || userIdGmail,
       ratingStar: '0',
       title: '',
       subject: '',
@@ -111,10 +116,10 @@ class CustomerReviews extends Component {
   }
   handleDeleteComment() {
     const userId = localStorage.getItem('UserIDFB');
-
+    const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: this.state.id,
-      userId: userId,
+      userId: userId || userIdGmail,
       carId: this.props.data.id,
       ratingStar: '0',
       title: '',
@@ -129,9 +134,10 @@ class CustomerReviews extends Component {
 
   hnadleLike(id, ratingStar) {
     const userId = localStorage.getItem('UserIDFB');
+    const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: id,
-      userId: userId,
+      userId: userId || userIdGmail,
       carId: this.props.data.id,
       ratingStar: ratingStar,
       title: '',

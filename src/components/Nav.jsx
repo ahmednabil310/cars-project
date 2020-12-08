@@ -38,6 +38,7 @@ class Nav extends Component {
     if (response.accessToken) {
       localStorage.setItem('accessTokenGmail', response.accessToken);
       localStorage.setItem('nameGmail', response.profileObj.name);
+      localStorage.setItem('GmailId', response.googleId);
       this.setState((state) => ({
         isLoginedGmail: true,
         accessToken: response.accessToken,
@@ -59,24 +60,22 @@ class Nav extends Component {
     window.location.reload();
   }
 
-  handleLoginFailure(response) {
-    alert('Failed to log in');
-  }
+  handleLoginFailure(response) {}
 
-  handleLogoutFailure(response) {
-    alert('Failed to log out');
-  }
+  handleLogoutFailure(response) {}
 
   responseFacebook = (response) => {
-    localStorage.setItem('accessTokenFB', response.accessToken);
-    localStorage.setItem('nameFB', response.name);
-    localStorage.setItem('UserIDFB', response.userID);
-    this.setState({
-      isLoginedFB: true,
-      name: response.name,
-      showPopUp: false,
-      loggedIn: true,
-    });
+    if (response.status !== 'unknown') {
+      localStorage.setItem('accessTokenFB', response.accessToken);
+      localStorage.setItem('nameFB', response.name);
+      localStorage.setItem('UserIDFB', response.userID);
+      this.setState({
+        isLoginedFB: true,
+        name: response.name,
+        showPopUp: false,
+        loggedIn: true,
+      });
+    }
   };
 
   logOUtFB = () => {
@@ -193,7 +192,7 @@ class Nav extends Component {
         </nav>
 
         <div
-          className="modal fade "
+          className="modal fade"
           id="exampleModal"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
