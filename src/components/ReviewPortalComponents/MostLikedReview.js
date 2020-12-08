@@ -9,10 +9,32 @@ import ReactStars from 'react-rating-stars-component';
 class MostLikeReview extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLike: false,
+    };
   }
 
   componentDidMount() {
     this.props.actions.getMostLikes();
+  }
+  hnadleLike(item) {
+    const userId = localStorage.getItem('UserIDFB');
+    const obj = {
+      id: item.id,
+      userId: item.userId,
+      carId: item.carId,
+      ratingStar: item.ratingStar,
+      title: item.title,
+      subject: item.subject,
+      totalView: item.totalView,
+      totalLike: item.totalLike,
+      status: item.status,
+      postedon: item.postedon,
+    };
+
+    this.setState({ isLike: !this.state.isLike });
+
+    this.props.actions.likeComment(obj);
   }
 
   render() {
@@ -27,9 +49,7 @@ class MostLikeReview extends Component {
               <div className="MostLikeReview_cards row m-0">
                 <div className="MostLikeReview_cardContainer col-12 col-xl-6 col-lg-6 col-sm-12 col-md-12">
                   <img
-                    src={
-                     item.imageURL
-                    }
+                    src={item.imageURL}
                     className="mostLikedReviewParticipantCard_img"
                   />
                   <div className="mostLikedReviewParticipantCard_details">
@@ -75,6 +95,7 @@ class MostLikeReview extends Component {
                 </span>
                 <i
                   className="far fa-heart cursor-pointer  ml-auto"
+                  onClick={() => this.hnadleLike(item)}
                   style={{ color: 'grey' }}></i>
                 <i className="fas fa-heart cursor-pointer  ml-auto"></i>
                 {/* <svg
