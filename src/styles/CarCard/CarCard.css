@@ -27,3 +27,6 @@
 .bg_custom_gray {
   background-color: #efefef;
 }
+.Car__Card .stars {
+  top: -10px;
+}

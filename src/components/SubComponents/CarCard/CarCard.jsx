@@ -87,7 +87,7 @@ class CarCard extends Component {
             </div>
           </div>
           {/* =============== Car Price ================ */}
-          <div className="Car__Price pb-3">
+          <div className="Car__Price pb-3" style={{ height: '187px' }}>
             <h4 className="main__red pl-4 pt-4 text-capitalize">Pricing</h4>
 
             <p className="main__gary pl-4 py-2 mb-0">
@@ -103,33 +103,76 @@ class CarCard extends Component {
             <div className="px-4">
               <div style={{ textTransform: 'capitalize' }}>
                 {reliability.replaceAll('_', ' ')} <div> </div>
+                <div
+                  style={{
+                    zIndex: 99,
+                    top: '14px',
+                    left: '0px',
+                    width: '105px',
+                    height: '16px',
+                  }}
+                  className=" px-4  position-relative bg-transparent"
+                  name="rating"></div>
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
                   value={parseInt(this.props.data.reliability)}
+                  classNames="stars"
                 />
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {resale_Value.replaceAll('_', ' ')}{' '}
+                <div
+                  style={{
+                    zIndex: 99,
+                    top: '14px',
+                    left: '0px',
+                    width: '105px',
+                    height: '16px',
+                  }}
+                  className=" px-4  position-relative bg-transparent"
+                  name="rating"></div>
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
                   value={parseInt(this.props.data.resale_Value)}
+                  classNames="stars"
                 />
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {nhtsA_Driver_Frontal_Rating.replaceAll('_', ' ')}
+                <div
+                  style={{
+                    zIndex: 99,
+                    top: '14px',
+                    left: '0px',
+                    width: '105px',
+                    height: '16px',
+                  }}
+                  className=" px-4  position-relative bg-transparent"
+                  name="rating"></div>
                 <ReactStars
                   count={5}
                   size={24}
                   activeColor="#d53535"
                   value={parseInt(this.props.data.nhtsA_Driver_Frontal_Rating)}
+                  classNames="stars"
                 />
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {euroNCAP_Overall_Adult_Rating.replaceAll('_', ' ')}
+                <div
+                  style={{
+                    zIndex: 99,
+                    top: '14px',
+                    left: '0px',
+                    width: '105px',
+                    height: '16px',
+                  }}
+                  className=" px-4  position-relative bg-transparent"
+                  name="rating"></div>
                 <ReactStars
                   count={5}
                   size={24}
@@ -137,14 +180,19 @@ class CarCard extends Component {
                   value={parseInt(
                     this.props.data.euroNCAP_Overall_Adult_Rating,
                   )}
+                  classNames="stars"
                 />
               </div>
             </div>
             <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>
-            <ul className="fa-ul px-2" style={{ textTransform: 'capitalize' }}>
+            <ul
+              className="fa-ul px-2"
+              style={{ textTransform: 'capitalize', height: '150px' }}>
               {listGood}
             </ul>
-            <ul className="fa-ul px-2" style={{ textTransform: 'capitalize' }}>
+            <ul
+              className="fa-ul px-2"
+              style={{ textTransform: 'capitalize', height: '120px' }}>
               {listbad}
             </ul>
             <div className="px-2 mb-4">

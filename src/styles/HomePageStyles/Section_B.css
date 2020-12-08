@@ -139,6 +139,12 @@
     margin: 0px !important;
     width: 1200px;
   }
+  .section-b__addCar {
+    min-height: 148px;
+  }
+  .section-b__addCar i {
+    font-size: 3rem !important;
+  }
 }
 @media screen and (max-width: 768px) {
   .section-b-homepage-container h3 {

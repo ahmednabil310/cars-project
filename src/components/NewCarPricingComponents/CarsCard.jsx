@@ -15,7 +15,7 @@ function CarsCard(props) {
         <img className="img-fluid h-auto" src={props.data.image_1} alt="car" />
       </div>
       <div className="carsTable-carCard-price">
-        {<i className="fas fa-angle-left"></i>} {props.data.scoreRange} $
+        {<i className="fas fa-angle-left"></i>} {props.data.scoreRange}K $ AED
       </div>
       <div className="carsTable-carCard-topCarsContainer">
         <div className="carsTable-carCard-topCar">
