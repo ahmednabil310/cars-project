@@ -90,7 +90,7 @@ class CarCard extends Component {
           <div className="Car__Price pb-3" style={{ height: '187px' }}>
             <h4 className="main__red pl-4 pt-4 text-capitalize">Pricing</h4>
 
-            <p className="main__gary pl-4 py-2 mb-0">
+            <p className="main__gary special-gray pl-4 py-2 mb-0">
               <>
                 Starting MSRP <br />
                 {listPrices}

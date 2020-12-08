@@ -40,111 +40,123 @@ class Section_B extends Component {
         card3: false,
         card4: false,
       },
+      listCarData: [],
       carNumber: 0,
       modalShow: false,
       engine: '',
+      number: 4,
     };
   }
 
   componentWillReceiveProps(nextState, prevState) {
-    if (this.state.carNumber > 0) {
-      switch (this.state.carNumber) {
-        case 1:
-          let objCard1 = this.state.cardShow;
-          objCard1.card1 = true;
-          objCard1.show = true;
-          this.setState({
-            cardShow: objCard1,
-          });
-          break;
+    // if (this.state.carNumber > 0) {
+    //   switch (this.state.carNumber) {
+    //     case 1:
+    //       let objCard1 = this.state.cardShow;
+    //       objCard1.card1 = true;
+    //       objCard1.show = true;
+    //       this.setState({
+    //         cardShow: objCard1,
+    //       });
+    //       break;
 
-        case 2:
-          let objCard2 = this.state.cardShow;
-          objCard2.card2 = true;
-          objCard2.show = true;
-          this.setState({
-            cardShow: objCard2,
-          });
-          break;
-        case 3:
-          let objCard3 = this.state.cardShow;
-          objCard3.card3 = true;
-          objCard3.show = true;
-          this.setState({
-            cardShow: objCard3,
-          });
-          break;
-        case 4:
-          let objCard4 = this.state.cardShow;
-          objCard4.card4 = true;
-          objCard4.show = true;
-          this.setState({
-            cardShow: objCard4,
-          });
-          break;
-      }
-    } else if (nextState.listCarData.length === 4) {
-      let objCard = this.state.cardShow;
-      objCard.card1 = true;
-      objCard.card2 = true;
-      objCard.card3 = true;
-      objCard.card4 = true;
-      objCard.show = true;
-      this.refCSS.current.scrollIntoView();
-      this.setState({ cardShow: objCard });
-    }
+    //     case 2:
+    //       let objCard2 = this.state.cardShow;
+    //       objCard2.card2 = true;
+    //       objCard2.show = true;
+    //       this.setState({
+    //         cardShow: objCard2,
+    //       });
+    //       break;
+    //     case 3:
+    //       let objCard3 = this.state.cardShow;
+    //       objCard3.card3 = true;
+    //       objCard3.show = true;
+    //       this.setState({
+    //         cardShow: objCard3,
+    //       });
+    //       break;
+    //     case 4:
+    //       let objCard4 = this.state.cardShow;
+    //       objCard4.card4 = true;
+    //       objCard4.show = true;
+    //       this.setState({
+    //         cardShow: objCard4,
+    //       });
+    //       break;
+    //   }
+    // } else if (nextState.listCarData.length === 4) {
+    //   let objCard = this.state.cardShow;
+    //   objCard.card1 = true;
+    //   objCard.card2 = true;
+    //   objCard.card3 = true;
+    //   objCard.card4 = true;
+    //   objCard.show = true;
+    // }
+
+    this.refCSS.current.scrollIntoView();
+    this.setState({
+      listCarData: nextState.listCarData,
+    });
   }
 
   componentDidMount() {
     this.props.actions.makeYears();
   }
 
-  closeModelHandler1 = () => {
-    let lastData = this.state.cardShow;
-    lastData['card1'] = false;
-
-    this.setState({
-      cardShow: lastData,
-      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
-    },()=>{
-      this.props.actions.clearCar(0);
-    });
+  closeModelHandler1 = (index) => {
+    this.props.actions.clearCar(index);
+    // this.setState({
+    //   cardShow: lastData,
+    //   carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
+    // }, () => {
+    //   this.props.actions.clearCar(0);
+    // });
   };
 
   closeModelHandler2 = () => {
     let lastData = this.state.cardShow;
     lastData['card2'] = false;
 
-    this.setState({
-      cardShow: lastData,
-      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
-    },()=>{
-      this.props.actions.clearCar(1);
-    });
+    this.setState(
+      {
+        cardShow: lastData,
+        carNumber: this.state.carNumber === 1 ? 0 : this.state.carNumber - 1,
+      },
+      () => {
+        this.props.actions.clearCar(1);
+      },
+    );
   };
 
   closeModelHandler3 = () => {
     let lastData = this.state.cardShow;
     lastData['card3'] = false;
 
-    this.setState({
-      cardShow: lastData,
-      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
-    },()=>{
-      this.props.actions.clearCar(2);
-    });
+    this.setState(
+      {
+        cardShow: lastData,
+        carNumber: this.state.carNumber === 1 ? 0 : this.state.carNumber - 1,
+      },
+      () => {
+        this.props.actions.clearCar(2);
+      },
+    );
   };
 
   closeModelHandler4 = () => {
     let lastData = this.state.cardShow;
     lastData['card4'] = false;
 
-    this.setState({
-      cardShow: lastData,
-      carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
-    },()=>{
-      this.props.actions.clearCar(3);
-    });
+    this.setState(
+      {
+        cardShow: lastData,
+        carNumber: this.state.carNumber === 1 ? 0 : this.state.carNumber - 1,
+      },
+      () => {
+        this.props.actions.clearCar(3);
+      },
+    );
   };
 
   setModalShow = (type) => {
@@ -158,35 +170,42 @@ class Section_B extends Component {
   };
 
   addVechileHandler = () => {
-    if (this.state.cardShow.card1 === false) {
-      this.props.actions.getCarData(this.state.SelectedEngine.value);
+    this.props.actions.getCarData(this.state.SelectedEngine.value);
 
-      this.setState({
-        carNumber: 1,
-        modalShow: !this.state.modalShow,
-      });
-    } else if (this.state.cardShow.card2 === false) {
-      this.props.actions.getCarData(this.state.SelectedEngine.value);
+    this.setState({
+      carNumber: 1,
+      modalShow: !this.state.modalShow,
+    });
 
-      this.setState({
-        carNumber: 2,
-        modalShow: !this.state.modalShow,
-      });
-    } else if (this.state.cardShow.card3 === false) {
-      this.props.actions.getCarData(this.state.SelectedEngine.value);
+    // if (this.state.cardShow.card1 === false) {
+    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
 
-      this.setState({
-        carNumber: 3,
-        modalShow: !this.state.modalShow,
-      });
-    } else if (this.state.cardShow.card4 === false) {
-      this.props.actions.getCarData(this.state.SelectedEngine.value);
+    //   this.setState({
+    //     carNumber: 1,
+    //     modalShow: !this.state.modalShow,
+    //   });
+    // } else if (this.state.cardShow.card2 === false) {
+    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
 
-      this.setState({
-        carNumber: 4,
-        modalShow: !this.state.modalShow,
-      });
-    }
+    //   this.setState({
+    //     carNumber: 2,
+    //     modalShow: !this.state.modalShow,
+    //   });
+    // } else if (this.state.cardShow.card3 === false) {
+    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
+
+    //   this.setState({
+    //     carNumber: 3,
+    //     modalShow: !this.state.modalShow,
+    //   });
+    // } else if (this.state.cardShow.card4 === false) {
+    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
+
+    //   this.setState({
+    //     carNumber: 4,
+    //     modalShow: !this.state.modalShow,
+    //   });
+    // }
   };
 
   setFieldValue = (type, option) => {
@@ -226,6 +245,14 @@ class Section_B extends Component {
         boxShadow: '0 1px 3px #707070',
       }),
     };
+
+    let listAdded = [];
+    const existNumber = this.state.number - this.state.listCarData.length;
+    for (var i = 0; i < existNumber; i++) {
+      listAdded.push(
+        <AddVechile showModel={() => this.setModalShow(i)} key={i} />,
+      );
+    }
 
     return (
       <div className="section-b-homepage-container">
@@ -278,18 +305,27 @@ class Section_B extends Component {
             />
           </svg>
         </div>
-
         <div className="car-container-wrapper">
           <div className="row section-b_car-container" ref={this.refCSS}>
-            {this.state.cardShow.show && this.state.cardShow.card1 && (
-              <div className="col-12 col-sm-12 col-md-6 col-lg-3">
-                <CarCard
-                  closeModel={this.closeModelHandler1}
-                  data={this.props.listCarData[0]}
-                />
-              </div>
-            )}
-            {this.state.cardShow.show && this.state.cardShow.card2 && (
+            {/* {this.state.cardShow.show && this.state.cardShow.card1 && (
+             
+            )} */}
+
+            {this.state.listCarData.length > 0
+              ? this.state.listCarData.map((item, i) => {
+                  return (
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
+                      <CarCard
+                        closeModel={() => this.closeModelHandler1(i)}
+                        data={item}
+                      />
+                    </div>
+                  );
+                })
+              : null}
+
+            {listAdded}
+            {/* {this.state.cardShow.show && this.state.cardShow.card2 && (
               <div className="col-12 col-sm-12 col-md-6 col-lg-3">
                 <CarCard
                   closeModel={this.closeModelHandler2}
@@ -313,19 +349,23 @@ class Section_B extends Component {
                   data={this.props.listCarData[3]}
                 />
               </div>
-            )}
-            {!this.state.cardShow.card1 && (
+            )} */}
+            {/* {this.state.listCarData[0] === {} ? (
               <AddVechile showModel={() => this.setModalShow(true, 1)} />
-            )}
-            {!this.state.cardShow.card2 && (
+            ) : null
+            }
+            {this.state.listCarData[1] === {} ? (
               <AddVechile showModel={() => this.setModalShow(true, 2)} />
-            )}
-            {!this.state.cardShow.card3 && (
-              <AddVechile showModel={() => this.setModalShow(true, 3)} />
-            )}
-            {!this.state.cardShow.card4 && (
+            ) : null
+            }
+            {this.state.listCarData[2] === {} ?
+              (
+                <AddVechile showModel={() => this.setModalShow(true, 3)} />
+              ) : null}
+            {this.state.listCarData[3] === {} ? (
               <AddVechile showModel={() => this.setModalShow(true, 4)} />
-            )}
+            ) : null} */}
+
             <ModelFields
               show={this.state.modalShow}
               onHide={() => this.setModalShow(false)}

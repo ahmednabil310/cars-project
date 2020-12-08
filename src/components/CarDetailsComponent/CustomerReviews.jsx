@@ -74,11 +74,13 @@ class CustomerReviews extends Component {
 
   addReviewHandler = () => {
     this.setState({ modalShow: !this.state.modalShow });
+    const userId = localStorage.getItem('UserIDFB');
     const param = {
       carId: this.state.carId,
       ratingStar: this.state.rate.toString(),
       title: this.state.title,
       subject: this.state.comment,
+      userId: userId,
     };
 
     this.props.actions.addComment(param);
@@ -94,6 +96,7 @@ class CustomerReviews extends Component {
       title: this.state.editingItem.title,
       subject: this.state.editingItem.subject,
       id: this.state.editingItem.id, //useId
+      userId: localStorage.getItem('UserIDFB'),
       ratingStar: '0',
       title: '',
       subject: '',
@@ -309,7 +312,7 @@ class CustomerReviews extends Component {
               color: 'red',
               display: this.props.listComment.length > 0 ? 'none' : 'block',
             }}>
-            There Are No Reviews Yet
+            There Is No Reviews Yet
           </h2>
           <div className="consumer-reviews pt-5">
             <h1>{'Most helpful consumer reviews'}</h1>

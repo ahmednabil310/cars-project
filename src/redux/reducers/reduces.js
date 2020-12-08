@@ -88,15 +88,12 @@ export default function (state = initialState, action) {
       };
 
     case "GETCARDATA":
+
       const listCar = [...state.listCarData, action.data];
-      localStorage.setItem("CarData", JSON.stringify(listCar));
 
-      let listCarIndex = [{}, {}, {}, {}];
-
-      listCarIndex[action.index] = action.data
       return {
         ...state,
-        listCarData: listCarIndex,
+        listCarData: listCar,
         objCarData: action.data
       };
 
@@ -107,6 +104,11 @@ export default function (state = initialState, action) {
       };
 
     case "GETCARCOMPARISON":
+
+      if (state.listCarData.length > 0) {
+        state.listCarData = [];
+      }
+
       let listCars = [];
 
       listCars.push(action.data["car1"]);
@@ -139,9 +141,21 @@ export default function (state = initialState, action) {
         ListMostLike: action.data,
       };
     case "GETCARPRICE":
+
+      const blow60 = action.data.find(x => x.scoreRange === "below 60");
+      const blow80 = action.data.find(x => x.scoreRange === "60-80");
+      const blow100 = action.data.find(x => x.scoreRange === "80-100");
+      const blow130 = action.data.find(x => x.scoreRange === "100-130");
+      const blow200 = action.data.find(x => x.scoreRange === "130-200");
+      const blow300 = action.data.find(x => x.scoreRange === "200-300");
+      const blow500 = action.data.find(x => x.scoreRange === "300-500");
+      const above500 = action.data.find(x => x.scoreRange === "above 500");
+
+      const listData = [blow60, blow80, blow100, blow130, blow200, blow300, blow500, above500];
+
       return {
         ...state,
-        ListCarPrice: action.data,
+        ListCarPrice: listData,
       };
     case "GETCARCATEGORY":
       return {
@@ -164,12 +178,10 @@ export default function (state = initialState, action) {
       };
     case "DELETECAR":
 
-      let listCarData = state.listCarData;
-      listCarData[action.data] = {};
-
+      state.listCarData.splice(action.data, 1);
       return {
         ...state,
-        listCarData: listCarData,
+        listCarData: [...state.listCarData]
       };
     case "GETCARREVIEW":
 

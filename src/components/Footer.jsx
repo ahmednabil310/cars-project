@@ -23,8 +23,25 @@ const Footer = () => {
           <NavLink className="navbar-brand" to="/">
             <img src={logo} alt="logo" />
           </NavLink>
-          <p className="first-column-pargraph">{t('footerParagph')}</p>
-          <img src={social} width="200px" />
+          <p className="first-column-pargraph">
+            caradvice.smartarz.com is the largest automotive consumer portal of
+            its kind in the UAE. The site provides a unique online service for
+            motoring consumers, designed specifically for the United Arab
+            Emirates.
+            <br />
+            <br />
+            Unless otherwise stated, all prices are shown as Manufacturer's
+            Recommended List Price (MRLP) inclusive of VAT, exclusive of options
+            and on road costs.
+          </p>
+          <div className="icons">
+            <a href="/">
+              <i className="fab fa-facebook-square"></i>
+            </a>
+            <a href="/">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
         </div>
 
         <div className="footer-container__content--second-column d-flex flex-column">
@@ -33,26 +50,21 @@ const Footer = () => {
             Home
           </NavLink>
           <NavLink to="/" className="footerItem">
-            Help
+            Price & Specifications
           </NavLink>
           <NavLink to="/" className="footerItem">
-            About Us
+            New Car
           </NavLink>
           <NavLink to="/" className="footerItem">
-            Contact Us
+            Reviews
           </NavLink>
           <NavLink to="/" className="footerItem">
-            Careers
+            Used Car
           </NavLink>
           <NavLink to="/" className="footerItem">
-            Affiliate Program
+            Terms and Condition
           </NavLink>
-          <NavLink to="/" className="footerItem mb-3">
-            Dealer Center
-          </NavLink>
-          <NavLink to="/" className="footerItem mb-3">
-            Terms And Conditios
-          </NavLink>
+
           <div
             className="language"
             onClick={() => {
@@ -65,7 +77,7 @@ const Footer = () => {
             onClick={() => {
               changelanguage('ar');
             }}>
-            العربيه
+            Arabic
           </div>
         </div>
 
@@ -122,8 +134,8 @@ const Footer = () => {
         style={{ color: 'white' }}>
         <div className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">
           This site is powered and designed by{' '}
-          <span style={{ fontWeight: 'bold' }}>Smarter</span>, All rights are
-          reserved @2020
+          <span style={{ fontWeight: 'bold' }}>Smartarz</span>, All rights
+          reserved @2021
         </div>
         <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
           Privacy Polices
