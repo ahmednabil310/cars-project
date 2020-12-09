@@ -94,10 +94,14 @@ class MostLikeReview extends Component {
                   />
                 </span>
                 <i
-                  className="far fa-heart cursor-pointer  ml-auto"
-                  onClick={() => this.hnadleLike(item)}
-                  style={{ color: 'grey' }}></i>
-                <i className="fas fa-heart cursor-pointer  ml-auto"></i>
+                  id={i}
+                  className={`${this.state[i]?'fas fa-heart':'far fa-heart'} cursor-pointer  ml-auto`}
+                  onClick={(e) => {this.setState({[e.target.id]:true})}}
+                  style={this.state[i]?null:{ color: 'grey' }}
+                  ></i>
+
+
+                {/* <i className="fas fa-heart cursor-pointer  ml-auto"></i> */}
                 {/* <svg
                   
                   className=""
