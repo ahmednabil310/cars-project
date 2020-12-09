@@ -174,6 +174,22 @@ export function addComment(param) {
       });
   };
 }
+
+export function addUsers(param) {
+  return (dispatch) => {
+    axiosDocs
+      .post(`api/User/Add`, param)
+      .then(function (response) {
+        toastr.success("Add User Success");
+        localStorage.setItem("userId", response.data.result.replaceAll(/['"]+/g, ''));
+      })
+      .catch(function (error) {
+        console.log("addUsers: ", error);
+      });
+  };
+}
+
+
 export function updateComment(param) {
   return (dispatch) => {
     axiosDocs

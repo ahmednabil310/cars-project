@@ -18,10 +18,10 @@ class MostLikeReview extends Component {
     this.props.actions.getMostLikes();
   }
   hnadleLike(item) {
-    const userId = localStorage.getItem('UserIDFB');
+    const userId = localStorage.getItem('userId');
     const obj = {
       id: item.id,
-      userId: item.userId,
+      userId: userId,
       carId: item.carId,
       ratingStar: item.ratingStar,
       title: item.title,

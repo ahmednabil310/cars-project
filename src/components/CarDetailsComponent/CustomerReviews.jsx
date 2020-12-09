@@ -34,6 +34,7 @@ class CustomerReviews extends Component {
       isLike: false,
       currentIdComment: 0,
       id: 0,
+      userId: localStorage.getItem("userId")
     };
   }
 
@@ -74,11 +75,10 @@ class CustomerReviews extends Component {
 
   addReviewHandler = () => {
     this.setState({ modalShow: !this.state.modalShow });
-    const userId = localStorage.getItem('UserIDFB');
-    const userIdGmail = localStorage.getItem('GmailId');
+    const userId = localStorage.getItem('userId');
 
     const param = {
-      userId: userId || userIdGmail,
+      userId: userId,
       carId: this.state.carId,
       ratingStar: this.state.rate.toString(),
       title: this.state.title,
@@ -105,11 +105,10 @@ class CustomerReviews extends Component {
     this.props.actions.updateComment(obj);
   }
   handleDeleteComment() {
-    const userId = localStorage.getItem('UserIDFB');
-    const userIdGmail = localStorage.getItem('GmailId');
+    const userId = localStorage.getItem('userId');
     const obj = {
       id: this.state.editingItem.id,
-      userId: userId || userIdGmail,
+      userId: userId,
       carId: this.state.editingItem.id,
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
@@ -123,11 +122,10 @@ class CustomerReviews extends Component {
   }
 
   hnadleLike(id, carId) {
-    const userId = localStorage.getItem('UserIDFB');
-    const userIdGmail = localStorage.getItem('GmailId');
+    const userId = localStorage.getItem('userId');
     const obj = {
       id: id,
-      userId: userId || userIdGmail,
+      userId: userId,
       carId: carId
     };
 
@@ -343,170 +341,169 @@ class CustomerReviews extends Component {
                         fill="#c4c4c4"
                       />
                     </svg>
-                    {isLoginGmail === item.userId || isLoginFB === item.userId
-                      ? (
-                    <div className="edit-delete-btns-container">
-                      <button
-                        className="consumerReviewBtn"
-                        onClick={() => {
-                          this.setState({
-                            editingItem: item,
-                            editformshow: true,
-                          });
-                        }}>
-                        {' '}
-                        <i class="fas fa-pen mr-2"></i>Edit Comment
+                    {  item.userId === this.state.userId ? (
+                      <div className="edit-delete-btns-container">
+                        <button
+                          className="consumerReviewBtn"
+                          onClick={() => {
+                            this.setState({
+                              editingItem: item,
+                              editformshow: true,
+                            });
+                          }}>
+                          {' '}
+                          <i class="fas fa-pen mr-2"></i>Edit Comment
                           </button>
-                      <button
-                        onClick={() =>
-                          this.setState({
-                            editingItem: item,
-                          })
-                        }
-                        className="consumerReviewBtn"
-                        data-toggle="modal"
-                        data-target="#DeleteCofirm">
-                        <i class="fas fa-trash-alt mr-2"></i>Delete Comment
+                        <button
+                          onClick={() =>
+                            this.setState({
+                              editingItem: item,
+                            })
+                          }
+                          className="consumerReviewBtn"
+                          data-toggle="modal"
+                          data-target="#DeleteCofirm">
+                          <i class="fas fa-trash-alt mr-2"></i>Delete Comment
                           </button>{' '}
-                      <div
-                        class="modal fade"
-                        id="DeleteCofirm"
-                        tabindex="-1"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5
-                                class="modal-title"
-                                id="exampleModalLabel">
-                                Delete
+                        <div
+                          class="modal fade"
+                          id="DeleteCofirm"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5
+                                  class="modal-title"
+                                  id="exampleModalLabel">
+                                  Delete
                                   </h5>
-                              <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body text-center">
-                              Are you sure want to delete this comment ?
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-center">
+                                Are you sure want to delete this comment ?
                                 </div>
-                            <div class="modal-footer justify-content-center">
-                              <button
-                                type="button"
-                                className="btn btn-secondary"
-                                data-dismiss="modal">
-                                Cancel
+                              <div class="modal-footer justify-content-center">
+                                <button
+                                  type="button"
+                                  className="btn btn-secondary"
+                                  data-dismiss="modal">
+                                  Cancel
                                   </button>
-                              <button
-                                data-dismiss="modal"
-                                onClick={this.handleDeleteComment.bind(
-                                  this,
-                                )}
-                                type="button"
-                                className="btn btn-danger ">
-                                Delete
+                                <button
+                                  data-dismiss="modal"
+                                  onClick={this.handleDeleteComment.bind(
+                                    this,
+                                  )}
+                                  type="button"
+                                  className="btn btn-danger ">
+                                  Delete
                                   </button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <ModelFields
-                        show={this.state.editformshow}
-                        onHide={() => {
-                          this.setState({ editformshow: false });
-                        }}
-                        submitHandler={this.handleEditComment.bind(this)}
-                        title="Review">
-                        <div className="form-group position-relative">
-                          <input
-                            type="text"
-                            className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
-                            name="title"
-                            defaultValue={
-                              this.state.editingItem
-                                ? this.state.editingItem.title
-                                : null
-                            }
-                            onChange={this.inputChangeHandlerTitleEdit}
-                          />
-                          {this.state.editingItem &&
-                            this.state.editingItem.title.length == 0 && (
-                              <div className="position-absolute review__input_title__placeholder">
-                                <span className="main__gary mr-2">
-                                  {'Review title'}
-                                </span>
-                                <span
-                                  className="main__gary ml-2"
-                                  style={{ color: '#C4C4C4' }}>
-                                  {'64 letters or numbers'}
-                                </span>
-                              </div>
-                            )}
-                        </div>
-                        <div className="form-group position-relative">
-                          <div
-                            style={{ zIndex: 0 }}
-                            className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
-                            name="rating"></div>
-                          {this.state.editingItem && (
+                        <ModelFields
+                          show={this.state.editformshow}
+                          onHide={() => {
+                            this.setState({ editformshow: false });
+                          }}
+                          submitHandler={this.handleEditComment.bind(this)}
+                          title="Review">
+                          <div className="form-group position-relative">
+                            <input
+                              type="text"
+                              className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
+                              name="title"
+                              defaultValue={
+                                this.state.editingItem
+                                  ? this.state.editingItem.title
+                                  : null
+                              }
+                              onChange={this.inputChangeHandlerTitleEdit}
+                            />
+                            {this.state.editingItem &&
+                              this.state.editingItem.title.length == 0 && (
+                                <div className="position-absolute review__input_title__placeholder">
+                                  <span className="main__gary mr-2">
+                                    {'Review title'}
+                                  </span>
+                                  <span
+                                    className="main__gary ml-2"
+                                    style={{ color: '#C4C4C4' }}>
+                                    {'64 letters or numbers'}
+                                  </span>
+                                </div>
+                              )}
+                          </div>
+                          <div className="form-group position-relative">
                             <div
-                              className="position-absolute review__input_rating__placeholder"
-                              style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                              }}>
-                              <span className="main__gary mr-2">
-                                {'Review rating'}
-                              </span>
-                              <span
-                                className="ml-2 d-inline-block"
-                                style={{ width: '135px' }}>
-                                <ReactStars
-                                  count={5}
-                                  size={24}
-                                  activeColor="#d53535"
-                                  value={this.state.editingItem.ratingStar}
-                                  onChange={this.inputRateHandlerEdit}
-                                />
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                        <div className="form-group position-relative">
-                          <textarea
-                            className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
-                            name="comment"
-                            rows="5"
-                            defaultValue={
-                              this.state.editingItem
-                                ? this.state.editingItem.subject
-                                : null
-                            }
-                            onChange={
-                              this.inputChangeHandlerEdit
-                            }></textarea>
-                          {this.state.editingItem &&
-                            this.state.editingItem.subject.length == 0 && (
+                              style={{ zIndex: 0 }}
+                              className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
+                              name="rating"></div>
+                            {this.state.editingItem && (
                               <div
-                                className="position-absolute"
-                                style={{ top: '12%', left: '6%' }}>
+                                className="position-absolute review__input_rating__placeholder"
+                                style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                }}>
                                 <span className="main__gary mr-2">
-                                  {'Review details'}
+                                  {'Review rating'}
                                 </span>
                                 <span
-                                  className="main__gary ml-2"
-                                  style={{ color: '#C4C4C4' }}>
-                                  {'360 letters or numbers'}
+                                  className="ml-2 d-inline-block"
+                                  style={{ width: '135px' }}>
+                                  <ReactStars
+                                    count={5}
+                                    size={24}
+                                    activeColor="#d53535"
+                                    value={this.state.editingItem.ratingStar}
+                                    onChange={this.inputRateHandlerEdit}
+                                  />
                                 </span>
                               </div>
                             )}
-                        </div>
-                      </ModelFields>
-                    </div>
-                     ) : null}
+                          </div>
+                          <div className="form-group position-relative">
+                            <textarea
+                              className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
+                              name="comment"
+                              rows="5"
+                              defaultValue={
+                                this.state.editingItem
+                                  ? this.state.editingItem.subject
+                                  : null
+                              }
+                              onChange={
+                                this.inputChangeHandlerEdit
+                              }></textarea>
+                            {this.state.editingItem &&
+                              this.state.editingItem.subject.length == 0 && (
+                                <div
+                                  className="position-absolute"
+                                  style={{ top: '12%', left: '6%' }}>
+                                  <span className="main__gary mr-2">
+                                    {'Review details'}
+                                  </span>
+                                  <span
+                                    className="main__gary ml-2"
+                                    style={{ color: '#C4C4C4' }}>
+                                    {'360 letters or numbers'}
+                                  </span>
+                                </div>
+                              )}
+                          </div>
+                        </ModelFields>
+                      </div>
+                    ) : null}
                   </div>
                 );
               })
