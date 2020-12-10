@@ -137,7 +137,7 @@ class CustomerReviews extends Component {
     const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: id,
-      userId: userId || userIdGmail,
+      userId: userId,
       carId: carId,
     };
 
@@ -242,15 +242,15 @@ class CustomerReviews extends Component {
                 title="Review">
                 <div className="form-group position-relative">
                   <input
-                    autoComplete="off"
                     type="text"
-                    className="form-control p-3 px-4 review_input review_input_title position-relative bg-transparent"
+                    autoComplete="off"
+                    className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                     name="title"
                     value={this.state.title}
                     onChange={this.inputChangeHandler}
                   />
                   {this.state.title.length === 0 && (
-                    <div className="position-absolute review_input_title_placeholder">
+                    <div className="position-absolute review__input_title__placeholder">
                       <span className="main__gary mr-2">{'Review title'}</span>
                       <span
                         className="main__gary ml-2"
@@ -263,11 +263,11 @@ class CustomerReviews extends Component {
                 <div className="form-group position-relative">
                   <div
                     style={{ zIndex: 0 }}
-                    className="form-control p-3 px-4 review_input review_input_rating position-relative bg-transparent"
+                    className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
                     name="rating"></div>
                   {this.state.rating.length === 0 && (
                     <div
-                      className="position-absolute review_input_rating_placeholder"
+                      className="position-absolute review__input_rating__placeholder"
                       style={{ display: 'flex', alignItems: 'center' }}>
                       <span className="main__gary mr-2">{'Review rating'}</span>
                       <span
@@ -286,9 +286,9 @@ class CustomerReviews extends Component {
                 </div>
                 <div className="form-group position-relative">
                   <textarea
-                    autoComplete="off"
-                    className="form-control p-3 px-4 review_input review_input_comment position-relative bg-transparent"
+                    className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                     name="comment"
+                    autoComplete="off"
                     rows="5"
                     value={this.state.comment}
                     onChange={this.inputChangeHandler}></textarea>
@@ -353,25 +353,7 @@ class CustomerReviews extends Component {
                           color: `${this.state[item.id] ? '#d53535' : 'grey'}`,
                           fontSize: '25px',
                         }}></i>
-                      {/* <svg
-                      onClick={() =>
-                        this.hnadleLike(item.id, item.carId)
-                      }
-                      //style={{ background: this.state.isLike ? "red" : "" }}
-                      className="cursor-pointer"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="29.25"
-                      height="27"
-                      viewBox="0 0 29.25 27">
-                      <path
-                        id="Icon_ionic-md-heart-empty"
-                        data-name="Icon ionic-md-heart-empty"
-                        d="M24.581,4.5A8.652,8.652,0,0,0,18,7.587,8.652,8.652,0,0,0,11.419,4.5a7.952,7.952,0,0,0-8.044,8.093c0,5.59,4.971,10.076,12.5,16.995L18,31.5l2.123-1.913c7.53-6.919,12.5-11.4,12.5-16.995A7.952,7.952,0,0,0,24.581,4.5ZM18.9,27.654l-.3.274-.6.548-.6-.548-.3-.274a89.372,89.372,0,0,1-8.627-8.578c-1.969-2.44-2.841-4.437-2.841-6.483A5.848,5.848,0,0,1,7.3,8.423a5.722,5.722,0,0,1,4.12-1.673,6.449,6.449,0,0,1,4.859,2.285L18,11.081l1.723-2.046A6.425,6.425,0,0,1,24.581,6.75a5.75,5.75,0,0,1,4.127,1.673,5.86,5.86,0,0,1,1.666,4.17c0,2.039-.879,4.043-2.841,6.483A89.552,89.552,0,0,1,18.9,27.654Z"
-                        transform="translate(-3.375 -4.5)"
-                        fill="#c4c4c4"
-                      />
-                    </svg>
-                     */}
+
                       {isLoginGmail === item.userId ||
                       isLoginFB === item.userId ? (
                         <div className="edit-delete-btns-container">
@@ -452,7 +434,7 @@ class CustomerReviews extends Component {
                             <div className="form-group position-relative">
                               <input
                                 type="text"
-                                className="form-control p-3 px-4 review_input review_input_title position-relative bg-transparent"
+                                className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                                 name="title"
                                 defaultValue={
                                   this.state.editingItem
@@ -463,7 +445,7 @@ class CustomerReviews extends Component {
                               />
                               {this.state.editingItem &&
                                 this.state.editingItem.title.length == 0 && (
-                                  <div className="position-absolute review_input_title_placeholder">
+                                  <div className="position-absolute review__input_title__placeholder">
                                     <span className="main__gary mr-2">
                                       {'Review title'}
                                     </span>
@@ -478,11 +460,11 @@ class CustomerReviews extends Component {
                             <div className="form-group position-relative">
                               <div
                                 style={{ zIndex: 0 }}
-                                className="form-control p-3 px-4 review_input review_input_rating position-relative bg-transparent"
+                                className="form-control p-3 px-4 review__input review__input_rating position-relative bg-transparent"
                                 name="rating"></div>
                               {this.state.editingItem && (
                                 <div
-                                  className="position-absolute review_input_rating_placeholder"
+                                  className="position-absolute review__input_rating__placeholder"
                                   style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -506,7 +488,7 @@ class CustomerReviews extends Component {
                             </div>
                             <div className="form-group position-relative">
                               <textarea
-                                className="form-control p-3 px-4 review_input review_input_comment position-relative bg-transparent"
+                                className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                                 name="comment"
                                 rows="5"
                                 defaultValue={
