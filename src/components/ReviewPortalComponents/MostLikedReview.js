@@ -85,7 +85,17 @@ class MostLikeReview extends Component {
               </div>
               <div className="mostLikeReview_title">
                 A Car for your life{' '}
-                <span style={{ marginLeft: '5%' }}>
+                <div
+                  style={{
+                    zIndex: 99,
+                    position: 'relative',
+                    width: '117px',
+                    height: '37px',
+                    left: '104px',
+                  }}
+                  className="bg-transparent"
+                  name="rating"></div>
+                <span>
                   <ReactStars
                     count={5}
                     size={24}
@@ -95,12 +105,13 @@ class MostLikeReview extends Component {
                 </span>
                 <i
                   id={i}
-                  className={`${this.state[i]?'fas fa-heart':'far fa-heart'} cursor-pointer  ml-auto`}
-                  onClick={(e) => {this.setState({[e.target.id]:true})}}
-                  style={this.state[i]?null:{ color: 'grey' }}
-                  ></i>
-
-
+                  className={`${
+                    this.state[i] ? 'fas fa-heart' : 'far fa-heart'
+                  } cursor-pointer  ml-auto`}
+                  onClick={(e) => {
+                    this.setState({ [e.target.id]: true });
+                  }}
+                  style={this.state[i] ? null : { color: 'grey' }}></i>
                 {/* <i className="fas fa-heart cursor-pointer  ml-auto"></i> */}
                 {/* <svg
                   

@@ -50,7 +50,6 @@ class Section_B extends Component {
   }
 
   componentWillReceiveProps(nextState, prevState) {
-
     if (nextState.listCarData.length === 4) {
       this.refCSS.current.scrollIntoView();
     }
@@ -183,8 +182,8 @@ class Section_B extends Component {
     }
 
     return (
-      <div className="section-b-homepage-container" >
-        <div className="d-flex sub-container" >
+      <div className="section-b-homepage-container">
+        <div className="d-flex sub-container">
           <h3>
             {/* //t( */}
             <span className="special">{'Compare'}</span> {/* t( */}
@@ -235,64 +234,20 @@ class Section_B extends Component {
         </div>
         <div className="car-container-wrapper">
           <div className="row section-b_car-container" ref={this.refCSS}>
-            {/* {this.state.cardShow.show && this.state.cardShow.card1 && (
-             
-            )} */}
-
             {this.state.listCarData.length > 0
               ? this.state.listCarData.map((item, i) => {
-                return (
-                  <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
-                    <CarCard
-                      closeModel={() => this.closeModelHandler1(i)}
-                      data={item}
-                    />
-                  </div>
-                );
-              })
+                  return (
+                    <div className="col-3 col-lg-3" key={i}>
+                      <CarCard
+                        closeModel={() => this.closeModelHandler1(i)}
+                        data={item}
+                      />
+                    </div>
+                  );
+                })
               : null}
 
             {listAdded}
-            {/* {this.state.cardShow.show && this.state.cardShow.card2 && (
-              <div className="col-12 col-sm-12 col-md-6 col-lg-3">
-                <CarCard
-                  closeModel={this.closeModelHandler2}
-                  data={this.props.listCarData[1]}
-                />
-              </div>
-            )}
-            {this.state.cardShow.show && this.state.cardShow.card3 && (
-              <div className="col-12 col-sm-12 col-md-6 col-lg-3">
-                <CarCard
-                  closeModel={this.closeModelHandler3}
-                  data={this.props.listCarData[2]}
-                />
-              </div>
-            )}
-            {this.state.cardShow.show && this.state.cardShow.card4 && (
-              <div className="col-12 col-sm-12 col-md-6 col-lg-3">
-                <CarCard
-                  imageUrl={car4}
-                  closeModel={this.closeModelHandler4}
-                  data={this.props.listCarData[3]}
-                />
-              </div>
-            )} */}
-            {/* {this.state.listCarData[0] === {} ? (
-              <AddVechile showModel={() => this.setModalShow(true, 1)} />
-            ) : null
-            }
-            {this.state.listCarData[1] === {} ? (
-              <AddVechile showModel={() => this.setModalShow(true, 2)} />
-            ) : null
-            }
-            {this.state.listCarData[2] === {} ?
-              (
-                <AddVechile showModel={() => this.setModalShow(true, 3)} />
-              ) : null}
-            {this.state.listCarData[3] === {} ? (
-              <AddVechile showModel={() => this.setModalShow(true, 4)} />
-            ) : null} */}
 
             <ModelFields
               show={this.state.modalShow}
