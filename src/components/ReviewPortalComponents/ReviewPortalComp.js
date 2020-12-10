@@ -77,8 +77,7 @@ class ReviewPortalComp extends Component {
             <MostLikeReview />
           </div>
 
-          <div className="col-12 col-sm-12 col-md-4 col-lg-4  pl-0">
-            {/* <div className='writeReviewBtn' onClick={()=>{this.setState({modalShow:!this.state.modalShow})}}>+ Write a review</div> */}
+          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4  pl-0">
             <TopRatedCars />
           </div>
         </div>
