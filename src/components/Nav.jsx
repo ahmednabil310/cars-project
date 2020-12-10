@@ -205,7 +205,8 @@ class Nav extends Component {
               <li
                 className="nav-item d-flex"
                 data-toggle="modal"
-                data-target="#exampleModal">
+                data-target="#exampleModal"
+                id="loginPopUpShow">
                 <div
                   className="nav-link special-login"
                   activeClassName="active-link"
