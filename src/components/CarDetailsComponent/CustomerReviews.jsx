@@ -243,6 +243,7 @@ class CustomerReviews extends Component {
                 <div className="form-group position-relative">
                   <input
                     type="text"
+                    autoComplete="off"
                     className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                     name="title"
                     value={this.state.title}
@@ -287,6 +288,7 @@ class CustomerReviews extends Component {
                   <textarea
                     className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                     name="comment"
+                    autoComplete="off"
                     rows="5"
                     value={this.state.comment}
                     onChange={this.inputChangeHandler}></textarea>
