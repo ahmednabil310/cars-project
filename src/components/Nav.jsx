@@ -69,6 +69,7 @@ class Nav extends Component {
     this.setState((state) => ({
       isLoginedGmail: false,
       accessToken: '',
+      loggedIn: false,
     }));
     window.location.reload();
   }
@@ -105,6 +106,7 @@ class Nav extends Component {
     localStorage.removeItem('accessTokenFB');
     this.setState({
       isLoginedFB: false,
+      loggedIn: false,
     });
     window.location.reload();
   };
