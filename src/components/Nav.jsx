@@ -28,7 +28,6 @@ class Nav extends Component {
       accessToken: '',
       showPopUp: false,
       name: nameFB || nameGmail,
-      loggedIn: false,
     };
 
     this.login = this.login.bind(this);
@@ -47,7 +46,6 @@ class Nav extends Component {
         accessToken: response.accessToken,
         name: response.profileObj.name,
         showPopUp: false,
-        loggedIn: true,
       }));
 
       const objNewUser = {
@@ -87,7 +85,6 @@ class Nav extends Component {
         isLoginedFB: true,
         name: response.name,
         showPopUp: false,
-        loggedIn: true,
       });
 
       const objNewUser = {
@@ -106,7 +103,6 @@ class Nav extends Component {
     localStorage.removeItem('accessTokenFB');
     this.setState({
       isLoginedFB: false,
-      loggedIn: false,
     });
     window.location.reload();
   };
@@ -135,7 +131,12 @@ class Nav extends Component {
             id="navbarSupportedContent">
             <ul
               className="navbar-nav"
-              style={{ width: this.state.loggedIn ? '64%' : '71%' }}>
+              style={{
+                width:
+                  this.state.isLoginedGmail || this.state.isLoginedFB
+                    ? '64%'
+                    : '71%',
+              }}>
               <li className="nav-item active">
                 <NavLink
                   className="less-padding nav-link "
