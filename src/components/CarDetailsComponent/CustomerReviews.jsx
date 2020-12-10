@@ -37,7 +37,7 @@ class CustomerReviews extends Component {
     };
   }
 
-  componentWillReceiveProps(nextState, prevState) { }
+  componentWillReceiveProps(nextState, prevState) {}
 
   componentDidMount() {
     this.props.actions.getCommentList(this.state.carId);
@@ -79,7 +79,7 @@ class CustomerReviews extends Component {
       this.state.title ||
       this.state.comment
     ) {
-      alert('Please fill the form')
+      alert('Please fill the form');
     } else {
       this.setState({ modalShow: !this.state.modalShow });
       const userId = localStorage.getItem('UserIDFB');
@@ -90,7 +90,7 @@ class CustomerReviews extends Component {
         carId: this.state.carId,
         ratingStar: this.state.rate.toString(),
         title: this.state.title,
-        subject: this.state.comment
+        subject: this.state.comment,
       };
 
       this.props.actions.addComment(param);
@@ -102,12 +102,11 @@ class CustomerReviews extends Component {
   };
 
   handleEditComment() {
-
     const obj = {
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
       subject: this.state.editingItem.subject,
-      id: this.state.editingItem.id
+      id: this.state.editingItem.id,
     };
     this.setState({ editformshow: false });
 
@@ -130,7 +129,7 @@ class CustomerReviews extends Component {
     };
     this.props.actions.deleteComment(obj);
   }
-  successRequest(id){
+  successRequest(id) {
     this.setState({ [id]: true });
   }
   hnadleLike(id, carId) {
@@ -138,13 +137,13 @@ class CustomerReviews extends Component {
     const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: id,
-      userId: userId || userIdGmail,
-      carId: carId
+      userId: userId,
+      carId: carId,
     };
 
     this.setState({ isLike: !this.state.isLike });
 
-    this.props.actions.likeComment(obj,this.successRequest);
+    this.props.actions.likeComment(obj);
   }
 
   render() {
@@ -213,7 +212,11 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-                onClick={() => { document.getElementById('loginPopUpShow') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
+                onClick={() => {
+                  document.getElementById('loginPopUpShow')
+                    ? document.getElementById('loginPopUpShow').click()
+                    : this.setState({ modalShow: true });
+                }}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -319,32 +322,36 @@ class CustomerReviews extends Component {
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
-                return (
-                  <div className="review" key={item.id}>
-                    <div className="review-title d-flex flex-row flex-wrap align-items-center">
-                      <h2>{item.title}</h2>
-                      <ReactStars
-                        count={5}
-                        size={24}
-                        activeColor="#d53535"
-                        classNames="consumer-reviews"
-                        value={parseInt(item.ratingStar)}
-                      />
-                    </div>
-                    <p>{item.subject}</p>
-                    <span>{item.fullName}</span>
-                    <span>{'date-cons'}</span>
-                    <span>{'detail-car'}</span>
-                    <span className="last">{'likes'}</span>
-                    <i
-                      id={item.id}
-                      className={`${this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'
+                  return (
+                    <div className="review" key={item.id}>
+                      <div className="review-title d-flex flex-row flex-wrap align-items-center">
+                        <h2>{item.title}</h2>
+                        <ReactStars
+                          count={5}
+                          size={24}
+                          activeColor="#d53535"
+                          classNames="consumer-reviews"
+                          value={parseInt(item.ratingStar)}
+                        />
+                      </div>
+                      <p>{item.subject}</p>
+                      <span>{item.fullName}</span>
+                      <span>{'date-cons'}</span>
+                      <span>{'detail-car'}</span>
+                      <span className="last">{'likes'}</span>
+                      <i
+                        id={item.id}
+                        className={`${
+                          this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'
                         } cursor-pointer  ml-auto`}
-                      onClick={(e) => {
-                        this.hnadleLike(item.id, item.carId)
-                      }}
-                      style={{color:`${this.state[item.id] ?'#d53535':'grey'}`,fontSize:'25px'}}></i>
-                    {/* <svg
+                        onClick={(e) => {
+                          this.hnadleLike(item.id, item.carId);
+                        }}
+                        style={{
+                          color: `${this.state[item.id] ? '#d53535' : 'grey'}`,
+                          fontSize: '25px',
+                        }}></i>
+                      {/* <svg
                       onClick={() =>
                         this.hnadleLike(item.id, item.carId)
                       }
@@ -363,8 +370,8 @@ class CustomerReviews extends Component {
                       />
                     </svg>
                      */}
-                    {isLoginGmail === item.userId || isLoginFB === item.userId
-                      ? (
+                      {isLoginGmail === item.userId ||
+                      isLoginFB === item.userId ? (
                         <div className="edit-delete-btns-container">
                           <button
                             className="consumerReviewBtn"
@@ -527,9 +534,9 @@ class CustomerReviews extends Component {
                           </ModelFields>
                         </div>
                       ) : null}
-                  </div>
-                );
-              })
+                    </div>
+                  );
+                })
               : null}
           </div>
         </div>
@@ -540,7 +547,7 @@ class CustomerReviews extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   listComment: state.reduces.listComment,
-  gstate: state
+  gstate: state,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
