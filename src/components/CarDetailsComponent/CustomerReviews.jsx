@@ -202,7 +202,7 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-                onClick={() => this.viewReviewHandler(true)}>
+                onClick={() =>{document.getElementById('loginPopUpShow')?document.getElementById('loginPopUpShow').click():this.setState({modalShow:true})}}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -520,6 +520,7 @@ class CustomerReviews extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   listComment: state.reduces.listComment,
+  gstate:state
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
