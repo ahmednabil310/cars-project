@@ -195,6 +195,12 @@ export default function (state = initialState, action) {
         ...state,
         ListCarsRate: action.data.sort((a, b) => b - a).slice(0, 5)
       };
+    case "CLEARALLCAR":
+
+      return {
+        ...state,
+        listCarData: []
+      };
     default:
       return {
         ...state,

@@ -25,7 +25,7 @@ class TopRatedCars extends Component {
 
         {this.props.ListCarsRate.length > 0 ?
           this.props.ListCarsRate.map((item, i) => {
-            return <div className="topRatedCarCard">
+            return <div className="topRatedCarCard"  key={i}>
               <img
                 className="topRatedCarCard_img"
                 src={

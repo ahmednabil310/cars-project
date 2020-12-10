@@ -19,3 +19,4 @@ export const GETCARREVIEW = "GETCARREVIEW";
 export const GETCARRATED = "GETCARRATED";
 export const ADDCOMMENT = "ADDCOMMENT";
 export const DELETECAR = "DELETECAR";
+export const CLEARALLCAR = "CLEARALLCAR";

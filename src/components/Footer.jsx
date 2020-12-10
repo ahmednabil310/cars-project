@@ -52,15 +52,17 @@ const Footer = () => {
           <NavLink to="/" className="footerItem">
             Price & Specifications
           </NavLink>
-          <NavLink to="/" className="footerItem">
+          <NavLink to="/newcarpricing" className="footerItem">
             New Car
           </NavLink>
-          <NavLink to="/" className="footerItem">
+          <NavLink to="/car-reviews" className="footerItem">
             Reviews
           </NavLink>
-          <NavLink to="/" className="footerItem">
+          <a
+            href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE"
+            className="footerItem">
             Used Car
-          </NavLink>
+          </a>
           <NavLink to="/" className="footerItem">
             Terms and Condition
           </NavLink>
@@ -87,43 +89,43 @@ const Footer = () => {
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Honda HR-V vs Honda CR-V Comparison
+            Toyota Land Crusier/Nissan Patrol/GMC Yukon/Chevrolet Tahoe
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Toyota RAV4 vs Honda CR-V Comparison
+            Toyota RAV4/Mazda CX-5/Kia Sportage/Honda CR-V
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Subaru Forester vs Subaru Outback Comparison
+            Toyota Camry/Honda Accord/Nissan Altima/Mazada 6
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Chevrolet Camaro vs Ford Mustang Comparison
+            Lexus ES/Mercedes-Benz E-Class/Audi A6/BMW 5-Series
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Toyota Camry vs Honda Accord Comparison
+            Chrysler 300C/Dodge Charger/Ford Taurus/Toyota Avalon
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Honda Civic vs Toyota Corolla Comparison
+            Lexus GS/Jaguar XF/Volvo S90/Infiniti Q70
           </NavLink>
           <NavLink
             to="/"
             className="footerItem"
             style={{ textDecoration: 'underline' }}>
-            Honda Odyssey vs Toyota Sienna Comparison
+            Audi Q7/BMW X5/Lexus RX/Mercedes-Benz GLE 63 AMG
           </NavLink>
         </div>
       </div>

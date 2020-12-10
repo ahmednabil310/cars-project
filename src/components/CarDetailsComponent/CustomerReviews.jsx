@@ -307,7 +307,7 @@ class CustomerReviews extends Component {
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
                 return (
-                  <div className="review" key={item.id}>
+                  <div className="review" key={index}>
                     <div className="review-title d-flex flex-row flex-wrap align-items-center">
                       <h2>{item.title}</h2>
                       <ReactStars

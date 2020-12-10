@@ -58,6 +58,7 @@ class Nav extends Component {
         profilePic: response.profileObj.profileObj,
       };
       this.props.actions.addUsers(objNewUser);
+      window.location.reload();
     }
   }
 
@@ -170,7 +171,7 @@ class Nav extends Component {
                 </a>
               </li>
             </ul>
-            {this.state.loggedIn ? (
+            {this.state.isLoginedGmail || this.state.isLoginedFB ? (
               <div className="dropdown">
                 <button
                   className="btn btn-secondary dropdown-toggle d-flex align-items-center dropdown-nav"
@@ -185,7 +186,7 @@ class Nav extends Component {
                 <div
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuButton">
-                  <li data-toggle="modal" data-target="#exampleModal">
+                  <li onClick={this.logout}>
                     <div
                       style={{
                         cursor: 'pointer',

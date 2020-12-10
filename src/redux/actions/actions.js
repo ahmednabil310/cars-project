@@ -36,6 +36,15 @@ export function makeYears() {
   };
 }
 
+// action of login success
+export function clearAllCar() {
+  return (dispatch) => {
+    dispatch({
+      type: types.CLEARALLCAR 
+    });
+  };
+}
+
 export function getMakeByYears(make, year) {
   return (dispatch) => {
     axiosDocs

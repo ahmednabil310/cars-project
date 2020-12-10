@@ -43,7 +43,7 @@ class CarCard extends Component {
     });
 
     const listPrices = listPrice.map((item, i) => {
-      return <>{item}</>;
+      return <div key={i}>{item}</div>;
     });
 
     return (
@@ -106,10 +106,10 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '14px',
+                    top: '16px',
                     left: '0px',
                     width: '105px',
-                    height: '16px',
+                    height: '39px',
                   }}
                   className=" px-4  position-relative bg-transparent"
                   name="rating"></div>
@@ -126,10 +126,10 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '14px',
+                    top: '16px',
                     left: '0px',
                     width: '105px',
-                    height: '16px',
+                    height: '39px',
                   }}
                   className=" px-4  position-relative bg-transparent"
                   name="rating"></div>
@@ -146,10 +146,10 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '14px',
+                    top: '16px',
                     left: '0px',
                     width: '105px',
-                    height: '16px',
+                    height: '39px',
                   }}
                   className=" px-4  position-relative bg-transparent"
                   name="rating"></div>
@@ -166,10 +166,10 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '14px',
+                    top: '16px',
                     left: '0px',
                     width: '105px',
-                    height: '16px',
+                    height: '39px',
                   }}
                   className=" px-4  position-relative bg-transparent"
                   name="rating"></div>

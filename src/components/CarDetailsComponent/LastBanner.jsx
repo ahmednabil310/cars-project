@@ -23,7 +23,7 @@ const LastBanner = (props) => {
             <div className="banner-price">
               <h2 className="price-detail">{t('Price')}</h2>
               {prices.map((item, i) => {
-                return <h3 className="price-range">{item}</h3>;
+                return <h3 className="price-range" key={i}>{item}</h3>;
               })}
             </div>
           </div>

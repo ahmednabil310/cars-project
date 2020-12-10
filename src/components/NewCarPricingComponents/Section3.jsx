@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/NewCarPricingStyles/Section3.css'; 
+import '../../styles/NewCarPricingStyles/Section3.css';
 import { connect } from "react-redux";
 import actions from "../../redux/actions";
 import { bindActionCreators } from "redux";
@@ -33,7 +33,7 @@ class Section3 extends Component {
 				</div>
 				<div className='row m-0'>
 					{this.props.ListCarCategory.map((item, i) => {
-						return (<div className='NewCarPricing-Section3-CategoryContainer d-flex flex-column align-items-center col-xl-2 col-lg-4 col-sm-6 p-0 col-6'>
+						return (<div key={i} className='NewCarPricing-Section3-CategoryContainer d-flex flex-column align-items-center col-xl-2 col-lg-4 col-sm-6 p-0 col-6'>
 							<img className='img-fluid h-auto' src={item.imageURL} alt='SUV' />
 							<p>{item.make}</p>
 						</div>);

@@ -25,6 +25,7 @@ class Section_B extends Component {
     super(props);
 
     this.refCSS = React.createRef();
+    //this.refParentCSS = React.createRef();
 
     this.state = {
       Years: [],
@@ -49,52 +50,14 @@ class Section_B extends Component {
   }
 
   componentWillReceiveProps(nextState, prevState) {
-    // if (this.state.carNumber > 0) {
-    //   switch (this.state.carNumber) {
-    //     case 1:
-    //       let objCard1 = this.state.cardShow;
-    //       objCard1.card1 = true;
-    //       objCard1.show = true;
-    //       this.setState({
-    //         cardShow: objCard1,
-    //       });
-    //       break;
 
-    //     case 2:
-    //       let objCard2 = this.state.cardShow;
-    //       objCard2.card2 = true;
-    //       objCard2.show = true;
-    //       this.setState({
-    //         cardShow: objCard2,
-    //       });
-    //       break;
-    //     case 3:
-    //       let objCard3 = this.state.cardShow;
-    //       objCard3.card3 = true;
-    //       objCard3.show = true;
-    //       this.setState({
-    //         cardShow: objCard3,
-    //       });
-    //       break;
-    //     case 4:
-    //       let objCard4 = this.state.cardShow;
-    //       objCard4.card4 = true;
-    //       objCard4.show = true;
-    //       this.setState({
-    //         cardShow: objCard4,
-    //       });
-    //       break;
-    //   }
-    // } else if (nextState.listCarData.length === 4) {
-    //   let objCard = this.state.cardShow;
-    //   objCard.card1 = true;
-    //   objCard.card2 = true;
-    //   objCard.card3 = true;
-    //   objCard.card4 = true;
-    //   objCard.show = true;
+    if (nextState.listCarData.length === 4) {
+      this.refCSS.current.scrollIntoView();
+    }
+    //  else if (nextState.listCarData.length === 0) {
+    //   this.refParentCSS.current.scrollIntoView();
     // }
 
-    this.refCSS.current.scrollIntoView();
     this.setState({
       listCarData: nextState.listCarData,
     });
@@ -102,16 +65,11 @@ class Section_B extends Component {
 
   componentDidMount() {
     this.props.actions.makeYears();
+    this.props.actions.clearAllCar();
   }
 
   closeModelHandler1 = (index) => {
     this.props.actions.clearCar(index);
-    // this.setState({
-    //   cardShow: lastData,
-    //   carNumber: this.state.carNumber === 1 ? 0 : (this.state.carNumber - 1)
-    // }, () => {
-    //   this.props.actions.clearCar(0);
-    // });
   };
 
   closeModelHandler2 = () => {
@@ -176,36 +134,6 @@ class Section_B extends Component {
       carNumber: 1,
       modalShow: !this.state.modalShow,
     });
-
-    // if (this.state.cardShow.card1 === false) {
-    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
-
-    //   this.setState({
-    //     carNumber: 1,
-    //     modalShow: !this.state.modalShow,
-    //   });
-    // } else if (this.state.cardShow.card2 === false) {
-    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
-
-    //   this.setState({
-    //     carNumber: 2,
-    //     modalShow: !this.state.modalShow,
-    //   });
-    // } else if (this.state.cardShow.card3 === false) {
-    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
-
-    //   this.setState({
-    //     carNumber: 3,
-    //     modalShow: !this.state.modalShow,
-    //   });
-    // } else if (this.state.cardShow.card4 === false) {
-    //   this.props.actions.getCarData(this.state.SelectedEngine.value);
-
-    //   this.setState({
-    //     carNumber: 4,
-    //     modalShow: !this.state.modalShow,
-    //   });
-    // }
   };
 
   setFieldValue = (type, option) => {
@@ -255,8 +183,8 @@ class Section_B extends Component {
     }
 
     return (
-      <div className="section-b-homepage-container">
-        <div className="d-flex sub-container">
+      <div className="section-b-homepage-container" >
+        <div className="d-flex sub-container" >
           <h3>
             {/* //t( */}
             <span className="special">{'Compare'}</span> {/* t( */}
@@ -313,15 +241,15 @@ class Section_B extends Component {
 
             {this.state.listCarData.length > 0
               ? this.state.listCarData.map((item, i) => {
-                  return (
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
-                      <CarCard
-                        closeModel={() => this.closeModelHandler1(i)}
-                        data={item}
-                      />
-                    </div>
-                  );
-                })
+                return (
+                  <div className="col-12 col-sm-12 col-md-6 col-lg-3" key={i}>
+                    <CarCard
+                      closeModel={() => this.closeModelHandler1(i)}
+                      data={item}
+                    />
+                  </div>
+                );
+              })
               : null}
 
             {listAdded}
