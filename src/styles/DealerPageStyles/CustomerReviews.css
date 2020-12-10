@@ -78,7 +78,7 @@
 .consumer-reviews h2 {
   font-size: 26px;
   color: #727272;
-  margin: 0 45px 0 0;
+  min-width: 100px;
   font-weight: 500;
 }
 

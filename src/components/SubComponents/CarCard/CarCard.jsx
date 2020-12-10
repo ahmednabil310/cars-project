@@ -87,7 +87,7 @@ class CarCard extends Component {
             </div>
           </div>
           {/* =============== Car Price ================ */}
-          <div className="Car__Price pb-3" style={{ height: '187px' }}>
+          <div className="Car__Price pb-3" style={{ height: '258px' }}>
             <h4 className="main__red pl-4 pt-4 text-capitalize">Pricing</h4>
 
             <p className="main__gary special-gray pl-4 py-2 mb-0">
@@ -106,12 +106,12 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '16px',
+                    top: '10px',
                     left: '0px',
                     width: '105px',
                     height: '39px',
                   }}
-                  className=" px-4  position-relative bg-transparent"
+                  className=" position-relative bg-transparent"
                   name="rating"></div>
                 <ReactStars
                   count={5}
@@ -126,12 +126,12 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '16px',
+                    top: '10px',
                     left: '0px',
                     width: '105px',
                     height: '39px',
                   }}
-                  className=" px-4  position-relative bg-transparent"
+                  className=" position-relative bg-transparent"
                   name="rating"></div>
                 <ReactStars
                   count={5}
@@ -146,12 +146,12 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '16px',
+                    top: '10px',
                     left: '0px',
                     width: '105px',
                     height: '39px',
                   }}
-                  className=" px-4  position-relative bg-transparent"
+                  className=" position-relative bg-transparent"
                   name="rating"></div>
                 <ReactStars
                   count={5}
@@ -166,12 +166,12 @@ class CarCard extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    top: '16px',
+                    top: '10px',
                     left: '0px',
                     width: '105px',
                     height: '39px',
                   }}
-                  className=" px-4  position-relative bg-transparent"
+                  className="position-relative bg-transparent"
                   name="rating"></div>
                 <ReactStars
                   count={5}
@@ -187,12 +187,12 @@ class CarCard extends Component {
             <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>
             <ul
               className="fa-ul px-2"
-              style={{ textTransform: 'capitalize', height: '150px' }}>
+              style={{ textTransform: 'capitalize', height: '176px' }}>
               {listGood}
             </ul>
             <ul
               className="fa-ul px-2"
-              style={{ textTransform: 'capitalize', height: '120px' }}>
+              style={{ textTransform: 'capitalize', height: '135px' }}>
               {listbad}
             </ul>
             <div className="px-2 mb-4">

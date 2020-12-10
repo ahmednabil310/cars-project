@@ -17,8 +17,8 @@ const SingleDetail = (props) => {
 
           <div className="stars-container d-flex">
             <div
-              style={{ zIndex: 99, top: '67px', left: '100px', width: '105px' }}
-              className=" p-3 px-4  position-relative bg-transparent"
+              style={{ zIndex: 99, top: '0px', left: '100px', width: '105px' }}
+              className="  position-relative bg-transparent"
               name="rating"></div>
             <ReactStars
               count={5}
