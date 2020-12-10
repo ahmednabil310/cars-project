@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SingleCar extends Component {
   constructor(props) {
@@ -13,11 +13,10 @@ class SingleCar extends Component {
   render() {
     return (
       <div
-        className="col-md-4 col-12   cars-container d-flex flex-column align-items-center"
-        style={{ cursor: "pointer" }}
+        className="col-md-6 col-xs-12 col-sm-6 col-lg-4 pb-4   cars-container d-flex flex-column align-items-center"
+        style={{ cursor: 'pointer' }}
         key={this.props.name}
-        onClick={() => this.handleClickImage(this.props.name)}
-      >
+        onClick={() => this.handleClickImage(this.props.name)}>
         <img src={this.props.image} alt="img" />
         <h4 className="car-name">{this.props.name}</h4>
       </div>

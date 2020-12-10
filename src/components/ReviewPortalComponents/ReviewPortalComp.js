@@ -73,7 +73,7 @@ class ReviewPortalComp extends Component {
         </div>
 
         <div className="row m-0 paddingSchema">
-          <div className="col-12 col-sm-12 col-md-8 col-lg-8  pl-0 pr-5">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-8  pl-0 pr-5">
             <MostLikeReview />
           </div>
 

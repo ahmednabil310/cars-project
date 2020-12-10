@@ -124,8 +124,19 @@
 }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .Cars-Available__container__form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-group {
+    margin: 0px !important;
+    padding-bottom: 10px !important;
+  }
+  .Cars-Available__container__submitBtn {
+    margin-left: 0px !important;
+  }
   .Cars-Available__container {
-    padding: 10px 20px !important;
+    padding: 10px 0px !important;
     min-height: 120px;
     align-items: center;
     justify-content: center;
@@ -140,12 +151,18 @@
   .Cars-Available__container__NewUSedBar {
     flex-direction: column;
   }
+  .Cars-Available__container__NewUSedBar a {
+    font-size: 14px !important;
+  }
+  .Cars-Available__container__title {
+    font-size: 18px;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .Cars-Available__container {
-    padding: 10px 20px !important;
+    padding: 10px 0px !important;
     min-height: 120px;
     align-items: center;
     justify-content: center;
@@ -162,7 +179,7 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
   .Cars-Available__container {
-    padding: 10px 20px !important;
+    padding: 10px 0px !important;
     min-height: 120px;
     align-items: center;
     justify-content: center;
@@ -177,6 +194,15 @@
 }
 @media (max-width: 1200px) {
   .Cars-Available__container {
-    padding: 0px 20px;
+    padding: 0px 0px;
+  }
+  .Cars-Available__container__ChoosedBrand {
+    padding-left: 20px;
+  }
+  .Cars-Available__container__title {
+    padding-left: 20px;
+  }
+  .Cars-Available__container__SubTitle {
+    padding-left: 20px;
   }
 }

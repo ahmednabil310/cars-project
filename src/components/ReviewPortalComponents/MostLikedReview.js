@@ -88,14 +88,14 @@ class MostLikeReview extends Component {
                 <div
                   style={{
                     zIndex: 99,
-                    position: 'relative',
+                    position: 'absolute',
                     width: '117px',
                     height: '37px',
-                    left: '104px',
+                    left: '229px',
                   }}
-                  className="bg-transparent"
+                  className="bg-transparent stars-z"
                   name="rating"></div>
-                <span>
+                <span className="stars-container">
                   <ReactStars
                     count={5}
                     size={24}
