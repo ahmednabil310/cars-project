@@ -28,8 +28,9 @@ class LatestCarReview extends Component {
                             className='carReviewCard_img'
                         />
                         <div className='carReviewCard_details'>
-                            <div className='carReviewCard_title'>{item.make + "  " + item.model}</div>
-                            <div className='carReviewCard_desc'>{item.subject}</div>
+                            <div className='carReviewCard_title'>{item.make + "  " + item.model + " " + item.year}</div>
+                            <div className='carReviewCard_title'>{item.subject}</div>
+                            <div className='carReviewCard_title'>Posted on : {item.postedon.split("T")[0]}</div>
                         </div>
                     </div>
                 }) : null}

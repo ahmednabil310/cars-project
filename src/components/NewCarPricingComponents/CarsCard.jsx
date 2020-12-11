@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import '../../styles/NewCarPricingStyles/CarsTable.css';
 
 // the hook
@@ -8,7 +9,11 @@ function CarsCard(props) {
   const { t, i18n } = useTranslation();
 
   return (
-    <div
+    <div style={{ cursor: "pointer" }} onClick={() =>
+      props.history.push(
+        `/cardetail?type=${props.data.id}`,
+      )
+    }
       className="carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5"
       key={props.key}>
       <div className="carsTable-cardimg" style={{ marginBottom: '5px' }}>
@@ -38,4 +43,4 @@ function CarsCard(props) {
   );
 }
 
-export default CarsCard;
+export default withRouter(CarsCard);

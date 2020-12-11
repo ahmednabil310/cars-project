@@ -195,7 +195,7 @@ export default function (state = initialState, action) {
     case 'GETCARRATED':
       return {
         ...state,
-        ListCarsRate: action.data.sort((a, b) => b - a).slice(0, 5),
+        ListCarsRate: action.data,
       };
     case 'CLEARALLCAR':
       return {

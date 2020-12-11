@@ -53,10 +53,6 @@ class Section_B extends Component {
     if (nextState.listCarData.length === 4) {
       this.refCSS.current.scrollIntoView();
     }
-    //  else if (nextState.listCarData.length === 0) {
-    //   this.refParentCSS.current.scrollIntoView();
-    // }
-
     this.setState({
       listCarData: nextState.listCarData,
     });
@@ -236,15 +232,15 @@ class Section_B extends Component {
           <div className="row section-b_car-container" ref={this.refCSS}>
             {this.state.listCarData.length > 0
               ? this.state.listCarData.map((item, i) => {
-                  return (
-                    <div className="col-3 col-lg-3" key={i}>
-                      <CarCard
-                        closeModel={() => this.closeModelHandler1(i)}
-                        data={item}
-                      />
-                    </div>
-                  );
-                })
+                return (
+                  <div className="col-3 col-lg-3" key={i}>
+                    <CarCard
+                      closeModel={() => this.closeModelHandler1(i)}
+                      data={item}
+                    />
+                  </div>
+                );
+              })
               : null}
 
             {listAdded}

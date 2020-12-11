@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/ReviewPortalStyles/MostLikedReview.css';
-import stars from '../../images/ReviewPortal/Group 166.jpg';
 import ReactStars from 'react-rating-stars-component';
 
 class MostLikeReview extends Component {
@@ -32,7 +31,7 @@ class MostLikeReview extends Component {
       postedon: item.postedon,
     };
 
-    this.setState({ isLike: !this.state.isLike });
+    // this.setState({ isLike: !this.state.isLike });
 
     this.props.actions.likeComment(obj);
   }
@@ -54,37 +53,40 @@ class MostLikeReview extends Component {
                   />
                   <div className="mostLikedReviewParticipantCard_details">
                     <div className="mostLikedReviewParticipantCard_title">
-                      {item.fullName}
+                      {item.make + "  " + item.model + "  " + item.year}
                     </div>
                     <div className="mostLikedReviewParticipantCard_subTitle">
-                      User since : 3 y
-                    </div>
-                    <div className="mostLikedReviewParticipantCard_subTitle">
-                      Reviews : (188)
+                      <span className="stars-container">
+                        <ReactStars
+                          count={5}
+                          size={24}
+                          activeColor="#d53535"
+                          value={parseFloat(item.ratingStar)}
+                        />
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="MostLikeReview_cardContainer col-12 col-xl-6 col-lg-6 col-xs-12 col-sm-12 col-md-12">
                   <img
-                    src={
-                      'https://s3.caradvice.com.au/wp-content/uploads/2015/12/2016-Lexus-GS200t_10.jpg'
-                    }
+                    src={item.profilePic}
                     className="mostLikedReviewCarCard_img"
                   />
 
                   <div className="mostLikedReviewCarCard_details">
                     <div className="mostLikedReviewCarCard_title">
-                      2020 TOGG 4WD
+                      {item.fullName}
                     </div>
                     <div className="mostLikedReviewCarCard_desc">
-                      {item.subject}
+                      TotalPost:  {item.totalPost}
                     </div>
                   </div>
                 </div>
               </div>
               <div className="mostLikeReview_title">
-                A Car for your life{' '}
+                {item.title}<br />
+               PostedOn : {item.postedon.split("T")[0]}
                 <div
                   style={{
                     zIndex: 99,
@@ -95,32 +97,26 @@ class MostLikeReview extends Component {
                   }}
                   className="bg-transparent stars-z"
                   name="rating"></div>
-                <span className="stars-container">
+                {/* <span className="stars-container">
                   <ReactStars
                     count={5}
                     size={24}
                     activeColor="#d53535"
                     value={parseFloat(item.ratingStar)}
                   />
-                </span>
+                </span> */}
                 <i
                   id={i}
-                  className={`${
-                    this.state[i] ? 'fas fa-heart' : 'far fa-heart'
-                  } cursor-pointer  ml-auto`}
+                  className={`${this.state[i] ? 'fas fa-heart' : 'far fa-heart'
+                    } cursor-pointer  ml-auto`}
                   onClick={(e) => {
                     this.setState({ [e.target.id]: true });
+                    this.hnadleLike(item)
                   }}
                   style={this.state[i] ? null : { color: 'grey' }}></i>
               </div>
               <div className="mostLikeReview_desc">
-                Going head to head with BMW’s 5 Series and Mercedes-Benz’s
-                E-Class is no easy feat, but the 2020 G80 sedan easily holds its
-                own. The G80’s roots date back to when the Genesis sedan was a
-                model in the Hyundai lineup, before Genesis was its own brand.
-                Now serving as the middle ground between the sportier G70 and
-                the flagship G90, the G80 offers an appealing blend of comfort
-                and power.
+                {item.subject}
               </div>
             </div>
           );
