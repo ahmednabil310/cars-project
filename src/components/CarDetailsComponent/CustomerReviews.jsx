@@ -130,7 +130,7 @@ class CustomerReviews extends Component {
     };
     this.props.actions.deleteComment(obj);
   }
-  successRequest(id){
+  successRequest(id) {
     this.setState({ [id]: true });
   }
   hnadleLike(id, carId) {
@@ -144,7 +144,7 @@ class CustomerReviews extends Component {
 
     this.setState({ isLike: !this.state.isLike });
 
-    this.props.actions.likeComment(obj,this.successRequest);
+    this.props.actions.likeComment(obj, this.successRequest);
   }
 
   render() {
@@ -213,7 +213,7 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-                onClick={() => { document.getElementById('loginPopUpShow') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
+                onClick={() => { document.getElementById('loginPopUpShoaw') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -239,6 +239,7 @@ class CustomerReviews extends Component {
                 title="Review">
                 <div className="form-group position-relative">
                   <input
+                    autoComplete="off"
                     type="text"
                     className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                     name="title"
@@ -282,6 +283,7 @@ class CustomerReviews extends Component {
                 </div>
                 <div className="form-group position-relative">
                   <textarea
+                    autoComplete='off'
                     className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                     name="comment"
                     rows="5"
@@ -343,7 +345,7 @@ class CustomerReviews extends Component {
                       onClick={(e) => {
                         this.hnadleLike(item.id, item.carId)
                       }}
-                      style={{color:`${this.state[item.id] ?'#d53535':'grey'}`,fontSize:'25px'}}></i>
+                      style={{ color: `${this.state[item.id] ? '#d53535' : 'grey'}`, fontSize: '25px' }}></i>
                     {/* <svg
                       onClick={() =>
                         this.hnadleLike(item.id, item.carId)
