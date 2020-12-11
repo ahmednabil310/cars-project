@@ -73,18 +73,12 @@ class CustomerReviews extends Component {
   };
 
   addReviewHandler = () => {
-    
-    if (
-      this.state.rate>0 &&
-      this.state.title &&
-      this.state.comment
-    ) {
+    if (this.state.rate > 0 && this.state.title && this.state.comment) {
       this.setState({ modalShow: !this.state.modalShow });
-      const userId = localStorage.getItem('UserIDFB');
-      const userIdGmail = localStorage.getItem('GmailId');
+      const userId = localStorage.getItem('userId');
 
       const param = {
-        userId: userId || userIdGmail,
+        userId: userId,
         carId: this.state.carId,
         ratingStar: this.state.rate.toString(),
         title: this.state.title,
@@ -92,7 +86,6 @@ class CustomerReviews extends Component {
       };
 
       this.props.actions.addComment(param);
-      
     } else {
       alert('Please fill the form');
     }
@@ -114,11 +107,11 @@ class CustomerReviews extends Component {
     this.props.actions.updateComment(obj);
   }
   handleDeleteComment() {
-    const userId = localStorage.getItem('UserIDFB');
-    const userIdGmail = localStorage.getItem('GmailId');
+    const userId = localStorage.getItem('userId');
+
     const obj = {
       id: this.state.editingItem.id,
-      userId: userId || userIdGmail,
+      userId: userId,
       carId: this.state.editingItem.id,
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
@@ -134,8 +127,7 @@ class CustomerReviews extends Component {
     this.setState({ [id]: true });
   }
   hnadleLike(id, carId) {
-    const userId = localStorage.getItem('UserIDFB');
-    const userIdGmail = localStorage.getItem('GmailId');
+    const userId = localStorage.getItem('userId');
     const obj = {
       id: id,
       userId: userId,
@@ -244,7 +236,6 @@ class CustomerReviews extends Component {
                 <div className="form-group position-relative">
                   <input
                     type="text"
-                    
                     className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                     name="title"
                     value={this.state.title}
