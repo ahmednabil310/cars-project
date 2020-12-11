@@ -56,7 +56,6 @@ class Nav extends Component {
         profilePic: response.profileObj.profileObj,
       };
       this.props.actions.addUsers(objNewUser);
-      window.location.reload();
     }
   }
 
