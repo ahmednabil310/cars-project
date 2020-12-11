@@ -1,6 +1,6 @@
-import * as types from "./types";
-import axiosDocs from "../../api/server";
-import toastr from "toastr";
+import * as types from './types';
+import axiosDocs from '../../api/server';
+import toastr from 'toastr';
 
 // action of makeList
 export function makeList() {
@@ -14,7 +14,7 @@ export function makeList() {
         });
       })
       .catch(function (error) {
-        console.log("makeList: ", error);
+        console.log('makeList: ', error);
       });
   };
 }
@@ -31,7 +31,7 @@ export function makeYears() {
         });
       })
       .catch(function (error) {
-        console.log("makeYears: ", error);
+        console.log('makeYears: ', error);
       });
   };
 }
@@ -40,7 +40,7 @@ export function makeYears() {
 export function clearAllCar() {
   return (dispatch) => {
     dispatch({
-      type: types.CLEARALLCAR 
+      type: types.CLEARALLCAR,
     });
   };
 }
@@ -56,7 +56,7 @@ export function getMakeByYears(make, year) {
         });
       })
       .catch(function (error) {
-        console.log("makeYears: ", error);
+        console.log('makeYears: ', error);
       });
   };
 }
@@ -72,7 +72,7 @@ export function getCars(year) {
         });
       })
       .catch(function (error) {
-        console.log("getCars: ", error);
+        console.log('getCars: ', error);
       });
   };
 }
@@ -88,7 +88,7 @@ export function getSubCars(model, year) {
         });
       })
       .catch(function (error) {
-        console.log("getSubCars: ", error);
+        console.log('getSubCars: ', error);
       });
   };
 }
@@ -104,7 +104,7 @@ export function getEngine(submodel, year) {
         });
       })
       .catch(function (error) {
-        console.log("getEngine: ", error);
+        console.log('getEngine: ', error);
       });
   };
 }
@@ -117,11 +117,11 @@ export function getCarData(id, index) {
         dispatch({
           type: types.GETCARDATA,
           data: response.data.result,
-          index: (index - 1)
+          index: index - 1,
         });
       })
       .catch(function (error) {
-        console.log("getCarData: ", error);
+        console.log('getCarData: ', error);
       });
   };
 }
@@ -137,7 +137,7 @@ export function getCommentList(id) {
         });
       })
       .catch(function (error) {
-        console.log("getCommentList: ", error);
+        console.log('getCommentList: ', error);
       });
   };
 }
@@ -146,7 +146,7 @@ export function getMultipleComparison(car1, car2, car3, car4) {
   return (dispatch) => {
     axiosDocs
       .get(
-        `api/Car/GetMultipleComparison?car1=${car1}&car2=${car2}&car3=${car3}&car4=${car4}`
+        `api/Car/GetMultipleComparison?car1=${car1}&car2=${car2}&car3=${car3}&car4=${car4}`,
       )
       .then(function (response) {
         dispatch({
@@ -155,7 +155,7 @@ export function getMultipleComparison(car1, car2, car3, car4) {
         });
       })
       .catch(function (error) {
-        console.log("getMultipleComparison: ", error);
+        console.log('getMultipleComparison: ', error);
       });
   };
 }
@@ -165,7 +165,7 @@ export function addComment(param) {
     axiosDocs
       .post(`api/Comment/Add`, param)
       .then(function () {
-        toastr.success("Add Comment Success");
+        toastr.success('Add Comment Success');
         axiosDocs
           .get(`api/Comment/GetCommentList?CarId=${param.carId}`)
           .then(function (response) {
@@ -175,11 +175,11 @@ export function addComment(param) {
             });
           })
           .catch(function (error) {
-            console.log("getCommentListfromAdd: ", error);
+            console.log('getCommentListfromAdd: ', error);
           });
       })
       .catch(function (error) {
-        console.log("addComment: ", error);
+        console.log('addComment: ', error);
       });
   };
 }
@@ -189,60 +189,60 @@ export function addUsers(param) {
     axiosDocs
       .post(`api/User/Add`, param)
       .then(function (response) {
-        toastr.success("Add User Success");
-        localStorage.setItem("userId", response.data.result.replaceAll(/['"]+/g, ''));
+        toastr.success('Add User Success');
+        localStorage.setItem(
+          'userId',
+          response.data.result.replaceAll(/['"]+/g, ''),
+        );
+        window.location.reload();
       })
       .catch(function (error) {
-        console.log("addUsers: ", error);
+        console.log('addUsers: ', error);
       });
   };
 }
-
 
 export function updateComment(param) {
   return (dispatch) => {
     axiosDocs
       .post(`api/Comment/Update`, param)
       .then(function (response) {
-        toastr.success("Update Comment Success");
+        toastr.success('Update Comment Success');
         dispatch({
           type: types.UPDATECOMMENT,
           data: response.data.result,
         });
       })
       .catch(function (error) {
-        console.log("addComment: ", error);
+        console.log('addComment: ', error);
       });
   };
 }
 
-export function likeComment(param,successFunc) {
+export function likeComment(param, successFunc) {
   return (dispatch) => {
     axiosDocs
       .post(`api/Comment/Likes`, param)
       .then(function (response) {
-        successFunc(param.id)
-        toastr.success("Like Comment Success");
+        successFunc(param.id);
+        toastr.success('Like Comment Success');
         // dispatch({
         //   type: types.UPDATECOMMENT,
         //   data: response.data.result,
         // });
       })
       .catch(function (error) {
-        
-        console.log("likeComment: ", error);
+        console.log('likeComment: ', error);
       });
   };
 }
-
-
 
 export function deleteComment(param) {
   return (dispatch) => {
     axiosDocs
       .post(`api/Comment/Delete`, param)
       .then(function (response) {
-        toastr.success("Delete Comment Success");
+        toastr.success('Delete Comment Success');
         dispatch({
           type: types.DELETECOMMENT,
           data: param.id,
@@ -253,7 +253,7 @@ export function deleteComment(param) {
           type: types.DELETECOMMENT,
           data: param.id,
         });
-        toastr.success("Delete Comment Success");
+        toastr.success('Delete Comment Success');
       });
   };
 }
@@ -269,7 +269,7 @@ export function getTopReview() {
         });
       })
       .catch(function (error) {
-        console.log("getTopReview: ", error);
+        console.log('getTopReview: ', error);
       });
   };
 }
@@ -285,7 +285,7 @@ export function getTopParticipants() {
         });
       })
       .catch(function (error) {
-        console.log("getTopParticipants: ", error);
+        console.log('getTopParticipants: ', error);
       });
   };
 }
@@ -301,7 +301,7 @@ export function getMostLike() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -317,7 +317,7 @@ export function getCarByPriceRange() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -333,7 +333,7 @@ export function getCarByCategory() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -349,7 +349,7 @@ export function getMostLikes() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -364,7 +364,7 @@ export function getLatestReview() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -380,7 +380,7 @@ export function getCarsRate() {
         });
       })
       .catch(function (error) {
-        console.log("getMostLike: ", error);
+        console.log('getMostLike: ', error);
       });
   };
 }
@@ -392,4 +392,4 @@ export function clearCar(index) {
       data: index,
     });
   };
-} 
+}

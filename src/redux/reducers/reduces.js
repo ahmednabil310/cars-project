@@ -1,8 +1,8 @@
-import initialState from "./initialState";
+import initialState from './initialState';
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case "GETMAKELIST":
+    case 'GETMAKELIST':
       let make = [];
       action.data.forEach((item) => {
         let objDept = {
@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
         ...state,
         listMake: make,
       };
-    case "GETYEARSLIST":
+    case 'GETYEARSLIST':
       let years = [];
       action.data.forEach((item) => {
         let objDept = {
@@ -33,13 +33,13 @@ export default function (state = initialState, action) {
         listYears: years,
       };
 
-    case "GETMAKEYEARS":
+    case 'GETMAKEYEARS':
       return {
         ...state,
         listMakeYears: action.data,
       };
 
-    case "GETCARS":
+    case 'GETCARS':
       let cars = [];
       action.data.forEach((item) => {
         let objDept = {
@@ -55,7 +55,7 @@ export default function (state = initialState, action) {
         listCars: cars,
       };
 
-    case "GETSUBCARS":
+    case 'GETSUBCARS':
       let subcars = [];
       action.data.forEach((item) => {
         let objDept = {
@@ -71,7 +71,7 @@ export default function (state = initialState, action) {
         listSubCars: subcars,
       };
 
-    case "GETENGINE":
+    case 'GETENGINE':
       let Engine = [];
       action.data.forEach((item) => {
         let objDept = {
@@ -87,119 +87,120 @@ export default function (state = initialState, action) {
         listEngine: Engine,
       };
 
-    case "GETCARDATA":
-
+    case 'GETCARDATA':
       const listCar = [...state.listCarData, action.data];
 
       return {
         ...state,
         listCarData: listCar,
-        objCarData: action.data
+        objCarData: action.data,
       };
 
-    case "GETCOMMENTLIST":
+    case 'GETCOMMENTLIST':
       return {
         ...state,
         listComment: action.data,
       };
 
-    case "GETCARCOMPARISON":
-
+    case 'GETCARCOMPARISON':
       if (state.listCarData.length > 0) {
         state.listCarData = [];
       }
 
       let listCars = [];
 
-      listCars.push(action.data["car1"]);
-      listCars.push(action.data["car2"]);
-      listCars.push(action.data["car3"]);
-      listCars.push(action.data["car4"]);
+      listCars.push(action.data['car1']);
+      listCars.push(action.data['car2']);
+      listCars.push(action.data['car3']);
+      listCars.push(action.data['car4']);
 
-      localStorage.setItem("CarData", JSON.stringify(listCars));
+      localStorage.setItem('CarData', JSON.stringify(listCars));
 
       return {
         ...state,
         listCarData: listCars,
       };
 
-    case "GETTOPREVIEW":
+    case 'GETTOPREVIEW':
       return {
         ...state,
         listReviews: action.data,
       };
 
-    case "GETTOPPARTICIPANTS":
+    case 'GETTOPPARTICIPANTS':
       return {
         ...state,
         ListParticipants: action.data,
       };
 
-    case "GETMOSTLIKE":
+    case 'GETMOSTLIKE':
       return {
         ...state,
         ListMostLike: action.data,
       };
-    case "GETCARPRICE":
+    case 'GETCARPRICE':
+      const blow60 = action.data.find((x) => x.scoreRange === 'below 60');
+      const blow80 = action.data.find((x) => x.scoreRange === '60-80');
+      const blow100 = action.data.find((x) => x.scoreRange === '80-100');
+      const blow130 = action.data.find((x) => x.scoreRange === '100-130');
+      const blow200 = action.data.find((x) => x.scoreRange === '130-200');
+      const blow300 = action.data.find((x) => x.scoreRange === '200-300');
+      const blow500 = action.data.find((x) => x.scoreRange === '300-500');
+      const above500 = action.data.find((x) => x.scoreRange === 'above 500');
 
-      const blow60 = action.data.find(x => x.scoreRange === "below 60");
-      const blow80 = action.data.find(x => x.scoreRange === "60-80");
-      const blow100 = action.data.find(x => x.scoreRange === "80-100");
-      const blow130 = action.data.find(x => x.scoreRange === "100-130");
-      const blow200 = action.data.find(x => x.scoreRange === "130-200");
-      const blow300 = action.data.find(x => x.scoreRange === "200-300");
-      const blow500 = action.data.find(x => x.scoreRange === "300-500");
-      const above500 = action.data.find(x => x.scoreRange === "above 500");
-
-      const listData = [blow60, blow80, blow100, blow130, blow200, blow300, blow500, above500];
+      const listData = [
+        blow60,
+        blow80,
+        blow100,
+        blow130,
+        blow200,
+        blow300,
+        blow500,
+        above500,
+      ];
 
       return {
         ...state,
         ListCarPrice: listData,
       };
-    case "GETCARCATEGORY":
+    case 'GETCARCATEGORY':
       return {
         ...state,
         ListCarCategory: action.data,
       };
 
-    case "GETMOSTLIKES":
+    case 'GETMOSTLIKES':
       return {
         ...state,
         ListLike: action.data,
       };
-    case "DELETECOMMENT":
-
-      let listComm = state.listComment.filter(x => x.id !== action.data);
+    case 'DELETECOMMENT':
+      let listComm = state.listComment.filter((x) => x.id !== action.data);
 
       return {
         ...state,
         listComment: listComm,
       };
-    case "DELETECAR":
-
+    case 'DELETECAR':
       state.listCarData.splice(action.data, 1);
       return {
         ...state,
-        listCarData: [...state.listCarData]
+        listCarData: [...state.listCarData],
       };
-    case "GETCARREVIEW":
-
+    case 'GETCARREVIEW':
       return {
         ...state,
         ListCarLike: action.data,
       };
-    case "GETCARRATED":
-
+    case 'GETCARRATED':
       return {
         ...state,
-        ListCarsRate: action.data.sort((a, b) => b - a).slice(0, 5)
+        ListCarsRate: action.data.sort((a, b) => b - a).slice(0, 5),
       };
-    case "CLEARALLCAR":
-
+    case 'CLEARALLCAR':
       return {
         ...state,
-        listCarData: []
+        listCarData: [],
       };
     default:
       return {

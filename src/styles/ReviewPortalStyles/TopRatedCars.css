@@ -9,6 +9,10 @@
   margin-bottom: 20px;
   margin-top: 40px;
 }
+.topRatedCarCard_title_link {
+  color: black !important;
+  font-weight: bold;
+}
 .topRatedCarCard {
   display: flex;
   align-items: center;
@@ -18,21 +22,24 @@
 .topRatedCarCard_details {
   width: 100%;
 }
+.topRatedCarCard_link {
+  margin-right: 5%;
+}
 .topRatedCarCard_img {
-  width: 35%;
+  width: 148px;
   height: 100px;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 0.1px solid white;
-  margin-right: 5%;
 }
 .topRatedCarCard_title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
 }
 .topRatedCarCard_reviewCard {
   display: flex;
   width: auto;
+  align-items: center;
 }
 .topRatedCarCard_rateNum {
   font-size: 35px;

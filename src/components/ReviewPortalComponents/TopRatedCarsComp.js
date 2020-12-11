@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/ReviewPortalStyles/TopRatedCars.css';
-import stars from '../../images/ReviewPortal/Group 166.jpg';
 import ReactStars from 'react-rating-stars-component';
+import { Link, NavLink } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 class TopRatedCars extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class TopRatedCars extends Component {
 
   componentDidMount() {
     this.props.actions.getCarsRate();
+    console.log(this.props.ListCarsRate.length);
   }
 
   render() {
@@ -27,17 +29,20 @@ class TopRatedCars extends Component {
           ? this.props.ListCarsRate.map((item, i) => {
               return (
                 <div className="topRatedCarCard" key={i}>
-                  <img className="topRatedCarCard_img" src={item.imageURL} />
+                  <NavLink to="/" className="topRatedCarCard_link">
+                    <img className="topRatedCarCard_img" src={item.imageURL} />
+                  </NavLink>
                   <div className="topRatedCarCard_details">
-                    <div className="topRatedCarCard_title">
-                      {item.make + '  ' + item.model}
-                    </div>
+                    <Link to="/" className="topRatedCarCard_title_link">
+                      <div className="topRatedCarCard_title">
+                        {item.make + '  ' + item.model}
+                      </div>
+                    </Link>
                     <div className="topRatedCarCard_reviewCard">
                       <div className="topRatedCarCard_rateNum">
                         {item.reliability}
                       </div>
                       <div className="topRatedCarCard_reteDetails">
-                        <div>255 reviews</div>
                         <div
                           style={{
                             zIndex: 99,
