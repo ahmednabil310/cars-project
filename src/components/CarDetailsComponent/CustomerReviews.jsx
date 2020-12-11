@@ -73,14 +73,12 @@ class CustomerReviews extends Component {
   };
 
   addReviewHandler = () => {
+    
     if (
-      this.state.carId ||
-      this.state.rate.toString() ||
-      this.state.title ||
+      this.state.rate>0 &&
+      this.state.title &&
       this.state.comment
     ) {
-      alert('Please fill the form');
-    } else {
       this.setState({ modalShow: !this.state.modalShow });
       const userId = localStorage.getItem('UserIDFB');
       const userIdGmail = localStorage.getItem('GmailId');
@@ -94,6 +92,9 @@ class CustomerReviews extends Component {
       };
 
       this.props.actions.addComment(param);
+      
+    } else {
+      alert('Please fill the form');
     }
   };
 
@@ -213,7 +214,7 @@ class CustomerReviews extends Component {
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
                 onClick={() => {
-                  document.getElementById('loginPopUpShow')
+                  document.getElementById('loginPopUpShaow')
                     ? document.getElementById('loginPopUpShow').click()
                     : this.setState({ modalShow: true });
                 }}>
@@ -243,7 +244,7 @@ class CustomerReviews extends Component {
                 <div className="form-group position-relative">
                   <input
                     type="text"
-                    autoComplete="off"
+                    
                     className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                     name="title"
                     value={this.state.title}
@@ -288,7 +289,6 @@ class CustomerReviews extends Component {
                   <textarea
                     className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                     name="comment"
-                    autoComplete="off"
                     rows="5"
                     value={this.state.comment}
                     onChange={this.inputChangeHandler}></textarea>
