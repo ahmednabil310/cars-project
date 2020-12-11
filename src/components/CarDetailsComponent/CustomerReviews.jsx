@@ -213,7 +213,7 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-                onClick={() => { document.getElementById('loginPopUpShoaw') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
+                onClick={() => { document.getElementById('loginPopUpShow') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
