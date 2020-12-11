@@ -23,7 +23,7 @@ const isLoginFB =
 class CustomerReviews extends Component {
   constructor(props) {
     super(props);
-
+    this.successRequest = this.successRequest.bind(this);
     this.state = {
       title: '',
       rating: '',
@@ -34,11 +34,10 @@ class CustomerReviews extends Component {
       isLike: false,
       currentIdComment: 0,
       id: 0,
-      userId: localStorage.getItem('userId'),
     };
   }
 
-  componentWillReceiveProps(nextState, prevState) {}
+  componentWillReceiveProps(nextState, prevState) { }
 
   componentDidMount() {
     this.props.actions.getCommentList(this.state.carId);
@@ -74,18 +73,28 @@ class CustomerReviews extends Component {
   };
 
   addReviewHandler = () => {
-    this.setState({ modalShow: !this.state.modalShow });
-    const userId = localStorage.getItem('userId');
+    if (
+      this.state.carId ||
+      this.state.rate.toString() ||
+      this.state.title ||
+      this.state.comment
+    ) {
+      alert('Please fill the form')
+    } else {
+      this.setState({ modalShow: !this.state.modalShow });
+      const userId = localStorage.getItem('UserIDFB');
+      const userIdGmail = localStorage.getItem('GmailId');
 
-    const param = {
-      userId: userId,
-      carId: this.state.carId,
-      ratingStar: this.state.rate.toString(),
-      title: this.state.title,
-      subject: this.state.comment,
-    };
+      const param = {
+        userId: userId || userIdGmail,
+        carId: this.state.carId,
+        ratingStar: this.state.rate.toString(),
+        title: this.state.title,
+        subject: this.state.comment
+      };
 
-    this.props.actions.addComment(param);
+      this.props.actions.addComment(param);
+    }
   };
 
   viewReviewHandler = (type) => {
@@ -93,21 +102,23 @@ class CustomerReviews extends Component {
   };
 
   handleEditComment() {
+
     const obj = {
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
       subject: this.state.editingItem.subject,
-      id: this.state.editingItem.id,
+      id: this.state.editingItem.id
     };
     this.setState({ editformshow: false });
 
     this.props.actions.updateComment(obj);
   }
   handleDeleteComment() {
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('UserIDFB');
+    const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: this.state.editingItem.id,
-      userId: userId,
+      userId: userId || userIdGmail,
       carId: this.state.editingItem.id,
       ratingStar: this.state.editingItem.ratingStar.toString(),
       title: this.state.editingItem.title,
@@ -119,18 +130,21 @@ class CustomerReviews extends Component {
     };
     this.props.actions.deleteComment(obj);
   }
-
+  successRequest(id){
+    this.setState({ [id]: true });
+  }
   hnadleLike(id, carId) {
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem('UserIDFB');
+    const userIdGmail = localStorage.getItem('GmailId');
     const obj = {
       id: id,
-      userId: userId,
-      carId: carId,
+      userId: userId || userIdGmail,
+      carId: carId
     };
 
     this.setState({ isLike: !this.state.isLike });
 
-    this.props.actions.likeComment(obj);
+    this.props.actions.likeComment(obj,this.successRequest);
   }
 
   render() {
@@ -199,11 +213,7 @@ class CustomerReviews extends Component {
               <button
                 type="button"
                 className="mr-0 mt-1 btn-block py-2 customer-reviews-writeReview"
-                onClick={() => {
-                  document.getElementById('loginPopUpShow')
-                    ? document.getElementById('loginPopUpShow').click()
-                    : this.setState({ modalShow: true });
-                }}>
+                onClick={() => { document.getElementById('loginPopUpShow') ? document.getElementById('loginPopUpShow').click() : this.setState({ modalShow: true }) }}>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -309,50 +319,52 @@ class CustomerReviews extends Component {
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, index) => {
-                  return (
-                    <div className="review" key={index}>
-                      <div className="review-title d-flex flex-row flex-wrap align-items-center">
-                        <h2>{item.title}</h2>
-                        <div
-                          style={{
-                            zIndex: 99,
-                            top: '-1px',
-                            left: '100px',
-                            width: '105px',
-                            height: '37px',
-                          }}
-                          className="  position-relative bg-transparent"
-                          name="rating"></div>
-                        <ReactStars
-                          count={5}
-                          size={24}
-                          activeColor="#d53535"
-                          classNames="consumer-reviews"
-                          value={parseInt(item.ratingStar)}
-                        />
-                      </div>
-                      <p>{item.subject}</p>
-                      <span>{item.fullName}</span>
-                      <span>{'date-cons'}</span>
-                      <span>{'detail-car'}</span>
-                      <span className="last">{'likes'}</span>
-                      <svg
-                        onClick={() => this.hnadleLike(item.id, item.carId)}
-                        //style={{ background: this.state.isLike ? "red" : "" }}
-                        className="cursor-pointer"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="29.25"
-                        height="27"
-                        viewBox="0 0 29.25 27">
-                        <path
-                          id="Icon_ionic-md-heart-empty"
-                          data-name="Icon ionic-md-heart-empty"
-                          d="M24.581,4.5A8.652,8.652,0,0,0,18,7.587,8.652,8.652,0,0,0,11.419,4.5a7.952,7.952,0,0,0-8.044,8.093c0,5.59,4.971,10.076,12.5,16.995L18,31.5l2.123-1.913c7.53-6.919,12.5-11.4,12.5-16.995A7.952,7.952,0,0,0,24.581,4.5ZM18.9,27.654l-.3.274-.6.548-.6-.548-.3-.274a89.372,89.372,0,0,1-8.627-8.578c-1.969-2.44-2.841-4.437-2.841-6.483A5.848,5.848,0,0,1,7.3,8.423a5.722,5.722,0,0,1,4.12-1.673,6.449,6.449,0,0,1,4.859,2.285L18,11.081l1.723-2.046A6.425,6.425,0,0,1,24.581,6.75a5.75,5.75,0,0,1,4.127,1.673,5.86,5.86,0,0,1,1.666,4.17c0,2.039-.879,4.043-2.841,6.483A89.552,89.552,0,0,1,18.9,27.654Z"
-                          transform="translate(-3.375 -4.5)"
-                          fill="#c4c4c4"
-                        />
-                      </svg>
-                      {item.userId === this.state.userId ? (
+                return (
+                  <div className="review" key={item.id}>
+                    <div className="review-title d-flex flex-row flex-wrap align-items-center">
+                      <h2>{item.title}</h2>
+                      <ReactStars
+                        count={5}
+                        size={24}
+                        activeColor="#d53535"
+                        classNames="consumer-reviews"
+                        value={parseInt(item.ratingStar)}
+                      />
+                    </div>
+                    <p>{item.subject}</p>
+                    <span>{item.fullName}</span>
+                    <span>{'date-cons'}</span>
+                    <span>{'detail-car'}</span>
+                    <span className="last">{'likes'}</span>
+                    <i
+                      id={item.id}
+                      className={`${this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'
+                        } cursor-pointer  ml-auto`}
+                      onClick={(e) => {
+                        this.hnadleLike(item.id, item.carId)
+                      }}
+                      style={{color:`${this.state[item.id] ?'#d53535':'grey'}`,fontSize:'25px'}}></i>
+                    {/* <svg
+                      onClick={() =>
+                        this.hnadleLike(item.id, item.carId)
+                      }
+                      //style={{ background: this.state.isLike ? "red" : "" }}
+                      className="cursor-pointer"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="29.25"
+                      height="27"
+                      viewBox="0 0 29.25 27">
+                      <path
+                        id="Icon_ionic-md-heart-empty"
+                        data-name="Icon ionic-md-heart-empty"
+                        d="M24.581,4.5A8.652,8.652,0,0,0,18,7.587,8.652,8.652,0,0,0,11.419,4.5a7.952,7.952,0,0,0-8.044,8.093c0,5.59,4.971,10.076,12.5,16.995L18,31.5l2.123-1.913c7.53-6.919,12.5-11.4,12.5-16.995A7.952,7.952,0,0,0,24.581,4.5ZM18.9,27.654l-.3.274-.6.548-.6-.548-.3-.274a89.372,89.372,0,0,1-8.627-8.578c-1.969-2.44-2.841-4.437-2.841-6.483A5.848,5.848,0,0,1,7.3,8.423a5.722,5.722,0,0,1,4.12-1.673,6.449,6.449,0,0,1,4.859,2.285L18,11.081l1.723-2.046A6.425,6.425,0,0,1,24.581,6.75a5.75,5.75,0,0,1,4.127,1.673,5.86,5.86,0,0,1,1.666,4.17c0,2.039-.879,4.043-2.841,6.483A89.552,89.552,0,0,1,18.9,27.654Z"
+                        transform="translate(-3.375 -4.5)"
+                        fill="#c4c4c4"
+                      />
+                    </svg>
+                     */}
+                    {isLoginGmail === item.userId || isLoginFB === item.userId
+                      ? (
                         <div className="edit-delete-btns-container">
                           <button
                             className="consumerReviewBtn"
@@ -430,7 +442,6 @@ class CustomerReviews extends Component {
                             title="Review">
                             <div className="form-group position-relative">
                               <input
-                                required
                                 type="text"
                                 className="form-control p-3 px-4 review__input review__input_title position-relative bg-transparent"
                                 name="title"
@@ -488,7 +499,6 @@ class CustomerReviews extends Component {
                               <textarea
                                 className="form-control p-3 px-4 review__input review__input_comment position-relative bg-transparent"
                                 name="comment"
-                                required
                                 rows="5"
                                 defaultValue={
                                   this.state.editingItem
@@ -517,9 +527,9 @@ class CustomerReviews extends Component {
                           </ModelFields>
                         </div>
                       ) : null}
-                    </div>
-                  );
-                })
+                  </div>
+                );
+              })
               : null}
           </div>
         </div>
@@ -530,7 +540,7 @@ class CustomerReviews extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
   listComment: state.reduces.listComment,
-  gstate: state,
+  gstate: state
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
