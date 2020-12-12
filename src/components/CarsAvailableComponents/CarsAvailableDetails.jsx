@@ -20,10 +20,13 @@ class CarsAvailableDetails extends Component {
       makeID = params[1];
     }
 
+    var d = new Date();
+    var year = d.getFullYear();
+
     this.state = {
       Years: [],
       Make: [],
-      SelectedYears: { label: '2020', value: '2020' },
+      SelectedYears: { label: year, value: year },
       SelectedMake: { label: makeID, value: makeID },
     };
 
@@ -59,16 +62,15 @@ class CarsAvailableDetails extends Component {
   componentDidMount() {
     this.props.actions.makeList();
     this.props.actions.makeYears();
-    this.props.actions.getMakeByYears(
+    this.props.actions.getCarsByCategory(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value,
     );
   }
 
   handleClick() {
     this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value,
+      this.state.SelectedYears.value
     );
   }
 
@@ -84,8 +86,8 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-            <div className="Cars-Available__container__title">Choose</div>
-          )}
+              <div className="Cars-Available__container__title">Choose</div>
+            )}
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2">

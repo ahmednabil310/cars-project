@@ -4,6 +4,7 @@ import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/ReviewPortalStyles/MostLikedReview.css';
 import ReactStars from 'react-rating-stars-component';
+import { withRouter } from 'react-router-dom';
 
 class MostLikeReview extends Component {
   constructor(props) {
@@ -31,8 +32,6 @@ class MostLikeReview extends Component {
       postedon: item.postedon,
     };
 
-    // this.setState({ isLike: !this.state.isLike });
-
     this.props.actions.likeComment(obj);
   }
 
@@ -47,9 +46,14 @@ class MostLikeReview extends Component {
             <div key={i}>
               <div className="MostLikeReview_cards row m-0">
                 <div className="MostLikeReview_cardContainer col-12 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                  <img
+                  <img style={{ cursor: "pointer" }}
                     src={item.imageURL}
                     className="mostLikedReviewParticipantCard_img"
+                    onClick={() =>
+                      this.props.history.push(
+                        `/cardetail?type=${item.carId}`,
+                      )
+                    }
                   />
                   <div className="mostLikedReviewParticipantCard_details">
                     <div className="mostLikedReviewParticipantCard_title">
@@ -134,4 +138,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MostLikeReview);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MostLikeReview));

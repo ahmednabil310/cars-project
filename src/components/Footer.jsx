@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 import { connect } from "react-redux";
 import actions from "../redux/actions";
 import { bindActionCreators } from "redux";
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/logo.png';
 import social from '../images/social.png';
 
@@ -20,8 +20,14 @@ class Footer extends Component {
     this.state = {};
   }
 
+
+
   handleClick(car1, car2, car3, car4) {
     this.props.actions.getMultipleComparison(car1, car2, car3, car4);
+    const route = window.location.pathname;
+    if (route !== "/") {
+      this.props.history.push("/");
+    }
   };
 
   render() {
@@ -229,4 +235,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer); 
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Footer)); 

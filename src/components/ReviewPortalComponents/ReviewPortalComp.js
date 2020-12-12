@@ -23,11 +23,7 @@ class ReviewPortalComp extends Component {
       comment: '',
     };
   }
-
-  componentDidMount() {
-    //  this.props.actions.getTopReview();
-  }
-
+  
   inputChangeHandler = (event) => {
     this.setState({
       [event.target.name]: event.target.value,

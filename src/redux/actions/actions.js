@@ -338,6 +338,22 @@ export function getCarByCategory() {
   };
 }
 
+export function getCarsByCategory(category) {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Car/GetCarByCategory?category=${category}`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARSCATEGORY,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log('getMostLike: ', error);
+      });
+  };
+}
+
 export function getMostLikes() {
   return (dispatch) => {
     axiosDocs

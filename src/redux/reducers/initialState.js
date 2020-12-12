@@ -12,6 +12,7 @@ export default {
   ListMostLike: [],
   ListCarPrice: [],
   ListCarCategory: [],
+  ListCarsCategory: [],
   ListLike: [],
   ListCarLike: [],
   ListCarsRate: [],
