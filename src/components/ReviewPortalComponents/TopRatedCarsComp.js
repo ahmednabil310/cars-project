@@ -4,9 +4,7 @@ import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/ReviewPortalStyles/TopRatedCars.css';
 import ReactStars from 'react-rating-stars-component';
-import { Link, NavLink } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
-
+import { withRouter } from 'react-router-dom';
 class TopRatedCars extends Component {
   constructor(props) {
     super(props);
@@ -27,16 +25,20 @@ class TopRatedCars extends Component {
         {this.props.ListCarsRate.length > 0
           ? this.props.ListCarsRate.map((item, i) => {
             return (
-              <div className="topRatedCarCard" key={i} style={{ marginBottom: "60px" }}>
-                <NavLink to="/" className="topRatedCarCard_link">
+              <div className="topRatedCarCard" key={i} style={{ marginBottom: "60px", cursor: "pointer" }} onClick={() =>
+                this.props.history.push(
+                  `/cardetail?type=${item.id}`,
+                )
+              }>
+                <div className="topRatedCarCard_link">
                   <img className="topRatedCarCard_img" src={item.imageURL} />
-                </NavLink>
+                </div>
                 <div className="topRatedCarCard_details">
-                  <Link to="/" className="topRatedCarCard_title_link">
+                  <div className="topRatedCarCard_title_link">
                     <div className="topRatedCarCard_title">
                       {item.make + '  ' + item.model + '  ' + item.year}
                     </div>
-                  </Link>
+                  </div>
                   <div className="topRatedCarCard_reviewCard">
                     <div className="topRatedCarCard_rateNum">
                       {item.reliability}
@@ -107,4 +109,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopRatedCars);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TopRatedCars));

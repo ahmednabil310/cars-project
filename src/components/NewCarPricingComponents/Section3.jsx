@@ -35,7 +35,7 @@ class Section3 extends Component {
 					{this.props.ListCarCategory.map((item, i) => {
 						return (<div key={i} onClick={() =>
 							this.props.history.push(
-								`/cardetail?type=${item.id}`,
+								`/cars-available?type=${item.make}`,
 							)
 						} className='NewCarPricing-Section3-CategoryContainer d-flex flex-column align-items-center col-xl-2 col-lg-4 col-sm-6 p-0 col-6'>
 							<img className='img-fluid h-auto' src={item.imageURL} alt='SUV' />

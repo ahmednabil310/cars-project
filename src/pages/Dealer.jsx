@@ -25,9 +25,6 @@ class Dealer extends Component {
       objId = params[1];
     }
 
-    // let objData = JSON.parse(localStorage.getItem("CarData"));
-
-    // objData = objData.find((x) => x.id === parseInt(objId));
 
     this.state = {
       objData: objId,
@@ -35,8 +32,8 @@ class Dealer extends Component {
     };
   }
 
-  componentWillReceiveProps(nextState, prevState) { 
-this.setState({loading:false})
+  componentWillReceiveProps(nextState, prevState) {
+    this.setState({ loading: false })
 
   }
   componentDidMount() {
@@ -46,14 +43,14 @@ this.setState({loading:false})
   render() {
     return (
       <div>
-        {this.state.loading === false? (
+        {this.state.loading === false ? (
           <>
             <Banner data={this.props.objCarData} />
             <CarDetails data={this.props.objCarData} />
             <CarsPros data={this.props.objCarData} />
             <FullCar data={this.props.objCarData} />
             <LastBanner data={this.props.objCarData} />
-            <CustomerReviews data={this.props.objCarData} /> 
+            <CustomerReviews data={this.props.objCarData} />
           </>
         ) : null}
       </div>

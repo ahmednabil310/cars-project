@@ -139,34 +139,168 @@ export default function (state = initialState, action) {
         ListMostLike: action.data,
       };
     case 'GETCARPRICE':
-      const blow60 = action.data.find((x) => x.scoreRange === 'below 60');
-      const blow80 = action.data.find((x) => x.scoreRange === '60-80');
-      const blow100 = action.data.find((x) => x.scoreRange === '80-100');
-      const blow130 = action.data.find((x) => x.scoreRange === '100-130');
-      const blow200 = action.data.find((x) => x.scoreRange === '130-200');
-      const blow300 = action.data.find((x) => x.scoreRange === '200-300');
-      const blow500 = action.data.find((x) => x.scoreRange === '300-500');
-      const above500 = action.data.find((x) => x.scoreRange === 'above 500');
 
-      const listData = [
-        blow60,
-        blow80,
-        blow100,
-        blow130,
-        blow200,
-        blow300,
-        blow500,
-        above500,
-      ];
+      let bindData = [];
+
+      let bindblow60 = [];
+      let blow60 = action.data.filter((x) => x.scoreRange === 'below 60');
+
+      blow60.forEach(item => {
+        bindblow60.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow60[0].image_1,
+        scoreRange: blow60[0].scoreRange,
+        class: blow60[0].class,
+        listCars: bindblow60
+      });
+
+      let bindblow80 = [];
+      let blow80 = action.data.filter((x) => x.scoreRange === '60-80');
+
+      blow80.forEach(item => {
+        bindblow80.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow80[0].image_1,
+        scoreRange: blow80[0].scoreRange,
+        class: blow80[0].class,
+        listCars: bindblow80
+      });
+
+
+      let bindblow100 = [];
+      let blow100 = action.data.filter((x) => x.scoreRange === '80-100');
+
+      blow100.forEach(item => {
+        bindblow100.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow100[0].image_1,
+        scoreRange: blow100[0].scoreRange,
+        class: blow100[0].class,
+        listCars: bindblow100
+      });
+
+
+      let bindblow130 = [];
+      let blow130 = action.data.filter((x) => x.scoreRange === '100-130');
+
+      blow130.forEach(item => {
+        bindblow130.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow130[0].image_1,
+        scoreRange: blow130[0].scoreRange,
+        class: blow130[0].class,
+        listCars: bindblow130
+      });
+
+      let bindblow200 = [];
+      const blow200 = action.data.filter((x) => x.scoreRange === '130-200');
+
+      blow200.forEach(item => {
+        bindblow200.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow200[0].image_1,
+        scoreRange: blow200[0].scoreRange,
+        class: blow200[0].class,
+        listCars: bindblow200
+      });
+
+      let bindblow300 = [];
+      let blow300 = action.data.filter((x) => x.scoreRange === '200-300');
+
+      blow300.forEach(item => {
+        bindblow300.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow300[0].image_1,
+        scoreRange: blow300[0].scoreRange,
+        class: blow300[0].class,
+        listCars: bindblow300
+      });
+
+
+      let bindblow500 = [];
+      let blow500 = action.data.filter((x) => x.scoreRange === '300-500');
+      blow500.forEach(item => {
+        bindblow500.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: blow500[0].image_1,
+        scoreRange: blow500[0].scoreRange,
+        class: blow500[0].class,
+        listCars: bindblow500
+      });
+
+      let bindabove500 = [];
+      const above500 = action.data.filter((x) => x.scoreRange === 'above 500');
+      above500.forEach(item => {
+        bindabove500.push({
+          id: item.id,
+          make: item.make,
+          model: item.model
+        });
+      });
+
+      bindData.push({
+        image_1: above500[0].image_1,
+        scoreRange: above500[0].scoreRange,
+        class: above500[0].class,
+        listCars: bindabove500
+      });
 
       return {
         ...state,
-        ListCarPrice: listData,
+        ListCarPrice: bindData,
       };
     case 'GETCARCATEGORY':
       return {
         ...state,
         ListCarCategory: action.data,
+      };
+
+    case 'GETCARSCATEGORY':
+      return {
+        ...state,
+        listMakeYears: action.data,
       };
 
     case 'GETMOSTLIKES':

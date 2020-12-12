@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
-
-
+import { withRouter } from 'react-router-dom';
 
 class LatestCarReview extends Component {
     constructor(props) {
@@ -22,7 +21,11 @@ class LatestCarReview extends Component {
                 <div className={'reviewPortal_sectionSeparator'} />
 
                 {this.props.ListCarLike.length > 0 ? this.props.ListCarLike.map((item, i) => {
-                    return <div className='carReviewCard' key={i}>
+                    return <div className='carReviewCard'  style={{ cursor: "pointer" }} key={i} onClick={() =>
+                        this.props.history.push(
+                            `/cardetail?type=${item.carId}`,
+                        )
+                    }>
                         <img
                             src={item.carImage}
                             className='carReviewCard_img'
@@ -49,4 +52,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LatestCarReview);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LatestCarReview));

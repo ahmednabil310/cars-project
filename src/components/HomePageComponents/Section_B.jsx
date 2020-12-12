@@ -60,7 +60,9 @@ class Section_B extends Component {
 
   componentDidMount() {
     this.props.actions.makeYears();
-    this.props.actions.clearAllCar();
+    if (this.props.listCarData.length !== 4) {
+      this.props.actions.clearAllCar();
+    }
   }
 
   closeModelHandler1 = (index) => {
