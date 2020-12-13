@@ -56,7 +56,11 @@ class MostLikeReview extends Component {
                     }
                   />
                   <div className="mostLikedReviewParticipantCard_details">
-                    <div className="mostLikedReviewParticipantCard_title">
+                    <div className="mostLikedReviewParticipantCard_title" onClick={() =>
+                      this.props.history.push(
+                        `/cardetail?type=${item.carId}`,
+                      )
+                    } style={{ cursor: "pointer" }}>
                       {item.make + "  " + item.model + "  " + item.year}
                     </div>
                     <div className="mostLikedReviewParticipantCard_subTitle">
