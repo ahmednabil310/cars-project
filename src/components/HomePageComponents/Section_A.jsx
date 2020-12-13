@@ -80,9 +80,9 @@ const Section_A = () => {
             <div className="row w-100 pb-5">
               <SingleCar name="Hatchback" image={Hatchback} />
               <SingleCar name="Sedan" image={sedan} />
-              <SingleCar name="Midsize Sedan" image={midSizeSedan} />
-              <SingleCar name="Luxury Sedan" image={luxurySedan} />
-              <SingleCar name="Midsize SUV" image={midSizeSuv} />
+              <SingleCar name="Premium" image={midSizeSedan} />
+              <SingleCar name="Coupe" image={luxurySedan} />
+              <SingleCar name="SUV" image={midSizeSuv} />
               <SingleCar name="Large SUV" image={largeSuv} />
             </div>
             {/* <div className="row w-100"></div> */}

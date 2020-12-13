@@ -71,9 +71,9 @@ class Nav extends Component {
     window.location.reload();
   }
 
-  handleLoginFailure(response) { }
+  handleLoginFailure(response) {}
 
-  handleLogoutFailure(response) { }
+  handleLogoutFailure(response) {}
 
   responseFacebook = (response) => {
     if (response.status !== 'unknown') {
@@ -105,7 +105,11 @@ class Nav extends Component {
     });
     window.location.reload();
   };
-
+  logOutBoth = () => {
+    this.logOUtFB();
+    this.logout();
+    window.location.reload();
+  };
   render() {
     return (
       <div className="nav-container d-flex">
@@ -188,7 +192,7 @@ class Nav extends Component {
                 <div
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuButton">
-                  <li onClick={this.logout}>
+                  <li onClick={this.logOutBoth}>
                     <div
                       style={{
                         cursor: 'pointer',
@@ -201,19 +205,19 @@ class Nav extends Component {
                 </div>
               </div>
             ) : (
-                <li
-                  className="nav-item d-flex"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                  id="loginPopUpShow">
-                  <div
-                    className="nav-link special-login"
-                    activeClassName="active-link"
-                    style={{ cursor: 'pointer' }}>
-                    {'Login'}
-                  </div>
-                </li>
-              )}
+              <li
+                className="nav-item d-flex"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                id="loginPopUpShow">
+                <div
+                  className="nav-link special-login"
+                  activeClassName="active-link"
+                  style={{ cursor: 'pointer' }}>
+                  {'Login'}
+                </div>
+              </li>
+            )}
           </div>
         </nav>
 
@@ -252,34 +256,34 @@ class Nav extends Component {
                       onLogoutSuccess={this.logout}
                       onFailure={this.handleLogoutFailure}></GoogleLogout>
                   ) : (
-                      <GoogleLogin
-                        clientId={CLIENT_ID}
-                        buttonText="Continue with Google"
-                        icon={fbLogo}
-                        onSuccess={this.login}
-                        onFailure={this.handleLoginFailure}
-                        cookiePolicy={'single_host_origin'}
-                        responseType="code,token"
-                        className="google-login-btn"
-                      />
-                    )}
+                    <GoogleLogin
+                      clientId={CLIENT_ID}
+                      buttonText="Continue with Google"
+                      icon={fbLogo}
+                      onSuccess={this.login}
+                      onFailure={this.handleLoginFailure}
+                      cookiePolicy={'single_host_origin'}
+                      responseType="code,token"
+                      className="google-login-btn"
+                    />
+                  )}
                   {this.state.isLoginedFB ? (
                     <button onClick={this.logOUtFB} className="fb-login-btn">
                       {' '}
                       Log Out
                     </button>
                   ) : (
-                      <FacebookLogin
-                        // appId="1063436714175495"
-                        appId="781310785786387"
-                        autoLoad={false}
-                        fields="name,email,picture"
-                        callback={this.responseFacebook}
-                        textButton="Continue with Facebook"
-                        cssclassName="fb-login-btn"
-                        icon={<i className="fab fa-facebook-f px-2"></i>}
-                      />
-                    )}
+                    <FacebookLogin
+                      // appId="1063436714175495"
+                      appId="781310785786387"
+                      autoLoad={false}
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                      textButton="Continue with Facebook"
+                      cssclassName="fb-login-btn"
+                      icon={<i className="fab fa-facebook-f px-2"></i>}
+                    />
+                  )}
                 </div>
               </div>
             </div>
