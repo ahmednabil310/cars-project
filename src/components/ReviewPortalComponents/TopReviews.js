@@ -20,7 +20,7 @@ class TopReviews extends Component {
         <div className={"reviewPortal_sectionSeparator"} />
         {this.props.listReviews.map((item, index) => {
           return (
-            <div className="carReviewCard"  style={{ cursor: "pointer" }} key={index} onClick={() =>
+            <div className="carReviewCard" style={{ cursor: "pointer" }} key={index} onClick={() =>
               this.props.history.push(
                 `/cardetail?type=${item.carId}`,
               )

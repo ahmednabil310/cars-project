@@ -29,7 +29,7 @@ class CarsOfBrand extends Component {
               <div className="Cars-Available__container__carImgContainer__shadowBox" />
 
               <div className="Cars-Available__container__carImgContainer__title">
-                {item.model}
+                {item.make + "  " + item.model}
               </div>
             </div>
           );

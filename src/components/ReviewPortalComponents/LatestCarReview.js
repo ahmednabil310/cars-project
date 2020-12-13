@@ -21,17 +21,22 @@ class LatestCarReview extends Component {
                 <div className={'reviewPortal_sectionSeparator'} />
 
                 {this.props.ListCarLike.length > 0 ? this.props.ListCarLike.map((item, i) => {
-                    return <div className='carReviewCard'  style={{ cursor: "pointer" }} key={i} onClick={() =>
+                    return <div className='carReviewCard' key={i} >
+                        <img style={{ cursor: "pointer" }}
+                            src={item.carImage}
+                            className='carReviewCard_img'
+                            onClick={() =>
+                                this.props.history.push(
+                                    `/cardetail?type=${item.carId}`,
+                                )
+                            }
+                        />
+                        <div className='carReviewCard_details'>
+                            <div className='carReviewCard_title' style={{ cursor: "pointer" }} onClick={() =>
                         this.props.history.push(
                             `/cardetail?type=${item.carId}`,
                         )
-                    }>
-                        <img
-                            src={item.carImage}
-                            className='carReviewCard_img'
-                        />
-                        <div className='carReviewCard_details'>
-                            <div className='carReviewCard_title'>{item.make + "  " + item.model + " " + item.year}</div>
+                    }>{item.make + "  " + item.model + " " + item.year}</div>
                             <div className='carReviewCard_title'>{item.subject}</div>
                             <div className='carReviewCard_title'>Posted on : {item.postedon.split("T")[0]}</div>
                         </div>
