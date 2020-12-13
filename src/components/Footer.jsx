@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/Footer.css';
-import { connect } from "react-redux";
-import actions from "../redux/actions";
-import { bindActionCreators } from "redux";
+import { connect } from 'react-redux';
+import actions from '../redux/actions';
+import { bindActionCreators } from 'redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/logo.png';
 import social from '../images/social.png';
@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 
 import i18n from '../i18n';
 
-
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -20,15 +19,13 @@ class Footer extends Component {
     this.state = {};
   }
 
-
-
   handleClick(car1, car2, car3, car4) {
     this.props.actions.getMultipleComparison(car1, car2, car3, car4);
     const route = window.location.pathname;
-    if (route !== "/") {
-      this.props.history.push("/");
+    if (route !== '/') {
+      this.props.history.push('/');
     }
-  };
+  }
 
   render() {
     return (
@@ -40,16 +37,16 @@ class Footer extends Component {
               <img src={logo} alt="logo" />
             </NavLink>
             <p className="first-column-pargraph">
-              caradvice.smartarz.com is the largest automotive consumer portal of
-              its kind in the UAE. The site provides a unique online service for
-              motoring consumers, designed specifically for the United Arab
+              caradvice.smartarz.com is the largest automotive consumer portal
+              of its kind in the UAE. The site provides a unique online service
+              for motoring consumers, designed specifically for the United Arab
               Emirates.
-            <br />
               <br />
-            Unless otherwise stated, all prices are shown as Manufacturer's
-            Recommended List Price (MRLP) inclusive of VAT, exclusive of options
-            and on road costs.
-          </p>
+              <br />
+              Unless otherwise stated, all prices are shown as Manufacturer's
+              Recommended List Price (MRLP) inclusive of VAT, exclusive of
+              options and on road costs.
+            </p>
             <div className="icons">
               <a href="/">
                 <i className="fab fa-facebook-square"></i>
@@ -61,44 +58,44 @@ class Footer extends Component {
           </div>
 
           <div className="footer-container__content--second-column d-flex flex-column">
-            <h5 className="second-column-title">{"Quick Links"}</h5>
+            <h5 className="second-column-title">{'Quick Links'}</h5>
             <NavLink to="/" className="footerItem">
               Home
-          </NavLink>
+            </NavLink>
             <NavLink to="/" className="footerItem">
               Price & Specifications
-          </NavLink>
+            </NavLink>
             <NavLink to="/newcarpricing" className="footerItem">
               New Car
-          </NavLink>
+            </NavLink>
             <NavLink to="/car-reviews" className="footerItem">
               Reviews
-          </NavLink>
+            </NavLink>
             <a
               href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE"
               className="footerItem">
               Used Car
-          </a>
+            </a>
             <NavLink to="/" className="footerItem">
               Terms and Condition
-          </NavLink>
+            </NavLink>
 
             <div
               className="language"
-            // onClick={() => {
-            //   changelanguage('en');
-            // }}
+              // onClick={() => {
+              //   changelanguage('en');
+              // }}
             >
               English
-          </div>
+            </div>
             <div
               className="language"
-            // onClick={() => {
-            //   changelanguage('ar');
-            // }}
+              // onClick={() => {
+              //   changelanguage('ar');
+              // }}
             >
               Arabic
-          </div>
+            </div>
           </div>
 
           <div className="footer-container__content--second-column d-flex flex-column">
@@ -106,94 +103,94 @@ class Footer extends Component {
             <div
               onClick={() =>
                 this.handleClick(
-                  "Toyota Land Crusier",
-                  "Nissan Patrol",
-                  "GMC Yukon",
-                  "Chevrolet Tahoe"
+                  'Toyota Land Cruiser',
+                  'Nissan Patrol',
+                  'GMC Yukon',
+                  'Chevrolet Tahoe',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Toyota Land Crusier/Nissan Patrol/GMC Yukon/Chevrolet Tahoe
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Toyota RAV4",
-                  "Mazda CX-5",
-                  "Kia Sportage",
-                  "Honda CR-V"
+                  'Toyota RAV-4',
+                  'Mazda CX-5',
+                  'Kia Sportage',
+                  'Honda CR-V',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Toyota RAV4/Mazda CX-5/Kia Sportage/Honda CR-V
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Toyota Camry",
-                  "Honda Accord",
-                  "Nissan Altima",
-                  "Mazada 6"
+                  'Toyota Camry',
+                  'Honda Accord',
+                  'Nissan Altima',
+                  'Mazda 6',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Toyota Camry/Honda Accord/Nissan Altima/Mazada 6
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Lexus ES",
-                  "Mercedes-Benz E-Class",
-                  "Audi A6",
-                  "BMW 5-Series"
+                  'Lexus ES',
+                  'Mercedes-Benz E-Class',
+                  'Audi A6',
+                  'BMW 5-Series',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Lexus ES/Mercedes-Benz E-Class/Audi A6/BMW 5-Series
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Chrysler 300C",
-                  "Dodge Charger",
-                  "Ford Taurus",
-                  "Toyota Avalon"
+                  'Chrysler 300C',
+                  'Dodge Charger',
+                  'Ford Taurus',
+                  'Toyota Avalon',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Chrysler 300C/Dodge Charger/Ford Taurus/Toyota Avalon
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Lexus GS",
-                  "Jaguar XF",
-                  "Volvo S90",
-                  "Infiniti Q70"
+                  'Lexus GS',
+                  'Jaguar XF',
+                  'Volvo S90',
+                  'Infiniti Q70',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Lexus GS/Jaguar XF/Volvo S90/Infiniti Q70
-          </div>
+            </div>
             <div
               onClick={() =>
                 this.handleClick(
-                  "Audi Q7",
-                  "BMW X5",
-                  "Lexus RX",
-                  "Mercedes-Benz GLE 63 AMG"
+                  'Audi Q7',
+                  'BMW X5',
+                  'Lexus RX',
+                  'Mercedes-Benz GLE 63 AMG',
                 )
               }
               className="footerItem"
               style={{ textDecoration: 'underline' }}>
               Audi Q7/BMW X5/Lexus RX/Mercedes-Benz GLE 63 AMG
-          </div>
+            </div>
           </div>
         </div>
         <hr />
@@ -204,14 +201,14 @@ class Footer extends Component {
           <div className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">
             This site is powered and designed by{' '}
             <span style={{ fontWeight: 'bold' }}>Smartarz</span>, All rights
-          reserved @2021
-        </div>
+            reserved @2021
+          </div>
           <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
             Privacy Polices
-        </div>
+          </div>
           <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
             Rules & Regulations
-        </div>
+          </div>
         </div>
       </footer>
     );
@@ -235,4 +232,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Footer)); 
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Footer));
