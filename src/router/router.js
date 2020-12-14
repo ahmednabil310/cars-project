@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import CarsDetailsSmall from '../components/CarsAvailableComponents/CarsDetailsSmall';
 import Loading from '../components/loadingPage';
 
 const Nav = lazy(() => import('../components/Nav'));
@@ -25,6 +26,7 @@ const RouterDocument = () => {
           <Route path="/cardetail" component={Dealer} />
           <Route path="/dealer-details" component={DealerDetails} />
           <Route path="/cars-available" component={CarsAvailable} />
+          <Route path="/sub-cars" component={CarsDetailsSmall} />
           <Route path="/car-reviews" component={ReviewPortal} />
         </Switch>
         <Footer />
