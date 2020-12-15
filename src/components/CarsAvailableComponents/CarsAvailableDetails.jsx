@@ -56,11 +56,16 @@ class CarsAvailableDetails extends Component {
     this.setState({
       [type]: option,
     });
+
+    if(type ==="SelectedYears")
+    {
+      this.props.actions.makeList(this.state.SelectedYears.value);
+    }
   };
 
   // life cycle of react calling when page is loading
   componentDidMount() {
-    this.props.actions.makeList();
+    this.props.actions.makeList(this.state.SelectedYears.value);
     this.props.actions.makeYears();
     this.props.actions.getCarsByCategory(
       this.state.SelectedMake.value,

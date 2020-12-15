@@ -9,11 +9,15 @@ function CarsCard(props) {
   const { t, i18n } = useTranslation();
 
   return (
-    <div 
+    <div
       className="carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5"
       key={props.key}>
       <div className="carsTable-cardimg" style={{ marginBottom: '5px' }}>
-        <img className="img-fluid h-auto" src={props.data.image_1} alt="car" />
+        <img className="img-fluid h-auto" style={{ cursor: "pointer" }} src={props.data.image_1} alt="car" onClick={() =>
+          props.history.push(
+            `/cardetail?type=${props.data.listCars[0].id}`,
+          )
+        } />
       </div>
       <div className="carsTable-carCard-price">
         {<i className="fas fa-angle-left"></i>} {props.data.scoreRange}K $ AED

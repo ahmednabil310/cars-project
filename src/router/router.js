@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import CarsDetailsSmall from '../components/CarsAvailableComponents/CarsDetailsSmall';
 import Loading from '../components/loadingPage';
 
 const Nav = lazy(() => import('../components/Nav'));
@@ -9,6 +8,7 @@ const Home = lazy(() => import('../pages/Home'));
 const NewCarPricing = lazy(() => import('../pages/NewCarPricing'));
 const DealerDetails = lazy(() => import('../pages/DealerDetails'));
 const CarsAvailable = lazy(() => import('../pages/CarsAvailable'));
+const CarsDetailsSmall = lazy(() => import('../components/CarsAvailableComponents/CarsDetailsSmall'));
 const Footer = lazy(() => import('../components/Footer'));
 const ReviewPortal = lazy(() => import('../pages/ReviewPortal'));
 const CarCard = lazy(() =>

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import '../../styles/ReviewPortalStyles/MostLikedReview.css';
 import ReactStars from 'react-rating-stars-component';
 import { withRouter } from 'react-router-dom';
+import toastr from 'toastr';
 
 class MostLikeReview extends Component {
   constructor(props) {
@@ -17,22 +18,30 @@ class MostLikeReview extends Component {
   componentDidMount() {
     this.props.actions.getMostLikes();
   }
+  
   hnadleLike(item) {
-    const userId = localStorage.getItem('userId');
-    const obj = {
-      id: item.id,
-      userId: userId,
-      carId: item.carId,
-      ratingStar: item.ratingStar,
-      title: item.title,
-      subject: item.subject,
-      totalView: item.totalView,
-      totalLike: item.totalLike,
-      status: item.status,
-      postedon: item.postedon,
-    };
 
-    this.props.actions.likeComment(obj);
+    const userId = localStorage.getItem('userId');
+
+    if (userId !== null) {
+
+      const obj = {
+        id: item.id,
+        userId: userId,
+        carId: item.carId,
+        ratingStar: item.ratingStar,
+        title: item.title,
+        subject: item.subject,
+        totalView: item.totalView,
+        totalLike: item.totalLike,
+        status: item.status,
+        postedon: item.postedon,
+      };
+
+      this.props.actions.likeComment(obj);
+    } else {
+      toastr.warning('Please Login');
+    }
   }
 
   render() {
@@ -75,13 +84,11 @@ class MostLikeReview extends Component {
                     </div>
                   </div>
                 </div>
-
                 <div className="MostLikeReview_cardContainer col-12 col-xl-6 col-lg-6 col-xs-12 col-sm-12 col-md-12">
                   <img
                     src={item.profilePic}
                     className="mostLikedReviewCarCard_img"
                   />
-
                   <div className="mostLikedReviewCarCard_details">
                     <div className="mostLikedReviewCarCard_title">
                       {item.fullName}
@@ -105,14 +112,6 @@ class MostLikeReview extends Component {
                   }}
                   className="bg-transparent stars-z"
                   name="rating"></div>
-                {/* <span className="stars-container">
-                  <ReactStars
-                    count={5}
-                    size={24}
-                    activeColor="#d53535"
-                    value={parseFloat(item.ratingStar)}
-                  />
-                </span> */}
                 <i
                   id={i}
                   className={`${this.state[i] ? 'fas fa-heart' : 'far fa-heart'

@@ -78,12 +78,12 @@ const Section_A = () => {
           </h4>
           <div className="row">
             <div className="row w-100 pb-5">
-              <SingleCar name="Hatchback" image={Hatchback} />
-              <SingleCar name="Sedan" image={sedan} />
-              <SingleCar name="Premium" image={midSizeSedan} />
-              <SingleCar name="Coupe" image={luxurySedan} />
-              <SingleCar name="SUV" image={midSizeSuv} />
-              <SingleCar name="Large SUV" image={largeSuv} />
+              <SingleCar name="Hatchback" image={Hatchback} isRoute={true} />
+              <SingleCar name="Sedan" image={sedan} isRoute={true}/>
+              <SingleCar name="Premium" image={midSizeSedan} isRoute={true}/>
+              <SingleCar name="Coupe" image={luxurySedan} isRoute={true}/>
+              <SingleCar name="SUV" image={midSizeSuv} isRoute={true}/>
+              <SingleCar name="Large SUV" image={largeSuv} isRoute={true}/>
             </div>
             {/* <div className="row w-100"></div> */}
           </div>
@@ -145,12 +145,12 @@ const Section_A = () => {
           </h4>
           <div className="row  special-row">
             <div className="row w-100 pb-5">
-              <SingleCar name="Toyota" image={toyota} />
-              <SingleCar name="Mercedes" image={mercedes} />
-              <SingleCar name="BMW" image={bmw} />
-              <SingleCar name="Nissan" image={nissan} />
-              <SingleCar name="Honda" image={honda} />
-              <SingleCar name="Lexus" image={lexus} />
+              <SingleCar name="Toyota" image={toyota} isRoute={false}/>
+              <SingleCar name="Mercedes" image={mercedes} isRoute={false}/>
+              <SingleCar name="BMW" image={bmw} isRoute={false}/>
+              <SingleCar name="Nissan" image={nissan} isRoute={false}/>
+              <SingleCar name="Honda" image={honda} isRoute={false}/>
+              <SingleCar name="Lexus" image={lexus} isRoute={false}/>
             </div>
           </div>
         </div>

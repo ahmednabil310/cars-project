@@ -3,10 +3,10 @@ import axiosDocs from '../../api/server';
 import toastr from 'toastr';
 
 // action of makeList
-export function makeList() {
+export function makeList(Year) {
   return (dispatch) => {
     axiosDocs
-      .get(`api/Car/GetCarMake?Year=2020`)
+      .get(`api/Car/GetCarMake?Year=${Year}`)
       .then(function (response) {
         dispatch({
           type: types.GETMAKELIST,

@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
-import CarsOfBrand from './CarsOfBrand';
-import Select from 'react-select';
-import { withRouter } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+import CarsOfBrand from './CarsOfBrand'; 
+import { withRouter } from 'react-router-dom'; 
 
 class CarsAvailableDetails extends Component {
   constructor(props) {
@@ -24,21 +22,13 @@ class CarsAvailableDetails extends Component {
     var year = d.getFullYear();
 
     this.state = {
-      Years: [],
-      Make: [],
-      SelectedYears: { label: year, value: year },
       SelectedMake: { label: makeID, value: makeID },
     };
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   // life cycle of react calling when any change of props
   componentWillReceiveProps(nextState, prevState) {
-    if (
-      (nextState.listYears && nextState.listYears.length > 0) ||
-      (nextState.listMake && nextState.listMake.length > 0)
-    ) {
+    if ((nextState.SelectedMake && nextState.SelectedMake.length > 0)) {
       this.setState({
         isLoading: false,
         show: false,
@@ -52,24 +42,10 @@ class CarsAvailableDetails extends Component {
     }
   }
 
-  setFieldValue = (type, option) => {
-    this.setState({
-      [type]: option,
-    });
-  };
 
   // life cycle of react calling when page is loading
   componentDidMount() {
-    this.props.actions.makeList();
-    this.props.actions.makeYears();
     this.props.actions.getCarsByCategory(this.state.SelectedMake.value);
-  }
-
-  handleClick() {
-    this.props.actions.getMakeByYears(
-      this.state.SelectedMake.value,
-      this.state.SelectedYears.value,
-    );
   }
 
   render() {
@@ -84,8 +60,8 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-            <div className="Cars-Available__container__title">Choose</div>
-          )}
+              <div className="Cars-Available__container__title">Choose</div>
+            )}
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2">
@@ -93,6 +69,38 @@ class CarsAvailableDetails extends Component {
               <span style={{ color: '#3e3e3e' }}>
                 {this.state.SelectedMake.label}
               </span>
+            </div>
+          ) : null}
+          {this.state.SelectedMake.label != 'default' ? (
+            <div>
+              <div className="Cars-Available__container__NewUSedBar">
+                <a
+                  href=""
+                  style={{
+                    color: '#325c9a',
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                  }}>
+                  New {this.state.SelectedMake.label} for Sale in&nbsp;
+                  {this.state.SelectedMake.label}
+                </a>
+                <a
+                  href=""
+                  style={{
+                    color: '#325c9a',
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                  }}>
+                  Used {this.state.SelectedMake.label} for Sale in&nbsp;
+                  {this.state.SelectedMake.label}
+                </a>
+              </div>
+
+              <div className="Cars-Available__container__ChoosedBrand">
+                Browse {this.state.SelectedMake.label} Models
+              </div>
+
+              <CarsOfBrand CarsDetails={this.props.listMakeYears} />
             </div>
           ) : null}
         </div>
