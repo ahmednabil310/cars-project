@@ -78,12 +78,12 @@ const Section_A = () => {
           </h4>
           <div className="row">
             <div className="row w-100 pb-5">
-              <SingleCar name="Hatchback" image={Hatchback} isRoute={true} />
-              <SingleCar name="Sedan" image={sedan} isRoute={true}/>
-              <SingleCar name="Premium" image={midSizeSedan} isRoute={true}/>
-              <SingleCar name="Coupe" image={luxurySedan} isRoute={true}/>
-              <SingleCar name="SUV" image={midSizeSuv} isRoute={true}/>
-              <SingleCar name="Large SUV" image={largeSuv} isRoute={true}/>
+              <SingleCar name="Hatchback" image={Hatchback} rout={`/sub-cars?type=Hatchback`} />
+              <SingleCar name="Sedan" image={sedan} rout={`/sub-cars?type=Sedan`} />
+              <SingleCar name="Premium" image={midSizeSedan} rout={`/sub-cars?type=Premium`} />
+              <SingleCar name="Coupe" image={luxurySedan} rout={`/sub-cars?type=Coupe`} />
+              <SingleCar name="SUV" image={midSizeSuv} rout={`/sub-cars?type=SUV`} />
+              <SingleCar name="Large SUV" image={largeSuv} rout={`/sub-cars?type=LargeSUV`} />
             </div>
             {/* <div className="row w-100"></div> */}
           </div>
@@ -145,12 +145,12 @@ const Section_A = () => {
           </h4>
           <div className="row  special-row">
             <div className="row w-100 pb-5">
-              <SingleCar name="Toyota" image={toyota} isRoute={false}/>
-              <SingleCar name="Mercedes" image={mercedes} isRoute={false}/>
-              <SingleCar name="BMW" image={bmw} isRoute={false}/>
-              <SingleCar name="Nissan" image={nissan} isRoute={false}/>
-              <SingleCar name="Honda" image={honda} isRoute={false}/>
-              <SingleCar name="Lexus" image={lexus} isRoute={false}/>
+              <SingleCar name="Toyota" image={toyota} rout={`/cars-available?type=Toyota`} />
+              <SingleCar name="Mercedes" image={mercedes} rout={`/cars-available?type=Mercedes`} />
+              <SingleCar name="BMW" image={bmw} rout={`/cars-available?type=BMW`} />
+              <SingleCar name="Nissan" image={nissan} rout={`/cars-available?type=Nissan`} />
+              <SingleCar name="Honda" image={honda} rout={`/cars-available?type=Honda`} />
+              <SingleCar name="Lexus" image={lexus} rout={`/cars-available?type=Lexus`} />
             </div>
           </div>
         </div>

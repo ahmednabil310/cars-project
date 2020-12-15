@@ -7,9 +7,9 @@ class SingleCar extends Component {
   }
 
   handleClickImage = (name) => {
-    if (this.props.isRoute === true) {
-      this.props.history.push(`/sub-cars?type=${name.replace(/\s/g, '')}`);
-    }
+    
+      this.props.history.push(this.props.rout);
+   
   };
 
   render() {

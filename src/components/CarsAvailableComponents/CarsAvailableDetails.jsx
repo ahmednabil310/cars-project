@@ -59,7 +59,7 @@ class CarsAvailableDetails extends Component {
 
     if(type ==="SelectedYears")
     {
-      this.props.actions.makeList(this.state.SelectedYears.value);
+      this.props.actions.makeList(option.value);
     }
   };
 
@@ -67,9 +67,13 @@ class CarsAvailableDetails extends Component {
   componentDidMount() {
     this.props.actions.makeList(this.state.SelectedYears.value);
     this.props.actions.makeYears();
-    this.props.actions.getCarsByCategory(
+    this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
+      this.state.SelectedYears.value
     );
+    // this.props.actions.getCarsByCategory(
+    //   this.state.SelectedMake.value,
+    // );
   }
 
   handleClick() {
