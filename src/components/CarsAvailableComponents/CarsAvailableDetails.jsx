@@ -43,7 +43,6 @@ class CarsAvailableDetails extends Component {
         isLoading: false,
         show: false,
         showConfirme: false,
-        SelectedMake:{ label: "", value: "" }
       });
     } else {
       this.setState({
@@ -60,6 +59,9 @@ class CarsAvailableDetails extends Component {
 
     if(type ==="SelectedYears")
     {
+      this.setState({
+        SelectedMake:{ label: "", value: "" }
+      });
       this.props.actions.makeList(option.value);
     }
   };
