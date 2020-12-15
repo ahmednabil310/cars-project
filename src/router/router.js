@@ -18,7 +18,7 @@ const CarCard = lazy(() =>
 const RouterDocument = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Router basename="/">
+      <Router basename="/" onUpdate={() => window.scrollTo(0, 0)} >
         <Nav />
         <Switch>
           <Route path="/" component={Home} exact />
