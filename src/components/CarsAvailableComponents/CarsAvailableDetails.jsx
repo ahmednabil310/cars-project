@@ -43,6 +43,7 @@ class CarsAvailableDetails extends Component {
         isLoading: false,
         show: false,
         showConfirme: false,
+        SelectedMake:{ label: "", value: "" }
       });
     } else {
       this.setState({
