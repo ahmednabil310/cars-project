@@ -12,7 +12,7 @@ import LastBanner from "../components/CarDetailsComponent/LastBanner";
 class Dealer extends Component {
   constructor(props) {
     super(props);
-
+    window.scroll(0, 0);
     let objId;
 
     if (this.props.location.search === "") {
@@ -37,6 +37,7 @@ class Dealer extends Component {
 
   }
   componentDidMount() {
+    window.scroll(0, 0);
     this.props.actions.getCarData(this.state.objData);
   }
 

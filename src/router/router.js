@@ -11,14 +11,12 @@ const CarsAvailable = lazy(() => import('../pages/CarsAvailable'));
 const CarsDetailsSmall = lazy(() => import('../components/CarsAvailableComponents/CarsDetailsSmall'));
 const Footer = lazy(() => import('../components/Footer'));
 const ReviewPortal = lazy(() => import('../pages/ReviewPortal'));
-const CarCard = lazy(() =>
-  import('../components/SubComponents/CarCard/CarCard'),
-);
+const CarCard = lazy(() => import('../components/SubComponents/CarCard/CarCard'));
 
 const RouterDocument = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Router basename="/" onUpdate={() => window.scrollTo(0, 0)} >
+      <Router basename="/"  >
         <Nav />
         <Switch>
           <Route path="/" component={Home} exact />

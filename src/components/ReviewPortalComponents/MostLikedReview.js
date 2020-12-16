@@ -10,15 +10,17 @@ import toastr from 'toastr';
 class MostLikeReview extends Component {
   constructor(props) {
     super(props);
+    const userId = localStorage.getItem('userId');
     this.state = {
       isLike: false,
+      userId: userId
     };
   }
 
   componentDidMount() {
     this.props.actions.getMostLikes();
   }
-  
+
   hnadleLike(item) {
 
     const userId = localStorage.getItem('userId');
@@ -117,8 +119,12 @@ class MostLikeReview extends Component {
                   className={`${this.state[i] ? 'fas fa-heart' : 'far fa-heart'
                     } cursor-pointer  ml-auto`}
                   onClick={(e) => {
-                    this.setState({ [e.target.id]: true });
-                    this.hnadleLike(item)
+                    if (this.state.userId !== null) {
+                      this.setState({ [e.target.id]: true });
+                      this.hnadleLike(item)
+                    } else {
+                      toastr.warning('Please Login');
+                    }
                   }}
                   style={this.state[i] ? null : { color: 'grey' }}></i>
               </div>

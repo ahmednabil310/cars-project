@@ -33,9 +33,9 @@ class Footer extends Component {
         <div className="footer-container__red"></div>
         <div className="footer-container__content d-flex justify-content-between row m-0">
           <div className="footer-container__content--first-column d-flex flex-column">
-            <NavLink className="navbar-brand" to="/">
+            <div className="navbar-brand" >
               <img src={logo} alt="logo" />
-            </NavLink>
+            </div>
             <p className="first-column-pargraph">
               caradvice.smartarz.com is the largest automotive consumer portal
               of its kind in the UAE. The site provides a unique online service
@@ -59,40 +59,40 @@ class Footer extends Component {
 
           <div className="footer-container__content--second-column d-flex flex-column">
             <h5 className="second-column-title">{'Quick Links'}</h5>
-            <NavLink to="/" className="footerItem">
+            <div className="footerItem">
               Home
-            </NavLink>
-            <NavLink to="/" className="footerItem">
+            </div>
+            <div className="footerItem">
               Price & Specifications
-            </NavLink>
-            <NavLink to="/newcarpricing" className="footerItem">
+            </div>
+            <div className="footerItem">
               New Car
-            </NavLink>
-            <NavLink to="/car-reviews" className="footerItem">
+            </div>
+            <div className="footerItem">
               Reviews
-            </NavLink>
+            </div>
             <a
               href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE"
               className="footerItem">
               Used Car
             </a>
-            <NavLink to="/" className="footerItem">
+            <div className="footerItem">
               Terms and Condition
-            </NavLink>
+            </div>
 
             <div
               className="language"
-              // onClick={() => {
-              //   changelanguage('en');
-              // }}
+            // onClick={() => {
+            //   changelanguage('en');
+            // }}
             >
               English
             </div>
             <div
               className="language"
-              // onClick={() => {
-              //   changelanguage('ar');
-              // }}
+            // onClick={() => {
+            //   changelanguage('ar');
+            // }}
             >
               Arabic
             </div>
