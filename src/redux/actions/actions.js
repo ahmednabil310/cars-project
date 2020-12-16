@@ -224,7 +224,7 @@ export function likeComment(param, successFunc) {
     axiosDocs
       .post(`api/Comment/Likes`, param)
       .then(function (response) {
-        successFunc(param.id);
+        //  successFunc(param.id);
         toastr.success('Like Comment Success');
         // dispatch({
         //   type: types.UPDATECOMMENT,
