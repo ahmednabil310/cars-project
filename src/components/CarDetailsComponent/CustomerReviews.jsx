@@ -131,7 +131,7 @@ class CustomerReviews extends Component {
       carId: carId,
     };
 
-    this.setState({ isLike: !this.state.isLike });
+    this.setState({ isLike: true });
 
     this.props.actions.likeComment(obj, this.successRequest);
   }
@@ -333,13 +333,13 @@ class CustomerReviews extends Component {
                       <i
                         id={item.id}
                         className={`${
-                          this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'
+                          this.state.isLike ? 'fas fa-heart' : 'far fa-heart'
                         } cursor-pointer  ml-auto`}
                         onClick={(e) => {
                           this.hnadleLike(item.id, item.carId);
                         }}
                         style={{
-                          color: `${this.state[item.id] ? '#d53535' : 'grey'}`,
+                          color: `${this.state.isLike ? '#d53535' : 'grey'}`,
                           fontSize: '25px',
                         }}></i>
 
