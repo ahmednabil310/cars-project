@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
 import CarsOfBrand from './CarsOfBrand';
 import { withRouter } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 class CarsAvailableDetails extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +64,9 @@ class CarsAvailableDetails extends Component {
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2">
-              HOME / PRICES & SPECS {this.state.SelectedMake.label} /{' '}
+              <NavLink to="/"> HOME &nbsp;</NavLink>/&nbsp;
+              <NavLink to="/">PRICES & SPECS</NavLink>&nbsp;
+              {this.state.SelectedMake.label} / &nbsp;
               <span style={{ color: '#3e3e3e' }}>
                 {this.state.SelectedMake.label}
               </span>

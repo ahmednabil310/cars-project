@@ -39,6 +39,8 @@ class TopReviews extends Component {
                   }>
                   {item.make}
                 </div>
+                <div className="carReviewCard_title">{item.year}</div>
+                <div className="carReviewCard_title">{item.totalReviews}</div>
                 <div className="carReviewCard_desc">{item.model}</div>
               </div>
             </div>

@@ -11,6 +11,11 @@
   color: #aaa;
   font-size: 15px;
 }
+.Cars-Available__container__SubTitle a {
+  color: #aaa;
+  font-size: 15px;
+  text-decoration: none;
+}
 .Cars-Available__container__form {
   display: flex;
   justify-content: center;

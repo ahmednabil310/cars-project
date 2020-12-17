@@ -5,9 +5,9 @@ import { bindActionCreators } from 'redux';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
 import CarsOfBrand from './CarsOfBrand';
 import Select from 'react-select';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 class CarsAvailableDetails extends Component {
   constructor(props) {
     super(props);
@@ -57,10 +57,9 @@ class CarsAvailableDetails extends Component {
       [type]: option,
     });
 
-    if(type ==="SelectedYears")
-    {
+    if (type === 'SelectedYears') {
       this.setState({
-        SelectedMake:{ label: "", value: "" }
+        SelectedMake: { label: '', value: '' },
       });
       this.props.actions.makeList(option.value);
     }
@@ -72,7 +71,7 @@ class CarsAvailableDetails extends Component {
     this.props.actions.makeYears();
     this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value
+      this.state.SelectedYears.value,
     );
     // this.props.actions.getCarsByCategory(
     //   this.state.SelectedMake.value,
@@ -82,7 +81,7 @@ class CarsAvailableDetails extends Component {
   handleClick() {
     this.props.actions.getMakeByYears(
       this.state.SelectedMake.value,
-      this.state.SelectedYears.value
+      this.state.SelectedYears.value,
     );
   }
 
@@ -98,12 +97,14 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-              <div className="Cars-Available__container__title">Choose</div>
-            )}
+            <div className="Cars-Available__container__title">Choose</div>
+          )}
 
           {this.state.SelectedMake.value != 'default' ? (
-            <div className="Cars-Available__container__SubTitle mt-2">
-              HOME / PRICES & SPECS {this.state.SelectedMake.label} /{' '}
+            <div className="Cars-Available__container__SubTitle mt-2 d-flex">
+              <NavLink to="/"> HOME &nbsp;</NavLink> /&nbsp;
+              <NavLink to="/">PRICES & SPECS</NavLink> &nbsp;
+              {this.state.SelectedMake.label} / &nbsp;
               <span style={{ color: '#3e3e3e' }}>
                 {this.state.SelectedMake.label}
               </span>
