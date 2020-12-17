@@ -1,7 +1,7 @@
-import "../../styles/DealerPageStyles/Banner.css";
+import '../../styles/DealerPageStyles/Banner.css';
 
 // the hook
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 const Banner = (props) => {
   const { t, i18n } = useTranslation();
@@ -9,12 +9,18 @@ const Banner = (props) => {
     <div className="banner-container">
       <div className="banner-content d-flex justify-content-between">
         <h1 className="text-uppercase banner-title">
-          {t(props.data.year + " " + props.data.make + " " + props.data.model)}
+          {t(props.data.year + ' ' + props.data.make + ' ' + props.data.model)}
         </h1>
         <ul className="d-flex align-items-end banner-list">
-          <li>{t("Overview")}</li>
-          <li>{t("Review")}</li>
-          <li>{t("Pricing")}</li>
+          <a href="#overview">
+            <li>{t('Overview')}</li>
+          </a>
+          <a href="#review">
+            <li>{t('Review')}</li>
+          </a>
+          <a href="#pricing">
+            <li>{t('Pricing')}</li>
+          </a>
         </ul>
       </div>
     </div>

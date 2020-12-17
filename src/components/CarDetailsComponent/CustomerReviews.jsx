@@ -38,6 +38,7 @@ class CustomerReviews extends Component {
 
   componentDidMount() {
     this.props.actions.getCommentList(this.state.carId);
+    console.log(this.props.data);
   }
 
   inputChangeHandler = (event) => {
@@ -139,18 +140,24 @@ class CustomerReviews extends Component {
   render() {
     return (
       <>
-        <div className="container-fluid customer-reviews">
+        <div className="container-fluid customer-reviews" id="review">
           <div className="row d-flex justify-content-between align-items-center w-100">
             <div className="col-md-7">
               <div className="d-flex flex-column">
                 <h3
                   style={{ marginBottom: 0 }}
                   className="customer-review-title">
-                  <span className="special">{'Customer'}</span> {'Reviews1'}
+                  <span className="special">{'Customer'}</span> {'Reviews'}
                 </h3>
                 <div className="d-flex align-items-center">
                   <h6 className="customer-review-sub-title">
-                    {'Read what other owners think about the 2020 Genesis G80'}
+                    {`Read what other owners think about the ${
+                      this.props.data.year +
+                      ' ' +
+                      this.props.data.make +
+                      ' ' +
+                      this.props.data.model
+                    }`}
                   </h6>
                   <svg
                     id="Component_6_1"

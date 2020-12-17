@@ -56,6 +56,11 @@
 .full-details hr {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
+.not-stars {
+  color: #727272;
+  font-weight: bolder;
+  font-size: 14px;
+}
 @media (max-width: 1200px) {
   .fullcar-container {
     padding: 0 20px;

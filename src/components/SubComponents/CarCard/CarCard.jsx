@@ -62,7 +62,7 @@ class CarCard extends Component {
             <button
               className="main__gary pl-0"
               style={{
-                textDecoration: 'underline',
+                textDecoration: 'none',
                 border: 'none',
                 background: 'none',
               }}>
@@ -103,7 +103,7 @@ class CarCard extends Component {
             <div className="px-4">
               <div style={{ textTransform: 'capitalize' }}>
                 {reliability.replaceAll('_', ' ')} <div> </div>
-                <div
+                {/* <div
                   style={{
                     zIndex: 99,
                     top: '10px',
@@ -112,18 +112,22 @@ class CarCard extends Component {
                     height: '39px',
                   }}
                   className=" position-relative bg-transparent"
-                  name="rating"></div>
-                <ReactStars
-                  count={5}
-                  size={24}
-                  activeColor="#d53535"
-                  value={parseInt(this.props.data.reliability)}
-                  classNames="stars"
-                />
+                  name="rating"></div> */}
+                {this.props.data.reliability === null ? (
+                  <p className="not-stars">N/A</p>
+                ) : (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    activeColor="#d53535"
+                    value={parseInt(this.props.data.reliability)}
+                    classNames="stars"
+                  />
+                )}
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {resale_Value.replaceAll('_', ' ')}{' '}
-                <div
+                {/* <div
                   style={{
                     zIndex: 99,
                     top: '10px',
@@ -132,18 +136,22 @@ class CarCard extends Component {
                     height: '39px',
                   }}
                   className=" position-relative bg-transparent"
-                  name="rating"></div>
-                <ReactStars
-                  count={5}
-                  size={24}
-                  activeColor="#d53535"
-                  value={parseInt(this.props.data.resale_Value)}
-                  classNames="stars"
-                />
+                  name="rating"></div> */}
+                {this.props.data.resale_Value === null ? (
+                  <p className="not-stars">N/A</p>
+                ) : (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    activeColor="#d53535"
+                    value={parseInt(this.props.data.resale_Value)}
+                    classNames="stars"
+                  />
+                )}
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {nhtsA_Driver_Frontal_Rating.replaceAll('_', ' ')}
-                <div
+                {/* <div
                   style={{
                     zIndex: 99,
                     top: '10px',
@@ -152,18 +160,24 @@ class CarCard extends Component {
                     height: '39px',
                   }}
                   className=" position-relative bg-transparent"
-                  name="rating"></div>
-                <ReactStars
-                  count={5}
-                  size={24}
-                  activeColor="#d53535"
-                  value={parseInt(this.props.data.nhtsA_Driver_Frontal_Rating)}
-                  classNames="stars"
-                />
+                  name="rating"></div> */}
+                {this.props.data.nhtsA_Driver_Frontal_Rating === null ? (
+                  <p className="not-stars">N/A</p>
+                ) : (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    activeColor="#d53535"
+                    value={parseInt(
+                      this.props.data.nhtsA_Driver_Frontal_Rating,
+                    )}
+                    classNames="stars"
+                  />
+                )}
               </div>
               <div style={{ textTransform: 'capitalize' }}>
                 {euroNCAP_Overall_Adult_Rating.replaceAll('_', ' ')}
-                <div
+                {/* <div
                   style={{
                     zIndex: 99,
                     top: '10px',
@@ -172,16 +186,20 @@ class CarCard extends Component {
                     height: '39px',
                   }}
                   className="position-relative bg-transparent"
-                  name="rating"></div>
-                <ReactStars
-                  count={5}
-                  size={24}
-                  activeColor="#d53535"
-                  value={parseInt(
-                    this.props.data.euroNCAP_Overall_Adult_Rating,
-                  )}
-                  classNames="stars"
-                />
+                  name="rating"></div> */}
+                {this.props.data.euroNCAP_Overall_Adult_Rating === null ? (
+                  <p className="not-stars">N/A</p>
+                ) : (
+                  <ReactStars
+                    count={5}
+                    size={24}
+                    activeColor="#d53535"
+                    value={parseInt(
+                      this.props.data.euroNCAP_Overall_Adult_Rating,
+                    )}
+                    classNames="stars"
+                  />
+                )}
               </div>
             </div>
             <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>

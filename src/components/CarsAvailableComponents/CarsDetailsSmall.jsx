@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 import '../../styles/CarsAvailable/CarsAvailableDetails.css';
-import CarsOfBrand from './CarsOfBrand'; 
-import { withRouter } from 'react-router-dom'; 
+import CarsOfBrand from './CarsOfBrand';
+import { withRouter } from 'react-router-dom';
 
 class CarsAvailableDetails extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class CarsAvailableDetails extends Component {
 
   // life cycle of react calling when any change of props
   componentWillReceiveProps(nextState, prevState) {
-    if ((nextState.SelectedMake && nextState.SelectedMake.length > 0)) {
+    if (nextState.SelectedMake && nextState.SelectedMake.length > 0) {
       this.setState({
         isLoading: false,
         show: false,
@@ -41,7 +41,6 @@ class CarsAvailableDetails extends Component {
       });
     }
   }
-
 
   // life cycle of react calling when page is loading
   componentDidMount() {
@@ -60,8 +59,8 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-              <div className="Cars-Available__container__title">Choose</div>
-            )}
+            <div className="Cars-Available__container__title">Choose</div>
+          )}
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2">
@@ -73,29 +72,6 @@ class CarsAvailableDetails extends Component {
           ) : null}
           {this.state.SelectedMake.label != 'default' ? (
             <div>
-              <div className="Cars-Available__container__NewUSedBar">
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  New {this.state.SelectedMake.label} for Sale in&nbsp;
-                  {this.state.SelectedMake.label}
-                </a>
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  Used {this.state.SelectedMake.label} for Sale in&nbsp;
-                  {this.state.SelectedMake.label}
-                </a>
-              </div>
-
               <div className="Cars-Available__container__ChoosedBrand">
                 Browse {this.state.SelectedMake.label} Models
               </div>

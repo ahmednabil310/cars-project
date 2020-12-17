@@ -9,7 +9,7 @@ const LastBanner = (props) => {
   let prices = props.data.price.split(';');
 
   return (
-    <div className="last-banner d-flex py-5">
+    <div className="last-banner d-flex py-5" id="pricing">
       <div className="container-fluid ">
         <div className="row">
           <div className="col-lg-5 d-flex justify-content-start align-items-center">
@@ -23,7 +23,11 @@ const LastBanner = (props) => {
             <div className="banner-price">
               <h2 className="price-detail">{t('Price')}</h2>
               {prices.map((item, i) => {
-                return <h3 className="price-range" key={i}>{item}</h3>;
+                return (
+                  <h3 className="price-range" key={i}>
+                    {item}
+                  </h3>
+                );
               })}
             </div>
           </div>

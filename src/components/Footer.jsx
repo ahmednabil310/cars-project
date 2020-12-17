@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 import { connect } from 'react-redux';
 import actions from '../redux/actions';
 import { bindActionCreators } from 'redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/logo.png';
 import social from '../images/social.png';
 
@@ -33,7 +33,7 @@ class Footer extends Component {
         <div className="footer-container__red"></div>
         <div className="footer-container__content d-flex justify-content-between row m-0">
           <div className="footer-container__content--first-column d-flex flex-column">
-            <div className="navbar-brand" >
+            <div className="navbar-brand">
               <img src={logo} alt="logo" />
             </div>
             <p className="first-column-pargraph">
@@ -59,40 +59,38 @@ class Footer extends Component {
 
           <div className="footer-container__content--second-column d-flex flex-column">
             <h5 className="second-column-title">{'Quick Links'}</h5>
-            <div className="footerItem">
-              Home
-            </div>
-            <div className="footerItem">
-              Price & Specifications
-            </div>
-            <div className="footerItem">
-              New Car
-            </div>
-            <div className="footerItem">
-              Reviews
-            </div>
+            <Link to="/">
+              <div className="footerItem">Home</div>
+            </Link>
+            <Link to="/">
+              <div className="footerItem">Price & Specifications</div>
+            </Link>
+            <Link to="/newcarpricing">
+              <div className="footerItem">New Car</div>
+            </Link>
+            <Link to="/car-reviews">
+              <div className="footerItem">Reviews</div>
+            </Link>
             <a
               href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE"
               className="footerItem">
               Used Car
             </a>
-            <div className="footerItem">
-              Terms and Condition
-            </div>
+            <div className="footerItem">Terms and Condition</div>
 
             <div
               className="language"
-            // onClick={() => {
-            //   changelanguage('en');
-            // }}
+              // onClick={() => {
+              //   changelanguage('en');
+              // }}
             >
               English
             </div>
             <div
               className="language"
-            // onClick={() => {
-            //   changelanguage('ar');
-            // }}
+              // onClick={() => {
+              //   changelanguage('ar');
+              // }}
             >
               Arabic
             </div>

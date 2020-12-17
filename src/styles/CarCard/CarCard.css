@@ -27,9 +27,16 @@
 .bg_custom_gray {
   background-color: #efefef;
 }
-.Car__Card .stars {
+/* .Car__Card .stars {
   top: -29px;
-}
+} */
 .special-gray {
   height: 216px !important;
+}
+.not-stars {
+  color: #727272;
+  font-weight: bolder;
+  font-size: 14px;
+  padding-top: 10px;
+  margin-bottom: 6px;
 }

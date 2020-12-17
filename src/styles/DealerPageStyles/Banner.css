@@ -14,6 +14,10 @@
 .banner-list {
   list-style: none;
 }
+.banner-list a {
+  color: white;
+  text-decoration: none;
+}
 .banner-list li:nth-child(1) {
   padding-right: 51px;
   font-size: 20px;

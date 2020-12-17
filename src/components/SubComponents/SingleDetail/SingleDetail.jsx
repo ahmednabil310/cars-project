@@ -20,12 +20,16 @@ const SingleDetail = (props) => {
               style={{ zIndex: 99, top: '0px', left: '100px', width: '105px' }}
               className="  position-relative bg-transparent"
               name="rating"></div>
-            <ReactStars
-              count={5}
-              size={24}
-              activeColor="#d53535"
-              value={parseInt(props.rate)}
-            />
+            {props.rate === null ? (
+              <span className="not-stars">N/A</span>
+            ) : (
+              <ReactStars
+                count={5}
+                size={24}
+                activeColor="#d53535"
+                value={parseInt(props.rate)}
+              />
+            )}
           </div>
         </div>
       ) : (

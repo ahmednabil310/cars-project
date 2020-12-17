@@ -72,6 +72,9 @@
 .footer-container hr {
   border-top: 1px solid gray;
 }
+.footer-container__content--second-column a {
+  text-decoration: none;
+}
 @media (max-width: 1200px) {
   .footer-container__content {
     padding: 50px 20px 44px;
