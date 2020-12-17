@@ -59,7 +59,7 @@ class CarCard extends Component {
               </div>
             </div>
             <p className="main__gary mb-1"> {this.props.data.model}</p>
-            <button
+            <span
               className="main__gary pl-0"
               style={{
                 textDecoration: 'none',
@@ -67,7 +67,7 @@ class CarCard extends Component {
                 background: 'none',
               }}>
               {this.props.data.class}
-            </button>
+            </span>
           </div>
           {/* =============== Car Image ================ */}
           <div
