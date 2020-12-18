@@ -6,7 +6,7 @@ import '../../styles/CarsAvailable/CarsAvailableDetails.css';
 import CarsOfBrand from './CarsOfBrand';
 import Select from 'react-select';
 import { NavLink, withRouter } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+import { Form, Spinner, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 class CarsAvailableDetails extends Component {
   constructor(props) {
@@ -28,6 +28,8 @@ class CarsAvailableDetails extends Component {
       Make: [],
       SelectedYears: { label: year, value: year },
       SelectedMake: { label: makeID, value: makeID },
+      isNewYear: false,
+      isLoading: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -43,6 +45,8 @@ class CarsAvailableDetails extends Component {
         isLoading: false,
         show: false,
         showConfirme: false,
+        SelectedMake: this.state.isNewYear ? { label: nextState.listMake[0].label, value: nextState.listMake[0].value } :
+          { label: this.state.SelectedMake.label, value: this.state.SelectedMake.value }
       });
     } else {
       this.setState({
@@ -59,9 +63,13 @@ class CarsAvailableDetails extends Component {
 
     if (type === 'SelectedYears') {
       this.setState({
-        SelectedMake: { label: '', value: '' },
+        isNewYear: true,
       });
       this.props.actions.makeList(option.value);
+    } else {
+      this.setState({
+        isNewYear: false,
+      });
     }
   };
 
@@ -83,6 +91,9 @@ class CarsAvailableDetails extends Component {
       this.state.SelectedMake.value,
       this.state.SelectedYears.value,
     );
+    this.setState({
+      isLoading: true
+    });
   }
 
   render() {
@@ -97,8 +108,8 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-            <div className="Cars-Available__container__title">Choose</div>
-          )}
+              <div className="Cars-Available__container__title">Choose</div>
+            )}
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2 d-flex">
@@ -139,12 +150,23 @@ class CarsAvailableDetails extends Component {
                 options={this.props.listYears}
               />
             </Form.Group>
-            <button
-              onClick={this.handleClick}
-              className="Cars-Available__container__submitBtn"
-              type="button">
-              Go
-            </button>
+            {this.state.isLoading ?
+              <Button variant="primary" disabled>
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">Loading...</span>
+              </Button> :
+              <button
+                onClick={this.handleClick}
+                className="Cars-Available__container__submitBtn"
+                type="button">
+                Go
+            </button>}
           </div>
 
           {this.state.SelectedMake.label != 'default' ? (
