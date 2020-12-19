@@ -60,6 +60,7 @@ class Nav extends Component {
         profilePic: response.profileObj.profileObj,
       };
       this.props.actions.addUsers(objNewUser);
+      document.getElementById('hideLoginPopup').click();
     }
   }
 
@@ -100,8 +101,8 @@ class Nav extends Component {
         email: response.email,
         profilePic: response.picture.data.url,
       };
-
       this.props.actions.addUsers(objNewUser);
+      document.getElementById('hideLoginPopup').click();
     }
   };
 
@@ -217,7 +218,7 @@ class Nav extends Component {
               <li
                 className="nav-item d-flex"
                 data-toggle="modal"
-                data-target="#exampleModal"
+                data-target="#loginPopupForm"
                 id="loginPopUpShow">
                 <div
                   className="nav-link special-login"
@@ -232,7 +233,7 @@ class Nav extends Component {
 
         <div
           className="modal fade"
-          id="exampleModal"
+          id="loginPopupForm"
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -246,6 +247,7 @@ class Nav extends Component {
                   <img src={logo} />
                 </div>
                 <button
+                  id="hideLoginPopup"
                   type="button"
                   className="close"
                   data-dismiss="modal"
