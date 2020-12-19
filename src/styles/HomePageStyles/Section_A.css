@@ -33,8 +33,11 @@
 }
 
 .section-a-homepage-container .cars-container img {
-  padding-bottom: 26.5px;
+  /* padding-bottom: 26.5px; */
   height: 110.5px;
+}
+.section-a-homepage-container .cars-left .cars-container img {
+  height: 112px;
 }
 .section-a-homepage-container .cars-container .car-name {
   font-weight: 500;
