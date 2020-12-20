@@ -10,7 +10,7 @@ function CarsCard(props) {
 
   return (
     <div
-      className="carsTable-cardContainer col-xl-3 col-lg-3 col-md-6 py-1 pb-5"
+      className="carsTable-cardContainer col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 "
       key={props.key}>
       <div className="carsTable-cardimg" style={{ marginBottom: '5px' }}>
         <img

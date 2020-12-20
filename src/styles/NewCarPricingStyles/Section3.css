@@ -2,11 +2,21 @@
   max-width: 1700px;
 }
 
-.NewCarPricing-Section3-CategoryContainer img {
+/* .NewCarPricing-Section3-CategoryContainer img {
   max-width: 100%;
   height: 151px;
+} */
+.NewCarPricing-Section3-CategoryContainer-imgCont{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 97%;
+  max-height: 200px;
 }
-
+.NewCarPricing-Section3-CategoryContainer-img{
+  width:100% ;
+}
 .NewCarPricing-Section3-CategoryContainer p {
   font-size: 25px;
   font-family: 'Poppins', sans-serif;
