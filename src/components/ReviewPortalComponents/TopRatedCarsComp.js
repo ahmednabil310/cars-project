@@ -45,7 +45,7 @@ class TopRatedCars extends Component {
                   </div>
                   <div className="topRatedCarCard_reviewCard">
                     <div className="topRatedCarCard_rateNum">
-                      {item.reliability}
+                      {parseInt(item.reliability).toFixed(1)}
                     </div>
                     <div className="topRatedCarCard_reteDetails">
                       {/* <div
@@ -59,9 +59,11 @@ class TopRatedCars extends Component {
                         className="bg-transparent"
                         name="rating"></div> */}
                       <div>
-                        <p className="topRatedCarCard_title">Reliability</p>
+                        <p className="topRatedCarCard_title" style={{fontSize:'14px'}}>Reliability</p>
                         <ReactStars
-                        edit={false}
+                          classNames='stylingStars'
+                          edit={false}
+                          size={'12px'}
                           count={5}
                           size={24}
                           activeColor="#d53535"
@@ -72,7 +74,7 @@ class TopRatedCars extends Component {
                   </div>
                   <div className="topRatedCarCard_reviewCard">
                     <div className="topRatedCarCard_rateNum">
-                      {item.resaleValue}
+                      {parseInt(item.resaleValue).toFixed(1)}
                     </div>
                     <div className="topRatedCarCard_reteDetails">
                       {/* <div
@@ -86,8 +88,10 @@ class TopRatedCars extends Component {
                         className="bg-transparent"
                         name="rating"></div> */}
                       <div>
-                        <p className="topRatedCarCard_title">ResaleValue</p>
+                        <p className="topRatedCarCard_title" style={{fontSize:'14px'}}>ResaleValue</p>
                         <ReactStars
+                          classNames='stylingStars'
+                          size={'12px'}
                           edit={false}
                           count={5}
                           size={24}

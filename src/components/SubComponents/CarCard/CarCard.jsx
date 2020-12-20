@@ -117,6 +117,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
+                    edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
@@ -141,6 +142,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
+                    edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
@@ -165,6 +167,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
+                  edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
@@ -191,6 +194,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
+                  edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
