@@ -37,10 +37,12 @@ class TopReviews extends Component {
                   onClick={() =>
                     this.props.history.push(`/cardetail?type=${item.carId}`)
                   }>
-                  {item.make}
+                  {item.make} {item.year}
                 </div>
-                <div className="carReviewCard_title">{item.year}</div>
-                <div className="carReviewCard_title">{item.totalReviews}</div>
+
+                <div className="carReviewCard_reviews">
+                  Total Reviews: {item.totalReviews}
+                </div>
                 <div className="carReviewCard_desc">{item.model}</div>
               </div>
             </div>
