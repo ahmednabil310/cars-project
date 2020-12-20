@@ -7,6 +7,9 @@ import { withRouter } from 'react-router-dom';
 class LatestCarReview extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      viewAll: false,
+    };
   }
 
   componentDidMount() {
@@ -20,7 +23,10 @@ class LatestCarReview extends Component {
         <div className={'reviewPortal_sectionSeparator'} />
 
         {this.props.ListCarLike.length > 0
-          ? this.props.ListCarLike.map((item, i) => {
+          ? this.props.ListCarLike.slice(
+              0,
+              this.state.viewAll ? Infinity : 6,
+            ).map((item, i) => {
               return (
                 <div className="carReviewCard" key={i}>
                   <img
@@ -37,19 +43,26 @@ class LatestCarReview extends Component {
                       style={{ cursor: 'pointer' }}
                       onClick={() =>
                         this.props.history.push(`/cardetail?type=${item.carId}`)
-                      }>
-                      {item.make + '  ' + item.model + ' ' + item.year}
+                      }>{`${item.make} ${item.model}`}</div>
+                    <div className="carReviewCard_desc">
+                      Model Year: {item.year}
                     </div>
                     <div className="carReviewCard_subj">{item.subject}</div>
                     <div className="carReviewCard_date">
-                      Posted on : {item.postedon.split('T')[0]}
+                      Posted on :<br></br> {item.postedon.split('T')[0]}
                     </div>
                   </div>
                 </div>
               );
             })
           : null}
-        <div className="reviewPortal_viewAll">View all latest cars reviews</div>
+        <div
+          className="reviewPortal_viewAll"
+          onClick={() => {
+            this.setState({ viewAll: !this.state.viewAll });
+          }}>
+          {this.state.viewAll ? 'View less' : 'View all latest cars reviews'}
+        </div>
       </>
     );
   }

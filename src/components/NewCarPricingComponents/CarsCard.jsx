@@ -35,7 +35,9 @@ function CarsCard(props) {
             return (
               <p
                 style={{ cursor: 'pointer' }}
-                className="carsTable-carCard-topCar-topCarName"
+                className={`carsTable-carCard-topCar-topCarName ${
+                  i == 1 ? 'darker' : ''
+                }`}
                 key={i}
                 onClick={() =>
                   props.history.push(`/cardetail?type=${item.id}`)

@@ -56,7 +56,7 @@ table {
   .carsTable-carCard-price {
     font-size: 25px;
   }
-  
+
   .carsTable-carCard-topCar-topCategory {
     font-size: 16px;
   }
@@ -71,7 +71,6 @@ table {
     font-size: 25px;
   }
 
-  
   .carsTable-carCard-topCar-topCategory {
     font-size: 14px;
   }
@@ -80,15 +79,27 @@ table {
     font-size: 11px;
   }
 }
-@media (max-width: 661px) {
+
+/* @media (max-width: 661px) {
   .carsTable-cardContainer{
     flex: 0 0 50% !important;
     max-width: 50% !important;
   }
+} */
+@media (max-width: 618px) {
+  .carsTable-cardContainer {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
 }
-
 @media (max-width: 560px) {
-  .carsTable-cardContainer{
+  .carsTable-cardContainer {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+@media (max-width: 500px) {
+  .carsTable-cardContainer {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }

@@ -79,13 +79,13 @@ class ReviewPortalComp extends Component {
             <>
               <div className="ReviewPortalTitle ">REVIEW PORTAL</div>
               <div className="row m-0 paddingSchema">
-                <div className="col-12 col-sm-6 col-md-4 col-lg-4  pl-0">
+                <div className="col-12 col-sm-6 col-md-6 col-lg-4  pl-0">
                   <LatestCarReview />
                 </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-4 pl-0">
+                <div className="col-12 col-sm-6 col-md-6 col-lg-4 pl-0">
                   <TopReviews />
                 </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-4 pl-0">
+                <div className="col-12 col-sm-6 col-md-6 col-lg-4 pl-0">
                   <TopParticipants />
                 </div>
               </div>

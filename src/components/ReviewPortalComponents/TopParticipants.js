@@ -20,27 +20,28 @@ class TopParticipants extends Component {
           className={'reviewPortal_sectionSeparator'}
           style={{ marginBottom: '13%' }}
         />
-        {this.props.ListParticipants.length > 0 ?
-
-          this.props.ListParticipants.map((item, i) => {
-            return <div className="participantsReviewCard" key={i}>
-              <img
-                src={
-                  item.profilePic
-                }
-                className="participantsReviewCard_img"
-              />
-              <div className="participantsReviewCard_details">
-                <div className="participantsReviewCard_title">{item.fullName}</div>
-                <div className="participantsReviewCard_title">
-                  Total Post : {item.totalPost}
+        {this.props.ListParticipants.length > 0
+          ? this.props.ListParticipants.map((item, i) => {
+              return (
+                <div className="participantsReviewCard" key={i}>
+                  <img
+                    src={item.profilePic}
+                    className="participantsReviewCard_img"
+                  />
+                  <div className="participantsReviewCard_details">
+                    <div className="participantsReviewCard_title">
+                      {item.fullName}
+                    </div>
+                    <div className="participantsReviewCard_subTitle">
+                      Total Post : {item.totalPost}
+                    </div>
+                    <div className="participantsReviewCard_subTitleTwo">
+                      Joined on : {item.joinedDate.split('T')[0]}
+                    </div>
+                  </div>
                 </div>
-                <div className="participantsReviewCard_title">
-                  Joined on : {item.joinedDate.split("T")[0]}
-                </div>
-              </div>
-            </div>
-          })
+              );
+            })
           : null}
       </>
     );
