@@ -8,10 +8,6 @@ import AddVechile from '../SubComponents/AddVechile/AddVechile';
 import CarCard from '../SubComponents/CarCard/CarCard';
 import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
-import car1 from '../../images/car-details/car1.png';
-import car2 from '../../images/car-details/car2.png';
-import car3 from '../../images/car-details/car3.png';
-import car4 from '../../images/car-details/car4.png';
 import Select from 'react-select';
 import { Form } from 'react-bootstrap';
 
@@ -234,15 +230,15 @@ class Section_B extends Component {
           <div className="row section-b_car-container" ref={this.refCSS}>
             {this.state.listCarData.length > 0
               ? this.state.listCarData.map((item, i) => {
-                return (
-                  <div className="col-3 col-lg-3" key={i}>
-                    <CarCard
-                      closeModel={() => this.closeModelHandler1(i)}
-                      data={item}
-                    />
-                  </div>
-                );
-              })
+                  return (
+                    <div className="col-3 col-lg-3" key={i}>
+                      <CarCard
+                        closeModel={() => this.closeModelHandler1(i)}
+                        data={item}
+                      />
+                    </div>
+                  );
+                })
               : null}
 
             {listAdded}
