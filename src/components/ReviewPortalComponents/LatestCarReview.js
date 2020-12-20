@@ -7,8 +7,11 @@ import { withRouter } from 'react-router-dom';
 class LatestCarReview extends Component {
     constructor(props) {
         super(props);
+        this.state={
+            viewAll:false
+        }
     }
-
+    
     componentDidMount() {
         this.props.actions.getLatestReview();
     }
@@ -20,7 +23,7 @@ class LatestCarReview extends Component {
                 <div className={'reviewPortal_sectionTitle'}>Latest Car Review</div>
                 <div className={'reviewPortal_sectionSeparator'} />
 
-                {this.props.ListCarLike.length > 0 ? this.props.ListCarLike.map((item, i) => {
+                {this.props.ListCarLike.length > 0 ? this.props.ListCarLike.slice(0,this.state.viewAll?Infinity:6).map((item, i) => {
                     return <div className='carReviewCard' key={i} >
                         <img style={{ cursor: "pointer" }}
                             src={item.carImage}
@@ -43,7 +46,7 @@ class LatestCarReview extends Component {
                         </div>
                     </div>
                 }) : null}
-                <div className='reviewPortal_viewAll'>View all latest cars reviews</div>
+                <div className='reviewPortal_viewAll' onClick={()=>{this.setState({viewAll:!this.state.viewAll})}}>{this.state.viewAll?'View less':'View all latest cars reviews'}</div>
             </>
         )
     }

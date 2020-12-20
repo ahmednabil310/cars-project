@@ -30,9 +30,15 @@
 }
 @media (max-width: 576px) {
   .header-container .main-title {
-    font-size: 39px;
+    font-size: 30px;
   }
   .header-container .sub-title {
     font-size: 18px;
+  }
+  .header-container {
+    background-size: 100% 100%;
+    min-height: 125px;
+    padding-top: 5px;
+    margin-bottom: 30px;
   }
 }
