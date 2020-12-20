@@ -332,6 +332,7 @@ class CustomerReviews extends Component {
                     <div className="review-title d-flex flex-row flex-wrap align-items-center">
                       <h2>{item.title}</h2>
                       <ReactStars
+                        edit={false}
                         count={5}
                         size={24}
                         activeColor="#d53535"

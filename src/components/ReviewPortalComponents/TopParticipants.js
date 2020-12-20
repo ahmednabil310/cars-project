@@ -32,10 +32,10 @@ class TopParticipants extends Component {
               />
               <div className="participantsReviewCard_details">
                 <div className="participantsReviewCard_title">{item.fullName}</div>
-                <div className="participantsReviewCard_title">
+                <div className="participantsReviewCard_subTitle">
                   Total Post : {item.totalPost}
                 </div>
-                <div className="participantsReviewCard_title">
+                <div className="participantsReviewCard_subTitle">
                   Joined on : {item.joinedDate.split("T")[0]}
                 </div>
               </div>

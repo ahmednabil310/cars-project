@@ -48,7 +48,7 @@ class TopRatedCars extends Component {
                       {item.reliability}
                     </div>
                     <div className="topRatedCarCard_reteDetails">
-                      <div
+                      {/* <div
                         style={{
                           zIndex: 99,
                           position: 'absolute',
@@ -57,10 +57,11 @@ class TopRatedCars extends Component {
                           tio: '233px',
                         }}
                         className="bg-transparent"
-                        name="rating"></div>
+                        name="rating"></div> */}
                       <div>
                         <p className="topRatedCarCard_title">Reliability</p>
                         <ReactStars
+                        edit={false}
                           count={5}
                           size={24}
                           activeColor="#d53535"
@@ -74,7 +75,7 @@ class TopRatedCars extends Component {
                       {item.resaleValue}
                     </div>
                     <div className="topRatedCarCard_reteDetails">
-                      <div
+                      {/* <div
                         style={{
                           zIndex: 99,
                           position: 'absolute',
@@ -83,10 +84,11 @@ class TopRatedCars extends Component {
                           tio: '233px',
                         }}
                         className="bg-transparent"
-                        name="rating"></div>
+                        name="rating"></div> */}
                       <div>
                         <p className="topRatedCarCard_title">ResaleValue</p>
                         <ReactStars
+                          edit={false}
                           count={5}
                           size={24}
                           activeColor="#d53535"

@@ -36,9 +36,10 @@ class LatestCarReview extends Component {
                         this.props.history.push(
                             `/cardetail?type=${item.carId}`,
                         )
-                    }>{item.make + "  " + item.model + " " + item.year}</div>
-                            <div className='carReviewCard_title'>{item.subject}</div>
-                            <div className='carReviewCard_title'>Posted on : {item.postedon.split("T")[0]}</div>
+                    }>{`${item.make} ${item.model}`}</div>
+                            <div className='carReviewCard_desc'>Model Year: {item.year}</div>
+                            <div className='carReviewCard_desc'>{item.subject}</div>
+                            <div className='carReviewCard_desc'>Posted on :<br></br> {item.postedon.split("T")[0]}</div>
                         </div>
                     </div>
                 }) : null}
