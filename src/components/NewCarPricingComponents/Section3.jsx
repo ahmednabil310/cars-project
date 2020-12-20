@@ -37,8 +37,11 @@ class Section3 extends Component {
 							this.props.history.push(
 								`/cars-available?type=${item.make}`,
 							)
-						} className='NewCarPricing-Section3-CategoryContainer d-flex flex-column align-items-center col-xl-2 col-lg-4 col-sm-6 p-0 col-6'>
-							<img className='img-fluid h-auto' src={item.imageURL} alt='SUV' />
+						} className='NewCarPricing-Section3-CategoryContainer d-flex flex-column align-items-center col-xl-2 col-lg-4 col-sm-6 col-6 p-0 '>
+							{/* <img className='img-fluid h-auto' src={item.imageURL} alt='SUV' /> */}
+							<div className='NewCarPricing-Section3-CategoryContainer-imgCont'>
+								<img className='NewCarPricing-Section3-CategoryContainer-img' src={item.imageURL} alt='SUV' />
+							</div>
 							<p>{item.make}</p>
 						</div>);
 					})}

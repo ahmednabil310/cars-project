@@ -4,6 +4,7 @@
 }
 
 .carsTable-cardContainer {
+  padding: 5px !important;
   /* width: 413px; */
 }
 
@@ -11,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
+  max-width: 250px;
 }
 .carsTable-cardimg img {
   border-radius: 15px;
@@ -28,7 +29,7 @@
 }
 
 .carsTable-carCard-topCar-topCarName {
-  font-size: 18px;
+  font-size: 95%;
   color: #1a1a1a;
 }
 
@@ -55,9 +56,7 @@ table {
   .carsTable-carCard-price {
     font-size: 25px;
   }
-  .carsTable-carCard-topCar-topCarName {
-    font-size: 20px;
-  }
+  
   .carsTable-carCard-topCar-topCategory {
     font-size: 16px;
   }
@@ -72,14 +71,25 @@ table {
     font-size: 25px;
   }
 
-  .carsTable-carCard-topCar-topCarName {
-    font-size: 20px;
-  }
+  
   .carsTable-carCard-topCar-topCategory {
     font-size: 14px;
   }
   .carsTable-shop,
   .carsTable-shop:hover {
     font-size: 11px;
+  }
+}
+@media (max-width: 661px) {
+  .carsTable-cardContainer{
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .carsTable-cardContainer{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 }
