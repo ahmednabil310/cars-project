@@ -110,7 +110,7 @@
   .stars-container {
     margin-left: 0px;
     position: relative;
-    top: -40px;
+    /* top: -40px; */
   }
   .topRatedCarCard_rateNum {
     width: 44px;
