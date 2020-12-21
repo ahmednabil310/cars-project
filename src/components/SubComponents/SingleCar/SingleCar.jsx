@@ -7,15 +7,13 @@ class SingleCar extends Component {
   }
 
   handleClickImage = (name) => {
-    
-      this.props.history.push(this.props.rout);
-   
+    this.props.history.push(this.props.rout);
   };
 
   render() {
     return (
       <div
-        className="col-md-6 col-xs-12 col-sm-6 col-lg-4 pb-4   cars-container d-flex flex-column align-items-center"
+        className="col-md-6 col-6 col-sm-6 col-lg-4 pb-4   cars-container d-flex flex-column align-items-center"
         style={{ cursor: 'pointer' }}
         key={this.props.name}
         onClick={() => this.handleClickImage(this.props.name)}>

@@ -101,4 +101,10 @@
   .section-a-homepage-container svg {
     width: 170px;
   }
+  .section-a-homepage-container .cars-left .cars-container img {
+    height: 69px;
+  }
+  .section-a-homepage-container .cars-container img {
+    height: 68px;
+  }
 }

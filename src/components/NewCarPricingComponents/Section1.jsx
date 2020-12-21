@@ -52,7 +52,7 @@ class Section1 extends Component {
     const customStyles = {
       control: (base) => ({
         ...base,
-        height: '72px!important',
+        height: '72px',
         width: '100%!important',
         padding: '6px 10px 6px 16px!important',
         marginBottom: '3px!important',

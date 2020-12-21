@@ -179,5 +179,8 @@
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (max-width: 576px) {
+  .my-btn {
+    height: 52px;
+  }
 }
