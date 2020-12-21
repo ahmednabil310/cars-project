@@ -15,15 +15,16 @@ const SingleDetail = (props) => {
             <h5 className="mb-0">{t(props.title)}</h5>
           </div>
 
-          <div className="stars-container d-flex">
-            <div
+          <div className="stars-container d-flex pl-4 py-2">
+            {/* <div
               style={{ zIndex: 99, top: '0px', left: '100px', width: '105px' }}
               className="  position-relative bg-transparent"
-              name="rating"></div>
+              name="rating"></div> */}
             {props.rate === null ? (
               <span className="not-stars">N/A</span>
             ) : (
               <ReactStars
+                edit={false}
                 count={5}
                 size={24}
                 activeColor="#d53535"

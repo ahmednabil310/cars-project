@@ -77,7 +77,7 @@ class MostLikeReview extends Component {
                     <div className="mostLikedReviewParticipantCard_subTitle">
                       <span className="stars-container">
                         <ReactStars
-                        edit={false}
+                          edit={false}
                           count={5}
                           size={24}
                           activeColor="#d53535"

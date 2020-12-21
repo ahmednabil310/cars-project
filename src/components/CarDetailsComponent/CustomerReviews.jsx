@@ -75,18 +75,27 @@ class CustomerReviews extends Component {
 
   addReviewHandler = () => {
     if (this.state.rate > 0 && this.state.title && this.state.comment) {
-      this.setState({ modalShow: !this.state.modalShow });
-      const userId = localStorage.getItem('userId');
+      if (this.state.title.length > 64) {
+        toastr.warning('Title should not exceed 64 letters');
 
-      const param = {
-        userId: userId,
-        carId: this.state.carId,
-        ratingStar: this.state.rate.toString(),
-        title: this.state.title,
-        subject: this.state.comment,
-      };
+      } else if(this.state.comment.length>360){
+        toastr.warning('Comment should not exceed 360 letters');
 
-      this.props.actions.addComment(param);
+      }
+      else {
+        this.setState({ modalShow: !this.state.modalShow });
+        const userId = localStorage.getItem('userId');
+
+        const param = {
+          userId: userId,
+          carId: this.state.carId,
+          ratingStar: this.state.rate.toString(),
+          title: this.state.title,
+          subject: this.state.comment,
+        }
+        this.props.actions.addComment(param);
+      }
+
     } else {
       toastr.warning('Please fill the form');
     }
@@ -158,13 +167,12 @@ class CustomerReviews extends Component {
                 </h3>
                 <div className="d-flex align-items-center">
                   <h6 className="customer-review-sub-title">
-                    {`Read what other owners think about the ${
-                      this.props.data.year +
+                    {`Read what other owners think about the ${this.props.data.year +
                       ' ' +
                       this.props.data.make +
                       ' ' +
                       this.props.data.model
-                    }`}
+                      }`}
                   </h6>
                   <svg
                     id="Component_6_1"
@@ -329,7 +337,7 @@ class CustomerReviews extends Component {
               ? this.props.listComment.map((item, i) => {
                 return (
                   <div className="review" key={item.id}>
-                    <div className="review-title d-flex flex-row flex-wrap align-items-center">
+                    <div className="review-title d-flex flex-row flex-wrap align-items-center justify-content-between ">
                       <h2>{item.title}</h2>
                       <ReactStars
                         edit={false}
