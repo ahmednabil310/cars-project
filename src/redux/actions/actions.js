@@ -194,7 +194,7 @@ export function addUsers(param) {
           'userId',
           response.data.result.replaceAll(/['"]+/g, ''),
         );
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(function (error) {
         console.log('addUsers: ', error);

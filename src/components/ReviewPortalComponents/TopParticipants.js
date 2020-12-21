@@ -10,7 +10,7 @@ class TopParticipants extends Component {
       viewAll: false,
     };
   }
-  
+
   componentDidMount() {
     this.props.actions.getTopParticipants();
   }
@@ -19,12 +19,17 @@ class TopParticipants extends Component {
     return (
       <>
         <div className={'reviewPortal_sectionTitle'}>Top Participants</div>
+
         <div
           className={'reviewPortal_sectionSeparator'}
           style={{ marginBottom: '13%' }}
         />
+
         {this.props.ListParticipants.length > 0
-          ? this.props.ListParticipants.slice(0, this.state.viewAll ? Infinity : 3).map((item, i) => {
+          ? this.props.ListParticipants.slice(
+              0,
+              this.state.viewAll ? Infinity : 3,
+            ).map((item, i) => {
               return (
                 <div className="participantsReviewCard" key={i}>
                   <img
@@ -44,11 +49,10 @@ class TopParticipants extends Component {
                   </div>
                 </div>
               );
-            }
-            
-            )
+            })
           : null}
-          <div
+
+        <div
           className="reviewPortal_viewAll mt-5"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });
