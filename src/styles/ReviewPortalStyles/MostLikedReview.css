@@ -80,17 +80,27 @@
   /* .mostLikedReviewCarCard_img {
     width: 25%;
   } */
-  .mostLikedReviewParticipantCard_img {
+  /* .mostLikedReviewParticipantCard_img {
     width: 25%;
-  }
+  } */
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* .mostLikedReviewCarCard_img {
     width: 25%;
   } */
-  .mostLikedReviewParticipantCard_img {
+  /* .mostLikedReviewParticipantCard_img {
     width: 25%;
+  } */
+  .mostLikedReviewParticipantCard_title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1200px) {
+  .most_liked {
+    flex: 100%;
+    max-width: 100%;
+    padding-right: 0px !important;
   }
 }
 @media (max-width: 576px) {
@@ -115,5 +125,25 @@
   .topRatedCarCard_rateNum {
     width: 44px;
     font-size: 29px;
+  }
+  .mostLikedReviewParticipantCard_img {
+    width: 87%;
+    margin-bottom: 10px;
+  }
+  .MostLikeReview_cardContainer {
+    display: block;
+    padding-left: 0px !important;
+  }
+  .mostLikedReviewParticipantCard_title {
+    font-size: 13px;
+  }
+  .mostLikedReviewCarCard_title {
+    font-size: 13px;
+  }
+  .mostLikedReviewCarCard_img {
+    margin-bottom: 10px;
+  }
+  .mostLikeReview_title {
+    font-size: 15px;
   }
 }
