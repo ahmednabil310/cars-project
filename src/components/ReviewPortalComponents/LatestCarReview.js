@@ -49,7 +49,7 @@ class LatestCarReview extends Component {
                     </div>
                     <div className="carReviewCard_subj">{item.subject}</div>
                     <div className="carReviewCard_date">
-                      Posted on :<br></br> {item.postedon.split('T')[0]}
+                      Posted on : {item.postedon.split('T')[0]}
                     </div>
                   </div>
                 </div>
