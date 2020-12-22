@@ -147,4 +147,17 @@
   .mostLikeReview_title {
     font-size: 15px;
   }
+  .special_padding {
+    padding-right: 0px !important;
+  }
+  .topRatedCarCard_img {
+    width: 90px;
+  }
+  .topRatedCarCard_title {
+    font-size: 14px;
+  }
+  .topRatedCarCard_rateNum {
+    font-size: 25px !important;
+    margin-right: 0px !important;
+  }
 }
