@@ -13,8 +13,10 @@ class MostLikeReview extends Component {
     const userId = localStorage.getItem('userId');
     this.state = {
       isLike: false,
-      userId: userId
+      userId: userId,
+      viewAll: false,
     };
+    
   }
 
   componentDidMount() {
@@ -52,7 +54,7 @@ class MostLikeReview extends Component {
         <div className="mostLikedReview_header">
           <span style={{ color: '#D53535' }}>Most</span> Liked Review
         </div>
-        {this.props.ListLike.map((item, i) => {
+        {this.props.ListLike.slice(0, this.state.viewAll ? Infinity : 3).map((item, i) => {
           return (
             <div key={i}>
               <div className="MostLikeReview_cards row m-0">
@@ -135,6 +137,13 @@ class MostLikeReview extends Component {
             </div>
           );
         })}
+        <div
+          className="reviewPortal_viewAll my-5"
+          onClick={() => {
+            this.setState({ viewAll: !this.state.viewAll });
+          }}>
+          {this.state.viewAll ? 'View less' : 'View all'}
+        </div>
       </>
     );
   }

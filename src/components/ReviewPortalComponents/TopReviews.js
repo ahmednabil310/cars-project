@@ -23,7 +23,7 @@ class TopReviews extends Component {
         <div className={'reviewPortal_sectionTitle'}>Top Reviews </div>
         <div className={'reviewPortal_sectionSeparator'} />
         {this.props.listReviews
-          .slice(0, this.state.viewAll ? Infinity : 7)
+          .slice(0, this.state.viewAll ? Infinity : 3)
           .map((item, index) => {
             return (
               <div className="carReviewCard" key={index}>

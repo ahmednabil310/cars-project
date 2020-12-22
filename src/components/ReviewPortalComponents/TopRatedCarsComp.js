@@ -8,6 +8,9 @@ import { withRouter } from 'react-router-dom';
 class TopRatedCars extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      viewAll: false,
+    };
   }
 
   componentDidMount() {
@@ -23,7 +26,7 @@ class TopRatedCars extends Component {
         </div>
 
         {this.props.ListCarsRate.length > 0
-          ? this.props.ListCarsRate.map((item, i) => {
+          ? this.props.ListCarsRate.slice(0, this.state.viewAll ? Infinity : 3).map((item, i) => {
               return (
                 <div
                   className="topRatedCarCard"
@@ -93,6 +96,13 @@ class TopRatedCars extends Component {
               );
             })
           : null}
+          <div
+          className="reviewPortal_viewAll mt-5"
+          onClick={() => {
+            this.setState({ viewAll: !this.state.viewAll });
+          }}>
+          {this.state.viewAll ? 'View less' : 'View all'}
+        </div>
       </div>
     );
   }

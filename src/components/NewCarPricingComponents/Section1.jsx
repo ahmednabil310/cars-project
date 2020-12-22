@@ -52,13 +52,14 @@ class Section1 extends Component {
     const customStyles = {
       control: (base) => ({
         ...base,
-        height: '72px',
+        height: '60px',
         width: '100%!important',
         padding: '6px 10px 6px 16px!important',
         marginBottom: '3px!important',
         border: '1px solid #707070!important',
         marginTop: '3px',
         boxShadow: '0 1px 3px #707070',
+        
       }),
     };
     return (

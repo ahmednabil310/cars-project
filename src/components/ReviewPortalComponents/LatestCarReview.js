@@ -25,7 +25,7 @@ class LatestCarReview extends Component {
         {this.props.ListCarLike.length > 0
           ? this.props.ListCarLike.slice(
               0,
-              this.state.viewAll ? Infinity : 6,
+              this.state.viewAll ? Infinity : 3,
             ).map((item, i) => {
               return (
                 <div className="carReviewCard" key={i}>
