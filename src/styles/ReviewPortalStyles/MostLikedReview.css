@@ -23,9 +23,9 @@
   margin-left: 1.5rem;
 }
 .mostLikeReview_desc {
-  color: #727272;
+  color: #494949;
   margin-bottom: 4%;
-  font-weight: 500;
+  font-weight: 400;
 }
 .mostLikeReview_title {
   align-items: center;
@@ -37,43 +37,43 @@
 }
 
 .mostLikedReviewCarCard_img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid white;
+  border: 0.1px solid #fff;
   margin-right: 7%;
 }
 
 .mostLikedReviewCarCard_title {
-  color: #727272;
-  font-size: 20px;
-  font-weight: bold;
+  color: #a40000;
+  font-size: 14px;
+  font-weight: 500;
 }
 .mostLikedReviewCarCard_desc {
-  color: #727272;
+  color: #a09a9a;
   font-size: 13px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .mostLikedReviewParticipantCard_img {
-  width: 50%;
-  height: 100px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid white;
-  margin-right: 10%;
+  width: 52%;
+  height: 113px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
+  border: 0.1px solid #fff;
+  margin-right: 4%;
 }
 
 .mostLikedReviewParticipantCard_title {
-  color: #727272;
+  color: #515151;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
 }
 .mostLikedReviewParticipantCard_subTitle {
   color: #727272;
   font-size: 13px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {

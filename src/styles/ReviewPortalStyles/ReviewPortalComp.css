@@ -24,23 +24,25 @@
   display: flex;
   align-items: center;
   width: 97%;
-  margin: 14% 0%;
-  height: 130px;
+  margin: 6% 0;
+  height: 125px;
+  background-color: #f2f2f2;
+  border-radius: 0px 9px 9px 0px;
 }
 
 .carReviewCard_img {
   width: 50%;
-  height: 100px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid white;
-  margin-right: 5%;
+  height: 126px;
+  border-radius: 0px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
+  border: 0.1px solid #fff;
+  margin-right: 3%;
 }
 
 .carReviewCard_title {
-  color: #727272;
-  font-size: 18px;
-  font-weight: bold;
+  color: #3e3e3e;
+  font-size: 17px;
+  font-weight: 700;
 }
 .carReviewCard_desc {
   font-weight: bold;
@@ -80,7 +82,7 @@
 }
 .reviewPortal_viewAll {
   font-size: 15px;
-  color: #727272;
+  color: #0089ff;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -89,8 +91,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin: 13.5% 0% 14% 0;
-  height: 128px;
+  margin: 9.5% 0px 11%;
+  height: 93.2px;
 }
 .participantsReviewCard_img {
   width: 25%;
@@ -103,19 +105,19 @@
   margin-left: 7%;
 }
 .participantsReviewCard_title {
-  color: #727272;
-  font-size: 18px;
-  font-weight: bold;
+  color: #a40000;
+  font-size: 17px;
+  font-weight: 600;
 }
 .participantsReviewCard_subTitle {
   color: #727272;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .participantsReviewCard_subTitleTwo {
   color: #727272;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
 }
 .participantsReviewCard_order {
   color: #c4c4c4;
@@ -135,7 +137,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
+.carReviewCard_date,
+.carReviewCard_desc,
+.carReviewCard_model,
+.carReviewCard_modelyear,
+.carReviewCard_reviews,
+.carReviewCard_subj {
+  font-weight: 400 !important;
+  color: #8b8b8b !important;
+  font-size: 14px !important;
+  margin-top: 5px !important;
+}
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .paddingSchema {

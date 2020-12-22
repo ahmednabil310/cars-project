@@ -28,7 +28,7 @@ class TopParticipants extends Component {
         {this.props.ListParticipants.length > 0
           ? this.props.ListParticipants.slice(
               0,
-              this.state.viewAll ? Infinity : 3,
+              this.state.viewAll ? Infinity : 5,
             ).map((item, i) => {
               return (
                 <div className="participantsReviewCard" key={i}>

@@ -51,7 +51,7 @@ class MostLikeReview extends Component {
         <div className="mostLikedReview_header">
           <span style={{ color: '#D53535' }}>Most</span> Liked Review
         </div>
-        {this.props.ListLike.slice(0, this.state.viewAll ? Infinity : 3).map(
+        {this.props.ListLike.slice(0, this.state.viewAll ? Infinity : 5).map(
           (item, i) => {
             return (
               <div key={i}>

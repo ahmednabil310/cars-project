@@ -10,13 +10,14 @@
   margin-top: 40px;
 }
 .topRatedCarCard_title_link {
-  color: black !important;
-  font-weight: bold;
+  color: #a40000;
+  font-weight: 600;
 }
 .topRatedCarCard {
   display: flex;
   align-items: center;
   border-bottom: 2px solid #efefef;
+  margin-bottom: 60px;
 }
 .topRatedCarCard_details {
   width: 100%;
@@ -25,11 +26,11 @@
   margin-right: 5%;
 }
 .topRatedCarCard_img {
-  width: 130px;
-  height: 90px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid white;
+  width: 148px;
+  height: 112px;
+  border-radius: 7px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
+  border: 0.1px solid #fff;
 }
 
 .topRatedCarCard_reviewCard {
@@ -38,24 +39,24 @@
   align-items: center;
 }
 .topRatedCarCard_rateNum {
-  font-size: 35px;
+  font-size: 26px;
   font-weight: 500;
   margin-right: 10px;
   color: #727272;
-  width: 50px;
+  width: 59px;
 }
 
 .topRatedCarCard_resale {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 0px;
-  color: #727272;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #a2a2a2;
 }
 .topRatedCarCard_reli {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 0px;
-  color: #727272;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #a2a2a2;
 }
 .stylingStars {
   margin-top: -5px;

@@ -26,12 +26,12 @@ class TopRatedCars extends Component {
         </div>
 
         {this.props.ListCarsRate.length > 0
-          ? this.props.ListCarsRate.slice(0, this.state.viewAll ? Infinity : 3).map((item, i) => {
+          ? this.props.ListCarsRate.slice(
+              0,
+              this.state.viewAll ? Infinity : 5,
+            ).map((item, i) => {
               return (
-                <div
-                  className="topRatedCarCard"
-                  key={i}
-                  style={{ marginBottom: '60px' }}>
+                <div className="topRatedCarCard" key={i}>
                   <div className="topRatedCarCard_link">
                     <img
                       className="topRatedCarCard_img"
@@ -96,7 +96,7 @@ class TopRatedCars extends Component {
               );
             })
           : null}
-          <div
+        <div
           className="reviewPortal_viewAll mt-5"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });

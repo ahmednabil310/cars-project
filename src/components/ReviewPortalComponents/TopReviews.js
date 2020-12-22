@@ -23,7 +23,7 @@ class TopReviews extends Component {
         <div className={'reviewPortal_sectionTitle'}>Top Reviews </div>
         <div className={'reviewPortal_sectionSeparator'} />
         {this.props.listReviews
-          .slice(0, this.state.viewAll ? Infinity : 3)
+          .slice(0, this.state.viewAll ? Infinity : 5)
           .map((item, index) => {
             return (
               <div className="carReviewCard" key={index}>
@@ -42,7 +42,7 @@ class TopReviews extends Component {
                     onClick={() =>
                       this.props.history.push(`/cardetail?type=${item.carId}`)
                     }>
-                    {item.make}
+                    {item.make} {item.model}
                   </div>
                   {/* <div className="carReviewCard_title">{item.year}</div> */}
                   <div className="carReviewCard_modelyear">
@@ -52,7 +52,7 @@ class TopReviews extends Component {
                   <div className="carReviewCard_reviews">
                     Total Reviews: {item.totalReviews}
                   </div>
-                  <div className="carReviewCard_model">{item.model}</div>
+                  {/* <div className="carReviewCard_model"></div> */}
                 </div>
               </div>
             );
