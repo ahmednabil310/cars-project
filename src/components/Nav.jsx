@@ -250,19 +250,14 @@ class Nav extends Component {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
-                <div
-                  className="modal-title"
-                  id="exampleModalLabel"
-                  style={{ marginTop: '5px', backgroundColor: 'black' }}>
-                  <img src={logo} />
-                </div>
+                <span className="title">Sign In or Sign Up</span>
                 <button
                   id="hideLoginPopup"
                   type="button"
                   className="close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  style={{ color: 'white', opacity: '1' }}>
+                  style={{ color: 'gray', opacity: '1', fontSize: '26px' }}>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
