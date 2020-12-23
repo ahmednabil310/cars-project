@@ -124,6 +124,7 @@ class Nav extends Component {
           </NavLink>
 
           <button
+            id='collapseMenu'
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -151,11 +152,8 @@ class Nav extends Component {
                   to="/"
                   exact
                   activeClassName="active-link"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
+                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
+                  >
                   {'Prices & spec'}
                 </NavLink>
               </li>
@@ -164,11 +162,9 @@ class Nav extends Component {
                   className="nav-link"
                   to="/newcarpricing"
                   activeClassName="active-link"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
+                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
+
+                  >
                   {'New Cars'}
                 </NavLink>
               </li>
@@ -178,17 +174,17 @@ class Nav extends Component {
                   className="nav-link"
                   activeClassName="active-link"
                   to="/car-reviews"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
+                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
+
+                  >
                   {'Reviews'}
                 </NavLink>
               </li>
 
               <li className="nav-item">
                 <a
+                                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
+
                   className="nav-link"
                   target="_blank"
                   rel="noreferrer"
