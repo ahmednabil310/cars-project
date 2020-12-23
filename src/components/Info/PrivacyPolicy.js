@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 export default function PrivacyPolicy() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <div >
             <h2 style={{padding:'10px 110px',background:'#fafafc',color:'#343434',marginTop:'1px',fontWeight:'700'}}>Privacy Policy</h2>
