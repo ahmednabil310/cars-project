@@ -76,7 +76,7 @@ class Footer extends Component {
               className="footerItem">
               Used Car
             </a>
-            <Link to='/about-us' className="footerItem">About Us</Link>
+            <Link to='/rules-regulation' className="footerItem">Rules and Regulation</Link>
             <Link to='/privacy-policy' className="footerItem">Privacy and Polciy</Link>
             <Link to='/terms-of-use' className="footerItem">Terms and Condition</Link>
 

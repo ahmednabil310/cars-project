@@ -29,7 +29,7 @@ const RouterDocument = () => {
           <Route path="/cars-available" component={CarsAvailable} />
           <Route path="/sub-cars" component={CarsDetailsSmall} />
           <Route path="/car-reviews" component={ReviewPortal} />
-          <Route path="/about-us" component={AboutUs} />
+          <Route path="/rules-regulation" component={AboutUs} />
           <Route path="/terms-of-use" component={TermsAndCond} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
 
