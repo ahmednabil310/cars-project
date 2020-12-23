@@ -7,10 +7,17 @@
   font-weight: bold;
   margin: 30px 0px;
 }
+.review-card-comment {
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
 .MostLikeReview_cards {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background: white;
 }
 .MostLikeReview_cardContainer {
   margin-top: 22px;

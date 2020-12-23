@@ -1,52 +1,52 @@
 /* Review Inputs */
 .review__input {
-	border: 1px solid #707070 !important;
-	box-shadow: 0px 1px 4px #707070;
+  border: 1px solid #707070 !important;
+  box-shadow: 0px 1px 4px #707070;
 }
 
 .review__input_title {
-	height: 60px;
+  height: 60px;
 }
 
 .review__input_rating {
-	height: 60px;
+  height: 60px;
 }
 
 .review__input_comment {
-	resize: none;
+  resize: none;
 }
 
 .review__input_title,
 .review__input_rating,
 .review__input_comment {
-	z-index: 1;
+  z-index: 1;
 }
 
 .review__input_rating__placeholder,
 .review__input_title__placeholder {
-	top: 50%;
-	left: 6%;
-	transform: translateY(-50%);
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
 }
 
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-	.customer-reviews h3 {
-		font-size: 1.25rem;
-	}
-	.customer-reviews h6 {
-		font-size: 1rem;
-	}
+  .customer-reviews h3 {
+    font-size: 1.25rem;
+  }
+  .customer-reviews h6 {
+    font-size: 1rem;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.customer-reviews h3 {
-		font-size: 1.5rem;
-	}
-	.customer-reviews h6 {
-		font-size: 1.2rem;
-	}
+  .customer-reviews h3 {
+    font-size: 1.5rem;
+  }
+  .customer-reviews h6 {
+    font-size: 1.2rem;
+  }
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -55,20 +55,20 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.customer-reviews h3 {
-		font-size: 1.75rem;
-	}
-	.customer-reviews h6 {
-		font-size: 1.2rem;
-	}
+  .customer-reviews h3 {
+    font-size: 1.75rem;
+  }
+  .customer-reviews h6 {
+    font-size: 1.2rem;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.customer-reviews h3 {
-		font-size: 2.1rem;
-	}
-	.customer-reviews h6 {
-		font-size: 1.1rem;
-	}
+  .customer-reviews h3 {
+    font-size: 2.1rem;
+  }
+  .customer-reviews h6 {
+    font-size: 1.1rem;
+  }
 }

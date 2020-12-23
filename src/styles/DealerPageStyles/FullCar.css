@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .fullcar-container {
   padding: 0 110px;
-  margin-bottom: 167px;
+  margin-bottom: 56px;
   font-family: 'Poppins', sans-serif;
 }
 .fullcar-container .brief {
@@ -14,20 +14,20 @@
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
-  color: #727272;
+  color: #6e6e6e;
 }
 .fullcar-container .made-in {
   padding-bottom: 21px;
 }
 .fullcar-container .made-in span {
-  color: #727272;
-  font-size: 21px;
-  font-weight: 500;
+  color: #999999;
+  font-size: 16px;
+  font-weight: 400;
 }
 .fullcar-container .brief-content {
-  font-size: 20px;
-  font-weight: 600;
-  color: #727272;
+  font-size: 18px;
+  font-weight: 300;
+  color: #5b5b5b;
   max-width: 600px;
 }
 .full-details__banner {
@@ -54,7 +54,7 @@
   margin-left: auto;
 }
 .full-details hr {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgb(0 0 0 / 12%);
 }
 .not-stars {
   color: #727272;

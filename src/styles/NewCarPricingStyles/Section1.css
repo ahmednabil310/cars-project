@@ -43,10 +43,9 @@
 
 .my-btn {
   width: 100% !important;
-  height: 73px;
+  height: 62px;
   background-color: #d53535 !important;
   border-color: #d53535 !important;
-  box-shadow: 0px 1px 3px #707070;
 }
 
 /* // Extra small devices (portrait phones, less than 576px) */

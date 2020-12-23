@@ -29,6 +29,21 @@ code {
   width: 100%;
   padding: 0 110px;
 }
+.paddingSchema {
+  background-color: #b20101;
+}
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+  margin-top: 10px;
+}
 
 @media (max-width: 1199.98px) {
   .custom__container {
@@ -37,5 +52,6 @@ code {
   }
   .paddingSchema {
     padding: 0px 20px !important;
+    background-color: #b20101;
   }
 }

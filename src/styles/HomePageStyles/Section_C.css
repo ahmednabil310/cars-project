@@ -10,9 +10,9 @@
   width: 709px;
 }
 .compare-title {
-  font-weight: bold;
-  font-size: 30px;
-  color: #727272;
+  font-weight: 800;
+  font-size: 34px;
+  color: #282828;
 }
 .compare-main-content {
   padding-bottom: 38px;
@@ -25,13 +25,16 @@
   color: #727272;
 }
 .compare-labels .labels-title {
-  font-weight: bold;
-  font-size: 21px;
+  font-weight: 600;
+  font-size: 17px;
   padding-top: 10px;
+  color: #0954c5;
 }
 .compare-labels .labels-types {
   font-weight: 400;
   font-size: 14px !important;
+  color: #727272;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -47,7 +50,6 @@
   .compare-title {
     font-size: 30px;
     margin-bottom: 20px;
-    color: rgb(41, 40, 40);
   }
   .compare-main-content {
     flex-direction: column;

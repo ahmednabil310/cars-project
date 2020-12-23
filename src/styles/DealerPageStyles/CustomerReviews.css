@@ -15,18 +15,18 @@
 }
 .customer-review-sub-title {
   font-weight: 400;
-  color: #727272;
+  color: #d3d3d3;
 }
 
 .customer-reviews-writeReview {
   background-color: #d53535;
-  color: white;
+  color: #fff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px;
-  font-size: 14px;
+  padding: 12px 0;
+  font-size: 22px;
   border-radius: 5px;
 }
 
@@ -70,13 +70,13 @@
 }
 
 .consumer-reviews h1 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #727272;
+  font-size: 28px;
+  font-weight: 600;
+  color: #666666;
 }
 
 .consumer-reviews h2 {
-  font-size: 26px;
+  font-size: 20px;
   color: #727272;
   min-width: 100px;
   font-weight: 500;
@@ -190,6 +190,13 @@
 }
 .consumerReviewBtn:focus {
   outline: none;
+}
+.review {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+  text-transform: capitalize;
+  margin-top: 26px;
 }
 @media (max-width: 1200px) {
   .customer-reviews {

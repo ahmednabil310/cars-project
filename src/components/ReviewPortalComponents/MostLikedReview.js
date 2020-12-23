@@ -54,7 +54,7 @@ class MostLikeReview extends Component {
         {this.props.ListLike.slice(0, this.state.viewAll ? Infinity : 5).map(
           (item, i) => {
             return (
-              <div key={i}>
+              <div key={i} className="review-card-comment">
                 <div className="MostLikeReview_cards row m-0">
                   <div className="MostLikeReview_cardContainer col-7 col-xl-6 col-lg-6 col-sm-6 col-md-6">
                     <img

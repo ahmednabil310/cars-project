@@ -15,22 +15,23 @@
   max-width: 250px;
 }
 .carsTable-cardimg img {
-  border-radius: 15px;
+  border-radius: 8px;
 }
 .carsTable-carCard-price {
-  color: #d53535;
-  font-size: 26px;
+  color: #b83737;
+  font-size: 23px;
   font-weight: 500;
 }
 
 .carsTable-carCard-topCar-topCategory {
-  font-size: 18px;
-  color: #707070;
+  font-size: 14px;
+  color: #959595;
 }
 
 .carsTable-carCard-topCar-topCarName {
   font-size: 95%;
-  color: #1a1a1a;
+
+  color: var(--blue);
 }
 
 .carsTable-carCard-topCar-topCarName__span {
