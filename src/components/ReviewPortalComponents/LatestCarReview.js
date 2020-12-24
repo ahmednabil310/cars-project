@@ -23,10 +23,12 @@ class LatestCarReview extends Component {
         <div className={'reviewPortal_sectionSeparator'} />
 
         {this.props.ListCarLike.length > 0
-          ? this.props.ListCarLike.slice(
-              0,
-              this.state.viewAll ? Infinity : 5,
-            ).map((item, i) => {
+          ? this.props.ListCarLike
+          // .slice(
+          //     0,
+          //     this.state.viewAll ? Infinity : 5,
+          //   )
+            .map((item, i) => {
               return (
                 <div className="carReviewCard" key={i}>
                   <img
@@ -56,13 +58,13 @@ class LatestCarReview extends Component {
               );
             })
           : null}
-        <div
+        {/* <div
           className="reviewPortal_viewAll"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });
           }}>
           {this.state.viewAll ? 'View less' : 'View all latest cars reviews'}
-        </div>
+        </div> */}
       </>
     );
   }
