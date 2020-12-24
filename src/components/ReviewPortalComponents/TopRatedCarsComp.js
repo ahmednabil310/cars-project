@@ -26,10 +26,9 @@ class TopRatedCars extends Component {
         </div>
 
         {this.props.ListCarsRate.length > 0
-          ? this.props.ListCarsRate.slice(
-              0,
-              this.state.viewAll ? Infinity : 5,
-            ).map((item, i) => {
+          ? this.props.ListCarsRate
+          // .slice(0,this.state.viewAll ? Infinity : 5)
+            .map((item, i) => {
               return (
                 <div className="topRatedCarCard" key={i}>
                   <div className="topRatedCarCard_link">
@@ -96,13 +95,13 @@ class TopRatedCars extends Component {
               );
             })
           : null}
-        <div
+        {/* <div
           className="reviewPortal_viewAll mt-5"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });
           }}>
           {this.state.viewAll ? 'View less' : 'View all'}
-        </div>
+        </div> */}
       </div>
     );
   }
