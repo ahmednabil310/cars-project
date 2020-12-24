@@ -23,7 +23,7 @@ class TopReviews extends Component {
         <div className={'reviewPortal_sectionTitle'}>Top Reviews </div>
         <div className={'reviewPortal_sectionSeparator'} />
         {this.props.listReviews
-          .slice(0, this.state.viewAll ? Infinity : 5)
+          // .slice(0, this.state.viewAll ? Infinity : 5)
           .map((item, index) => {
             return (
               <div className="carReviewCard" key={index}>
@@ -58,13 +58,13 @@ class TopReviews extends Component {
             );
           })}
 
-        <div
+        {/* <div
           className="reviewPortal_viewAll"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });
           }}>
           {this.state.viewAll ? 'View less' : 'View all'}
-        </div>
+        </div> */}
       </>
     );
   }

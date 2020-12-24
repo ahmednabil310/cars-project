@@ -26,10 +26,9 @@ class TopParticipants extends Component {
         />
 
         {this.props.ListParticipants.length > 0
-          ? this.props.ListParticipants.slice(
-              0,
-              this.state.viewAll ? Infinity : 5,
-            ).map((item, i) => {
+          ? this.props.ListParticipants
+          // .slice(0,this.state.viewAll ? Infinity : 5,)
+            .map((item, i) => {
               return (
                 <div className="participantsReviewCard" key={i}>
                   <img
@@ -52,13 +51,13 @@ class TopParticipants extends Component {
             })
           : null}
 
-        <div
+        {/* <div
           className="reviewPortal_viewAll mt-5"
           onClick={() => {
             this.setState({ viewAll: !this.state.viewAll });
           }}>
           {this.state.viewAll ? 'View less' : 'View all'}
-        </div>
+        </div> */}
       </>
     );
   }
