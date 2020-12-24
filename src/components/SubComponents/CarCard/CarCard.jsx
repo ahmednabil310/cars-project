@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import SingleDetail from '../SingleDetail/SingleDetail';
 import ReactStars from 'react-rating-stars-component';
 import { withRouter } from 'react-router-dom';
-
+import right from '../../../images/right.png';
+import wrong from '../../../images/wrong.png';
 class CarCard extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class CarCard extends Component {
       return (
         <li key={index}>
           <span className="fa-li">
-            <i className="fas fa-check"></i>
+            <img src={right} />
           </span>
           {item}
         </li>
@@ -35,7 +36,7 @@ class CarCard extends Component {
       return (
         <li key={index}>
           <span className="fa-li">
-            <i className="fas fa-times main__red"></i>
+            <img src={wrong} />
           </span>
           {item}
         </li>
@@ -167,7 +168,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
-                  edit={false}
+                    edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
@@ -194,7 +195,7 @@ class CarCard extends Component {
                   <p className="not-stars">N/A</p>
                 ) : (
                   <ReactStars
-                  edit={false}
+                    edit={false}
                     count={5}
                     size={24}
                     activeColor="#d53535"
