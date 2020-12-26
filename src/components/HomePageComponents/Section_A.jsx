@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next';
 const Section_A = () => {
   const { t, i18n } = useTranslation();
   return (
-    <div className="section-a-homepage-container">
+    <div className="section-a-homepage-container mt-5">
       <div className="row">
         <div className="choices-container col-xl-6 col-lg-12">
           <div className="d-flex choices-container-sub">

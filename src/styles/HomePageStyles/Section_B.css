@@ -46,7 +46,7 @@
 
 .section-b__addCar {
   border: 1px solid #d53535;
-  min-height: 238px;
+  min-height: 150px;
   color: #d53535;
   cursor: pointer;
 }
@@ -133,7 +133,7 @@
   }
   .car-container-wrapper {
     margin-bottom: 85px;
-    overflow: auto;
+    overflow: hidden;
   }
   .section-b_car-container {
     margin: 0px !important;

@@ -50,7 +50,7 @@ class CarCard extends Component {
     return (
       <div>
         <div className="Car__Card pb-4 mb-5">
-          <div className="Car__Header p-4 position-relative">
+          {/* <div className="Car__Header p-4">
             <div className="d-flex justify-content-between align-items-center mb-1">
               <h6 className="text-capitalize font-weight-bold main__red mb-0">
                 {this.props.data.make}
@@ -70,6 +70,7 @@ class CarCard extends Component {
               {this.props.data.class}
             </span>
           </div>
+           */}
           {/* =============== Car Image ================ */}
           <div
             className="Car__Image"
