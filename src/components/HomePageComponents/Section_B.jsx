@@ -190,7 +190,7 @@ class Section_B extends Component {
     return (
       <>
 
-
+        <div ref={this.refCSS}></div>
         <div className='sticky-top  bg-white' id='sticky_nav' style={{overflow:'auto'}}>
           <div className="section-b-homepage-container">
             <div className="d-flex sub-container ">
@@ -250,7 +250,7 @@ class Section_B extends Component {
 
             </div>
 
-            <div className="row section-b_car-container " ref={this.refCSS} style={{ top: '13%' }}>
+            <div className="row section-b_car-container "  style={{ top: '13%' }}>
 
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
@@ -288,7 +288,7 @@ class Section_B extends Component {
 
           </div>
         </div>
-        <div className="section-b-homepage-container">
+        <div className="section-b-homepage-container" >
           {/* <div className="d-flex sub-container ">
             <h3>
               <span className="special">{'Compare'}</span> 
@@ -347,7 +347,7 @@ class Section_B extends Component {
  */}
 
           <div className="car-container-wrapper" id='cards_container'>
-            <div className="row section-b_car-container" ref={this.refCSS}>
+            <div className="row section-b_car-container" >
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
                   return (
