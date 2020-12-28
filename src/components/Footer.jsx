@@ -76,9 +76,9 @@ class Footer extends Component {
               className="footerItem">
               Used Car
             </a>
-            <Link to="/rules-regulation" className="footerItem">
-              Rules and Regulation
-            </Link>
+            {/* <Link to="/rules-regulation" className="footerItem">
+              Rules and Regulations
+            </Link> */}
             <Link to="/privacy-policy" className="footerItem">
               Privacy and Polciy
             </Link>
@@ -86,22 +86,22 @@ class Footer extends Component {
               Terms and Condition
             </Link>
 
-            <div
+            {/* <div
               className="language"
               // onClick={() => {
               //   changelanguage('en');
               // }}
             >
               English
-            </div>
-            <div
+            </div> */}
+            {/* <div
               className="language"
               // onClick={() => {
               //   changelanguage('ar');
               // }}
             >
               Arabic
-            </div>
+            </div> */}
           </div>
 
           <div className="footer-container__content--second-column d-flex flex-column">
@@ -199,22 +199,22 @@ class Footer extends Component {
             </div>
           </div>
         </div>
-        <hr />
+        {/* <hr /> */}
         <div className="paddingSchema "></div>
         <div
-          className="row m-0 paddingSchema last-footer"
+          className="row m-0 paddingSchema last-footer justify-content-center"
           style={{ color: 'white' }}>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 ">
+          <div className="col-12 col-sm-12 col-md-6 col-lg-8  pl-0 mb-3 text-center">
             This site is powered and designed by{' '}
             <span style={{ fontWeight: 'bold' }}>Smartarz</span>, All rights
             reserved @2021
           </div>
-          <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
+          {/* <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
             Privacy Polices
           </div>
           <div className="col-12 col-sm-12 col-md-3 col-lg-2  pl-0 mb-3">
             Rules & Regulations
-          </div>
+          </div> */}
         </div>
       </footer>
     );

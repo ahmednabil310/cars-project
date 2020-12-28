@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import AboutUs from '../components/Info/AboutUs';
+import BuyerGuide from '../components/Info/BuyerGuide';
 import PrivacyPolicy from '../components/Info/PrivacyPolicy';
 import TermsAndCond from '../components/Info/TermsAndCond';
 import Loading from '../components/loadingPage';
@@ -29,7 +29,7 @@ const RouterDocument = () => {
           <Route path="/cars-available" component={CarsAvailable} />
           <Route path="/sub-cars" component={CarsDetailsSmall} />
           <Route path="/car-reviews" component={ReviewPortal} />
-          <Route path="/rules-regulation" component={AboutUs} />
+          <Route path="/buyer-guide" component={BuyerGuide} />
           <Route path="/terms-of-use" component={TermsAndCond} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
 

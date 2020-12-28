@@ -107,9 +107,12 @@ class MostLikeReview extends Component {
                   </div>
                 </div>
                 <div className="mostLikeReview_title">
-                  {item.title}
-                  <br />
-                  PostedOn : {item.postedon.split('T')[0]}
+                  <div>
+                    {item.title}
+                  <div><span className='postedOn_color'>PostedOn</span> : {item.postedon.split('T')[0]}</div>
+                    
+                    </div>
+                  
                   <div
                     style={{
                       zIndex: 99,

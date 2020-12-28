@@ -2,14 +2,14 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default function AboutUs() {
+export default function BuyerGuide() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
     return (
         <div >
-            <h2 style={{padding:'10px 110px',background:'#fafafc',color:'#343434',marginTop:'1px',fontWeight:'700'}}>Rules and regulation</h2>
-            <div style={{padding:'0px 170px',fontSize:'14px',marginTop:'35px'}}><Link to='/' style={{color:'#343434',fontWeight:'500'}}>Home</Link> {'>'} <span style={{color:'#0073d8',fontWeight:'500'}}>Rules and regulation</span></div>
+            <h2 style={{padding:'10px 110px',background:'#fafafc',color:'#343434',marginTop:'1px',fontWeight:'700'}}>Buyer-guide</h2>
+            <div style={{padding:'0px 170px',fontSize:'14px',marginTop:'35px'}}><Link to='/' style={{color:'#343434',fontWeight:'500'}}>Home</Link> {'>'} <span style={{color:'#0073d8',fontWeight:'500'}}>Buyer-guide</span></div>
 
             {/* <h4 style={{padding:'0px 170px',fontWeight:'700',color:'#343434',marginTop:'35px'}}>Rules and regulation</h4> */}
         

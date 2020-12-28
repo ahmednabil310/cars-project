@@ -3,6 +3,7 @@ import '../../styles/DealerPageStyles/FullCar.css';
 import flag from '../../images/dealer/korea.png';
 import SingleDetail from '../SubComponents/SingleDetail/SingleDetail';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 const FullCar = (props) => {
   // the hook
 
@@ -41,11 +42,13 @@ const FullCar = (props) => {
           <SingleDetail
             title={'Reliability'}
             hasStar={true}
+            info={true}
             rate={props.data.reliability}
           />
           <SingleDetail
             title={'Resale Value'}
             hasStar={true}
+            info={true}
             rate={props.data.resale_Value}
           />
           <SingleDetail

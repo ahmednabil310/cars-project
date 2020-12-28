@@ -13,24 +13,24 @@ const Header = () => {
     //   <h2 className="sub-title">{t("WHICH CAR TO CHOOSE")}</h2>
     // </div>
     < >
-      <div id="carouselExampleSlidesOnly " class="carousel slide" data-ride="carousel" >
+      <div id="carouselExampleSlidesOnly " class="carousel slide" data-ride="carousel" data-interval="2000">
         <div class="carousel-inner" >
-          <div class="carousel-item active" data-interval="1000">
+          <div class="carousel-item active" >
             <div className='img_cont'>
-              <img height='300px' src={headerImg1} class="d-block w-100" alt="..." />
+              <img width='100%' src={headerImg1} class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-none d-md-block ">
               <h3>Your car says lot about you!</h3>
               <h5>Our powerful car comparison tool lets you compare multiple vehicles, so you can see how they stack up at a glance.</h5>
             </div>
-            <div class=" d-block d-md-none mt-3  " style={{padding:'0 20px'}}>
+            <div class=" d-block d-md-none mt-4  " style={{padding:'0 20px'}}>
               <h5>Your car says lot about you!</h5>
               <div>Our powerful car comparison tool lets you compare multiple vehicles, so you can see how they stack up at a glance.</div>
             </div>
           </div>
-          <div class="carousel-item" data-interval="1000">
+          <div class="carousel-item" >
             <div className='img_cont'>
-              <img height='300px' src={headerImg2} class="d-block w-100" alt="..." />
+              <img width='100%' src={headerImg2} class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-none d-md-block ">
               <h3>Comprehensive comparison from 2000 to 2021</h3>
@@ -41,9 +41,9 @@ const Header = () => {
               <div>Just select the cars you're interested in from our comprehensive list and leave the rest to smartarz’s powerful comparison tool.</div>
             </div>
           </div>
-          <div class="carousel-item" data-interval="1000">
+          <div class="carousel-item" >
             <div className='img_cont'>
-              <img height='300px' src={headerImg3} class="d-block w-100" alt="..." />
+              <img width='100%'  src={headerImg3} class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-caption d-none d-md-block ">
               <h3>Right car does make a difference</h3>

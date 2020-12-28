@@ -49,7 +49,8 @@ class Section_B extends Component {
 
   componentWillReceiveProps(nextState, prevState) {
     if (nextState.listCarData.length === 4) {
-      this.refCSS.current.scrollIntoView();
+      this.refCSS.current.scrollIntoView({block: "center",behavior: "smooth"});
+      
     }
     this.setState({
       listCarData: nextState.listCarData,
