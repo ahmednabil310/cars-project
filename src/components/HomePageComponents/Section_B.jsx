@@ -49,8 +49,8 @@ class Section_B extends Component {
 
   componentWillReceiveProps(nextState, prevState) {
     if (nextState.listCarData.length === 4) {
-      this.refCSS.current.scrollIntoView({block: "center",behavior: "smooth"});
-      
+      this.refCSS.current.scrollIntoView({ block: "center", behavior: "smooth" });
+
     }
     this.setState({
       listCarData: nextState.listCarData,
@@ -125,6 +125,7 @@ class Section_B extends Component {
 
   addVechileHandler = () => {
     this.props.actions.getCarData(this.state.SelectedEngine.value);
+    this.refCSS.current.scrollIntoView({ block: "center", behavior: "smooth" });
 
     this.setState({
       carNumber: 1,
@@ -157,16 +158,16 @@ class Section_B extends Component {
   };
 
   render() {
-    document.getElementById('cards_container')&&document.getElementById('cards_container').addEventListener('scroll', (event) => {
-     
-      document.getElementById('sticky_nav').scrollLeft=document.getElementById('cards_container').scrollLeft
-      console.log('event',document.getElementById('sticky_nav').scrollLeft)
-  });
-  document.getElementById('sticky_nav')&&document.getElementById('sticky_nav').addEventListener('scroll', (event) => {
-     
-    document.getElementById('cards_container').scrollLeft=document.getElementById('sticky_nav').scrollLeft
-    console.log('event',document.getElementById('cards_container').scrollLeft)
-});
+    document.getElementById('cards_container') && document.getElementById('cards_container').addEventListener('scroll', (event) => {
+
+      document.getElementById('sticky_nav').scrollLeft = document.getElementById('cards_container').scrollLeft
+      console.log('event', document.getElementById('sticky_nav').scrollLeft)
+    });
+    document.getElementById('sticky_nav') && document.getElementById('sticky_nav').addEventListener('scroll', (event) => {
+
+      document.getElementById('cards_container').scrollLeft = document.getElementById('sticky_nav').scrollLeft
+      console.log('event', document.getElementById('cards_container').scrollLeft)
+    });
     const customStyles = {
       control: (base) => ({
         ...base,
@@ -192,7 +193,7 @@ class Section_B extends Component {
       <>
 
         <div ref={this.refCSS}></div>
-        <div className='sticky-top  bg-white' id='sticky_nav' style={{overflow:'auto'}}>
+        <div className='sticky-top  bg-white' id='sticky_nav' style={{ overflow: 'auto' }}>
           <div className="section-b-homepage-container">
             <div className="d-flex sub-container ">
               <h3>
@@ -251,7 +252,7 @@ class Section_B extends Component {
 
             </div>
 
-            <div className="row section-b_car-container "  style={{ top: '13%' }}>
+            <div className="row section-b_car-container " style={{ top: '13%' }}>
 
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
