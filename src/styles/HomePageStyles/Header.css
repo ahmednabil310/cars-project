@@ -16,6 +16,21 @@
   justify-content: center;
   align-items: center;  
 }
+.filterImage{
+  background-image: linear-gradient(transparent,transparent,rgb(59, 58, 58));
+  /* box-shadow: inset 0 0 10px red; */
+    position: absolute;
+    right: 0%;
+    bottom: 0px;
+    left: 0%;
+    z-index: 10;
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 .header-container .main-title {
   font-size: 60px;
   font-weight: bold;
