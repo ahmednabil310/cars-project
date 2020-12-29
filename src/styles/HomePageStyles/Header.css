@@ -17,7 +17,7 @@
   align-items: center;  
 }
 .filterImage{
-  background-image: linear-gradient(transparent,transparent,rgb(59, 58, 58));
+  background-image: linear-gradient(transparent,transparent,black);
   /* box-shadow: inset 0 0 10px red; */
     position: absolute;
     right: 0%;
