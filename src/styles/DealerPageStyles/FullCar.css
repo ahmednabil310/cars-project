@@ -44,6 +44,11 @@
   /* color: #d53535;
   font-size: 25px; */
 }
+.single-detail .notPadding img {
+  padding-right: 0px;
+  /* color: #d53535;
+  font-size: 25px; */
+}
 .single-detail h5 {
   font-size: 15px;
   font-weight: 500;

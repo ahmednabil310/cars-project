@@ -16,7 +16,7 @@ const SingleDetail = (props) => {
             <img src={rightIcon} alt="rightIcon" />
             <h5 className="mb-0">{t(props.title)}</h5>
             {props.info ? (
-              <Link to="/buyer-guide" className="ml-2">
+              <Link to="/buyer-guide" className="ml-2 notPadding">
                 <img width="15px" src={infoIcon} />
               </Link>
             ) : null}
