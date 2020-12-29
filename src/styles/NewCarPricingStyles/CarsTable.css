@@ -30,8 +30,7 @@
 
 .carsTable-carCard-topCar-topCarName {
   font-size: 95%;
-
-  color: var(--blue);
+  color: #727272;
 }
 
 .carsTable-carCard-topCar-topCarName__span {

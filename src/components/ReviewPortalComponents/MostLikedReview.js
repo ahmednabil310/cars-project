@@ -52,9 +52,8 @@ class MostLikeReview extends Component {
           <span style={{ color: '#D53535' }}>Most</span> Liked Review
         </div>
         {this.props.ListLike
-        // .slice(0, this.state.viewAll ? Infinity : 5)
-        .map(
-          (item, i) => {
+          // .slice(0, this.state.viewAll ? Infinity : 5)
+          .map((item, i) => {
             return (
               <div key={i} className="review-card-comment">
                 <div className="MostLikeReview_cards row m-0">
@@ -109,10 +108,14 @@ class MostLikeReview extends Component {
                 <div className="mostLikeReview_title">
                   <div>
                     {item.title}
-                  <div><span className='postedOn_color'>PostedOn</span> : {item.postedon.split('T')[0]}</div>
-                    
+                    <div className="posted-container">
+                      <span className="postedOn_color">PostedOn</span> :{' '}
+                      <span className="postedOn_date">
+                        {item.postedon.split('T')[0]}
+                      </span>
                     </div>
-                  
+                  </div>
+
                   <div
                     style={{
                       zIndex: 99,
@@ -141,8 +144,7 @@ class MostLikeReview extends Component {
                 <div className="mostLikeReview_desc">{item.subject}</div>
               </div>
             );
-          },
-        )}
+          })}
         {/* <div
           className="reviewPortal_viewAll my-5"
           onClick={() => {

@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 import actions from '../redux/actions';
 import { bindActionCreators } from 'redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
-import logoblack from '../images/Logo.svg';
-import social from '../images/social.png';
-
-// the hook
-import { useTranslation } from 'react-i18next';
-
-import i18n from '../i18n';
+import logo from '../images/logo.png';
 
 class Footer extends Component {
   constructor(props) {
@@ -34,7 +28,7 @@ class Footer extends Component {
         <div className="footer-container__content d-flex justify-content-between row m-0">
           <div className="footer-container__content--first-column d-flex flex-column">
             <div className="navbar-brand">
-              <img src={logoblack} alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
             <p className="first-column-pargraph">
               caradvice.smartarz.com is the largest automotive consumer portal

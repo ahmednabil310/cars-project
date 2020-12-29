@@ -325,7 +325,8 @@ class CustomerReviews extends Component {
               color: 'red',
               display: this.props.listComment.length > 0 ? 'none' : 'block',
             }}>
-            There Is No Reviews Yet
+            There are no reviews yet. Be the first to submit a review about this
+            car
           </h2>
           <div className="consumer-reviews pt-5">
             <h1>{'Most helpful consumer reviews'}</h1>
@@ -347,21 +348,7 @@ class CustomerReviews extends Component {
                       </div>
                       <p>{item.subject}</p>
                       <span>{item.fullName}</span>
-                      <span>{'date-cons'}</span>
-                      <span>{'detail-car'}</span>
-                      <span className="last">{'likes'}</span>
-                      {/* <i
-                        id={item.id}
-                        className={`${
-                          this.state.isLike ? 'fas fa-heart' : 'far fa-heart'
-                        } cursor-pointer  ml-auto`}
-                        onClick={(e) => {
-                          this.hnadleLike(item.id, item.carId);
-                        }}
-                        style={{
-                          color: `${this.state.isLike ? '#d53535' : 'grey'}`,
-                          fontSize: '25px',
-                        }}></i> */}
+
                       <i
                         id={item.id}
                         className={`${

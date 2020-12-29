@@ -81,7 +81,7 @@ class ReviewPortalComp extends Component {
           <Loading />
         ) : (
           <>
-            <div className="ReviewPortalTitle ">REVIEW PORTAL</div>
+            <div className="ReviewPortalTitle ">REVIEW</div>
             <div className="row m-0 paddingSchema">
               <div className="col-12 col-sm-6 col-md-6 col-lg-4  pl-0">
                 <LatestCarReview />

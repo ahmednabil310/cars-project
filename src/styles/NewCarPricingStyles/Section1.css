@@ -42,10 +42,11 @@
 }
 
 .my-btn {
-  width: 100% !important;
   height: 62px;
-  background-color: #d53535 !important;
-  border-color: #d53535 !important;
+  width: 100% !important;
+  background-color: rgb(213, 53, 53) !important;
+  border-color: rgb(213, 53, 53) !important;
+  font-size: 22px;
 }
 
 /* // Extra small devices (portrait phones, less than 576px) */

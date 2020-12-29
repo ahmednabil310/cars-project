@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .section-a-homepage-container {
-  padding: 0 110px;
+  padding: 0 102px;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
 }
 .section-a-homepage-container .choices-container .choices-container-sub,
 .make-container-sub {
@@ -26,7 +26,7 @@
 }
 .section-a-homepage-container .note {
   font-size: 15px !important;
-  font-weight: 600;
+  font-weight: 400;
   color: #727272;
   margin-bottom: 30px;
   font-family: 'Poppins', sans-serif;

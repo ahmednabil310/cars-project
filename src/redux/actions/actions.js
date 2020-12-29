@@ -189,7 +189,7 @@ export function addUsers(param) {
     axiosDocs
       .post(`api/User/Add`, param)
       .then(function (response) {
-        toastr.success('Add User Success');
+        toastr.success('User logged in successfully');
         localStorage.setItem(
           'userId',
           response.data.result.replaceAll(/['"]+/g, ''),

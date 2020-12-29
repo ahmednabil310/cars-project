@@ -29,7 +29,7 @@ class CarsAvailableDetails extends Component {
       SelectedYears: { label: year, value: year },
       SelectedMake: { label: makeID, value: makeID },
       isNewYear: false,
-      isLoading: false
+      isLoading: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -45,8 +45,15 @@ class CarsAvailableDetails extends Component {
         isLoading: false,
         show: false,
         showConfirme: false,
-        SelectedMake: this.state.isNewYear ? { label: nextState.listMake[0].label, value: nextState.listMake[0].value } :
-          { label: this.state.SelectedMake.label, value: this.state.SelectedMake.value }
+        SelectedMake: this.state.isNewYear
+          ? {
+              label: nextState.listMake[0].label,
+              value: nextState.listMake[0].value,
+            }
+          : {
+              label: this.state.SelectedMake.label,
+              value: this.state.SelectedMake.value,
+            },
       });
     } else {
       this.setState({
@@ -92,7 +99,7 @@ class CarsAvailableDetails extends Component {
       this.state.SelectedYears.value,
     );
     this.setState({
-      isLoading: true
+      isLoading: true,
     });
   }
 
@@ -108,8 +115,8 @@ class CarsAvailableDetails extends Component {
               UAE Prices & Specs
             </div>
           ) : (
-              <div className="Cars-Available__container__title">Choose</div>
-            )}
+            <div className="Cars-Available__container__title">Choose</div>
+          )}
 
           {this.state.SelectedMake.value != 'default' ? (
             <div className="Cars-Available__container__SubTitle mt-2 d-flex">
@@ -150,7 +157,7 @@ class CarsAvailableDetails extends Component {
                 options={this.props.listYears}
               />
             </Form.Group>
-            {this.state.isLoading ?
+            {this.state.isLoading ? (
               <Button variant="primary" disabled>
                 <Spinner
                   as="span"
@@ -160,18 +167,20 @@ class CarsAvailableDetails extends Component {
                   aria-hidden="true"
                 />
                 <span className="sr-only">Loading...</span>
-              </Button> :
+              </Button>
+            ) : (
               <button
                 onClick={this.handleClick}
                 className="Cars-Available__container__submitBtn"
                 type="button">
                 Go
-            </button>}
+              </button>
+            )}
           </div>
 
           {this.state.SelectedMake.label != 'default' ? (
             <div>
-              <div className="Cars-Available__container__NewUSedBar">
+              {/* <div className="Cars-Available__container__NewUSedBar">
                 <a
                   href=""
                   style={{
@@ -192,7 +201,7 @@ class CarsAvailableDetails extends Component {
                   Used {this.state.SelectedMake.label} for Sale in&nbsp;
                   {this.state.SelectedMake.label}
                 </a>
-              </div>
+              </div> */}
 
               <div className="Cars-Available__container__ChoosedBrand">
                 Browse {this.state.SelectedMake.label} Models

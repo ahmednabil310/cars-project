@@ -27,7 +27,8 @@
   margin: 6% 0;
   height: 125px;
   background-color: #f2f2f2;
-  border-radius: 0px 9px 9px 0px;
+  border-radius: 0 9px 9px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
 }
 
 .carReviewCard_img {
@@ -91,15 +92,15 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin: 9.5% 0px 11%;
-  height: 93.2px;
+  margin: 9.5% 0 11%;
+  height: 42.2px;
 }
 .participantsReviewCard_img {
-  width: 25%;
-
+  width: 12%;
   border-radius: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid white;
+  margin-left: 39px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 22px 0 rgba(0, 0, 0, 0.19);
+  border: 0.1px solid #fff;
 }
 .participantsReviewCard_details {
   margin-left: 7%;
