@@ -19,9 +19,9 @@ const Header = () => {
             <div className='img_cont'>
               <img width='100%' src={headerImg1} class="d-block w-100" alt="..." />
             </div>
-            <div class="carousel-caption d-none d-md-block ">
-              <h3>Your car says lot about you!</h3>
-              <h5>Our powerful car comparison tool lets you compare multiple vehicles, so you can see how they stack up at a glance.</h5>
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1>Your car says lot about you!</h1>
+              <h4 style={{color:'#a5a4a4'}}>Our powerful car comparison tool lets you compare multiple vehicles, so you can see how they stack up at a glance.</h4>
             </div>
             <div class=" d-block d-md-none mt-4  " style={{padding:'0 20px'}}>
               <h5>Your car says lot about you!</h5>
@@ -32,9 +32,9 @@ const Header = () => {
             <div className='img_cont'>
               <img width='100%' src={headerImg2} class="d-block w-100" alt="..." />
             </div>
-            <div class="carousel-caption d-none d-md-block ">
-              <h3>Comprehensive comparison from 2000 to 2021</h3>
-              <h5>Just select the cars you're interested in from our comprehensive list and leave the rest to smartarz’s powerful comparison tool.</h5>
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1>Comprehensive comparison from 2000 to 2021</h1>
+              <h4 style={{color:'#a5a4a4'}}>Just select the cars you're interested in from our comprehensive list and leave the rest to smartarz’s powerful comparison tool.</h4>
             </div>
             <div class=" d-block d-md-none mt-3  " style={{padding:'0 20px'}}>
               <h5>Comprehensive comparison from 2000 to 2021</h5>
@@ -45,9 +45,9 @@ const Header = () => {
             <div className='img_cont'>
               <img width='100%'  src={headerImg3} class="d-block w-100" alt="..." />
             </div>
-            <div class="carousel-caption d-none d-md-block ">
-              <h3>Right car does make a difference</h3>
-              <h5>Compare features, warranties, engines, fuel economy, passenger room and trunk space, and even ownership costs, together with ratings,pros and cons and MSRP.8</h5>
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1>Right car does make a difference</h1>
+              <h4 style={{color:'#a5a4a4'}}>Compare features, warranties, engines, fuel economy, passenger room and trunk space, and even ownership costs, together with ratings,pros and cons and MSRP.8</h4>
             </div>
             <div class=" d-block d-md-none mt-3  " style={{padding:'0 20px'}}>
               <h5>Right car does make a difference</h5>
