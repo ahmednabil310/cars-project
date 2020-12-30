@@ -319,15 +319,15 @@ class CustomerReviews extends Component {
             </div>
           </div>
 
-          <h2
+          <h4
             className="text-center py-5"
             style={{
-              color: 'red',
+              color: '#6e6e6e',
               display: this.props.listComment.length > 0 ? 'none' : 'block',
             }}>
             There are no reviews yet. Be the first to submit a review about this
             car
-          </h2>
+          </h4>
           <div className="consumer-reviews pt-5">
             <h1>{'Most helpful consumer reviews'}</h1>
 
