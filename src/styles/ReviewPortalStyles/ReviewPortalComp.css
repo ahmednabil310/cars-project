@@ -207,3 +207,11 @@
     width: 35%;
   }
 }
+@media (max-width: 575.98px) {
+  .carReviewCard_img {
+    width: 47%;
+  }
+  .participantsReviewCard_img {
+    margin-left: 0px;
+  }
+}
