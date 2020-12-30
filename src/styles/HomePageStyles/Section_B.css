@@ -129,11 +129,11 @@
     width: 660px;
   }
   .section-b_car-sub-container {
-    padding-bottom: 25px !important;
+    /* padding-bottom: 25px !important; */
   }
   .car-container-wrapper {
     margin-bottom: 85px;
-    overflow: hidden;
+    overflow: auto;
   }
   .section-b_car-container {
     margin: 0px !important;

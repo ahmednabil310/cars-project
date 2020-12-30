@@ -74,7 +74,7 @@ class MostLikeReview extends Component {
                             `/cardetail?type=${item.carId}`,
                           )
                         }
-                        style={{ cursor: 'pointer' }}>
+                        style={{ cursor: 'pointer' ,position:'absolute',top:'0',width:'100%'}}>
                         {item.make + '  ' + item.model + '  ' + item.year}
                       </div>
                       <div className="mostLikedReviewParticipantCard_subTitle">
@@ -107,7 +107,7 @@ class MostLikeReview extends Component {
                 </div>
                 <div className="mostLikeReview_title">
                   <div>
-                    {item.title}
+                    <span className='reviewTitle'>{item.title}</span>
                     <div className="posted-container">
                       <span className="postedOn_color">PostedOn</span> :{' '}
                       <span className="postedOn_date">

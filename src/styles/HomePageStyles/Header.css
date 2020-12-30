@@ -12,9 +12,12 @@
   margin-bottom: 71px;
 }
 .img_cont {
+  position: relative;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .carousel-caption {
   left: 6%;
@@ -47,6 +50,14 @@
   font-weight: 100;
 }
 @media (max-width: 992px) {
+  .carousel-caption h4 {
+    font-size: 20px;
+    max-width: 100%;
+  }
+  .carousel-caption h1{
+    font-size: 25px;
+  }
+  .img_cont {height: 380px;}
   .header-container .main-title {
     font-size: 60px;
   }
@@ -54,7 +65,11 @@
     font-size: 40px;
   }
 }
+@media (max-width: 777px) {
+  .img_cont {height: 300px;}
+}
 @media (max-width: 576px) {
+  .img_cont {height: 200px;}
   .header-container .main-title {
     font-size: 30px;
   }
