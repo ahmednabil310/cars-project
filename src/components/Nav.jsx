@@ -8,7 +8,7 @@ import '../styles/Nav.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import fbLogo from '../images/facebook-logo-png-white.png';
-
+import  userIcon from "../images/userIcon.png";
 const CLIENT_ID =
   '132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com';
 const Client_Secret = 'dCkN2EUohUrctqyXFTrjB7rq';
@@ -202,7 +202,7 @@ class Nav extends Component {
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false">
-                  <i className="fas fa-user-alt pr-2 user-icon"></i>
+                  <img src={userIcon} className="pr-2 user-icon"></img>
                   <span className="username">{this.state.name}</span>
                 </button>
                 <div

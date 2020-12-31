@@ -3,7 +3,17 @@
   padding: 0 110px;
   font-family: 'Poppins', sans-serif;
 }
-
+.forScrollHandle{
+  padding: 0 110px;
+  font-family: 'Poppins', sans-serif;
+}
+.stickyBar{
+  overflow: overlay;
+  
+}
+.stickyBar::-webkit-scrollbar{
+  width: 0;
+}
 .section-b-homepage-container h3 {
   font-size: 23px;
   color: #727272;
@@ -98,6 +108,10 @@
     padding: 0 20px;
     font-family: 'Poppins', sans-serif;
   }
+  .forScrollHandle{
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
   .section-b__nav .nav-container .active .nav-link {
     border-left: 1px solid white;
   }
@@ -123,8 +137,16 @@
   .section-b-homepage-container {
     padding: 0 20px !important;
   }
+  .forScrollHandle{
+    padding: 0 0px !important;
+
+  }
 }
 @media screen and (max-width: 992px) {
+  forScrollHandle{
+    padding: 0 0px !important;
+  }
+
   .section-b-homepage-container svg {
     width: 660px;
   }

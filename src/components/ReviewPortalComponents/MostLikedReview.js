@@ -57,7 +57,7 @@ class MostLikeReview extends Component {
             return (
               <div key={i} className="review-card-comment">
                 <div className="MostLikeReview_cards row m-0">
-                  <div className="MostLikeReview_cardContainer col-7 col-xl-6 col-lg-6 col-sm-6 col-md-6">
+                  <div className="MostLikeReview_cardContainer col-7 col-xl-6 col-lg-6 col-sm-7 col-md-6">
                     <img
                       style={{ cursor: 'pointer' }}
                       src={item.imageURL}
@@ -74,7 +74,7 @@ class MostLikeReview extends Component {
                             `/cardetail?type=${item.carId}`,
                           )
                         }
-                        style={{ cursor: 'pointer' ,position:'absolute',top:'0',width:'100%'}}>
+                       >
                         {item.make + '  ' + item.model + '  ' + item.year}
                       </div>
                       <div className="mostLikedReviewParticipantCard_subTitle">
@@ -90,7 +90,7 @@ class MostLikeReview extends Component {
                       </div>
                     </div>
                   </div>
-                  <div className="MostLikeReview_cardContainer col-5 col-xl-6 col-lg-6 col-xs-6 col-sm-6 col-md-6">
+                  <div className="MostLikeReview_cardContainer col-5 col-xl-6 col-lg-6 col-xs-6 col-sm-5 col-md-6">
                     <img
                       src={item.profilePic}
                       className="mostLikedReviewCarCard_img"

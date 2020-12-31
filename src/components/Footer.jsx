@@ -5,7 +5,8 @@ import actions from '../redux/actions';
 import { bindActionCreators } from 'redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/logo.png';
-
+import facebookLogo from '../images/facebook.png'
+import twitterLogo from '../images/twitter.png'
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -42,11 +43,11 @@ class Footer extends Component {
               options and on road costs.
             </p>
             <div className="icons">
-              <a href="/">
-                <i className="fab fa-facebook-square"></i>
+              <a href="/" className='mr-3'>
+                <img height="100%" src={facebookLogo}></img>
               </a>
               <a href="/">
-                <i className="fab fa-twitter"></i>
+              <img height="100%" src={twitterLogo}></img>
               </a>
             </div>
           </div>

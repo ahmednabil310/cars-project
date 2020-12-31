@@ -49,9 +49,12 @@ class Section_B extends Component {
 
   componentWillReceiveProps(nextState, prevState) {
     if (nextState.listCarData.length === 4) {
+
       this.refCSS.current.scrollIntoView({ block: "center", behavior: "smooth" });
+      document.getElementById('cards_container').scrollLeft=document.getElementById('sticky_nav').scrollLeft
 
     }
+
     this.setState({
       listCarData: nextState.listCarData,
     });
@@ -126,6 +129,7 @@ class Section_B extends Component {
   addVechileHandler = () => {
     this.props.actions.getCarData(this.state.SelectedEngine.value);
     this.refCSS.current.scrollIntoView({ block: "center", behavior: "smooth" });
+     document.getElementById('cards_container').scrollLeft=document.getElementById('sticky_nav').scrollLeft
 
     this.setState({
       carNumber: 1,
@@ -158,6 +162,8 @@ class Section_B extends Component {
   };
 
   render() {
+    
+
     document.getElementById('cards_container') && document.getElementById('cards_container').addEventListener('scroll', (event) => {
 
       document.getElementById('sticky_nav').scrollLeft = document.getElementById('cards_container').scrollLeft
@@ -193,9 +199,9 @@ class Section_B extends Component {
       <>
 
         <div ref={this.refCSS}></div>
-        <div className='sticky-top  bg-white' id='sticky_nav' style={{ overflow: 'hidden' }}>
-          <div className="section-b-homepage-container">
-            <div className="d-flex sub-container ">
+        <div className='sticky-top  bg-white stickyBar' id='sticky_nav' >
+          <div className=" ">
+            <div className="d-flex sub-container section-b-homepage-container" >
               <h3>
                 {/* //t( */}
                 <span className="special">{'Compare'}</span> {/* t( */}
@@ -252,7 +258,7 @@ class Section_B extends Component {
 
             </div>
 
-            <div className="row section-b_car-container " style={{ top: '13%' }}>
+            <div className="row section-b_car-container forScrollHandle" style={{ top: '13%' }}>
 
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
@@ -290,7 +296,7 @@ class Section_B extends Component {
 
           </div>
         </div>
-        <div className="section-b-homepage-container" >
+        <div className=" forScrollHandle" >
           {/* <div className="d-flex sub-container ">
             <h3>
               <span className="special">{'Compare'}</span> 
@@ -349,7 +355,7 @@ class Section_B extends Component {
  */}
 
           <div className="car-container-wrapper" id='cards_container'>
-            <div className="row section-b_car-container" style={{padding:'0px'}}>
+            <div className="row section-b_car-container" style={{ padding: '0px' }}>
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
                   return (
