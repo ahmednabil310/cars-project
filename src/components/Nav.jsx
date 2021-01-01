@@ -8,7 +8,7 @@ import '../styles/Nav.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import fbLogo from '../images/facebook-logo-png-white.png';
-import  userIcon from "../images/userIcon.png";
+import userIcon from '../images/userIcon.png';
 const CLIENT_ID =
   '132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com';
 const Client_Secret = 'dCkN2EUohUrctqyXFTrjB7rq';
@@ -124,7 +124,7 @@ class Nav extends Component {
           </NavLink>
 
           <button
-            id='collapseMenu'
+            id="collapseMenu"
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -152,8 +152,11 @@ class Nav extends Component {
                   to="/"
                   exact
                   activeClassName="active-link"
-                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
-                  >
+                  onClick={() => {
+                    document
+                      .getElementById('navbarSupportedContent')
+                      .classList.remove('show');
+                  }}>
                   {'Prices & spec'}
                 </NavLink>
               </li>
@@ -162,9 +165,11 @@ class Nav extends Component {
                   className="nav-link"
                   to="/newcarpricing"
                   activeClassName="active-link"
-                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
-
-                  >
+                  onClick={() => {
+                    document
+                      .getElementById('navbarSupportedContent')
+                      .classList.remove('show');
+                  }}>
                   {'New Cars'}
                 </NavLink>
               </li>
@@ -174,17 +179,22 @@ class Nav extends Component {
                   className="nav-link"
                   activeClassName="active-link"
                   to="/car-reviews"
-                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
-
-                  >
+                  onClick={() => {
+                    document
+                      .getElementById('navbarSupportedContent')
+                      .classList.remove('show');
+                  }}>
                   {'Reviews'}
                 </NavLink>
               </li>
 
               <li className="nav-item">
                 <a
-                                  onClick={()=>{document.getElementById('navbarSupportedContent').classList.remove('show')}}
-
+                  onClick={() => {
+                    document
+                      .getElementById('navbarSupportedContent')
+                      .classList.remove('show');
+                  }}
                   className="nav-link"
                   target="_blank"
                   rel="noreferrer"

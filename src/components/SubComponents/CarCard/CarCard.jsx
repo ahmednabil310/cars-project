@@ -24,7 +24,7 @@ class CarCard extends Component {
     const listGood = good.map((item, index) => {
       return (
         <li key={index}>
-            <img src={right} className='mr-2'/>
+          <img src={right} className="mr-2" />
           {item}
         </li>
       );
@@ -33,7 +33,7 @@ class CarCard extends Component {
     const listbad = bad.map((item, index) => {
       return (
         <li key={index}>
-            <img src={wrong} className='mr-2'/>
+          <img src={wrong} className="mr-2" />
           {item}
         </li>
       );
@@ -206,13 +206,21 @@ class CarCard extends Component {
             </div>
             <p className="main__gary pl-4 py-1 font-weight-bold">Pros & Cons</p>
             <ul
-              className=" px-2"
-              style={{ textTransform: 'capitalize', height: '176px',listStyleType:'none' }}>
+              className="px-4"
+              style={{
+                textTransform: 'capitalize',
+                height: '176px',
+                listStyleType: 'none',
+              }}>
               {listGood}
             </ul>
             <ul
               className=" px-2"
-              style={{ textTransform: 'capitalize', height: '135px',listStyleType:'none' }}>
+              style={{
+                textTransform: 'capitalize',
+                height: '135px',
+                listStyleType: 'none',
+              }}>
               {listbad}
             </ul>
             <div className="px-2 mb-4">

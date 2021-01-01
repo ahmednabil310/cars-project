@@ -24,13 +24,13 @@ function CarsCard(props) {
         />
       </div>
       <div className="carsTable-carCard-price">
-        <span style={{fontSize:'50px'}}>&lt;</span>
+        <span style={{ fontSize: '50px' }}>&lt;</span>
         {/* {<i className="fas fa-angle-left"></i>} */}
-         {props.data.scoreRange}K AED
+        {props.data.scoreRange}K AED
       </div>
       <div className="carsTable-carCard-topCarsContainer">
         <div className="carsTable-carCard-topCar">
-          <p className="carsTable-carCard-topCar-topCategory ml-3">
+          <p className="carsTable-carCard-topCar-topCategory ">
             {props.data.class}
           </p>
           {props.data.listCars.map((item, i) => {

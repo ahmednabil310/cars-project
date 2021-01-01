@@ -5,8 +5,8 @@ import actions from '../redux/actions';
 import { bindActionCreators } from 'redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 import logo from '../images/logo.png';
-import facebookLogo from '../images/facebook.png'
-import twitterLogo from '../images/twitter.png'
+import facebookLogo from '../images/facebook.png';
+import twitterLogo from '../images/twitter.png';
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -43,11 +43,18 @@ class Footer extends Component {
               options and on road costs.
             </p>
             <div className="icons">
-              <a href="/" className='mr-3'>
+              <a
+                href="https://www.facebook.com/smartarz"
+                target="_blank"
+                rel="noreferrer"
+                className="mr-3">
                 <img height="100%" src={facebookLogo}></img>
               </a>
-              <a href="/">
-              <img height="100%" src={twitterLogo}></img>
+              <a
+                href="https://twitter.com/smartarz2020"
+                target="_blank"
+                rel="noreferrer">
+                <img height="100%" src={twitterLogo}></img>
               </a>
             </div>
           </div>
@@ -67,6 +74,8 @@ class Footer extends Component {
               <div className="footerItem">Reviews</div>
             </Link>
             <a
+              target="_blank"
+              rel="noreferrer"
               href="https://smartarz.com/vehicle/1109/cars-for-sale/1118?fbclid=IwAR0K07Nj2wB9OoUrPcBT40mBIYmkddOeH_meSE-I_Qvrak-KuWKpuGs9QRE"
               className="footerItem">
               Used Car
