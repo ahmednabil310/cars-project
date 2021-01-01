@@ -2,7 +2,7 @@ import React from 'react';
 
 // the hook
 import { useTranslation } from 'react-i18next';
-
+import plusIconn from '../../../images/plus.png'
 const AddVechile = ({ showModel }) => {
   const { t, i18n } = useTranslation();
   return (

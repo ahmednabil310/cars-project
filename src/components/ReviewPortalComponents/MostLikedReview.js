@@ -6,7 +6,8 @@ import '../../styles/ReviewPortalStyles/MostLikedReview.css';
 import ReactStars from 'react-rating-stars-component';
 import { withRouter } from 'react-router-dom';
 import toastr from 'toastr';
-
+import like from '../../images/heart.png'
+import unlike from '../../images/regularHeart.png'
 class MostLikeReview extends Component {
   constructor(props) {
     super(props);
@@ -126,11 +127,11 @@ class MostLikeReview extends Component {
                     }}
                     className="bg-transparent stars-z"
                     name="rating"></div>
-                  <i
+                  <img
+                    
+                    src={this.state[i] ? like : unlike}
                     id={i}
-                    className={`${
-                      this.state[i] ? 'fas fa-heart' : 'far fa-heart'
-                    } cursor-pointer  ml-auto`}
+                    className={`cursor-pointer ml-auto`}
                     onClick={(e) => {
                       if (this.state.userId !== null) {
                         this.setState({ [e.target.id]: true });
@@ -139,7 +140,7 @@ class MostLikeReview extends Component {
                         toastr.warning('Please Login');
                       }
                     }}
-                    style={this.state[i] ? null : { color: 'grey' }}></i>
+                    style={this.state[i] ? null : { color: 'grey' }}/>
                 </div>
                 <div className="mostLikeReview_desc">{item.subject}</div>
               </div>

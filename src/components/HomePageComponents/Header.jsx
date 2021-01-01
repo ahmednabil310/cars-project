@@ -1,7 +1,7 @@
 import '../../styles/HomePageStyles/Header.css';
-import headerImg1 from '../../images/homeHeader1.jpg'
-import headerImg2 from '../../images/homeHeader2.jpg'
-import headerImg3 from '../../images/homeHeader3.jpg'
+import headerImg1 from '../../images/car1.webp'
+import headerImg2 from '../../images/car2.webp'
+import headerImg3 from '../../images/car3.webp'
 // the hook
 import { useTranslation } from 'react-i18next';
 
@@ -17,7 +17,7 @@ const Header = () => {
         <div class="carousel-inner" >
           <div class="carousel-item active" >
             <div className='img_cont'>
-              <img  src={headerImg1} class="d-block w-100" alt="..." />
+              <img  src={headerImg1} class="d-block w-100 h-100" alt="..." />
               <div className='filterImage'></div>
             </div>
 
@@ -32,7 +32,7 @@ const Header = () => {
           </div>
           <div class="carousel-item" >
             <div className='img_cont'>
-              <img  src={headerImg2} class="d-block w-100" alt="..." />
+              <img  src={headerImg2} class="d-block w-100 h-100" alt="..." />
               <div className='filterImage'></div>
             </div>
             <div class="carousel-caption d-none d-md-block text-left">
@@ -46,7 +46,7 @@ const Header = () => {
           </div>
           <div class="carousel-item" >
             <div className='img_cont'>
-              <img  src={headerImg3} class="d-block w-100" alt="..." />
+              <img  src={headerImg3} class="d-block w-100 h-100" alt="..." />
               <div className='filterImage'></div>
             </div>
             <div class="carousel-caption d-none d-md-block text-left">

@@ -13,7 +13,7 @@
 }
 .img_cont {
   position: relative;
-  height: 500px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@
   .img_cont {height: 300px;}
 }
 @media (max-width: 576px) {
-  .img_cont {height: 200px;}
+  .img_cont {height: 179px;}
   .header-container .main-title {
     font-size: 30px;
   }

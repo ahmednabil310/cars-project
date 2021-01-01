@@ -5,6 +5,10 @@ import { bindActionCreators } from 'redux';
 import '../../styles/DealerPageStyles/CustomerReviews.css';
 import ReactStars from 'react-rating-stars-component';
 import toastr from 'toastr';
+import like from '../../images/heart.png'
+import unlike from '../../images/regularHeart.png'
+
+
 // Images
 import bigstars from '../../images/dealer/bigstars.png';
 import singleStar from '../../images/dealer/singlestar.png';
@@ -349,11 +353,11 @@ class CustomerReviews extends Component {
                       <p>{item.subject}</p>
                       <span>{item.fullName}</span>
 
-                      <i
+                      <img
+                      src={this.state[item.id] ?like:unlike}
                         id={item.id}
-                        className={`${
-                          this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'
-                        } cursor-pointer  ml-auto`}
+                        // ${ this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'}
+                        className={`cursor-pointer  ml-auto`}
                         onClick={(e) => {
                           if (this.state.userId !== null) {
                             this.setState({ [e.target.id]: true });
@@ -366,7 +370,7 @@ class CustomerReviews extends Component {
                           this.state[item.id]
                             ? { color: 'red', fontSize: '25px' }
                             : { color: 'grey', fontSize: '25px' }
-                        }></i>
+                        }></img>
                       {item.userId === userId ? (
                         <div className="edit-delete-btns-container">
                           <button
