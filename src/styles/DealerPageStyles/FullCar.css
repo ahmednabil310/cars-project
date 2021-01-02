@@ -67,7 +67,9 @@
   font-size: 14px;
 }
 @media (max-width: 1200px) {
-  .brief {font-size: 29px;}
+  .brief {
+    font-size: 29px;
+  }
   .fullcar-container {
     padding: 0 20px;
   }
@@ -79,12 +81,17 @@
   }
 }
 @media (max-width: 992px) {
-  .brief {font-size: 29px;}
+  .brief {
+    font-size: 29px;
+  }
   .fullcar-container .brief-content {
     max-width: 100%;
   }
 }
 @media (max-width: 576px) {
+  .single-detail img {
+    padding-right: 11px;
+  }
   .fullcar-container .brief {
     font-size: 29px;
   }
@@ -107,6 +114,10 @@
   }
   .single-detail .stars-container {
     margin-left: 0px;
+    padding-left: 23px !important;
+  }
+  .stars-container p {
+    padding-left: 2px !important;
   }
   .single-detail i {
     padding-right: 5px;
