@@ -80,10 +80,10 @@
 }
 
 .mostLikedReviewParticipantCard_title {
-  cursor: pointer ;
-  position:absolute;
-  top:0;
-  width:100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 100%;
   color: #515151;
   font-size: 20px;
   font-weight: 700;
@@ -153,7 +153,7 @@
     padding-left: 0px !important;
   }
   .mostLikedReviewParticipantCard_title {
-    position:initial;
+    position: initial;
     font-size: 13px;
   }
   .mostLikedReviewCarCard_title {
@@ -167,7 +167,7 @@
     font-size: 15px;
   }
   .special_padding {
-    padding-right: 0px !important;
+    padding-right: 20px !important;
   }
   .topRatedCarCard_img {
     width: 90px;

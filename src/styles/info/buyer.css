@@ -1,0 +1,11 @@
+@media (max-width: 1200px) {
+  .buyer-container h2 {
+    padding: 10px 20px !important;
+  }
+  .buyer-container .link-container {
+    padding: 0px 20px !important;
+  }
+  .buyer-container .text-container {
+    padding: 0px 20px !important;
+  }
+}

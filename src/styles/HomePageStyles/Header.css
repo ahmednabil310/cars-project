@@ -37,6 +37,14 @@
   font-size: 2.7rem;
   text-shadow: 1px 1px #aaaaaa;
 }
+.carousel-indicators li {
+  border-radius: 50%;
+  background-clip: inherit !important;
+  width: 11px;
+  height: 13px;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+}
 .carousel-caption h4 {
   max-width: 42%;
   font-size: 0.9rem;
