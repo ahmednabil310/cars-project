@@ -207,7 +207,7 @@ class Section_B extends Component {
     return (
       <>
         <div ref={this.refCSS}></div>
-        <div className="sticky-top  bg-white stickyBar" id="sticky_nav">
+        <div className={`sticky-top  bg-white ${this.state.listCarData.length>0?'stickyBar':'noCompare'}`} id='sticky_nav' >
           <div className=" ">
             <div className="d-flex sub-container section-b-homepage-container">
               <h3>

@@ -11,6 +11,9 @@
   overflow: overlay;
   
 }
+.noCompare{
+  overflow: auto;
+}
 .stickyBar::-webkit-scrollbar{
   width: 0;
 }
