@@ -11,6 +11,10 @@
   overflow: overlay;
   
 }
+.noCompare{
+  overflow: hidden;
+}
+
 .stickyBar::-webkit-scrollbar{
   width: 0;
 }
@@ -86,6 +90,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1260px) {
+  .noCompare{overflow: hidden;}
   .section-b__nav .nav-container .nav-link {
     font-size: 14px;
     font-weight: 500;
@@ -95,6 +100,7 @@
 }
 
 @media screen and (min-width: 1260px) and (max-width: 1350px) {
+  .noCompare{overflow: hidden;}
   .section-b__nav .nav-container .nav-link {
     font-size: 14px;
     font-weight: 500;
@@ -104,6 +110,9 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .noCompare{
+    overflow: auto;
+  }
   .section-b-homepage-container {
     padding: 0 20px;
     font-family: 'Poppins', sans-serif;
@@ -169,6 +178,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .noCompare{
+    overflow: auto;
+  }
   .section-b-homepage-container h3 {
     font-size: 23px;
   }
@@ -177,6 +189,9 @@
   }
 }
 @media screen and (max-width: 576px) {
+  .noCompare{
+    overflow: auto;
+  }
   .section-b-homepage-container h3 {
     font-size: 16px;
   }

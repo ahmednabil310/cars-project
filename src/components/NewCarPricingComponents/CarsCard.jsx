@@ -24,7 +24,7 @@ function CarsCard(props) {
         />
       </div>
       <div className="carsTable-carCard-price">
-        <span style={{ fontSize: '50px' }}>&lt;</span>
+        <span style={{ fontSize: '50px',marginLeft:'-5px' }}>&lt;</span>
         {/* {<i className="fas fa-angle-left"></i>} */}
         {props.data.scoreRange}K AED
       </div>
