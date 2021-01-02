@@ -4,7 +4,7 @@
   font-family: 'Poppins', sans-serif;
   padding: 0 110px !important;
 }
-.customerRiviewAllTitles{
+.customerRiviewAllTitles {
   font-size: 25px;
   font-weight: 500;
   color: #727272;
@@ -33,7 +33,10 @@
   font-size: 22px;
   border-radius: 5px;
 }
-
+.no-comments {
+  color: rgb(155, 155, 155);
+  font-size: 20px;
+}
 .customer-reviews button svg {
   margin-right: 5px;
 }
@@ -203,20 +206,29 @@
   margin-top: 26px;
 }
 @media (max-width: 1200px) {
-  .customerRiviewAllTitles{font-size: 25px;}
+  .customerRiviewAllTitles {
+    font-size: 25px;
+  }
   .customer-reviews {
     padding: 0 20px !important;
   }
 }
 @media (max-width: 992px) {
-  .customerRiviewAllTitles{font-size: 25px;}
+  .customerRiviewAllTitles {
+    font-size: 25px;
+  }
   .customer-review-title {
     font-size: 29px;
   }
 }
 
 @media (max-width: 768px) {
-  .customerRiviewAllTitles{font-size: 20px;}
+  .no-comments {
+    font-size: 15px;
+  }
+  .customerRiviewAllTitles {
+    font-size: 20px;
+  }
 
   .customer-review-title {
     font-size: 29px;
@@ -230,7 +242,9 @@
   }
 }
 @media (max-width: 576px) {
-  .customerRiviewAllTitles{font-size: 20px;}
+  .customerRiviewAllTitles {
+    font-size: 20px;
+  }
 
   .customer-review-title {
     font-size: 20px;

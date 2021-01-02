@@ -5,9 +5,8 @@ import { bindActionCreators } from 'redux';
 import '../../styles/DealerPageStyles/CustomerReviews.css';
 import ReactStars from 'react-rating-stars-component';
 import toastr from 'toastr';
-import like from '../../images/heart.png'
-import unlike from '../../images/regularHeart.png'
-
+import like from '../../images/heart.png';
+import unlike from '../../images/regularHeart.png';
 
 // Images
 import bigstars from '../../images/dealer/bigstars.png';
@@ -324,16 +323,17 @@ class CustomerReviews extends Component {
           </div>
 
           <h4
-            className="text-center py-5 customerRiviewAllTitles"
+            className="text-center py-5 no-comments"
             style={{
-              color: '#6e6e6e',
               display: this.props.listComment.length > 0 ? 'none' : 'block',
             }}>
             There are no reviews yet. Be the first to submit a review about this
             car
           </h4>
           <div className="consumer-reviews pt-5">
-            <div className='customerRiviewAllTitles'>{'Most helpful consumer reviews'}</div>
+            <div className="customerRiviewAllTitles">
+              {'Most helpful consumer reviews'}
+            </div>
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, i) => {
@@ -354,7 +354,7 @@ class CustomerReviews extends Component {
                       <span>{item.fullName}</span>
 
                       <img
-                      src={this.state[item.id] ?like:unlike}
+                        src={this.state[item.id] ? like : unlike}
                         id={item.id}
                         // ${ this.state[item.id] ? 'fas fa-heart' : 'far fa-heart'}
                         className={`cursor-pointer  ml-auto`}
