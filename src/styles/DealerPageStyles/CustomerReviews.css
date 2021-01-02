@@ -4,7 +4,11 @@
   font-family: 'Poppins', sans-serif;
   padding: 0 110px !important;
 }
-
+.customerRiviewAllTitles{
+  font-size: 25px;
+  font-weight: 500;
+  color: #727272;
+}
 .customer-review-title {
   font-size: 35px;
   font-weight: 500;
@@ -199,17 +203,21 @@
   margin-top: 26px;
 }
 @media (max-width: 1200px) {
+  .customerRiviewAllTitles{font-size: 25px;}
   .customer-reviews {
     padding: 0 20px !important;
   }
 }
 @media (max-width: 992px) {
+  .customerRiviewAllTitles{font-size: 25px;}
   .customer-review-title {
     font-size: 29px;
   }
 }
 
 @media (max-width: 768px) {
+  .customerRiviewAllTitles{font-size: 20px;}
+
   .customer-review-title {
     font-size: 29px;
   }
@@ -222,6 +230,8 @@
   }
 }
 @media (max-width: 576px) {
+  .customerRiviewAllTitles{font-size: 20px;}
+
   .customer-review-title {
     font-size: 20px;
   }

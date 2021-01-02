@@ -11,7 +11,7 @@ const AddVechile = ({ showModel }) => {
       role="button"
       onClick={showModel}>
       <div className="section-b__addCar d-flex flex-column justify-content-center align-items-center ">
-        <i className="fas fa-plus fa-4x"></i>
+        <img src={plusIconn}  />
         <h4 className="Add text-center">{t('Add a vechile')}</h4>
       </div>
     </div>

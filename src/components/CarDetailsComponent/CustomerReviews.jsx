@@ -324,7 +324,7 @@ class CustomerReviews extends Component {
           </div>
 
           <h4
-            className="text-center py-5"
+            className="text-center py-5 customerRiviewAllTitles"
             style={{
               color: '#6e6e6e',
               display: this.props.listComment.length > 0 ? 'none' : 'block',
@@ -333,7 +333,7 @@ class CustomerReviews extends Component {
             car
           </h4>
           <div className="consumer-reviews pt-5">
-            <h1>{'Most helpful consumer reviews'}</h1>
+            <div className='customerRiviewAllTitles'>{'Most helpful consumer reviews'}</div>
 
             {this.props.listComment.length > 0
               ? this.props.listComment.map((item, i) => {

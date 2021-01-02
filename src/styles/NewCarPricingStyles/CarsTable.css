@@ -18,6 +18,8 @@
   border-radius: 8px;
 }
 .carsTable-carCard-price {
+  display: flex;
+  align-items: center;
   color: #b83737;
   font-size: 23px;
   font-weight: 500;

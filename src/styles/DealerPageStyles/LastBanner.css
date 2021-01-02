@@ -48,12 +48,14 @@
   }
 }
 @media (max-width: 992px) {
+  .last-banner .price-range {font-size: 25px;}
   .last-banner .banner-content {
     flex-direction: column !important;
     align-items: flex-start !important;
   }
 }
 @media (max-width: 600px) {
+  .last-banner .price-range {font-size: 20px;}
   .last-banner .banner-content {
     flex-direction: column;
     align-items: flex-start !important;

@@ -104,115 +104,121 @@ class CarsAvailableDetails extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className="Cars-Available__container">
-          {this.state.SelectedMake.value != 'default' ? (
-            <div className="Cars-Available__container__title">
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedMake.label}
-              </span>{' '}
-              UAE Prices & Specs
-            </div>
-          ) : (
-            <div className="Cars-Available__container__title">Choose</div>
-          )}
-
-          {this.state.SelectedMake.value != 'default' ? (
-            <div className="Cars-Available__container__SubTitle mt-2 d-flex">
-              <NavLink to="/"> HOME &nbsp;</NavLink> /&nbsp;
-              <NavLink to="/">PRICES & SPECS</NavLink> &nbsp;
-              {this.state.SelectedMake.label} / &nbsp;
-              <span style={{ color: '#3e3e3e' }}>
-                {this.state.SelectedMake.label}
-              </span>
-            </div>
-          ) : null}
-          <div className="Cars-Available__container__form mt-4">
-            <Form.Group
-              controlId="makeId"
-              style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
-              <Select
-                name="makeId"
-                id="makeId"
-                value={this.state.SelectedMake}
-                onChange={(opt) => {
-                  this.setFieldValue('SelectedMake', opt);
-                }}
-                options={this.props.listMake}
-                className="optGroup"
-              />
-            </Form.Group>
-            <Form.Group
-              controlId="year"
-              style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
-              <Select
-                name="year"
-                id="year"
-                value={this.state.SelectedYears}
-                onChange={(opt) => {
-                  this.setFieldValue('SelectedYears', opt);
-                }}
-                width="200px"
-                options={this.props.listYears}
-              />
-            </Form.Group>
-            {this.state.isLoading ? (
-              <Button variant="primary" disabled>
-                <Spinner
-                  as="span"
-                  animation="border"
-                  size="sm"
-                  role="status"
-                  aria-hidden="true"
-                />
-                <span className="sr-only">Loading...</span>
-              </Button>
-            ) : (
-              <button
-                onClick={this.handleClick}
-                className="Cars-Available__container__submitBtn"
-                type="button">
-                Go
-              </button>
-            )}
-          </div>
-
-          {this.state.SelectedMake.label != 'default' ? (
-            <div>
-              {/* <div className="Cars-Available__container__NewUSedBar">
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  New {this.state.SelectedMake.label} for Sale in&nbsp;
+    return (<>
+      {
+        this.state.isLoading?
+         (<Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />)
+         :
+         ( <div>
+          <div className="Cars-Available__container">
+            {this.state.SelectedMake.value != 'default' ? (
+              <div className="Cars-Available__container__title">
+                <span style={{ color: '#3e3e3e' }}>
                   {this.state.SelectedMake.label}
-                </a>
-                <a
-                  href=""
-                  style={{
-                    color: '#325c9a',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}>
-                  Used {this.state.SelectedMake.label} for Sale in&nbsp;
-                  {this.state.SelectedMake.label}
-                </a>
-              </div> */}
-
-              <div className="Cars-Available__container__ChoosedBrand">
-                Browse {this.state.SelectedMake.label} Models
+                </span>{' '}
+                UAE Prices & Specs
               </div>
-
-              <CarsOfBrand CarsDetails={this.props.listMakeYears} />
+            ) : (
+              <div className="Cars-Available__container__title">Choose</div>
+            )}
+  
+            {this.state.SelectedMake.value != 'default' ? (
+              <div className="Cars-Available__container__SubTitle mt-2 d-flex">
+                <NavLink to="/"> HOME &nbsp;</NavLink> /&nbsp;
+                <NavLink to="/">PRICES & SPECS</NavLink> &nbsp;
+                {this.state.SelectedMake.label} / &nbsp;
+                <span style={{ color: '#3e3e3e' }}>
+                  {this.state.SelectedMake.label}
+                </span>
+              </div>
+            ) : null}
+            <div className="Cars-Available__container__form mt-4">
+              <Form.Group
+                controlId="makeId"
+                style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
+                <Select
+                  name="makeId"
+                  id="makeId"
+                  value={this.state.SelectedMake}
+                  onChange={(opt) => {
+                    this.setFieldValue('SelectedMake', opt);
+                  }}
+                  options={this.props.listMake}
+                  className="optGroup"
+                />
+              </Form.Group>
+              <Form.Group
+                controlId="year"
+                style={{ width: '250px', margin: '0px 20px 0px 0px ' }}>
+                <Select
+                  name="year"
+                  id="year"
+                  value={this.state.SelectedYears}
+                  onChange={(opt) => {
+                    this.setFieldValue('SelectedYears', opt);
+                  }}
+                  width="200px"
+                  options={this.props.listYears}
+                />
+              </Form.Group>
+              {this.state.isLoading ? (
+                <Button variant="primary" disabled>
+                  <Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">Loading...</span>
+                </Button>
+              ) : (
+                <button
+                  onClick={this.handleClick}
+                  className="Cars-Available__container__submitBtn"
+                  type="button">
+                  Go
+                </button>
+              )}
             </div>
-          ) : null}
+  
+            {this.state.SelectedMake.label != 'default' ? (
+              <div>
+                {/* <div className="Cars-Available__container__NewUSedBar">
+                  <a
+                    href=""
+                    style={{
+                      color: '#325c9a',
+                      fontWeight: 'bold',
+                      fontSize: '18px',
+                    }}>
+                    New {this.state.SelectedMake.label} for Sale in&nbsp;
+                    {this.state.SelectedMake.label}
+                  </a>
+                  <a
+                    href=""
+                    style={{
+                      color: '#325c9a',
+                      fontWeight: 'bold',
+                      fontSize: '18px',
+                    }}>
+                    Used {this.state.SelectedMake.label} for Sale in&nbsp;
+                    {this.state.SelectedMake.label}
+                  </a>
+                </div> */}
+  
+                <div className="Cars-Available__container__ChoosedBrand">
+                  Browse {this.state.SelectedMake.label} Models
+                </div>
+  
+                <CarsOfBrand CarsDetails={this.props.listMakeYears} />
+              </div>
+            ) : null}
+          </div>
         </div>
-      </div>
-    );
+      )
+      }</>
+     );
   }
 }
 

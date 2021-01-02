@@ -25,7 +25,7 @@ class CarsPros extends Component {
       <div className="cars-pros-container">
         <div className="row">
           <div className="col-lg-4 col-md-12 car-pros">
-            <h3 className="pros">{"Pros"}</h3>
+            <h3 className="cons">{"Pros"}</h3>
             <svg
               id="Component_6_11"
               data-name="Component 6 – 11"
