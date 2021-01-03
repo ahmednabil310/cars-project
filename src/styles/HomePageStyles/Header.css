@@ -82,8 +82,14 @@
   .img_cont {
     height: 300px;
   }
+  .carousel-indicators {
+    top: 276px !important;
+  }
 }
 @media (max-width: 576px) {
+  .carousel-indicators {
+    top: 160px !important;
+  }
   .img_cont {
     height: 179px;
   }

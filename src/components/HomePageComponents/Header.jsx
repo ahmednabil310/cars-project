@@ -20,11 +20,11 @@ const Header = () => {
         data-interval="3000">
         <ol className="carousel-indicators">
           <li
-            data-target="#carouselExampleIndicators"
+            data-target="#carouselExampleSlidesOnly "
             data-slide-to="0"
             className="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleSlidesOnly " data-slide-to="1"></li>
+          <li data-target="#carouselExampleSlidesOnly " data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
