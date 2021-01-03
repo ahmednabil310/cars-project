@@ -361,7 +361,7 @@ class CustomerReviews extends Component {
                         onClick={(e) => {
                           if (this.state.userId !== null) {
                             this.setState({ [e.target.id]: true });
-                            this.hnadleLike(item.id, item.carId);
+                            (!this.state[item.id])&&this.hnadleLike(item.id, item.carId);
                           } else {
                             toastr.warning('Please Login');
                           }
