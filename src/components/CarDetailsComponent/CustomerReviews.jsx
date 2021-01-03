@@ -305,8 +305,8 @@ class CustomerReviews extends Component {
                     onChange={this.inputChangeHandler}></textarea>
                   {this.state.comment.length === 0 && (
                     <div
-                      className="position-absolute"
-                      style={{ top: '12%', left: '6%' }}>
+                      className="position-absolute review_input_comment_placeholder"
+                      >
                       <span className="main__gary mr-2">
                         {'Review details'}
                       </span>
@@ -519,8 +519,8 @@ class CustomerReviews extends Component {
                               {this.state.editingItem &&
                                 this.state.editingItem.subject.length == 0 && (
                                   <div
-                                    className="position-absolute"
-                                    style={{ top: '12%', left: '6%' }}>
+                                    className="position-absolute review_input_comment_placeholder"
+                                    >
                                     <span className="main__gary mr-2">
                                       {'Review details'}
                                     </span>

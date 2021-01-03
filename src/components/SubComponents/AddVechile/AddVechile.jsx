@@ -9,9 +9,13 @@ const AddVechile = ({ showModel }) => {
     <div
       className=" col-3  section-b_car-sub-container"
       role="button"
-      onClick={showModel}>
+      onClick={() => {
+        showModel();
+        document.getElementById('cards_container',).scrollLeft = 0;
+        document.getElementById('sticky_nav').scrollLeft = 0;
+      }}>
       <div className="section-b__addCar d-flex flex-column justify-content-center align-items-center ">
-        <img src={plusIconn}  />
+        <img src={plusIconn} />
         <h4 className="Add text-center">{t('Add a vechile')}</h4>
       </div>
     </div>

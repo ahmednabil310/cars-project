@@ -14,6 +14,8 @@ class Section_C extends Component {
   }
 
   handleClick = (car1, car2, car3, car4) => {
+    document.getElementById('cards_container',).scrollLeft = 0;
+    document.getElementById('sticky_nav').scrollLeft = 0;
     this.props.actions.getMultipleComparison(car1, car2, car3, car4);
   };
 

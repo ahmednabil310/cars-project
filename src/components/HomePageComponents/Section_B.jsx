@@ -53,9 +53,9 @@ class Section_B extends Component {
         block: 'center',
         behavior: 'smooth',
       });
-      document.getElementById(
-        'cards_container',
-      ).scrollLeft = document.getElementById('sticky_nav').scrollLeft;
+      // document.getElementById(
+      //   'cards_container',
+      // ).scrollLeft = document.getElementById('sticky_nav').scrollLeft;
     }
 
     this.setState({
@@ -132,9 +132,9 @@ class Section_B extends Component {
   addVechileHandler = () => {
     this.props.actions.getCarData(this.state.SelectedEngine.value);
     this.refCSS.current.scrollIntoView({ block: 'center', behavior: 'smooth' });
-    document.getElementById(
-      'cards_container',
-    ).scrollLeft = document.getElementById('sticky_nav').scrollLeft;
+    // document.getElementById(
+    //   'cards_container',
+    // ).scrollLeft = document.getElementById('sticky_nav').scrollLeft;
 
     this.setState({
       carNumber: 1,

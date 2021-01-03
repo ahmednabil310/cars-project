@@ -69,7 +69,7 @@ class Section1 extends Component {
           </h3>
           <h3 className="NewCarPricing-Section1__h3 desc">learn what to pay</h3>
 
-          <div className="d-flex align-items-center select__input row">
+          <div className="d-flex select__input row">
             <div className="col-lg-3 col-sm-12">
               <Select
                 name="makeId"
@@ -77,6 +77,9 @@ class Section1 extends Component {
                 value={this.state.SelectedMake}
                 onChange={(opt) => {
                   this.setFieldValue('SelectedMake', opt);
+                  this.setState({ SelectedSubMake: { label: 'Select SubMake', value: 'Select  SubMake' } })
+                  this.setState({ SelectedEngine: { label: 'Select Engine', value: 'Select Engine' } })
+
                 }}
                 options={this.props.listCars}
                 styles={customStyles}
@@ -89,6 +92,8 @@ class Section1 extends Component {
                 value={this.state.SelectedSubMake}
                 onChange={(opt) => {
                   this.setFieldValue('SelectedSubMake', opt);
+                  this.setState({ SelectedEngine: { label: 'Select Engine', value: 'Select Engine' } })
+
                 }}
                 styles={customStyles}
                 options={this.props.listSubCars}

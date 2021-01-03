@@ -135,7 +135,7 @@ class MostLikeReview extends Component {
                     onClick={(e) => {
                       if (this.state.userId !== null) {
                         this.setState({ [e.target.id]: true });
-                        this.hnadleLike(item);
+                        (!this.state[i])&&this.hnadleLike(item);
                       } else {
                         toastr.warning('Please Login');
                       }

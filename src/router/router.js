@@ -20,6 +20,7 @@ const RouterDocument = () => {
   return (
     <Suspense fallback={<Loading />}>
       <Router basename="/"  >
+        
         <Nav />
         <Switch>
           <Route path="/" component={Home} exact />

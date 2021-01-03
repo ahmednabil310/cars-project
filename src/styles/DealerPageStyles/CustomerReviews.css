@@ -155,6 +155,9 @@
 .review__input_title {
   height: 60px;
 }
+.review__input_title:focus ~ .review__input_title__placeholder{
+    display: none;
+  }
 
 .review__input_rating {
   height: 60px;
@@ -163,7 +166,14 @@
 .review__input_comment {
   resize: none;
 }
-
+.review_input_comment_placeholder{
+  display: block;
+  top: 12%;
+  left: 6%;
+  }
+.review__input_comment:focus ~ .review_input_comment_placeholder{
+  display: none;
+}
 .review__input_title,
 .review__input_rating,
 .review__input_comment {
@@ -176,6 +186,7 @@
   left: 6%;
   transform: translateY(-50%);
 }
+
 .edit-delete-btns-container {
   display: flex;
   margin-top: 20px;
