@@ -1,64 +1,68 @@
 .topCarsRated_title {
-  font-size: 25px;
-  font-weight: 500;
-  padding: 10px 7%;
-  height: 100px;
-  background: #efefef;
-  border-radius: 15px;
-  color: #d53535;
-  margin-bottom: 20px;
-  margin-top: 40px;
+	font-size: 25px;
+	font-weight: 500;
+	padding: 10px 7%;
+	height: 100px;
+	background: #efefef;
+	border-radius: 15px;
+	color: #d53535;
+	margin-bottom: 20px;
+	margin-top: 40px;
 }
 .topRatedCarCard_title_link {
-  color: #a40000;
-  font-weight: 600;
+	color: #a40000;
+	font-weight: 600;
 }
 .topRatedCarCard {
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid #efefef;
-  margin-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-bottom: 2px solid #efefef;
+	margin-bottom: 60px;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	overflow: hidden;
 }
 .topRatedCarCard_details {
-  width: 100%;
+	width: 100%;
 }
-.topRatedCarCard_link {
-  margin-right: 5%;
-}
+/* .topRatedCarCard_link {
+	margin-right: 5%;
+} */
 .topRatedCarCard_img {
-  width: 148px;
-  height: 112px;
-  border-radius: 7px;
-  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
-  border: 0.1px solid #fff;
+	width: 100%;
+	/* height: 112px; */
+	border-radius: 7px;
+	/* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
+	border: 0.1px solid #fff;
 }
 
 .topRatedCarCard_reviewCard {
-  display: flex;
-  width: auto;
-  align-items: center;
+	display: flex;
+	width: auto;
+	align-items: center;
 }
 .topRatedCarCard_rateNum {
-  font-size: 26px;
-  font-weight: 500;
-  margin-right: 10px;
-  color: #727272;
-  width: 59px;
+	font-size: 26px;
+	font-weight: 500;
+	margin-right: 10px;
+	color: #727272;
+	width: 59px;
 }
 
 .topRatedCarCard_resale {
-  font-weight: 600;
-  font-size: 13px;
-  margin-bottom: 0;
-  color: #a2a2a2;
+	font-weight: 600;
+	font-size: 13px;
+	margin-bottom: 0;
+	color: #a2a2a2;
 }
 .topRatedCarCard_reli {
-  font-weight: 600;
-  font-size: 13px;
-  margin-bottom: 0;
-  color: #a2a2a2;
+	font-weight: 600;
+	font-size: 13px;
+	margin-bottom: 0;
+	color: #a2a2a2;
 }
 .stylingStars {
-  margin-top: -5px;
-  width: 113px;
+	margin-top: -5px;
+	width: 113px;
 }

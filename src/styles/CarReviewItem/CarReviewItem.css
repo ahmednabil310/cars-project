@@ -1,0 +1,93 @@
+.CarReviewItem {
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	overflow: hidden;
+	margin: 0 2%;
+}
+
+.CarReviewItem img {
+	border-radius: 12px;
+	cursor: pointer;
+}
+
+.CarReviewItem .dashed-line {
+	border-top: thin dashed #ddd;
+}
+
+.CarReviewItem__title {
+	color: #3e3e3e;
+	font-size: 17px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.CarReviewItem__modelyear {
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+}
+
+.CarReviewItem__modelyear {
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+}
+
+.CarReviewItem_reviews {
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+}
+
+.CarReviewItem__postedin {
+	color: #3e3e3e;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.CarReviewItem__total__review {
+	color: #312f2f;
+	font-size: 15px;
+}
+
+/* .CarReviewItem__rating {
+
+} */
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.CarReviewItem__title {
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.CarReviewItem__modelyear {
+		color: #727272;
+		font-size: 14px;
+	}
+
+	.CarReviewItem__modelyear {
+		font-weight: bold;
+		color: #727272;
+		font-size: 14px;
+	}
+
+	.CarReviewItem_reviews {
+		font-weight: bold;
+		color: #727272;
+		font-size: 14px;
+	}
+
+	.CarReviewItem__postedin {
+		color: #3e3e3e;
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.CarReviewItem__total__review {
+		font-size: 13px;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
