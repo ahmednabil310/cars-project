@@ -104,7 +104,7 @@ class MostLikeReview extends Component {
                   </div>
                   <div className="MostLikeReview_cardContainer last-one col-12 col-sm-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
                     <div className="row no-gutters w-100">
-                      <div className="col-6 col-sm-8 col-md-8 d-flex justify-content-end align-items-center">
+                      <div className="col-10 col-sm-10 col-md-10 pr-4 d-flex justify-content-end align-items-center">
                         <div className="mostLikedReviewCarCard_details">
                           <div className="mostLikedReviewCarCard_title mb-2">
                             {item.fullName}
@@ -114,7 +114,7 @@ class MostLikeReview extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="col-6 col-sm-4 col-md-4 d-flex justify-content-center justify-content-sm-end align-items-center">
+                      <div className="col-2 col-sm-2 col-md-2 d-flex justify-content-center justify-content-sm-end align-items-center">
                         <img
                           src={item.profilePic}
                           className="img-fluid"

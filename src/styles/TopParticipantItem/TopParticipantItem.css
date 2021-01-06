@@ -1,89 +1,90 @@
 .TopParticipantItem {
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 15px;
-	width: 280px !important;
-	height: 120px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 280px !important;
+  height: 120px !important;
 }
 
 .TopParticipantItem__title {
-	font-family: Poppins;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 34px;
-	letter-spacing: 0em;
-	text-align: left;
-	color: rgba(30, 30, 30, 1);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(30, 30, 30, 1);
 }
 
 .TopParticipantItem .image__container {
-	border-radius: 15px;
-	overflow: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0px 15px 0px 10px;
 }
 
 .TopParticipantItem .image__container img {
-	border-radius: 15px;
-	width: 100px;
-	height: 90px;
+  border-radius: 15px;
+  width: 95px;
+  height: 95px;
 }
 
 .TopParticipantItem__total__posts {
-	font-family: Poppins;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 30px;
-	letter-spacing: 0em;
-	text-align: left;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .TopParticipantItem__joind__on {
-	font-family: Poppins;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 23px;
-	letter-spacing: 0em;
-	text-align: left;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.TopParticipantItem {
-		padding-bottom: 0 !important;
-	}
+  .TopParticipantItem {
+    padding-bottom: 0 !important;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.TopParticipantItem__title {
-		font-size: 14px;
-	}
-	/* .TopParticipantItem__total__posts {
+  .TopParticipantItem__title {
+    font-size: 14px;
+  }
+  /* .TopParticipantItem__total__posts {
 		font-size: 13px;
 	} */
-	.TopParticipantItem.mx-2 {
-		margin-left: 16px !important;
-		margin-right: 16px !important;
-	}
+  .TopParticipantItem.mx-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.TopParticipantItem {
-		width: 291px;
-	}
+  .TopParticipantItem {
+    width: 291px;
+  }
 
-	.TopParticipantItem__total__posts {
-		font-size: 13px;
-	}
-	/* .TopParticipantItem.mx-2 {
+  .TopParticipantItem__total__posts {
+    font-size: 13px;
+  }
+  /* .TopParticipantItem.mx-2 {
 	} */
-	.TopParticipantItem.col-xl-2 {
-		width: 260px !important;
-		max-width: 260px !important;
-		flex: 0 0 18.777777% !important;
-		margin-left: 16px !important;
-		margin-right: 16px !important;
-	}
+  .TopParticipantItem.col-xl-2 {
+    width: 274px !important;
+    max-width: 274px !important;
+    flex: 0 0 18.777777% !important;
+    margin-left: 16px !important;
+    margin-right: 0px !important;
+  }
 }

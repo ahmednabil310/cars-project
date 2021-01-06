@@ -1,7 +1,7 @@
 import '../../styles/HomePageStyles/Header.css';
-import headerImg1 from '../../images/car1.webp';
-import headerImg2 from '../../images/car2.webp';
-import headerImg3 from '../../images/car3.webp';
+import headerImg1 from '../../images/new1.webp';
+import headerImg2 from '../../images/new2.webp';
+import headerImg3 from '../../images/new3.webp';
 // the hook
 import { useTranslation } from 'react-i18next';
 
