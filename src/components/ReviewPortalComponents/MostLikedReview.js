@@ -60,8 +60,8 @@ class MostLikeReview extends Component {
               <div key={i} className="review-card-comment">
                 <div className="MostLikeReview_cards row no-gutters justify-content-between align-items-center mx-2 mt-1 pt-0 pb-3">
                   <div className="MostLikeReview_cardContainer col-12 col-md-8">
-                    <div className="row">
-                      <div className="col-12 col-md-4">
+                    <div className="row w-100">
+                      <div className="col-12 col-md-4 mostLiked-image-container">
                         <img
                           style={{ cursor: 'pointer' }}
                           src={item.imageURL}
