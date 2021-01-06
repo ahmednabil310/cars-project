@@ -25,29 +25,20 @@ class TopRatedCars extends Component {
 			<div>
 				<div className="reviewPortal_sectionTitle d-flex justify-content-between align-items-center">
 					<h3 className="mb-0">Top Rated Cars</h3>
-					<h5 className="text-capitalize mb-0 see-all-btn">
-						See All Top Rated cars{' '}
-						<span className="d-inline-block ml-2">
-							<img className="img-fluid" src={rightIcon} alt="rightIcon" />
-						</span>
-					</h5>
 				</div>
 				<div className={'reviewPortal_sectionSeparator'} />
 
-				<div
-					className="row flex-nowrap my-4 px-3"
-					style={{ overflowX: 'auto' }}
-				>
+				<div className="row my-4 overflow-container">
 					{this.props.ListCarsRate.length > 0
 						? this.props.ListCarsRate
 								// .slice(0,this.state.viewAll ? Infinity : 5)
 								.map((item, i) => {
 									return (
 										<div
-											className="topRatedCarCard col-12 col-sm-5 col-md-4 col-lg-3 mx-2"
+											className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mx-2"
 											key={i}
 										>
-											<div className="row">
+											<div className="row topRatedCarCard">
 												<div className="topRatedCarCard_link col-12 px-0 mb-3 mt-0 w-100">
 													<img
 														className="topRatedCarCard_img img-fluid"
@@ -89,7 +80,7 @@ class TopRatedCars extends Component {
 																	size={'12px'}
 																	count={5}
 																	size={24}
-																	activeColor="#d53535"
+																	activeColor="#EFAA24"
 																	value={parseInt(item.reliability)}
 																/>
 															</div>
@@ -110,7 +101,7 @@ class TopRatedCars extends Component {
 																	edit={false}
 																	count={5}
 																	size={24}
-																	activeColor="#d53535"
+																	activeColor="#EFAA24"
 																	value={parseInt(item.resaleValue)}
 																/>
 															</div>

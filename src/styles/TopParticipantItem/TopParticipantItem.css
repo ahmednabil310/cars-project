@@ -23,3 +23,32 @@
 		padding-bottom: 0 !important;
 	}
 }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.TopParticipantItem__title {
+		font-size: 14px;
+	}
+	.TopParticipantItem__total__posts {
+		font-size: 13px;
+	}
+	.TopParticipantItem.mx-2 {
+		margin-left: 16px !important;
+		margin-right: 16px !important;
+	}
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.TopParticipantItem__title {
+		font-size: 14px;
+	}
+	.TopParticipantItem__total__posts {
+		font-size: 13px;
+	}
+	.TopParticipantItem.mx-2 {
+		margin-left: 21px !important;
+		margin-right: 21px !important;
+		height: 120px;
+	}
+}

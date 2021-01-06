@@ -4,7 +4,6 @@ import actions from '../../redux/actions';
 import { bindActionCreators } from 'redux';
 
 import TopParticipantItem from '../TopParticipantItem/TopParticipantItem';
-import rightIcon from '../../images/right-icon.png';
 
 class TopParticipants extends Component {
 	constructor(props) {
@@ -23,16 +22,10 @@ class TopParticipants extends Component {
 			<>
 				<div className="reviewPortal_sectionTitle d-flex justify-content-between align-items-center">
 					<h3 className="mb-0">Top Participants</h3>
-					<h5 className="text-capitalize mb-0 see-all-btn">
-						See All Top Participants{' '}
-						<span className="d-inline-block ml-2">
-							<img className="img-fluid" src={rightIcon} alt="rightIcon" />
-						</span>
-					</h5>
 				</div>
 				<div className={'reviewPortal_sectionSeparator'} />
 
-				<div className="row flex-nowrap flex-lg-wrap my-4 px-3 overflow-container">
+				<div className="row my-4 overflow-container lg-overflow">
 					{this.props.ListParticipants.length > 0
 						? this.props.ListParticipants
 								// .slice(0,this.state.viewAll ? Infinity : 5,)
