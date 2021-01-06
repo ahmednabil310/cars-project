@@ -13,8 +13,8 @@ const TopReviewItem = ({
 	ratingStar,
 }) => {
 	return (
-		<div className="CarReviewItem col-12 col-sm-5 col-md-4 col-lg-2 mx-2">
-			<div className="row">
+		<div className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 px-1 mb-4">
+			<div className="row CarReviewItem">
 				<div className="col-12 px-0 mb-3 mt-0">
 					<img
 						className="img-fluid"
@@ -25,20 +25,13 @@ const TopReviewItem = ({
 				</div>
 				<div className="col-12">
 					<p
-						className="CarReviewItem__title"
+						className="CarReviewItem__title topReviewTitle"
 						onClick={onClickFunc}
 					>{`${make} ${model}`}</p>
-					<p className="CarReviewItem__modelyear">
+					<p className="CarReviewItem__modelyear top__review mb-2 pb-2">
 						Model Year: <span style={{ color: '#4c545c' }}>{year}</span>
 					</p>
-					<p className="CarReviewItem_reviews">{subject}</p>
-					<hr className="dashed-line" />
-					<div className="d-flex justify-content-between align-items-center mb-0">
-						<p className="CarReviewItem__total__review mb-0">
-							Total Reviews: <strong>{totalReviews}</strong>
-						</p>
-						<p className="CarReviewItem__rating mb-0"> {ratingStar}</p>
-					</div>
+					{/* <p className="CarReviewItem_reviews mb-0">{subject}</p> */}
 				</div>
 			</div>
 		</div>
