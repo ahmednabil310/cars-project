@@ -8,7 +8,7 @@ const TopParticipantItem = ({
 	totalPost,
 }) => {
 	return (
-		<div className="TopParticipantItem col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-2 my-2 p-2">
+		<div className="TopParticipantItem d-flex align-items-center col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-2 my-2 p-2 px-3">
 			<div className="row">
 				<div className="col-5 col-lg-5 col-xl-6 image__container d-flex justify-content-center align-items-center">
 					<img className="img-fluid" src={profilePic} alt={fullName} />
