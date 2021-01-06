@@ -1,54 +1,55 @@
 .TopParticipantItem {
-	border: 1px solid #ddd;
-	border-radius: 12px;
-	margin: 0 2%;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin: 0 2%;
 }
 
 .TopParticipantItem .image__container {
-	border-radius: 12px;
-	overflow: hidden;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .TopParticipantItem .image__container img {
-	border-radius: 12px;
+  border-radius: 12px;
 }
 
 .TopParticipantItem__joind__on {
-	font-size: 12px;
+  font-size: 12px;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-	.TopParticipantItem {
-		padding-bottom: 0 !important;
-	}
+  .TopParticipantItem {
+    padding-bottom: 0 !important;
+  }
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-	.TopParticipantItem__title {
-		font-size: 14px;
-	}
-	.TopParticipantItem__total__posts {
-		font-size: 13px;
-	}
-	.TopParticipantItem.mx-2 {
-		margin-left: 16px !important;
-		margin-right: 16px !important;
-	}
+  .TopParticipantItem__title {
+    font-size: 14px;
+  }
+  .TopParticipantItem__total__posts {
+    font-size: 13px;
+  }
+  .TopParticipantItem.mx-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.TopParticipantItem__title {
-		font-size: 14px;
-	}
-	.TopParticipantItem__total__posts {
-		font-size: 13px;
-	}
-	.TopParticipantItem.mx-2 {
-		margin-left: 21px !important;
-		margin-right: 21px !important;
-		height: 120px;
-	}
+  .TopParticipantItem__title {
+    font-size: 18px;
+    font-weight: 600 !important;
+  }
+  .TopParticipantItem__total__posts {
+    font-size: 13px;
+  }
+  .TopParticipantItem.mx-2 {
+    margin-left: 21px !important;
+    margin-right: 21px !important;
+    height: 120px;
+  }
 }
