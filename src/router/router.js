@@ -1,5 +1,10 @@
 import React, { lazy, Suspense } from 'react';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  HashRouter,
+} from 'react-router-dom';
 import BuyerGuide from '../components/Info/BuyerGuide';
 import PrivacyPolicy from '../components/Info/PrivacyPolicy';
 import TermsAndCond from '../components/Info/TermsAndCond';
@@ -11,16 +16,19 @@ const Home = lazy(() => import('../pages/Home'));
 const NewCarPricing = lazy(() => import('../pages/NewCarPricing'));
 const DealerDetails = lazy(() => import('../pages/DealerDetails'));
 const CarsAvailable = lazy(() => import('../pages/CarsAvailable'));
-const CarsDetailsSmall = lazy(() => import('../components/CarsAvailableComponents/CarsDetailsSmall'));
+const CarsDetailsSmall = lazy(() =>
+  import('../components/CarsAvailableComponents/CarsDetailsSmall'),
+);
 const Footer = lazy(() => import('../components/Footer'));
 const ReviewPortal = lazy(() => import('../pages/ReviewPortal'));
-const CarCard = lazy(() => import('../components/SubComponents/CarCard/CarCard'));
+const CarCard = lazy(() =>
+  import('../components/SubComponents/CarCard/CarCard'),
+);
 
 const RouterDocument = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Router basename="/"  >
-        
+      <HashRouter>
         <Nav />
         <Switch>
           <Route path="/" component={Home} exact />
@@ -33,11 +41,9 @@ const RouterDocument = () => {
           <Route path="/buyer-guide" component={BuyerGuide} />
           <Route path="/terms-of-use" component={TermsAndCond} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
-
-
         </Switch>
         <Footer />
-      </Router>
+      </HashRouter>
     </Suspense>
   );
 };
