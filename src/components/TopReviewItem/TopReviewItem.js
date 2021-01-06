@@ -13,7 +13,7 @@ const TopReviewItem = ({
 	ratingStar,
 }) => {
 	return (
-		<div className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 px-1 mb-4">
+		<div className="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 px-1 mb-4">
 			<div className="row CarReviewItem">
 				<div className="col-12 px-0 mb-3 mt-0">
 					<img

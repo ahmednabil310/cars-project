@@ -83,8 +83,7 @@
 		width: 260px !important;
 		max-width: 260px !important;
 		flex: 0 0 18.777777% !important;
+		margin-left: 16px !important;
+		margin-right: 16px !important;
 	}
 }
-
-/* margin-left: 21px !important;
-	margin-right: 21px !important; */
