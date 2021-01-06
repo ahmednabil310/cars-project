@@ -1,142 +1,152 @@
 .paddingSchema {
-  padding: 0px 110px;
+	padding: 0px 110px;
 }
 .ReviewPortalTitle {
-  padding: 22px 110px;
-  background: #727272;
-  color: #fff;
-  font-size: 45px;
-  font-weight: 700;
+	padding: 22px 110px;
+	background: #727272;
+	color: #fff;
+	font-size: 45px;
+	font-weight: 700;
 }
 
+/* .reviewPortal_sectionTitle:first-of-type {
+	border-top: none;
+} */
+
+.reviewPortal_sectionTitle .see-all-btn {
+	color: #d53535;
+	cursor: pointer;
+	font-size: 17px;
+}
 .reviewPortal_sectionTitle {
-  font-size: 30px;
-  font-weight: 600;
-  padding: 20px 0px;
+	font-size: 30px;
+	font-weight: 600;
+	padding: 15px 0px;
+	border-top: 2px solid #e5e5e5;
 }
 
 .reviewPortal_sectionSeparator {
-  border-top: 5px solid #d53535;
-  border-bottom: 5px solid #efefef;
+	/* border-top: 5px solid #d53535; */
+	border-bottom: 2px solid #e5e5e5;
 }
 
 .carReviewCard {
-  display: flex;
-  align-items: center;
-  /* width: 97%; */
-  margin: 6% 0;
-  height: 125px;
-  /* background-color: #f2f2f2; */
-  border-radius: 0 9px 9px 0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+	display: flex;
+	align-items: center;
+	/* width: 97%; */
+	margin: 6% 0;
+	height: 125px;
+	/* background-color: #f2f2f2; */
+	border-radius: 0 9px 9px 0;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
 }
 
 .carReviewCard_img {
-  width: 50%;
-  height: 126px;
-  border-radius: 0px;
-  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
-  border: 0.1px solid #fff;
-  margin-right: 3%;
+	width: 50%;
+	height: 126px;
+	border-radius: 0px;
+	/* box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19); */
+	border: 0.1px solid #fff;
+	margin-right: 3%;
 }
 
 .carReviewCard_title {
-  color: #3e3e3e;
-  font-size: 17px;
-  font-weight: 700;
+	color: #3e3e3e;
+	font-size: 17px;
+	font-weight: 700;
 }
 .carReviewCard_desc {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .carReviewCard_subj {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .carReviewCard_date {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .carReviewCard_modelyear {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .carReviewCard_reviews {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .carReviewCard_model {
-  font-weight: bold;
-  color: #727272;
-  font-size: 14px;
-  margin-top: 5px;
+	font-weight: bold;
+	color: #727272;
+	font-size: 14px;
+	margin-top: 5px;
 }
 .reviewPortal_viewAll {
-  font-size: 15px;
-  color: #0089ff;
-  text-decoration: underline;
-  cursor: pointer;
+	font-size: 15px;
+	color: #0089ff;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 .participantsReviewCard {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 9.5% 0 11%;
-  height: 42.2px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 9.5% 0 11%;
+	height: 42.2px;
 }
 .participantsReviewCard_img {
-  width: 12%;
-  border-radius: 50%;
-  margin-left: 39px;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 22px 0 rgba(0, 0, 0, 0.19);
-  border: 0.1px solid #fff;
+	width: 12%;
+	border-radius: 50%;
+	margin-left: 39px;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 4px 22px 0 rgba(0, 0, 0, 0.19);
+	border: 0.1px solid #fff;
 }
 .participantsReviewCard_details {
-  margin-left: 7%;
+	margin-left: 7%;
 }
 .participantsReviewCard_title {
-  color: #a40000;
-  font-size: 17px;
-  font-weight: 600;
+	color: #a40000;
+	font-size: 17px;
+	font-weight: 600;
 }
 .participantsReviewCard_subTitle {
-  color: #727272;
-  font-size: 13px;
-  font-weight: 500;
+	color: #727272;
+	font-size: 13px;
+	font-weight: 500;
 }
 .participantsReviewCard_subTitleTwo {
-  color: #727272;
-  font-size: 13px;
-  font-weight: 500;
+	color: #727272;
+	font-size: 13px;
+	font-weight: 500;
 }
 .participantsReviewCard_order {
-  color: #c4c4c4;
-  font-size: 45px;
-  margin-left: auto;
+	color: #c4c4c4;
+	font-size: 45px;
+	margin-left: auto;
 }
 
 .writeReviewBtn {
-  height: 85px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 25px;
-  color: white;
-  background: #d53535;
-  border-radius: 5px;
-  cursor: pointer;
+	height: 85px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 25px;
+	color: white;
+	background: #d53535;
+	border-radius: 5px;
+	cursor: pointer;
 }
 .carReviewCard_date,
 .carReviewCard_desc,
@@ -144,74 +154,74 @@
 .carReviewCard_modelyear,
 .carReviewCard_reviews,
 .carReviewCard_subj {
-  font-weight: 400 !important;
-  color: #8b8b8b !important;
-  font-size: 14px !important;
-  margin-top: 5px !important;
+	font-weight: 400 !important;
+	color: #8b8b8b !important;
+	font-size: 14px !important;
+	margin-top: 5px !important;
 }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  .paddingSchema {
-    padding: 0px 20px;
-  }
-  .carReviewCard_img {
-    width: 40%;
-  }
-  .ReviewPortalTitle {
-    padding: 22px 20px;
-    font-size: 30px;
-  }
+	.paddingSchema {
+		padding: 0px 20px;
+	}
+	.carReviewCard_img {
+		width: 40%;
+	}
+	.ReviewPortalTitle {
+		padding: 22px 20px;
+		font-size: 30px;
+	}
 }
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .paddingSchema {
-    padding: 0px 20px;
-  }
-  .carReviewCard_img {
-    width: 40%;
-  }
-  .ReviewPortalTitle {
-    padding: 22px 20px;
-    font-size: 40px;
-  }
-  .mostLikedReviewCarCard_img {
-    width: 25%;
-  }
-  .mostLikedReviewParticipantCard_img {
-    width: 20%;
-  }
+	.paddingSchema {
+		padding: 0px 20px;
+	}
+	.carReviewCard_img {
+		width: 40%;
+	}
+	.ReviewPortalTitle {
+		padding: 22px 20px;
+		font-size: 40px;
+	}
+	.mostLikedReviewCarCard_img {
+		width: 25%;
+	}
+	.mostLikedReviewParticipantCard_img {
+		width: 20%;
+	}
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .paddingSchema {
-    padding: 0px 20px;
-  }
-  .ReviewPortalTitle {
-    padding: 22px 20px;
-  }
-  .reviewPortal_sectionTitle {
-    font-size: 25px;
-  }
-  .mostLikedReviewCarCard_img {
-    width: 25%;
-  }
-  .mostLikedReviewParticipantCard_img {
-    width: 20%;
-  }
+	.paddingSchema {
+		padding: 0px 20px;
+	}
+	.ReviewPortalTitle {
+		padding: 22px 20px;
+	}
+	.reviewPortal_sectionTitle {
+		font-size: 25px;
+	}
+	.mostLikedReviewCarCard_img {
+		width: 25%;
+	}
+	.mostLikedReviewParticipantCard_img {
+		width: 20%;
+	}
 }
 
 @media (min-width: 760px) and (max-width: 1093px) {
-  .carReviewCard_img {
-    width: 35%;
-  }
+	.carReviewCard_img {
+		width: 35%;
+	}
 }
 @media (max-width: 575.98px) {
-  .carReviewCard_img {
-    width: 47%;
-  }
-  .participantsReviewCard_img {
-    margin-left: 0px;
-  }
+	.carReviewCard_img {
+		width: 47%;
+	}
+	.participantsReviewCard_img {
+		margin-left: 0px;
+	}
 }

@@ -89,10 +89,10 @@ class ReviewPortalComp extends Component {
 							<div className="col-12 col-sm-12 col-md-12 col-lg-12 pl-0">
 								<TopReviews />
 							</div>
-							<div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pl-0">
+							<div className="col-12 col-sm-12 col-md-12 col-lg-12 pl-0">
 								<TopRatedCars />
 							</div>
-							<div className="col-12 col-sm-6 col-md-6 col-lg-4 pl-0">
+							<div className="col-12 col-sm-12 col-md-12 col-lg-12 pl-0">
 								<TopParticipants />
 							</div>
 						</div>

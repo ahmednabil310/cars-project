@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import CarReviewItem from '../CarReviewItem/CarReviewItem';
+import rightIcon from '../../images/right-icon.png';
 
 class LatestCarReview extends Component {
 	constructor(props) {
@@ -21,7 +22,18 @@ class LatestCarReview extends Component {
 	render() {
 		return (
 			<>
-				<div className={'reviewPortal_sectionTitle'}>Latest Car Review</div>
+				<div
+					className="reviewPortal_sectionTitle d-flex justify-content-between align-items-center"
+					style={{ borderTop: 'none' }}
+				>
+					<h3 className="mb-0">Latest Car Review</h3>
+					<h5 className="text-capitalize mb-0 see-all-btn">
+						See All Latest car review{' '}
+						<span className="d-inline-block ml-2">
+							<img className="img-fluid" src={rightIcon} alt="rightIcon" />
+						</span>
+					</h5>
+				</div>
 				<div className={'reviewPortal_sectionSeparator'} />
 
 				<div

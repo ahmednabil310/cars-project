@@ -1,0 +1,25 @@
+.TopParticipantItem {
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	margin: 0 2%;
+}
+
+.TopParticipantItem .image__container {
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.TopParticipantItem .image__container img {
+	border-radius: 12px;
+}
+
+.TopParticipantItem__joind__on {
+	font-size: 12px;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.TopParticipantItem {
+		padding-bottom: 0 !important;
+	}
+}

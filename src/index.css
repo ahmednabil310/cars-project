@@ -1,54 +1,87 @@
 :root {
-  --mainRed: #d53535;
-  --mainGray: #727272;
+	--mainRed: #d53535;
+	--mainGray: #727272;
 }
 
 .main__red {
-  color: var(--mainRed);
+	color: var(--mainRed);
 }
 
 .main__gary {
-  color: var(--mainGray);
+	color: var(--mainGray);
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 .custom__container {
-  width: 100%;
-  padding: 0px 110px 24px;
+	width: 100%;
+	padding: 0px 110px 24px;
 }
 
 hr {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .mb-3,
 .my-3 {
-  margin-bottom: 1rem !important;
-  margin-top: 10px;
+	margin-bottom: 1rem !important;
+	margin-top: 10px;
+}
+
+.overflow-container {
+	overflow-x: inherit;
 }
 
 @media (max-width: 1199.98px) {
-  .custom__container {
-    width: 100%;
-    padding: 0 20px;
-  }
-  .paddingSchema {
-    padding: 0px 20px !important;
-  }
+	.custom__container {
+		width: 100%;
+		padding: 0 20px;
+	}
+	.paddingSchema {
+		padding: 0px 20px !important;
+	}
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.overflow-container {
+		overflow-x: auto;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.overflow-container {
+		overflow-x: auto;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.overflow-container {
+		overflow-x: auto;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
