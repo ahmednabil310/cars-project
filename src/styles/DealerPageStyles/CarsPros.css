@@ -1,25 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .cars-pros-container {
-  padding: 0 110px;
-  margin-bottom: 56px;
+  padding: 0 200px;
+  margin-bottom: 40px;
+}
+.car-cons,
+.car-pros {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 20px 30px 25px 30px;
+}
+.title-container {
+  border-bottom: 1px solid #e6e6e6;
 }
 .car-pros .pros,
 .cons {
-  font-size: 33px;
-  font-weight: 500;
-  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d53535;
   font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  padding-bottom: 2px;
+}
+.right-arrow {
+  padding-left: 3px;
+  font-weight: 400;
+  margin-top: 3px;
 }
 .cars-pros-container .pros-content {
   display: flex;
   align-items: end;
+  padding-top: 16px;
+}
+.pros-content {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 15px;
 }
 .pros-content h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: -3px;
   text-transform: capitalize;
+  padding-left: 23px;
+  min-height: 26px;
+  align-self: flex-end;
 }
 @media (max-width: 1200px) {
   .cars-pros-container {
@@ -27,13 +52,17 @@
   }
 }
 @media (max-width: 992px) {
-  .cons {font-size: 25px;}
+  .cons {
+    font-size: 25px;
+  }
   .cons {
     padding-top: 25px;
   }
 }
 @media (max-width: 576px) {
-  .cons {font-size: 25px;}
+  .cons {
+    font-size: 25px;
+  }
   .car-pros svg,
   .car-cons svg {
     width: 200px;

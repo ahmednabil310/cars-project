@@ -1,20 +1,35 @@
 .car-details-container {
-  padding: 0 110px;
-  margin-top: 38px;
-  margin-bottom: 59px;
+  padding: 0 200px;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
+.bigger-image {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .bigger-image img {
-  height: 100%;
-  max-width: 100%;
-  padding-bottom: 10px;
+  border-radius: 20px;
+  height: auto;
+  width: 100%;
+}
+.bigger-image-first img {
+  padding-right: 9px;
+  width: 100% !important;
 }
 @media (max-width: 1200px) {
   .car-details-container {
     padding: 0 20px;
   }
+  .bigger-image-first img {
+    padding-right: 0px;
+  }
   .bigger-image img {
-    width: 386px !important;
-    height: 269px !important;
+    padding: 0px 3px 0px 3px;
+  }
+}
+@media (max-width: 992px) {
+  .bigger-image img {
     padding-bottom: 10px;
   }
 }

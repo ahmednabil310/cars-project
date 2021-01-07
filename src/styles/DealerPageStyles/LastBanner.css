@@ -1,37 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .last-banner {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-family: 'Poppins', sans-serif;
-  background: #efefef;
-  padding: 0px 110px;
+  padding: 0px 174px 0px 183px;
+}
+.last-banner-inner-container {
+  background-color: #f4f8fb;
+  border-radius: 20px;
+  width: 100%;
+}
+.last-banner-inner-container img {
+  margin-left: 105px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+.last-banner-content {
+  padding-top: 49px;
 }
 .last-banner .banner-title {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 500;
-  padding-right: 85px;
+  color: #2b2b2b;
+  padding-bottom: 30px;
 }
 .last-banner .banner-title span {
   color: #d53535;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 30px;
 }
-.last-banner .banner-price {
-  margin-top: 15px;
-  padding-right: 50px;
-}
+
 .last-banner .price-detail {
-  font-weight: 400;
-  font-size: 28px;
-  color: #727272;
-  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 26px;
+  color: #1a1a1a;
 }
 .last-banner .price-range {
-  font-weight: 900;
-  font-size: 25px;
-  color: #666666;
+  font-weight: 600;
+  font-size: 26px;
+  color: #1a1a1a;
 }
-.pb-5,
-.py-5 {
-  padding-bottom: 3rem !important;
-}
+
 @media (max-width: 1200px) {
   .last-banner {
     padding: 96px 20px;
@@ -48,14 +57,18 @@
   }
 }
 @media (max-width: 992px) {
-  .last-banner .price-range {font-size: 25px;}
+  .last-banner .price-range {
+    font-size: 25px;
+  }
   .last-banner .banner-content {
     flex-direction: column !important;
     align-items: flex-start !important;
   }
 }
 @media (max-width: 600px) {
-  .last-banner .price-range {font-size: 20px;}
+  .last-banner .price-range {
+    font-size: 20px;
+  }
   .last-banner .banner-content {
     flex-direction: column;
     align-items: flex-start !important;

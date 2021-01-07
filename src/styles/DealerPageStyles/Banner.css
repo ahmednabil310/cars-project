@@ -1,53 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-.banner-container {
-  background-color: #707070;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .banner-content {
-  padding: 43px 110px;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
+  padding: 38px 200px 0px 200px;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.banner-inner-content {
+  margin-bottom: 10px;
 }
 .banner-title {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 600;
 }
 .banner-list {
   list-style: none;
+  padding-top: 12px;
 }
 .banner-list a {
-  color: white;
   text-decoration: none;
 }
+.banner-list li {
+  color: #d53535;
+  font-size: 16px;
+  font-weight: 500;
+}
 .banner-list li:nth-child(1) {
-  padding-right: 51px;
-  font-size: 20px;
-  font-weight: 400;
+  padding-right: 33px;
 }
 .banner-list li:nth-child(2) {
-  padding-right: 51px;
-  font-size: 20px;
-  font-weight: 400;
+  padding-right: 33px;
 }
-.banner-list li:nth-child(3) {
-  font-size: 20px;
-  font-weight: 400;
-}
+/* .banner-seprator {
+  margin: 0px !important;
+  padding: 0 200px;
+  height: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+} */
 @media (max-width: 1200px) {
   .banner-content {
-    flex-direction: column;
-    padding: 43px 20px;
-    align-items: center;
+    padding: 38px 20px 0px 20px;
   }
   .banner-list {
     padding-left: 0px !important;
   }
 }
+@media (max-width: 768px) {
+  .banner-inner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 @media (max-width: 576px) {
   .banner-title {
-    font-size: 22px;
+    font-size: 15px;
   }
   .banner-list li {
-    font-size: 17px !important;
+    font-size: 14px !important;
     padding-right: 10px !important;
   }
 }
