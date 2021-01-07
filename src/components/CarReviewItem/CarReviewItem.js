@@ -12,7 +12,7 @@ const CarReviewItem = ({
   onClickFunc,
 }) => {
   return (
-    <div className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 px-1">
+    <div className="col-8 col-sm-5 col-md-5 col-lg-3 col-xl-2 px-1">
       <div className="row CarReviewItem">
         <div className="col-12 px-0 mb-3 mt-0">
           <img

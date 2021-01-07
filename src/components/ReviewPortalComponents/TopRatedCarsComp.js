@@ -33,7 +33,7 @@ class TopRatedCars extends Component {
                 .map((item, i) => {
                   return (
                     <div
-                      className="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mx-2"
+                      className="col-8 col-sm-5 col-md-5 col-lg-3 col-xl-2 mx-2"
                       key={i}>
                       <div className="row topRatedCarCard">
                         <div className="topRatedCarCard_link col-12 px-0 mb-3 mt-0 w-100">

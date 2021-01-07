@@ -50,55 +50,10 @@ class LatestCarReview extends Component {
                         this.props.history.push(`/cardetail?type=${item.carId}`)
                       }
                     />
-                    // <div className="carReviewCard col-sm-2 col-md-2" key={i}>
-                    // 	<div className="row">
-                    // 		<div className="col-12">
-                    // 			<img
-                    // 				style={{ cursor: 'pointer' }}
-                    // 				src={item.carImage}
-                    // 				className="carReviewCard_img"
-                    // 				onClick={() =>
-                    // 					this.props.history.push(
-                    // 						`/cardetail?type=${item.carId}`
-                    // 					)
-                    // 				}
-                    // 			/>
-                    // 		</div>
-                    // 		<div className="col-12">
-                    // 			<div className="carReviewCard_details">
-                    // 				<div
-                    // 					className="carReviewCard_title"
-                    // 					style={{ cursor: 'pointer' }}
-                    // 					onClick={() =>
-                    // 						this.props.history.push(
-                    // 							`/cardetail?type=${item.carId}`
-                    // 						)
-                    // 					}
-                    // 				>{`${item.make} ${item.model}`}</div>
-                    // 				<div className="carReviewCard_desc">
-                    // 					Model Year: {item.year}
-                    // 				</div>
-                    // 				<div className="carReviewCard_subj">
-                    // 					{item.subject}
-                    // 				</div>
-                    // 				<div className="carReviewCard_date">
-                    // 					Posted on : {item.postedon.split('T')[0]}
-                    // 				</div>
-                    // 			</div>
-                    // 		</div>
-                    // 	</div>
-                    // </div>
                   );
                 })
             : null}
         </div>
-        {/* <div
-          className="reviewPortal_viewAll"
-          onClick={() => {
-            this.setState({ viewAll: !this.state.viewAll });
-          }}>
-          {this.state.viewAll ? 'View less' : 'View all latest cars reviews'}
-        </div> */}
       </>
     );
   }
