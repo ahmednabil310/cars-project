@@ -56,6 +56,7 @@
   .CarReviewItem__title {
     font-size: 14px;
     font-weight: 600;
+    height: 50px;
   }
 
   .CarReviewItem__modelyear {
@@ -108,6 +109,11 @@
     height: 45px;
   }
   .CarReviewItem__title.topReviewTitle {
+    height: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .CarReviewItem_reviews {
     height: 45px;
   }
 }

@@ -216,6 +216,7 @@
   }
   .topRatedCarCard_title {
     font-size: 14px;
+    height: 40px;
   }
   .topRatedCarCard_rateNum {
     font-size: 25px !important;
