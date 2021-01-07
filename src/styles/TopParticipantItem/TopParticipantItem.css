@@ -65,9 +65,11 @@
   .TopParticipantItem__title {
     font-size: 14px;
   }
-  /* .TopParticipantItem__total__posts {
-		font-size: 13px;
-	} */
+
+  .TopParticipantItem .image__container img {
+    max-width: 64px;
+    height: 60px;
+  }
   .TopParticipantItem.mx-2 {
     margin-left: 16px !important;
     margin-right: 16px !important;

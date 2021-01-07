@@ -24,7 +24,11 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
+.CarReviewItem__title:hover {
+  text-overflow: initial;
+  white-space: normal;
+  overflow: auto;
+}
 .CarReviewItem__modelyear {
   color: #3e3e3f;
   font-size: 14px;
@@ -34,11 +38,18 @@
 
 .CarReviewItem_reviews {
   color: #3e3e3f;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   margin-bottom: 0px !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-
+.CarReviewItem_reviews:hover {
+  text-overflow: initial;
+  white-space: normal;
+  overflow: auto;
+}
 .CarReviewItem__postedin {
   color: #1e1e1e;
   font-size: 15px;
@@ -103,9 +114,7 @@
   .CarReviewItem__modelyear.top__review {
     margin-bottom: 10px !important;
   }
-  .CarReviewItem_reviews {
-    height: 45px;
-  }
+
   .CarReviewItem__title {
     font-size: 12px;
   }
