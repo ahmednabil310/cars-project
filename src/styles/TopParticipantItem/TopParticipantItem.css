@@ -98,6 +98,7 @@
 @media (max-width: 576px) {
   .TopParticipantItem .image__container {
     justify-content: flex-start !important;
+    max-width: 20.333333% !important;
   }
   .TopParticipantItem .image__container img {
     border-radius: 15px;
