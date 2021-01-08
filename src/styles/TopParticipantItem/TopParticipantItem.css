@@ -115,9 +115,10 @@
 	.TopParticipantItem.col-xl-2 {
 		width: 274px !important;
 		max-width: 274px !important;
-		flex: 0 0 17.777777% !important;
+		flex: 0 0 17.977777% !important;
 		margin-left: 16px !important;
 		margin-right: 0px !important;
+		padding-right: 0;
 	}
 }
 @media (max-width: 1200px) {
@@ -140,7 +141,7 @@
 	}
 }
 
-@media (min-width: 1199px) and (max-width: 1600px) {
+@media (min-width: 1400px) {
 	.TopParticipantItem.col-xl-2 {
 		width: 274px !important;
 		max-width: 274px !important;
