@@ -5,7 +5,6 @@ const LoadingPage = props => {
 		zIndex: 2,
 		width: '150px',
 		height: '150px',
-		margin: '-75px 0 0 -75px',
 		border: '16px solid #f3f3f3',
 		borderRadius: '50%',
 		borderTop: '16px solid #3498db',
