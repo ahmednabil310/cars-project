@@ -10,7 +10,6 @@
   width: 100%;
 }
 .last-banner-inner-container img {
-  margin-left: 105px;
   margin-top: 14px;
   margin-bottom: 16px;
 }
@@ -37,7 +36,7 @@
 }
 .last-banner .price-range {
   font-weight: 600;
-  font-size: 26px;
+  font-size: 19px;
   color: #1a1a1a;
 }
 
@@ -52,9 +51,6 @@
   .last-banner .banner-title {
     font-size: 29px;
   }
-  .last-banner .price-range {
-    font-size: 27px;
-  }
 }
 @media (max-width: 992px) {
   .last-banner .price-range {
@@ -64,10 +60,19 @@
     flex-direction: column !important;
     align-items: flex-start !important;
   }
+  .last-banner-content {
+    padding-bottom: 15px;
+    margin-left: 19px;
+  }
+}
+@media (max-width: 768px) {
+  .last-banner .price-range {
+    font-size: 22px;
+  }
 }
 @media (max-width: 600px) {
   .last-banner .price-range {
-    font-size: 20px;
+    font-size: 12px;
   }
   .last-banner .banner-content {
     flex-direction: column;
@@ -81,5 +86,8 @@
   }
   .last-banner .banner-title {
     font-size: 21px;
+  }
+  .last-banner .banner-title span {
+    font-size: 22px;
   }
 }

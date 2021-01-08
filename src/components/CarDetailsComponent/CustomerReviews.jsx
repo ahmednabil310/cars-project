@@ -292,7 +292,7 @@ class CustomerReviews extends Component {
                       <div className="review" key={item.id}>
                         <div className="d-flex align-items-center">
                           <div className="review-title d-flex flex-row flex-wrap align-items-center ">
-                            <h2>{item.title}</h2>
+                            <h2>{item.fullName}</h2>
                             <ReactStars
                               edit={false}
                               count={5}
@@ -320,13 +320,13 @@ class CustomerReviews extends Component {
                               }}
                               style={
                                 this.state[item.id]
-                                  ? { color: 'red', fontSize: '25px' }
-                                  : { color: 'grey', fontSize: '25px' }
+                                  ? { color: 'red' }
+                                  : { color: 'grey' }
                               }></img>
                           </div>
                         </div>
+                        <span>{item.title}</span>
                         <p>{item.subject}</p>
-                        <span>{item.fullName}</span>
 
                         {item.userId === userId ? (
                           <div className="edit-delete-btns-container">

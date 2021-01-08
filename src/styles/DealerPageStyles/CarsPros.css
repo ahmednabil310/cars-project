@@ -58,10 +58,14 @@
   .cons {
     padding-top: 25px;
   }
+  .car-pros,
+  .car-cons {
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 576px) {
   .cons {
-    font-size: 25px;
+    font-size: 17px;
   }
   .car-pros svg,
   .car-cons svg {
@@ -69,5 +73,6 @@
   }
   .pros-content h2 {
     font-size: 12px;
+    min-height: 24px;
   }
 }

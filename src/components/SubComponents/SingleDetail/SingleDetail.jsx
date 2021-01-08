@@ -13,16 +13,16 @@ const SingleDetail = (props) => {
       {props.hasStar ? (
         <div className="single-detail d-flex ">
           <div className="d-flex align-items-center">
-            <img src={rightIcon} alt="rightIcon" width="26px" height="26px" />
+            <img src={rightIcon} alt="rightIcon" className="img-fluid" />
             <h5 className="mb-0">{t(props.title)}</h5>
             {props.info ? (
               <Link to="/buyer-guide" className="ml-2 notPadding">
-                <img src={infoIcon} />
+                <img src={infoIcon} className="img-fluid" />
               </Link>
             ) : null}
           </div>
 
-          <div className="stars-container d-flex pl-4 py-2">
+          <div className="stars-container d-flex py-1">
             {props.rate === null ? (
               <span className="not-stars">N/A</span>
             ) : (
@@ -44,7 +44,7 @@ const SingleDetail = (props) => {
             <h5 className="mb-0">{t(props.title)}</h5>
           </div>
           <div className="stars-container">
-            <p className="main__gary pl-4 py-2 mb-0">
+            <p className="main__gary py-1 mb-0">
               {props.Specifications}
               <span>{props.SpecificationsValue}</span>
             </p>

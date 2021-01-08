@@ -42,7 +42,7 @@ const FullCar = (props) => {
             </h4>
           </div>
           <div className="row no-gutters">
-            <div className="col-6 left-column-details">
+            <div className="col-lg-6 col-md-12 left-column-details">
               <SingleDetail
                 title={'Reliability'}
                 hasStar={true}
@@ -76,7 +76,7 @@ const FullCar = (props) => {
                 SpecificationsValue={props.data.torque_Nm}
               />
             </div>
-            <div className="col-6 right-column-details">
+            <div className="col-lg-6 col-md-12 right-column-details">
               <SingleDetail
                 title={' Gear Box'}
                 hasStar={false}
