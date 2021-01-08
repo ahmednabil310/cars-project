@@ -261,6 +261,9 @@
   }
 }
 @media (max-width: 576px) {
+  .review-title {
+    flex-direction: column !important;
+  }
   .consumerReviewBtn {
     padding: 8px !important;
     font-size: 10px !important;
@@ -292,7 +295,9 @@
     min-width: 113px;
   }
 }
-
+.customer-reviews-stars {
+  margin-left: -18px;
+}
 .consumer-reviews span::after {
   content: none;
   margin: 0 20px 0 20px;

@@ -293,14 +293,16 @@ class CustomerReviews extends Component {
                         <div className="d-flex align-items-center">
                           <div className="review-title d-flex flex-row flex-wrap align-items-center ">
                             <h2>{item.fullName}</h2>
-                            <ReactStars
-                              edit={false}
-                              count={5}
-                              size={24}
-                              activeColor="#EFAA24"
-                              classNames="consumer-reviews"
-                              value={parseInt(item.ratingStar)}
-                            />
+                            <span className="customer-reviews-stars">
+                              <ReactStars
+                                edit={false}
+                                count={5}
+                                size={24}
+                                activeColor="#EFAA24"
+                                classNames="consumer-reviews"
+                                value={parseInt(item.ratingStar)}
+                              />
+                            </span>
                           </div>
                           <div className="ml-auto">
                             {' '}
