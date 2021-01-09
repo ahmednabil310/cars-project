@@ -153,6 +153,14 @@
     margin-right: 0px !important;
   }
 }
+@media (max-width: 576px) {
+  .TopParticipantItem__total__posts {
+    font-size: 13px;
+  }
+  .TopParticipantItem__title {
+    font-size: 11px;
+  }
+}
 /* @media (max-width: 992px) {
   .TopParicipant-container {
     margin: 0px !important;

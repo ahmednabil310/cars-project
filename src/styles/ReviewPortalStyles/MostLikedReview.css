@@ -163,6 +163,14 @@
     padding-right: 0px !important;
   }
 }
+@media (max-width: 768px) {
+  .mostLiked-row {
+    margin: 0px !important;
+  }
+  .mostLiked-image-container {
+    padding: 10px;
+  }
+}
 @media (max-width: 576px) {
   .mostLikeReview_title {
     display: flex;
