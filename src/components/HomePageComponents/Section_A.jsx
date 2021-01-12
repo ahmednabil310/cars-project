@@ -31,48 +31,6 @@ const Section_A = () => {
               <span className="special">{t('Common')}</span>{' '}
               {t('types of choice')}
             </h3>
-            <svg
-              id="Component_6_1"
-              data-name="Component 6 – 1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="243.729"
-              height="36.969"
-              viewBox="0 0 243.729 36.969">
-              <defs>
-                <linearGradient
-                  id="linear-gradient"
-                  x1="0.5"
-                  x2="0.5"
-                  y2="1"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#d53535" />
-                  <stop offset="1" stopColor="#6b1b1b" />
-                </linearGradient>
-                <linearGradient
-                  id="linear-gradient-2"
-                  x1="0.777"
-                  x2="0.777"
-                  y2="1.686"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#efefef" />
-                  <stop offset="1" stopColor="#c4c4c4" />
-                </linearGradient>
-              </defs>
-              <path
-                id="Path_52"
-                data-name="Path 52"
-                d="M-180,0H42L62,33.969H-180Z"
-                transform="translate(180)"
-                fill="url(#linear-gradient)"
-              />
-              <path
-                id="Path_53"
-                data-name="Path 53"
-                d="M-180,0,59.808.207l3.921,6.566L-180,6.958Z"
-                transform="translate(180 30.01)"
-                fill="url(#linear-gradient-2)"
-              />
-            </svg>
           </div>
           <h4 className="note">
             {t(
@@ -80,7 +38,7 @@ const Section_A = () => {
             )}
           </h4>
           <div className="row">
-            <div className="row w-100 pb-5 cars-left">
+            <div className="row w-100cars-left">
               <SingleCar
                 name="Hatchback"
                 image={Hatchback}
@@ -118,48 +76,6 @@ const Section_A = () => {
               <span className="special">{t('Common')}</span>{' '}
               {t('types of make')}
             </h3>
-            <svg
-              id="Component_6_1"
-              data-name="Component 6 – 1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="243.729"
-              height="36.969"
-              viewBox="0 0 243.729 36.969">
-              <defs>
-                <linearGradient
-                  id="linear-gradient"
-                  x1="0.5"
-                  x2="0.5"
-                  y2="1"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#d53535" />
-                  <stop offset="1" stopColor="#6b1b1b" />
-                </linearGradient>
-                <linearGradient
-                  id="linear-gradient-2"
-                  x1="0.777"
-                  x2="0.777"
-                  y2="1.686"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#efefef" />
-                  <stop offset="1" stopColor="#c4c4c4" />
-                </linearGradient>
-              </defs>
-              <path
-                id="Path_52"
-                data-name="Path 52"
-                d="M-180,0H42L62,33.969H-180Z"
-                transform="translate(180)"
-                fill="url(#linear-gradient)"
-              />
-              <path
-                id="Path_53"
-                data-name="Path 53"
-                d="M-180,0,59.808.207l3.921,6.566L-180,6.958Z"
-                transform="translate(180 30.01)"
-                fill="url(#linear-gradient-2)"
-              />
-            </svg>
           </div>
           <h4 className="note">
             {t(

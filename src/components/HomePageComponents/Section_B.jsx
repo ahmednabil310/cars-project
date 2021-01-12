@@ -11,7 +11,6 @@ import ModelFields from '../SubComponents/ModelFields/ModelFields';
 
 import Select from 'react-select';
 import { Form } from 'react-bootstrap';
-import Section_C from './Section_C';
 
 // the hook
 // import { useTranslation } from "react-i18next";
@@ -207,61 +206,20 @@ class Section_B extends Component {
     return (
       <>
         <div ref={this.refCSS}></div>
-        <div className={`sticky-top  bg-white ${this.state.listCarData.length>0?'stickyBar':'noCompare'}`} id='sticky_nav' >
+        <div
+          className={`sticky-top  bg-white ${
+            this.state.listCarData.length > 0 ? 'stickyBar' : 'noCompare'
+          }`}
+          id="sticky_nav">
           <div className=" ">
             <div className="d-flex sub-container section-b-homepage-container">
               <h3>
-                {/* //t( */}
                 <span className="special">{'Compare'}</span> {/* t( */}
                 {'Cars Side-by-Side'}
               </h3>
-              <svg
-                id="Component_6_2"
-                data-name="Component 6 – 2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="1003.729"
-                height="36.969"
-                viewBox="0 0 1003.729 36.969">
-                <defs>
-                  <linearGradient
-                    id="linear-gradient"
-                    x1="0.5"
-                    x2="0.5"
-                    y2="1"
-                    gradientUnits="objectBoundingBox">
-                    <stop offset="0" stopColor="#d53535" />
-                    <stop offset="1" stopColor="#6b1b1b" />
-                  </linearGradient>
-                  <linearGradient
-                    id="linear-gradient-2"
-                    x1="0.777"
-                    x2="0.777"
-                    y2="1.686"
-                    gradientUnits="objectBoundingBox">
-                    <stop offset="0" stopColor="#efefef" />
-                    <stop offset="1" stopColor="#c4c4c4" />
-                  </linearGradient>
-                </defs>
-                <path
-                  id="Path_52"
-                  data-name="Path 52"
-                  d="M-940,0H42L62,33.969H-940Z"
-                  transform="translate(940)"
-                  fill="url(#linear-gradient)"
-                />
-                <path
-                  id="Path_53"
-                  data-name="Path 53"
-                  d="M-940,0,59.808.207l3.921,6.566L-940,6.958Z"
-                  transform="translate(940 30.01)"
-                  fill="url(#linear-gradient-2)"
-                />
-              </svg>
             </div>
 
-            <div
-              className="row section-b_car-container forScrollHandle"
-              style={{ top: '13%' }}>
+            <div className="row section-b_car-container forScrollHandle">
               {this.state.listCarData.length > 0
                 ? this.state.listCarData.map((item, i) => {
                     return (
@@ -303,63 +261,6 @@ class Section_B extends Component {
           </div>
         </div>
         <div className=" forScrollHandle">
-          {/* <div className="d-flex sub-container ">
-            <h3>
-              <span className="special">{'Compare'}</span> 
-              {'Cars Side-by-Side'}
-            </h3>
-            <svg
-              id="Component_6_2"
-              data-name="Component 6 – 2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1003.729"
-              height="36.969"
-              viewBox="0 0 1003.729 36.969">
-              <defs>
-                <linearGradient
-                  id="linear-gradient"
-                  x1="0.5"
-                  x2="0.5"
-                  y2="1"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#d53535" />
-                  <stop offset="1" stopColor="#6b1b1b" />
-                </linearGradient>
-                <linearGradient
-                  id="linear-gradient-2"
-                  x1="0.777"
-                  x2="0.777"
-                  y2="1.686"
-                  gradientUnits="objectBoundingBox">
-                  <stop offset="0" stopColor="#efefef" />
-                  <stop offset="1" stopColor="#c4c4c4" />
-                </linearGradient>
-              </defs>
-              <path
-                id="Path_52"
-                data-name="Path 52"
-                d="M-940,0H42L62,33.969H-940Z"
-                transform="translate(940)"
-                fill="url(#linear-gradient)"
-              />
-              <path
-                id="Path_53"
-                data-name="Path 53"
-                d="M-940,0,59.808.207l3.921,6.566L-940,6.958Z"
-                transform="translate(940 30.01)"
-                fill="url(#linear-gradient-2)"
-              />
-            </svg>
-
-
-
-
-
-
-
-          </div>
- */}
-
           <div className="car-container-wrapper" id="cards_container">
             <div
               className="row section-b_car-container"
@@ -376,8 +277,6 @@ class Section_B extends Component {
                     );
                   })
                 : null}
-
-              {/* {listAdded} */}
 
               <ModelFields
                 show={this.state.modalShow}

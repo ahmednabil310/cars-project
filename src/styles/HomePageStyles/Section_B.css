@@ -3,19 +3,18 @@
   padding: 0 110px;
   font-family: 'Poppins', sans-serif;
 }
-.forScrollHandle{
+.forScrollHandle {
   padding: 0 110px;
   font-family: 'Poppins', sans-serif;
 }
-.stickyBar{
+.stickyBar {
   overflow: overlay;
-  
 }
-.noCompare{
+.noCompare {
   overflow: hidden;
 }
 
-.stickyBar::-webkit-scrollbar{
+.stickyBar::-webkit-scrollbar {
   width: 0;
 }
 .section-b-homepage-container h3 {
@@ -60,14 +59,15 @@
 
 .section-b__addCar {
   border: 1px solid #d53535;
-  min-height: 150px;
+  min-height: 116px;
   color: #d53535;
   cursor: pointer;
+  border-radius: 15px;
+  padding: 11px 73px 11px 11px;
 }
 .section-b__addCar h4 {
-  padding-top: 13px;
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 /* Select Form */
@@ -90,7 +90,9 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1260px) {
-  .noCompare{overflow: hidden;}
+  .noCompare {
+    overflow: hidden;
+  }
   .section-b__nav .nav-container .nav-link {
     font-size: 14px;
     font-weight: 500;
@@ -100,7 +102,9 @@
 }
 
 @media screen and (min-width: 1260px) and (max-width: 1350px) {
-  .noCompare{overflow: hidden;}
+  .noCompare {
+    overflow: hidden;
+  }
   .section-b__nav .nav-container .nav-link {
     font-size: 14px;
     font-weight: 500;
@@ -110,14 +114,14 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .noCompare{
+  .noCompare {
     overflow: auto;
   }
   .section-b-homepage-container {
     padding: 0 20px;
     font-family: 'Poppins', sans-serif;
   }
-  .forScrollHandle{
+  .forScrollHandle {
     padding: 0 20px;
     font-family: 'Poppins', sans-serif;
   }
@@ -146,13 +150,12 @@
   .section-b-homepage-container {
     padding: 0 20px !important;
   }
-  .forScrollHandle{
+  .forScrollHandle {
     padding: 0 0px !important;
-
   }
 }
 @media screen and (max-width: 992px) {
-  forScrollHandle{
+  forScrollHandle {
     padding: 0 0px !important;
   }
 
@@ -178,7 +181,7 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .noCompare{
+  .noCompare {
     overflow: auto;
   }
   .section-b-homepage-container h3 {
@@ -189,7 +192,7 @@
   }
 }
 @media screen and (max-width: 576px) {
-  .noCompare{
+  .noCompare {
     overflow: auto;
   }
   .section-b-homepage-container h3 {
