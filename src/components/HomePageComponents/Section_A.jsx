@@ -85,39 +85,37 @@ const Section_A = () => {
 								'You can quickly pick a category from here by clicking on one of the following icons1'
 							)}
 						</h4>
-						<div className="row  special-row">
-							<div className="row w-100 pb-5">
-								<SingleCar
-									name="Toyota"
-									image={toyota}
-									rout={`/cars-available?type=Toyota`}
-								/>
-								<SingleCar
-									name="Mercedes"
-									image={mercedes}
-									rout={`/cars-available?type=Mercedes`}
-								/>
-								<SingleCar
-									name="BMW"
-									image={bmw}
-									rout={`/cars-available?type=BMW`}
-								/>
-								<SingleCar
-									name="Nissan"
-									image={nissan}
-									rout={`/cars-available?type=Nissan`}
-								/>
-								<SingleCar
-									name="Honda"
-									image={honda}
-									rout={`/cars-available?type=Honda`}
-								/>
-								<SingleCar
-									name="Lexus"
-									image={lexus}
-									rout={`/cars-available?type=Lexus`}
-								/>
-							</div>
+						<div className="row">
+							<SingleCar
+								name="Toyota"
+								image={toyota}
+								rout={`/cars-available?type=Toyota`}
+							/>
+							<SingleCar
+								name="Mercedes"
+								image={mercedes}
+								rout={`/cars-available?type=Mercedes`}
+							/>
+							<SingleCar
+								name="BMW"
+								image={bmw}
+								rout={`/cars-available?type=BMW`}
+							/>
+							<SingleCar
+								name="Nissan"
+								image={nissan}
+								rout={`/cars-available?type=Nissan`}
+							/>
+							<SingleCar
+								name="Honda"
+								image={honda}
+								rout={`/cars-available?type=Honda`}
+							/>
+							<SingleCar
+								name="Lexus"
+								image={lexus}
+								rout={`/cars-available?type=Lexus`}
+							/>
 						</div>
 					</div>
 				</div>

@@ -146,7 +146,7 @@ class Nav extends Component {
 								width:
 									this.state.isLoginedGmail || this.state.isLoginedFB
 										? '64%'
-										: '60%',
+										: '58%',
 							}}
 						>
 							<li className="nav-item active">
