@@ -29,7 +29,7 @@ class Section_C extends Component {
 						width="1003.729"
 					/>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -43,7 +43,7 @@ class Section_C extends Component {
 								types="Toyota Land Cruiser/Nissan Patrol/GMC Yukon/Chevrolet Tahoe"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -59,7 +59,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -73,7 +73,7 @@ class Section_C extends Component {
 								types="Toyota RAV-4/Mazda CX-5/Kia Sportage/Honda CR-V"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -89,7 +89,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -103,7 +103,7 @@ class Section_C extends Component {
 								types="Ford Explorer/Toyota Fortuner/Nissan Pathfinder/Mitsubishi Pajero"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -119,7 +119,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -133,7 +133,7 @@ class Section_C extends Component {
 								types="Honda Pilot/Mazda CX-9/Hyundai Grand Santa Fe/GMC Acadia"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -155,7 +155,7 @@ class Section_C extends Component {
 				<div className="section-c_compare">
 					<SingleCompare mainTitle="Compare Sedans" width="1003.729" />
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -169,7 +169,7 @@ class Section_C extends Component {
 								types="Toyota Camry/Honda Accord/Nissan Altima/Mazda 6"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -185,7 +185,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -199,7 +199,7 @@ class Section_C extends Component {
 								types="Nissan Sunny/Toyota Yaris Sedan/Honda City/Hyundai Elantra"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -215,7 +215,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -229,7 +229,7 @@ class Section_C extends Component {
 								types="Kia Optima/Toyota Corolla/Ford Taurus/Honda Civic"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -245,7 +245,7 @@ class Section_C extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(
@@ -259,7 +259,7 @@ class Section_C extends Component {
 								types="Chrysler 300C/Dodge Charger/Ford Taurus/Toyota Avalon"
 							/>
 						</div>
-						<div className="col-lg-6 col-12">
+						<div className="col-lg-6 col-12 d-flex justify-content-start align-items-end">
 							<CompareTypes
 								handleClick={() =>
 									this.handleClick(

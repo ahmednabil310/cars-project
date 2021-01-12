@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .section-c-homepage-container {
-	padding: 0 110px;
+	padding: 0 200px;
 }
 .section-c_compare {
-	padding-bottom: 41px;
+	padding-bottom: 60px;
 }
 .section-c-homepage-container svg {
 	width: 709px;

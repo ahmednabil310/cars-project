@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .section-b-homepage-container {
-	padding: 0 110px;
+	padding: 0 200px;
 	font-family: 'Poppins', sans-serif;
 }
 .forScrollHandle {
-	padding: 0 110px;
+	padding: 0 200px;
 	font-family: 'Poppins', sans-serif;
 }
 .stickyBar {
@@ -176,9 +176,9 @@
 	.section-b-homepage-container svg {
 		width: 660px;
 	}
-	.section-b_car-sub-container {
-		/* padding-bottom: 25px !important; */
-	}
+	/* .section-b_car-sub-container {
+		padding-bottom: 25px !important;
+	} */
 	.car-container-wrapper {
 		margin-bottom: 85px;
 		overflow: auto;

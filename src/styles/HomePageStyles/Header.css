@@ -20,7 +20,9 @@
 	overflow: hidden;
 }
 .carousel-caption {
-	left: 6%;
+	left: 13%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 .filterImage {
 	background-image: linear-gradient(transparent, transparent, #484848);
@@ -34,8 +36,12 @@
 	position: absolute;
 }
 .carousel-caption h1 {
-	font-size: 2.7rem;
+	font-size: 4rem;
 	text-shadow: 1px 1px #aaaaaa;
+	font-weight: 700;
+}
+.carousel-caption h1 span {
+	font-weight: 500;
 }
 .carousel-indicators li {
 	border-radius: 50%;
@@ -54,9 +60,9 @@
 }
 .carousel-caption h4 {
 	max-width: 42%;
-	font-size: 0.9rem;
-	font-weight: 400;
-	color: rgb(219 219 219);
+	font-size: 1.375rem;
+	font-weight: 500;
+	color: #fff;
 }
 .header-container .main-title {
 	font-size: 60px;
