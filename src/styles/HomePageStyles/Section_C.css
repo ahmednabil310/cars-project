@@ -1,90 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 .section-c-homepage-container {
-  padding: 0 110px;
+	padding: 0 110px;
 }
 .section-c_compare {
-  padding-bottom: 75px;
+	padding-bottom: 41px;
 }
 .section-c-homepage-container svg {
-  width: 709px;
+	width: 709px;
 }
 .compare-title {
-  font-weight: 800;
-  font-size: 34px;
-  color: #282828;
+	color: #282828;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-family: Poppins;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+/* .compare-main-content .title__border {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+} */
 .compare-main-content {
-  padding-bottom: 38px;
-  font-family: 'Montserrat', sans-serif;
-  align-items: center;
+	/* padding-bottom: 23px; */
+	font-family: 'Montserrat', sans-serif;
+	align-items: center;
 }
 
 .compare-labels {
-  font-family: 'Poppins', sans-serif;
-  color: #727272;
+	font-family: 'Poppins', sans-serif;
+	color: #727272;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 5px;
+	padding-top: 20px;
 }
 .compare-labels .labels-title {
-  font-weight: 600;
-  font-size: 17px;
-  padding-top: 10px;
-  color: #000000;
+	font-weight: 600;
+	font-size: 17px;
+	padding-top: 10px;
+	color: #000000;
 }
 .compare-labels .labels-types {
-  font-weight: 400;
-  font-size: 14px !important;
-  color: #727272;
-  cursor: pointer;
+	font-weight: 400;
+	font-size: 14px !important;
+	color: #727272;
+	cursor: pointer;
 }
 
 @media (max-width: 1200px) {
-  .section-c-homepage-container {
-    padding: 0 20px !important;
-  }
-  .compare-main-content {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
+	.section-c-homepage-container {
+		padding: 0 20px !important;
+	}
+	.compare-main-content {
+		flex-direction: column;
+		align-items: flex-start !important;
+	}
 }
 @media screen and (max-width: 992px) {
-  .compare-title {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  .compare-main-content {
-    flex-direction: column;
-  }
-  .section-c-homepage-container svg {
-    width: 534px;
-  }
+	.compare-title {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.compare-main-content {
+		flex-direction: column;
+	}
+	.section-c-homepage-container svg {
+		width: 534px;
+	}
 }
 
 @media screen and (max-width: 768px) {
-  .compare-labels .labels-types {
-    font-size: 12px !important;
-    font-weight: 500;
-  }
-  .compare-labels .labels-title {
-    font-size: 18px;
-  }
-  .section-c-homepage-container svg {
-    width: 535px;
-  }
+	.compare-labels .labels-types {
+		font-size: 12px !important;
+		font-weight: 500;
+	}
+	.compare-labels .labels-title {
+		font-size: 18px;
+	}
+	.section-c-homepage-container svg {
+		width: 535px;
+	}
 }
 @media screen and (max-width: 576px) {
-  .compare-labels .labels-title {
-    font-size: 16px;
-    padding-bottom: 5px;
-  }
-  .compare-labels .labels-types {
-    font-size: 12px !important;
-    padding-bottom: 14px;
-  }
+	.compare-labels .labels-title {
+		font-size: 16px;
+		padding-bottom: 5px;
+	}
+	.compare-labels .labels-types {
+		font-size: 12px !important;
+		padding-bottom: 14px;
+	}
 
-  .section-c-homepage-container svg {
-    width: 200px;
-  }
-  .compare-title {
-    font-size: 23px;
-  }
+	.section-c-homepage-container svg {
+		width: 200px;
+	}
+	.compare-title {
+		font-size: 23px;
+	}
+
+	.compare-labels img {
+		max-width: initial !important;
+	}
 }

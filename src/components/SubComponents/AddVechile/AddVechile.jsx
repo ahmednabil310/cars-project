@@ -12,11 +12,11 @@ const AddVechile = ({ showModel }) => {
         document.getElementById('cards_container').scrollLeft = 0;
         document.getElementById('sticky_nav').scrollLeft = 0;
       }}>
-      <div className="section-b__addCar d-flex  align-items-center">
+      <div className="section-b__addCar d-flex  align-items-center w-100">
         <div className="d-flex justify-content-center align-items-center add-image__container">
           <img src={plusIconn} />
         </div>
-        <h4 className="Add text-center">{t('Add a vechile')}</h4>
+        <h4 className="Add text-center w-100">{t('Add a vechile')}</h4>
       </div>
     </div>
   );
