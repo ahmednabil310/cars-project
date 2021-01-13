@@ -225,8 +225,8 @@ class Section_B extends Component {
 								? this.state.listCarData.map((item, i) => {
 										return (
 											<div className="col-3 col-lg-3" key={i}>
-												<div className="Car__Card pb-4 ">
-													<div className="Car__Header p-4 sticky-top ">
+												<div className="Car__Card Car__Card__bottomborder pb-4">
+													<div className="Car__Header p-4 sticky-top">
 														<div className="d-flex justify-content-between align-items-center mb-1">
 															<h6 className="text-capitalize font-weight-bold main__red mb-0">
 																{item.make}

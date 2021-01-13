@@ -21,6 +21,21 @@
 	border-radius: 15px;
 	overflow: hidden;
 }
+
+.Car__Card__topborder {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-top: 0;
+	position: relative;
+	top: -40px;
+}
+
+.Car__Card__bottomborder {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom: 0;
+}
+
 .Car__Card .dashed-line {
 	border-top: 1px dashed rgba(0, 0, 0, 0.2);
 	margin-left: -18px;

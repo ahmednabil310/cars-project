@@ -45,8 +45,8 @@ class CarCard extends Component {
 		});
 
 		return (
-			<div className="">
-				<div className="Car__Card pb-4 mb-5">
+			<div className="Car__Card Car__Card__topborder">
+				<div className="pb-4 mb-5">
 					{/* <div className="Car__Header p-4">
             <div className="d-flex justify-content-between align-items-center mb-1">
               <h6 className="text-capitalize font-weight-bold main__red mb-0">
@@ -70,13 +70,13 @@ class CarCard extends Component {
            */}
 					{/* =============== Car Image ================ */}
 					<div
-						className="Car__Image"
+						className="Car__Image mt-5"
 						onClick={() =>
 							this.props.history.push(`/cardetail?type=${this.props.data.id}`)
 						}
 					>
 						{/* <img className='img-fluid' src={imageUrl} alt='car' /> */}
-						<div className="Car__Image__Gallery d-flex flex-column ">
+						<div className="Car__Image__Gallery d-flex flex-column">
 							<img
 								className="img-fluid w-100"
 								src={this.props.data.image_1}

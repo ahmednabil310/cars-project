@@ -175,8 +175,8 @@
 	}
 	.section-a-homepage-container .cars-container img {
 		padding: 4px 8px;
-		width: 140px;
-		height: 125px;
+		width: 100%;
+		height: 105px;
 		max-width: none;
 	}
 	.section-a-homepage-container .cars-container .car-name {
