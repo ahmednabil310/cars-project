@@ -113,6 +113,14 @@
 		font-size: 27px;
 	}
 }
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.section-a-homepage-container .cars-container img {
+		padding: 12px 8px;
+		width: 120px;
+		height: 120px;
+	}
+}
 @media (max-width: 576px) {
 	.section-a-homepage-container .choices-container h3,
 	.make-container h3 {
@@ -128,8 +136,12 @@
 		height: 69px;
 	}
 	.section-a-homepage-container .cars-container img {
-		height: auto;
+		height: 68px;
 		width: auto;
+	}
+	.section-a-homepage-container .cars-container {
+		height: 120px;
+		width: 130px;
 	}
 }
 

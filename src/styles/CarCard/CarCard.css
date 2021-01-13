@@ -2,6 +2,10 @@
 	font-size: 14px;
 }
 
+.Car__Header {
+	height: 122px;
+}
+
 .Car__Header .Close__Btn {
 	width: 16px;
 	cursor: pointer;
@@ -29,6 +33,10 @@
 	margin-right: 12px;
 }
 
+.Car__Card .Car__Price {
+	height: 258px;
+}
+
 .Car__Card .Car__Price p {
 	font-family: Poppins;
 	font-size: 14px;
@@ -42,6 +50,10 @@
 
 .Car__Card .Car__Rating h4 {
 	margin-top: 5px;
+}
+
+.Car__Card .Car__Rating {
+	height: 325px;
 }
 
 .Car__Image__Gallery {
@@ -104,6 +116,11 @@
 	font-style: normal;
 	font-weight: 500;
 }
+
+.Pros ul {
+	height: 176px;
+}
+
 .Pros ul li {
 	font-family: Poppins;
 	font-size: 16px;
