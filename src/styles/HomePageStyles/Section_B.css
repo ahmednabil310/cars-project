@@ -103,6 +103,18 @@
 	border-radius: 10px;
 }
 
+@media (max-width: 576px) {
+	.section-b__addCar h4 {
+		font-size: 18px;
+	}
+	.section-b__addCar .add-image__container {
+		padding: 26px;
+	}
+	.section-b__addCar {
+		min-height: 104px !important;
+	}
+}
+
 @media screen and (min-width: 1200px) and (max-width: 1260px) {
 	.noCompare {
 		overflow: hidden;

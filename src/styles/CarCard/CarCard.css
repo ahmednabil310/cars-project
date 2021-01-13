@@ -134,3 +134,18 @@
 	font-style: normal;
 	font-weight: 500;
 }
+
+@media (max-width: 576px) {
+	.Car__Specifications h4 {
+		font-size: 20px;
+	}
+	.main__gary strong {
+		font-size: 16px;
+	}
+	.Car__Card .Car__Rating h4 {
+		font-size: 20px;
+	}
+	.Car__Card .Car__Price h4 {
+		font-size: 20px;
+	}
+}

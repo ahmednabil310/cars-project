@@ -136,12 +136,16 @@
 		height: 69px;
 	}
 	.section-a-homepage-container .cars-container img {
-		height: 68px;
+		height: 105px;
 		width: auto;
 	}
 	.section-a-homepage-container .cars-container {
-		height: 120px;
+		height: 152px;
 		width: 130px;
+	}
+	.section-a-homepage-container .cars-container .car-name {
+		font-size: 15px;
+		padding-top: 14px;
 	}
 }
 
@@ -161,5 +165,21 @@
 	}
 	.section-a-homepage-container .cars-container .car-name {
 		font-size: 14px;
+	}
+}
+
+@media (min-width: 1320px) {
+	.section-a-homepage-container .cars-container {
+		height: 165px;
+		width: 155px;
+	}
+	.section-a-homepage-container .cars-container img {
+		padding: 4px 8px;
+		width: 140px;
+		height: 125px;
+		max-width: none;
+	}
+	.section-a-homepage-container .cars-container .car-name {
+		font-size: 16px;
 	}
 }
