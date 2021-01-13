@@ -104,6 +104,13 @@
 	font-style: normal;
 	font-weight: 500;
 }
+.Pros ul li {
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	color: #1e1e1e;
+}
 .Car__Specifications h4 {
 	font-family: Poppins;
 	font-size: 20px;

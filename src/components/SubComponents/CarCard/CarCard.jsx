@@ -45,8 +45,8 @@ class CarCard extends Component {
 		});
 
 		return (
-			<div>
-				<div className="Car__Card pb-4 mb-5">
+			<div className="h-100">
+				<div className="Car__Card pb-4 mb-5 h-100">
 					{/* <div className="Car__Header p-4">
             <div className="d-flex justify-content-between align-items-center mb-1">
               <h6 className="text-capitalize font-weight-bold main__red mb-0">
@@ -171,7 +171,7 @@ class CarCard extends Component {
 										edit={false}
 										count={5}
 										size={24}
-										activeColor="#d53535"
+										activeColor="#EFAA24"
 										value={parseInt(
 											this.props.data.nhtsA_Driver_Frontal_Rating
 										)}
@@ -198,7 +198,7 @@ class CarCard extends Component {
 										edit={false}
 										count={5}
 										size={24}
-										activeColor="#d53535"
+										activeColor="#EFAA24"
 										value={parseInt(
 											this.props.data.euroNCAP_Overall_Adult_Rating
 										)}
@@ -210,7 +210,7 @@ class CarCard extends Component {
 					</div>
 					<hr className="dashed-line" style={{ margin: '26px 12px 0 12px' }} />
 					<div className="Pros">
-						<p className="py-1">Pros & Cons</p>
+						<p className="py-1">Pros</p>
 						<ul
 							className="px-0"
 							style={{
@@ -220,6 +220,11 @@ class CarCard extends Component {
 						>
 							{listGood}
 						</ul>
+						<hr
+							className="dashed-line"
+							style={{ margin: '22px 0px 0px -18px' }}
+						/>
+						<p className="py-1">Cons</p>
 						<ul
 							className=" px-0"
 							style={{
