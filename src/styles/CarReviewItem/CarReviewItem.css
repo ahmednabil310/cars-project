@@ -68,7 +68,7 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .CarReviewItem__title {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .CarReviewItem__modelyear {
@@ -116,7 +116,7 @@
   }
 
   .CarReviewItem__title {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
