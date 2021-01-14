@@ -79,8 +79,6 @@ class CustomerReviews extends Component {
     if (this.state.rate > 0 && this.state.title && this.state.comment) {
       if (this.state.title.length > 64) {
         toastr.warning('Title should not exceed 64 letters');
-      } else if (this.state.comment.length > 360) {
-        toastr.warning('Comment should not exceed 360 letters');
       } else {
         this.setState({ modalShow: !this.state.modalShow });
         const userId = localStorage.getItem('userId');
