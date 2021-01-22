@@ -19,6 +19,18 @@ class Section_C extends Component {
 		this.props.actions.getMultipleComparison(car1, car2, car3, car4);
 	};
 
+	componentDidMount() {
+		const query = new URLSearchParams(this.props.query);
+		const params = [];
+
+		["car1", "car2", "car3", "car4"].forEach((key) => {
+			if(query.has(key)) {
+				params.push(query.get(key));
+			}
+		})
+		this.props.actions.getMultipleComparison(...params);
+	}
+
 	render() {
 		return (
 			<div className="section-c-homepage-container">
