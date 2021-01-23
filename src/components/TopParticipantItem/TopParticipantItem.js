@@ -10,7 +10,10 @@ const TopParticipantItem = ({
   return (
     <div className="TopParticipantItem d-flex align-items-center col-8 col-sm-6 col-md-4 col-lg-3 col-xl-2  mt-2 mb-4">
       <div className="row w-100 TopParicipant-container">
-        <div className="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 image__container d-flex justify-content-center align-items-center">
+        <div
+          className={`col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 image__container d-flex justify-content-center align-items-center ${
+            profilePic ? '' : 'profileNot'
+          }`}>
           <img
             className="img-fluid"
             src={
@@ -18,10 +21,10 @@ const TopParticipantItem = ({
                 ? profilePic
                 : `https://ui-avatars.com/api/?size=512&font-size=0.33&background=random&rounded=true&name=${fullName}`
             }
-            style={{
-              height: profilePic ? '69px' : '64px',
-              maxWidth: profilePic ? '62px' : '64px',
-            }}
+            // style={{
+            //   height: profilePic ? '69px' : '64px',
+            //   maxWidth: profilePic ? '62px' : '64px',
+            // }}
             alt={fullName}
           />
         </div>
