@@ -11,7 +11,7 @@ import fbLogo from '../images/fb.svg';
 import userIcon from '../images/userIcon.png';
 const CLIENT_ID =
   '132576193524-o0v1lg1hhnfuurctq2fdk28t3btpi9k3.apps.googleusercontent.com';
-const Client_Secret = 'dCkN2EUohUrctqyXFTrjB7rq';
+const Client_Secret = 'c8fae9c7e0a0f059718066d6f4a978e2';
 
 class Nav extends Component {
   constructor(props) {
@@ -310,8 +310,8 @@ class Nav extends Component {
                     </button>
                   ) : (
                     <FacebookLogin
-                      // appId="1063436714175495"
-                      appId="781310785786387"
+                      appId="1063436714175495"
+                      // appId="781310785786387"
                       autoLoad={false}
                       fields="name,email,picture"
                       callback={this.responseFacebook}
