@@ -317,6 +317,8 @@ class Nav extends Component {
                       callback={this.responseFacebook}
                       textButton="Continue with Facebook"
                       cssclassName="fb-login-btn"
+                      redirectUri="https://caradvice.smartarz.com/"
+                      authType="c8fae9c7e0a0f059718066d6f4a978e2"
                       icon={<img width="25px" height="25px" src={fbLogo} />}
                     />
                   )}
