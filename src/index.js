@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'react-bnb-gallery/dist/style.css';
+import 'font-awesome/css/font-awesome.min.css';
 ReactDOM.render(
   <BrowserRouter>
     <App />
