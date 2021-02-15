@@ -210,8 +210,11 @@
 }
 
 @media screen and (max-width: 450px) {
-  .images-panel {
-    display: none;
+  .images-panel > div {
+    width: 60px;
+  }
+  .images-panel > div > img {
+    height: 40px;
   }
 
   .current-image,
