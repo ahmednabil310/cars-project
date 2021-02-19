@@ -233,7 +233,7 @@ class CarCard extends Component {
             </ul>
           </div>
           <hr className="dashed-line" style={{ margin: '0px 12px 0px 12px' }} />
-          {/* =============== Car Specifications ================ */}
+          {/* =============== Car Specifications ================  */}
           <div className="Car__Specifications pb-3">
             <h4 className="main__red pl-4 pt-4 text-capitalize">
               Specifications
