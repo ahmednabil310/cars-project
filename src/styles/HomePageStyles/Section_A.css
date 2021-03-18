@@ -47,11 +47,11 @@
   margin: 17px 0px;
 }
 .section-a-homepage-container .cars-container {
-  height: 105px;
+  height: 131px;
 
   text-align: center;
   border-radius: 15px;
-  box-shadow: 0px 4px 20px rgba(74, 101, 173, 0.07);
+  /* box-shadow: 0px 4px 20px rgba(74, 101, 173, 0.07); */
 }
 .section-a-homepage-container .cars-container img {
   padding: 12px 8px;
@@ -153,7 +153,7 @@
     width: 105px;
     text-align: center;
     border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(74, 101, 173, 0.07);
+    /* box-shadow: 0px 4px 20px rgba(74, 101, 173, 0.07); */
   }
   .section-a-homepage-container .cars-container img {
     height: 92px;
