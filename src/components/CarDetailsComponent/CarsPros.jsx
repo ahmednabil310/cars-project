@@ -7,6 +7,7 @@ import magic from '../../images/dealer/magic.png';
 class CarsPros extends Component {
 	constructor(props) {
 		super(props);
+		console.log(props.data);
 		const good = props.data.good.split(',');
 		const bad = props.data.bad.split(',');
 		const knone = props.data.known_Problems.split('.');

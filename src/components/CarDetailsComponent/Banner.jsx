@@ -14,7 +14,7 @@ const Banner = (props) => {
               props.data.year + ' ' + props.data.make + ' ' + props.data.model,
             )}
           </h1>
-          <ul className="d-flex align-items-end banner-list">
+          {!props.brief && <ul className="d-flex align-items-end banner-list">
             <a href="#overview">
               <li>{t('Overview')}</li>
             </a>
@@ -24,7 +24,7 @@ const Banner = (props) => {
             <a href="#pricing">
               <li style={{ paddingRight: '0px' }}>{t('Pricing')}</li>
             </a>
-          </ul>
+          </ul>}
         </div>
       </div>
       {/* <div className="banner-seprator" /> */}

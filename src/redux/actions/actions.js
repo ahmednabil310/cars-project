@@ -126,6 +126,22 @@ export function getCarData(id, index) {
   };
 }
 
+export function getCarBriefData({ make, model, year }) {
+  return (dispatch) => {
+    axiosDocs
+      .get(`api/Car/GetCarData?make=${make}&model=${model}&year=${year}`)
+      .then(function (response) {
+        dispatch({
+          type: types.GETCARDATA,
+          data: response.data.result,
+        });
+      })
+      .catch(function (error) {
+        console.log('getCarData: ', error);
+      });
+  };
+}
+
 export function getCommentList(id) {
   return (dispatch) => {
     axiosDocs
@@ -146,7 +162,7 @@ export function getMultipleComparison(car1, car2, car3, car4) {
   return (dispatch) => {
     axiosDocs
       .get(
-        `api/Car/GetMultipleComparison?car1=${car1}&car2=${car2}&car3=${car3}&car4=${car4}`,
+        `api/Car/GetMultipleComparison?car1=${car1}&car2=${car2}&car3=${car3}&car4=${car4}`
       )
       .then(function (response) {
         dispatch({
@@ -192,7 +208,7 @@ export function addUsers(param) {
         toastr.success('User logged in successfully');
         localStorage.setItem(
           'userId',
-          response.data.result.replaceAll(/['"]+/g, ''),
+          response.data.result.replaceAll(/['"]+/g, '')
         );
         // window.location.reload();
       })
