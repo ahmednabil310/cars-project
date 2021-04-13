@@ -99,6 +99,9 @@
   }
   .fullcar-container {
     padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .fullcar-container .car-type {
     font-size: 29px;
