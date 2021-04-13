@@ -5,10 +5,11 @@
   font-family: 'Poppins', sans-serif;
 }
 .fullcar-container .brief-details {
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  /* border: 1px solid rgba(0, 0, 0, 0.3); */
   border-radius: 20px;
   padding: 20px 30px 20px 27px;
   margin-bottom: 40px;
+  box-shadow: 0 0 5px 2px rgb(163 160 166 / 15%);
 }
 .brief-inner-container {
   padding-bottom: 7px;
@@ -44,9 +45,10 @@
   line-height: 32px;
 }
 .full-details {
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  /* border: 1px solid rgba(0, 0, 0, 0.3); */
   border-radius: 20px;
-  padding: 20px 30px 20px 27px;
+  padding: 20px 32px 20px 28px;
+  box-shadow: 0 0 5px 2px rgb(163 160 166 / 15%);
 }
 .full-details__banner {
   padding-bottom: 7px;
@@ -150,7 +152,7 @@
     font-size: 14px;
   }
   .full-details__banner {
-    padding: 27px 14px 34px 14px;
+    padding: 1px 14px 34px;
     text-align: center;
   }
   .single-detail {

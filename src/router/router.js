@@ -31,7 +31,10 @@ const RouterDocument = () => {
     <Suspense fallback={<Loading />}>
       <Router>
         <Switch>
-          <Route path='/carbrief' component={(props) => <Dealer brief {...props} />} />
+          <Route
+            path='/carbrief'
+            component={(props) => <Dealer brief {...props} />}
+          />
           <>
             <Nav />
             <Route path='/' component={Home} exact />
