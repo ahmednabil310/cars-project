@@ -214,9 +214,6 @@
   .notfound h2 {
     font-size: 1.1rem;
   }
-  .notfound a {
-    font-size: .8rem;
-  }
 
   .images-panel > div {
     width: 60px;
@@ -260,11 +257,9 @@
 
 @media screen and (max-width: 720px) {
   .notfound h2 {
-    font-size: 1.25rem;
+    font-size: 1.0rem;
   }
-  .notfound a {
-    font-size: .9rem;
-  }
+
   .current-image,
   .prev-image,
   .notfound {
@@ -275,12 +270,13 @@
 
 
 .notfound img {
-  max-width: 100%;
+  max-width: 76%;
   max-height: 85vh;
   vertical-align: middle;
   border-style: none;
+  margin-top: 74px;
 }
 
-.notfound h2, .notfound a {
+.notfound h2 {
   color: #F01E23;
 }

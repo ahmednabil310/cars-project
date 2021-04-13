@@ -46,13 +46,13 @@ const FullCar = (props) => {
               <SingleDetail
                 title={'Reliability'}
                 hasStar={true}
-                info={true}
+                info={true && !props.brief}
                 rate={props.data.reliability}
               />
               <SingleDetail
                 title={'Resale Value'}
                 hasStar={true}
-                info={true}
+                info={true && !props.brief}
                 rate={props.data.resale_Value}
               />
               <SingleDetail

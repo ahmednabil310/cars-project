@@ -78,14 +78,13 @@ class Dealer extends Component {
 							<Banner data={this.props.objCarData} brief={this.props.brief} />
 							{!this.props.brief && <CarDetails data={this.props.objCarData} />}
 							<CarsPros data={this.props.objCarData} />
-							<FullCar data={this.props.objCarData} />
+							<FullCar data={this.props.objCarData} brief={this.props.brief} />
 							{!this.props.brief && <LastBanner data={this.props.objCarData} />}
 							{!this.props.brief && <CustomerReviews data={this.props.objCarData} />}
 						</>) :
 						<div class="text-center notfound">
 							<img src={notFoundImg} alt="404 not found" />
 							<h2>Sorry! we don't have information about this car.</h2>
-							<Link to="/">Back to front page {'>'}</Link>
 						</div>
 				) : (
 					<LoadingPage />
